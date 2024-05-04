@@ -79,12 +79,12 @@
 				
 			</levelFactors>
 			
-			<!--levelSpecifics>
+			<!--levelSpecifics>		brings GUI errors from framework
 				<li>
 					<level>2</level>
 					<hediffAdd>
 						<li>
-							<HediffDef>Isekai_Pain_Resistance</HediffDef><severity>1</severity>
+							<hediffDef>Isekai_Pain_Resistance</hediffDef><severity>1</severity>
 						</li>
 						
 					</hediffAdd>
