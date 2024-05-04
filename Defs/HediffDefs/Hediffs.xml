@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_Pain_Resistance</defName>
+			<label>Pain resistance</label>
+			<description>The ability to resist pain.</description>
+			<isBad>true</isBad>
+			<maxSeverity>1</maxSeverity>
+			<stages>
+				<li>
+					<painFactor>0.9</painFactor>
+				</li>
+			</stages>
+
+		</HediffDef>		
+		
+		
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_Pain_Nullification</defName>
+			<label>Pain nullification</label>
+			<description>The ability to nullify pain.</description>
+			<isBad>true</isBad>
+			<maxSeverity>1</maxSeverity>
+			<stages>
+				<li>
+					<painFactor>0</painFactor>
+					<!--naturalHealingFactor>100</naturalHealingFactor>
+					<totalBleedFactor>0</totalBleedFactor>
+					<regeneration MayRequire="Ludeon.RimWorld.Anomaly">1000</regeneration-->
+					
+						
+				</li>
+			</stages>
+
+		</HediffDef>
+		
+		
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_MentalBreak_Nullification</defName>
+			<label>Mental break nullification</label>
+			<description>The ability to nullify mental breaks.</description>
+			<isBad>true</isBad>
+			<maxSeverity>1</maxSeverity>
+			<stages>
+				<li>
+					<blocksMentalBreaks MayRequire="Ludeon.RimWorld.Anomaly">true</blocksMentalBreaks>	
+				</li>
+			</stages>
+
+		</HediffDef>
+
+
+</Defs>

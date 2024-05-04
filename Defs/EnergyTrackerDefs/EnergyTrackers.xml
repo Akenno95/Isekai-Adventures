@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Resistances -->
+		
+		<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
+			<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
+			<defName>Isekai_Resistances_Defense</defName>
+			<label>Defense</label>
+			
+			<energyUnitStatDef>Isekai_DefenseCost</energyUnitStatDef>
+			<energyMaxStatDef>Isekai_Resistances_MaxEndurance</energyMaxStatDef>
+			<energyMinStatDef>Isekai_Resistances_MinEndurance</energyMinStatDef>
+			
+			<comps>
+				<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_DamageBase">
+					<compClass>ItsSorceryFramework.EnergyTrackerComp_OnDamaged</compClass>
+					<damageDefs>
+						<li>Bullet</li>
+						<li>Arrow</li>
+					</damageDefs>
+				</li>
+			</comps>
+		</ItsSorceryFramework.EnergyTrackerDef>
+
+		<!-- Arts -->
+		
+		<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
+			<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
+			<defName>Isekai_Arts_Stamina</defName>
+			<label>Stamina</label>
+			
+			<energyUnitStatDef>Isekai_StaminaCost</energyUnitStatDef>
+			<energyMaxStatDef>Isekai_Arts_MaxStamina</energyMaxStatDef>
+			<energyMinStatDef>Isekai_Arts_MinStamina</energyMinStatDef>
+			
+			<comps>
+				<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_PerTick">
+					<energyRecoveryStatDef>Isekai_Arts_StaminaRecovery</energyRecoveryStatDef>
+					<overchargeRecoveryFactor>-0.5</overchargeRecoveryFactor>
+					<deficitRecoveryFactor>0.5</deficitRecoveryFactor>
+				</li>
+			</comps>
+		</ItsSorceryFramework.EnergyTrackerDef>
+
+
+
+
+
+
+
+
+</Defs>

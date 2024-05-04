@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+		<!-- Resistances -->
+		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+			<defName>Isekai_Resistances_Gene</defName>
+			<label>Resistances</label>
+			<description>This gene activates the ability to gain resistances for damage types.</description>
+			
+			<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+			<displayCategory>Isekai_Genes</displayCategory>
+			<displayOrderInCategory>100</displayOrderInCategory>
+			
+			<modExtensions>
+				<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+					<schema>Isekai_Resistances</schema>
+				</li>
+			</modExtensions>
+			<biostatMet>-1</biostatMet>
+			<!-- <symbolPack>
+				<prefixSymbols>
+					<li><symbol>...</symbol></li>
+				</prefixSymbols>
+			</symbolPack> -->
+		</GeneDef>
+
+
+
+		<!-- Arts -->
+		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+			<defName>Isekai_Arts_Gene</defName>
+			<label>Arts</label>
+			<description>This gene activates the ability to gain Arts and ranks for your pawn.</description>
+			
+			<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+			<displayCategory>Isekai_Genes</displayCategory>
+			<displayOrderInCategory>101</displayOrderInCategory>
+			
+			<modExtensions>
+				<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+					<schema>Isekai_Arts</schema>
+				</li>
+			</modExtensions>
+			<biostatMet>-1</biostatMet>
+			<!-- <symbolPack>
+				<prefixSymbols>
+					<li><symbol>...</symbol></li>
+				</prefixSymbols>
+			</symbolPack> -->
+		</GeneDef>
+
+
+
+
+
+
+
+
+</Defs>

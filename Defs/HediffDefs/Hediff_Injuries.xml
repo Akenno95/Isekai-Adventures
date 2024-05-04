@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+		<HediffDef ParentName="InjuryBase">
+			<defName>Isekai_Slash</defName>
+			<label>Slash hit</label>
+			<labelNoun>A slash hit.</labelNoun>
+			<description>A slash hit.</description>
+			<comps>
+				<li Class="HediffCompProperties_TendDuration">
+					<labelTendedWell>treated</labelTendedWell>
+					<labelTendedWellInner>stabilized</labelTendedWellInner>
+					<labelSolidTendedWell>set</labelSolidTendedWell>
+				</li>
+				<li Class="HediffCompProperties_Infecter">
+					<infectionChance>0.15</infectionChance>
+				</li>
+				<li Class="HediffCompProperties_GetsPermanent">
+					<permanentLabel>Slash scar</permanentLabel>
+				</li>
+			</comps>
+			<injuryProps>
+				<painPerSeverity>0.0125</painPerSeverity>
+				<averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+				<bleedRate>0.06</bleedRate>
+				<canMerge>false</canMerge>
+				<destroyedLabel>Burned off</destroyedLabel>
+				<destroyedOutLabel>Burned out</destroyedOutLabel>
+			</injuryProps>
+		</HediffDef>
+
+
+
+
+
+
+
+
+
+</Defs>
+
+
+
+

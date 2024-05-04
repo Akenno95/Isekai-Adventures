@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Resistances -->
+		<StatDef>
+			<defName>Isekai_DefenseCost</defName>
+			<label>Defense</label>
+			<category>Isekai_Abilities</category>
+			<description>Defensive capabilities and resistances.</description>
+			<defaultBaseValue>10</defaultBaseValue>
+			<showIfUndefined>false</showIfUndefined>
+			<displayPriorityInCategory>1</displayPriorityInCategory>
+		</StatDef>
+
+
+		<!-- Arts -->
+		<StatDef>
+			<defName>Isekai_StaminaCost</defName>
+			<label>Stamina</label>
+			<category>Isekai_Abilities</category>
+			<description>Arts for your pawn, including Ranks.</description>
+			<defaultBaseValue>10</defaultBaseValue>
+			<showIfUndefined>false</showIfUndefined>
+			<displayPriorityInCategory>2</displayPriorityInCategory>
+		</StatDef>
+
+
+
+
+
+</Defs>

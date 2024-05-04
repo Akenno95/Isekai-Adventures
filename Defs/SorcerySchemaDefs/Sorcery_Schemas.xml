@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Resistances -->
+		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
+			<defName>Isekai_Resistances</defName>
+			<label>Resistances</label>
+			<description>Resistances against multiple damage types.</description>
+			
+			<energyTrackerDefs>
+				<li>Isekai_Resistances_Defense</li>
+			</energyTrackerDefs>
+			<learningTrackerDefs>
+				<li>Isekai_Resistances_LearningTrackerProgress</li>
+				<li>Isekai_Resistances_LearningTrackerTree</li>
+				<li>Isekai_Resistances_LearningTrackerTree_Two</li>
+			</learningTrackerDefs>
+			<progressTrackerDef>Isekai_ProgressTracker_Resistances</progressTrackerDef>
+		</ItsSorceryFramework.SorcerySchemaDef>
+
+
+		<!-- Arts -->
+		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
+			<defName>Isekai_Arts</defName>
+			<label>Arts/Ranks</label>
+			<description>Arts for your pawns including ranks.</description>
+			
+			<energyTrackerDefs>
+				<li>Isekai_Arts_Stamina</li>
+			</energyTrackerDefs>
+			<learningTrackerDefs>
+				<li>Isekai_Arts_LearningTrackerProgress</li>
+				<li>Isekai_Arts_LearningTrackerTree</li>
+				<li>Isekai_Arts_LearningTrackerTree_Two</li>
+			</learningTrackerDefs>
+			<progressTrackerDef>Isekai_ProgressTracker_Arts</progressTrackerDef>
+		</ItsSorceryFramework.SorcerySchemaDef>
+
+
+
+
+</Defs>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Resistances -->
+		<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnDamaged">
+			<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnDamaged</workerClass>
+			<defName>Isekai_Resistances_EXPTag_OnDamaged</defName>
+			<expFactor>1</expFactor>
+			<!-- <damageDefs>
+				<li>Cut</li>
+				<li>Blunt</li>
+				<li>ArrowHighVelocity</li>
+				<li>Burn</li>
+			</damageDefs> -->
+		</ItsSorceryFramework.ProgressEXPTagDef>
+
+
+
+		<!-- Arts -->
+		<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_Passive">
+			<workerClass>ItsSorceryFramework.ProgressEXPWorker_Passive</workerClass>
+			<defName>Isekai_Arts_EXPTag_Passive</defName>
+			<fixedEXP>1</fixedEXP>
+		</ItsSorceryFramework.ProgressEXPTagDef>
+
+
+
+
+
+
+
+</Defs>

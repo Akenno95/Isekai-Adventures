@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Resistances -->
+		<StatDef>
+			<defName>Isekai_Resistances_MaxEndurance</defName>
+			<label>Maximum endurance</label>
+			<description>Maximum defensive capabilities.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>100</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>100</displayPriorityInCategory>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Resistances_MinEndurance</defName>
+			<label>Minimum endurance</label>
+			<description>Minimum defensive capabilities.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>100</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>100</displayPriorityInCategory>
+		</StatDef>
+
+
+		<!-- Arts -->
+		<StatDef>
+			<defName>Isekai_Arts_MaxStamina</defName>
+			<label>Maximum stamina</label>
+			<description>Maximum stamina.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>100</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>101</displayPriorityInCategory>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Arts_MinStamina</defName>
+			<label>Minimum stamina</label>
+			<description>Minimum stamina.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>101</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef>
+			<defName>Isekai_Arts_StaminaRecovery</defName>
+			<label>Stamina recovery</label>
+			<description>Stamina recovery rate.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>102</displayPriorityInCategory>
+		</StatDef>
+
+
+
+
+
+
+
+
+
+</Defs>
+
+
+			
