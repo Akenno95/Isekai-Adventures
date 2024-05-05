@@ -3,7 +3,7 @@
 	
 		<!-- Slash -->
 		<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
-			<sorcerySchema>Isekai_Arts</sorcerySchema>
+			<sorcerySchema>Isekai_Rank</sorcerySchema>
 			<defName>Isekai_Slash</defName>
 			<label>Slash</label>
 			<description>Slashing the wind.</description>

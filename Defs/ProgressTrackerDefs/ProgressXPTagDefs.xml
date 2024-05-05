@@ -16,10 +16,10 @@
 
 
 
-		<!-- Arts -->
+		<!-- Rank -->
 		<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_Passive">
 			<workerClass>ItsSorceryFramework.ProgressEXPWorker_Passive</workerClass>
-			<defName>Isekai_Arts_EXPTag_Passive</defName>
+			<defName>Isekai_Rank_EXPTag_Passive</defName>
 			<fixedEXP>1</fixedEXP>
 		</ItsSorceryFramework.ProgressEXPTagDef>
 

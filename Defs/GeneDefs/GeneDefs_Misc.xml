@@ -26,11 +26,11 @@
 
 
 
-		<!-- Arts -->
+		<!-- Rank -->
 		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
-			<defName>Isekai_Arts_Gene</defName>
-			<label>Arts</label>
-			<description>This gene activates the ability to gain Arts and ranks for your pawn.</description>
+			<defName>Isekai_Rank_Gene</defName>
+			<label>Rank</label>
+			<description>This gene activates the ability to gain Rank and ranks for your pawn.</description>
 			
 			<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
 			<displayCategory>Isekai_Genes</displayCategory>
@@ -38,7 +38,7 @@
 			
 			<modExtensions>
 				<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
-					<schema>Isekai_Arts</schema>
+					<schema>Isekai_Rank</schema>
 				</li>
 			</modExtensions>
 			<biostatMet>-1</biostatMet>

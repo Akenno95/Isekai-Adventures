@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Rank -->
+		<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
+			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
+			<defName>Isekai_ProgressTracker_Rank</defName>
+			<label>Rank</label>
+			<!-- <bgPath>UI/ProgressTracker/...</bgPath> -->
+			
+			<!--progressLevelUpKey>Isekai_Rank_LevelUp</progressLevelUpKey>
+			<progressLevelUpDescKey>Isekai_Rank_LevelUpMessage</progressLevelUpDescKey>
+			<skillPointLabelKey>Isekai_Rank_SkillPointLabel</skillPointLabelKey-->
+			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Rank</progressHediff>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<statOffsets>
+						<PainShockThreshold>0.1</PainShockThreshold>
+						<InjuryHealingFactor>1</InjuryHealingFactor>
+						<ImmunityGainSpeed>1</ImmunityGainSpeed>
+						<MeleeDodgeChance>1.0</MeleeDodgeChance>
+						<MeleeDamageFactor MayRequire="ludeon.rimworld.biotech">2.0</MeleeDamageFactor>
+					</statOffsets>
+					<capMods>
+						<li>
+							<capacity>BloodFiltration</capacity>
+							<offset>0.1</offset>
+						</li>
+						<!--li>
+							<capacity>BloodPumping</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Breathing</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Consciousness</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Eating</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Hearing</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Manipulation</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Metabolism</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Moving</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Talking</capacity>
+							<offset>0.1</offset>
+						</li-->
+					</capMods>
+				</li>
+				<li>
+					<level>5</level>
+					<statOffsets>
+						<PainShockThreshold>1.0</PainShockThreshold>
+						<InjuryHealingFactor>10</InjuryHealingFactor>
+					</statOffsets>
+				</li>
+				
+			</levelFactors>
+			
+			<!--levelSpecifics>
+				<li>
+					<level>2</level>
+					<hediffAdd>
+						<li>
+							<hediffDef>Isekai_Pain_Resistance</hediffDef><severity>1</severity>
+						</li>
+						
+					</hediffAdd>
+				</li>
+			</levelSpecifics-->
+			
+			<levelLabels>
+				<li><level>1</level><label>F-Rank</label></li>
+				<li><level>5</level><label>E-Rank</label></li>
+				<li><level>10</level><label>D-Rank</label></li>
+				<li><level>15</level><label>C-Rank</label></li>
+				<li><level>30</level><label>B-Rank</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Rank_EXPTag_Passive</li>
+			</expTags>
+		
+		
+		</ItsSorceryFramework.ProgressTrackerDef>
+		
+		<HediffDef ParentName="ProgressTrackerHediffBase">
+			<defName>Isekai_ProgressTrackerRPG_Hediff_Rank</defName>
+			<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
+			<label>Rank</label>
+			<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+			<description>Ranks for your pawn.</description>
+			<initialSeverity>1</initialSeverity>
+			<minSeverity>0</minSeverity>
+			<maxSeverity>30</maxSeverity>
+			<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+			<stages>
+				<li>
+					<!--minSeverity>2</minSeverity>
+					<becomeVisible>false</becomeVisible-->
+				</li>
+			</stages>
+		</HediffDef>
+
+
+
+
+</Defs>

@@ -29,9 +29,9 @@
 		</StatDef>
 
 
-		<!-- Arts -->
+		<!-- Rank -->
 		<StatDef>
-			<defName>Isekai_Arts_MaxStamina</defName>
+			<defName>Isekai_Rank_MaxStamina</defName>
 			<label>Maximum stamina</label>
 			<description>Maximum stamina.</description>
 			<category>BasicsPawn</category>
@@ -44,7 +44,7 @@
 		</StatDef>
 		
 		<StatDef>
-			<defName>Isekai_Arts_MinStamina</defName>
+			<defName>Isekai_Rank_MinStamina</defName>
 			<label>Minimum stamina</label>
 			<description>Minimum stamina.</description>
 			<category>BasicsPawn</category>
@@ -57,7 +57,7 @@
 		</StatDef>
 
 		<StatDef>
-			<defName>Isekai_Arts_StaminaRecovery</defName>
+			<defName>Isekai_Rank_StaminaRecovery</defName>
 			<label>Stamina recovery</label>
 			<description>Stamina recovery rate.</description>
 			<category>BasicsPawn</category>

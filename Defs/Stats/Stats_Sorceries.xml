@@ -13,12 +13,12 @@
 		</StatDef>
 
 
-		<!-- Arts -->
+		<!-- Rank -->
 		<StatDef>
 			<defName>Isekai_StaminaCost</defName>
 			<label>Stamina</label>
 			<category>Isekai_Abilities</category>
-			<description>Arts for your pawn, including Ranks.</description>
+			<description>Rank for your pawn, including Ranks.</description>
 			<defaultBaseValue>10</defaultBaseValue>
 			<showIfUndefined>false</showIfUndefined>
 			<displayPriorityInCategory>2</displayPriorityInCategory>

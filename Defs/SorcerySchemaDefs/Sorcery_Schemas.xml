@@ -19,21 +19,21 @@
 		</ItsSorceryFramework.SorcerySchemaDef>
 
 
-		<!-- Arts -->
+		<!-- Rank -->
 		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
-			<defName>Isekai_Arts</defName>
-			<label>Arts/Ranks</label>
-			<description>Arts for your pawns including ranks.</description>
+			<defName>Isekai_Rank</defName>
+			<label>Rank/Ranks</label>
+			<description>Rank for your pawns including ranks.</description>
 			
 			<energyTrackerDefs>
-				<li>Isekai_Arts_Stamina</li>
+				<li>Isekai_Rank_Stamina</li>
 			</energyTrackerDefs>
 			<learningTrackerDefs>
-				<li>Isekai_Arts_LearningTrackerProgress</li>
-				<li>Isekai_Arts_LearningTrackerTree</li>
-				<li>Isekai_Arts_LearningTrackerTree_Two</li>
+				<li>Isekai_Rank_LearningTrackerProgress</li>
+				<li>Isekai_Rank_LearningTrackerTree</li>
+				<li>Isekai_Rank_LearningTrackerTree_Two</li>
 			</learningTrackerDefs>
-			<progressTrackerDef>Isekai_ProgressTracker_Arts</progressTrackerDef>
+			<progressTrackerDef>Isekai_ProgressTracker_Rank</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>
 
 
