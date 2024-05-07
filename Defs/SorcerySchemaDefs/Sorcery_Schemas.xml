@@ -32,6 +32,7 @@
 				<li>Isekai_Rank_LearningTrackerProgress</li>
 				<li>Isekai_Rank_LearningTrackerTree</li>
 				<li>Isekai_Rank_LearningTrackerTree_Two</li>
+				<li MayRequire = "Akenno.Tensura">Tensura_Ability_LearningTrackerTree</li>
 			</learningTrackerDefs>
 			<progressTrackerDef>Isekai_ProgressTracker_Rank</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>

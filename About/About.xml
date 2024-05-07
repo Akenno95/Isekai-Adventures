@@ -4,12 +4,12 @@
 		<name>Isekai Adventures</name>
 		<author>Akenno</author>
 		<supportedVersions><li>1.5</li></supportedVersions>
-		<packageId>Akenno.IsekaiAdventures</packageId>
+		<packageId>Akenno.Isekai</packageId>
 		<description>Isekai Adventures - Mod Project with abilities and races from Isekai Animes like "Reincarnated as a Slime"!</description>
 		<modDependencies>
 			<li>
 				<packageId>Zomuro.ItsSorcery</packageId>
-				<displayName>It's Sorcery></displayName>
+				<displayName>It's Sorcery</displayName>
 				<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3013487115</steamWorkshopUrl>
 			
 			</li>

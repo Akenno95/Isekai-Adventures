@@ -53,7 +53,7 @@
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
 		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<!--ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" MayRequire = "Akenno.Tensura">
 			<learningTrackerDef>Isekai_Rank_LearningTrackerTree_Two</learningTrackerDef>
 			<defName>Isekai_Node_Test</defName>
 			<label>Slash Ability</label>
@@ -71,9 +71,9 @@
 				<ArmorRating_Heat>10.0</ArmorRating_Heat>
 			</statOffsets>
 			<abilityGain>
-				<li>Isekai_Slash</li>
+				<li>Tensura_Slash</li>
 			</abilityGain>
-		</ItsSorceryFramework.LearningTreeNodeDef>
+		</ItsSorceryFramework.LearningTreeNodeDef-->
 
 
 
