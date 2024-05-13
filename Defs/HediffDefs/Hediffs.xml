@@ -7,10 +7,32 @@
 			<label>Pain resistance</label>
 			<description>The ability to resist pain.</description>
 			<isBad>true</isBad>
-			<maxSeverity>1</maxSeverity>
+			<initialSeverity>1</initialSeverity>
+			<maxSeverity>10</maxSeverity>
 			<stages>
 				<li>
+					<label>tiny</label>
 					<painFactor>0.9</painFactor>
+				</li>
+				<li>
+					<minSeverity>3</minSeverity>
+					<label>minor</label>
+					<painFactor>0.8</painFactor>
+				</li>
+				<li>
+					<minSeverity>5</minSeverity>
+					<label>moderate</label>
+					<painFactor>0.7</painFactor>
+				</li>
+				<li>
+					<minSeverity>7</minSeverity>
+					<label>good</label>
+					<painFactor>0.6</painFactor>
+				</li>
+				<li>
+					<minSeverity>10</minSeverity>
+					<label>high</label>
+					<painFactor>0.5</painFactor>
 				</li>
 			</stages>
 
@@ -46,6 +68,33 @@
 			<stages>
 				<li>
 					<blocksMentalBreaks MayRequire="Ludeon.RimWorld.Anomaly">true</blocksMentalBreaks>	
+				</li>
+			</stages>
+
+		</HediffDef>
+		
+		
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_Magic_MPStrain</defName>
+			<label>MP strain</label>
+			<description>Pawn needs to rest to recover from using too much MP.</description>
+			<isBad>true</isBad>
+			<initialSeverity>0</initialSeverity>
+			<maxSeverity>1</maxSeverity>
+			<comps>
+				<li Class="HediffCompProperties_SeverityPerDay">
+					<severityPerDay>-0.5</severityPerDay>
+					<showDaysToRecover>true</showDaysToRecover>
+				</li>
+			</comps>
+			<stages>
+				<li>
+					<capMods>
+						<li>
+							<capacity>Consciousness</capacity>
+							<setMax>0.1</setMax>
+						</li>
+					</capMods>
 				</li>
 			</stages>
 

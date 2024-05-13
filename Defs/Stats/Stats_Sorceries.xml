@@ -2,6 +2,7 @@
 <Defs>
 
 		<!-- Resistances -->
+		
 		<StatDef>
 			<defName>Isekai_DefenseCost</defName>
 			<label>Defense</label>
@@ -14,14 +15,28 @@
 
 
 		<!-- Rank -->
+		
 		<StatDef>
 			<defName>Isekai_StaminaCost</defName>
 			<label>Stamina</label>
 			<category>Isekai_Abilities</category>
-			<description>Rank for your pawn, including Ranks.</description>
+			<description>Stamina usage for pawns.</description>
 			<defaultBaseValue>10</defaultBaseValue>
 			<showIfUndefined>false</showIfUndefined>
 			<displayPriorityInCategory>2</displayPriorityInCategory>
+		</StatDef>
+		
+
+		<!-- Magic -->
+		
+		<StatDef>
+			<defName>Isekai_MPCost</defName>
+			<label>MP</label>
+			<category>Isekai_Abilities</category>
+			<description>MP also known as Magic Points or Magicule Points. This is needed to cast abilities.</description>
+			<defaultBaseValue>10</defaultBaseValue>
+			<showIfUndefined>false</showIfUndefined>
+			<displayPriorityInCategory>3</displayPriorityInCategory>
 		</StatDef>
 
 

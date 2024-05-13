@@ -81,10 +81,10 @@
 			
 			<levelLabels>
 				<li><level>1</level><label>Bad</label></li>
-				<li><level>5</level><label>Weak</label></li>
-				<li><level>10</level><label>Mediocre</label></li>
-				<li><level>15</level><label>High</label></li>
-				<li><level>30</level><label>Maximum</label></li>
+				<li><level>25</level><label>Weak</label></li>
+				<li><level>50</level><label>Moderate</label></li>
+				<li><level>75</level><label>High</label></li>
+				<li><level>100</level><label>Very high</label></li>
 			</levelLabels>
 			<expTags>
 				<li>Isekai_Resistances_EXPTag_OnDamaged</li>
@@ -101,7 +101,7 @@
 			<description>Resistances against damage types.</description>
 			<initialSeverity>1</initialSeverity>
 			<minSeverity>0</minSeverity>
-			<maxSeverity>30</maxSeverity>
+			<maxSeverity>1000</maxSeverity>
 			<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
 			<stages>
 				<!--li>

@@ -2,6 +2,7 @@
 <Defs>
 
 		<!-- Resistances -->
+		
 		<StatDef>
 			<defName>Isekai_Resistances_MaxEndurance</defName>
 			<label>Maximum endurance</label>
@@ -30,6 +31,7 @@
 
 
 		<!-- Rank -->
+		
 		<StatDef>
 			<defName>Isekai_Rank_MaxStamina</defName>
 			<label>Maximum stamina</label>
@@ -67,6 +69,80 @@
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
 			<displayPriorityInCategory>102</displayPriorityInCategory>
+		</StatDef>
+		
+
+		<!-- Magic -->
+		
+		<StatDef>
+			<defName>Isekai_Magic_MaxMP</defName>
+			<label>Maximum MP</label>
+			<description>Maximum MP.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1000</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>101</displayPriorityInCategory>
+			<statFactors>
+				<li>Isekai_Magic_Factor</li>
+			</statFactors>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Magic_MinMP</defName>
+			<label>Minimum MP</label>
+			<description>Minimum MP.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>101</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef>
+			<defName>Isekai_Magic_MPRecovery</defName>
+			<label>MP recovery</label>
+			<description>MP recovery rate.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>102</displayPriorityInCategory>
+			<statFactors>
+				<li>Isekai_Magic_Factor</li>
+			</statFactors>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Magic_AbsMinMP</defName>
+			<label>Absolute minimum MP</label>
+			<description>Absolute minimum MP of a pawn that might cause some trouble.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>-1000</defaultBaseValue>
+			<minValue>-1000</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>103</displayPriorityInCategory>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Magic_Factor</defName>
+			<label>Magic factor</label>
+			<description>Magic factor for maximum MP and recovery.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>104</displayPriorityInCategory>
 		</StatDef>
 
 

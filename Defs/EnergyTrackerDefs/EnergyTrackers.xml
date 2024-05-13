@@ -23,6 +23,7 @@
 			</comps>
 		</ItsSorceryFramework.EnergyTrackerDef>
 
+
 		<!-- Rank -->
 		
 		<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
@@ -37,6 +38,30 @@
 			<comps>
 				<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_PerTick">
 					<energyRecoveryStatDef>Isekai_Rank_StaminaRecovery</energyRecoveryStatDef>
+					<overchargeRecoveryFactor>-0.5</overchargeRecoveryFactor>
+					<deficitRecoveryFactor>0.5</deficitRecoveryFactor>
+				</li>
+			</comps>
+		</ItsSorceryFramework.EnergyTrackerDef>
+		
+
+		<!-- Magic -->
+		
+		<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
+			<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
+			<defName>Isekai_Magic_MP</defName>
+			<label>MP</label>
+			
+			<energyUnitStatDef>Isekai_MPCost</energyUnitStatDef>
+			<energyMaxStatDef>Isekai_Magic_MaxMP</energyMaxStatDef>
+			<energyMinStatDef>Isekai_Magic_MinMP</energyMinStatDef>
+			
+			<energyAbsMinStatDef>Isekai_Magic_AbsMinMP</energyAbsMinStatDef>
+			<sideEffect>Isekai_Magic_MPStrain</sideEffect>
+			
+			<comps>
+				<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_PerTick">
+					<energyRecoveryStatDef>Isekai_Magic_MPRecovery</energyRecoveryStatDef>
 					<overchargeRecoveryFactor>-0.5</overchargeRecoveryFactor>
 					<deficitRecoveryFactor>0.5</deficitRecoveryFactor>
 				</li>

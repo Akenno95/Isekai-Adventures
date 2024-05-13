@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-		<!-- Rank -->
+		<!-- Magic -->
+		
 		<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
 			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
-			<defName>Isekai_ProgressTracker_Rank</defName>
-			<label>Rank</label>
+			<defName>Isekai_ProgressTracker_Magic</defName>
+			<label>Magic</label>
 			<!-- <bgPath>UI/ProgressTracker/...</bgPath> -->
 			
 			<!--progressLevelUpKey>Isekai_Rank_LevelUp</progressLevelUpKey>
 			<progressLevelUpDescKey>Isekai_Rank_LevelUpMessage</progressLevelUpDescKey>
 			<skillPointLabelKey>Isekai_Rank_SkillPointLabel</skillPointLabelKey-->
-			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Rank</progressHediff>
+			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Magic</progressHediff>
 			<levelFactors>
 				<li>
 					<level>1</level>
 					<statOffsets>
-						<PainShockThreshold>0.1</PainShockThreshold>
-						<InjuryHealingFactor>1</InjuryHealingFactor>
-						<ImmunityGainSpeed>1</ImmunityGainSpeed>
-						<MeleeDodgeChance>1.0</MeleeDodgeChance>
-						<MeleeDamageFactor MayRequire="ludeon.rimworld.biotech">2.0</MeleeDamageFactor>
+						<Isekai_Magic_MaxMP>10</Isekai_Magic_MaxMP>
 					</statOffsets>
 					<capMods>
-						<li>
+						<!--li>
 							<capacity>BloodFiltration</capacity>
 							<offset>0.1</offset>
 						</li>
-						<!--li>
+						<li>
 							<capacity>BloodPumping</capacity>
 							<offset>0.1</offset>
 						</li>
@@ -72,14 +69,13 @@
 				<li>
 					<level>5</level>
 					<statOffsets>
-						<PainShockThreshold>1.0</PainShockThreshold>
-						<InjuryHealingFactor>10</InjuryHealingFactor>
+						<Isekai_Magic_MPRecovery>0.2</Isekai_Magic_MPRecovery>
 					</statOffsets>
 				</li>
 				
 			</levelFactors>
 			
-			<levelSpecifics>
+			<!--levelSpecifics>
 				<li>
 					<level>2</level>
 					<hediffAdd>
@@ -89,30 +85,28 @@
 						
 					</hediffAdd>
 				</li>
-			</levelSpecifics>
+			</levelSpecifics-->
 			
 			<levelLabels>
-				<li><level>1</level><label>F-Rank</label></li>
-				<li><level>20</level><label>E-Rank</label></li>
-				<li><level>40</level><label>D-Rank</label></li>
-				<li><level>60</level><label>C-Rank</label></li>
-				<li><level>80</level><label>B-Rank</label></li>
-				<li><level>100</level><label>A-Rank</label></li>
-				<li><level>150</level><label>S-Rank</label></li>
+				<li><level>1</level><label>Very low MP</label></li>
+				<li><level>25</level><label>Low MP</label></li>
+				<li><level>50</level><label>Moderate MP</label></li>
+				<li><level>75</level><label>High MP</label></li>
+				<li><level>100</level><label>Very high MP</label></li>
 			</levelLabels>
 			<expTags>
-				<li>Isekai_Rank_EXPTag_Passive</li>
+				<li>Isekai_Magic_EXPTag_Passive</li>
 			</expTags>
 		
 		
 		</ItsSorceryFramework.ProgressTrackerDef>
 		
 		<HediffDef ParentName="ProgressTrackerHediffBase">
-			<defName>Isekai_ProgressTrackerRPG_Hediff_Rank</defName>
+			<defName>Isekai_ProgressTrackerRPG_Hediff_Magic</defName>
 			<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
-			<label>Rank</label>
+			<label>MP</label>
 			<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
-			<description>Ranks for your pawn.</description>
+			<description>MP for your pawn.</description>
 			<initialSeverity>1</initialSeverity>
 			<minSeverity>0</minSeverity>
 			<maxSeverity>1000</maxSeverity>

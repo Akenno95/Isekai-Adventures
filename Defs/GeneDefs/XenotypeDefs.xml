@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+		<!-- Adventurer Xenotype -->
+	
+		<XenotypeDef MayRequire = "Ludeon.RimWorld.Biotech">
+			<defName>Isekai_Adventurer</defName>
+			<label>Adventurer</label>
+			<description>An adventurer who embarks on a new journey.</description>
+			<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
+			<genes>
+				<li>Isekai_Resistances_Gene</li>
+				<li>Isekai_Rank_Gene</li>
+				<li>Isekai_Magic_Gene</li>
+			</genes>
+		</XenotypeDef>
+
+
+</Defs>

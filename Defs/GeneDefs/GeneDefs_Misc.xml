@@ -2,6 +2,7 @@
 <Defs>
 	
 		<!-- Resistances -->
+		
 		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
 			<defName>Isekai_Resistances_Gene</defName>
 			<label>Resistances</label>
@@ -27,10 +28,11 @@
 
 
 		<!-- Rank -->
+		
 		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
 			<defName>Isekai_Rank_Gene</defName>
 			<label>Rank</label>
-			<description>This gene activates the ability to gain Rank and ranks for your pawn.</description>
+			<description>This gene activates the ability to gain a rank for your pawn, also improving base pawn stats.</description>
 			
 			<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
 			<displayCategory>Isekai_Genes</displayCategory>
@@ -48,9 +50,63 @@
 				</prefixSymbols>
 			</symbolPack> -->
 		</GeneDef>
+		
+		
+		<!-- Magic -->
+		
+		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+			<defName>Isekai_Magic_Gene</defName>
+			<label>Magic</label>
+			<description>This gene activates the ability to gain Magic abilities for your pawn.</description>
+			
+			<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+			<displayCategory>Isekai_Genes</displayCategory>
+			<displayOrderInCategory>102</displayOrderInCategory>
+			
+			<modExtensions>
+				<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+					<schema>Isekai_Magic</schema>
+				</li>
+			</modExtensions>
+			<biostatMet>-1</biostatMet>
+			<!-- <symbolPack>
+				<prefixSymbols>
+					<li><symbol>...</symbol></li>
+				</prefixSymbols>
+			</symbolPack> -->
+		</GeneDef>
 
 
 
+		<!--<!{1}** All-in-one **{1}>
+		
+		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+			<defName>Isekai_Adventurer_Gene</defName>
+			<label>Adventurer Gene</label>
+			<description>This gene is featured in every adventurer out there.</description>
+			
+			<!{1}** <iconPath>UI/Icons/Genes/...</iconPath> **{1}>
+			<displayCategory>Isekai_Genes</displayCategory>
+			<displayOrderInCategory>99</displayOrderInCategory>
+			
+			<modExtensions>
+				<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+					<schema>Isekai_Magic</schema>
+				</li>
+				<!{1}**li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+					<schema>Isekai_Rank</schema>
+				</li>
+				<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+					<schema>Isekai_Resistances</schema>
+				</li**{1}>
+			</modExtensions>
+			<biostatMet>-1</biostatMet>
+			<!{1}** <symbolPack>
+				<prefixSymbols>
+					<li><symbol>...</symbol></li>
+				</prefixSymbols>
+			</symbolPack> **{1}>
+		</GeneDef>-->
 
 
 

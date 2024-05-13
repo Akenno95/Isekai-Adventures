@@ -2,6 +2,7 @@
 <Defs>
 
 		<!-- Resistances -->
+		
 		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
 			<defName>Isekai_Resistances</defName>
 			<label>Resistances</label>
@@ -20,6 +21,7 @@
 
 
 		<!-- Rank -->
+		
 		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
 			<defName>Isekai_Rank</defName>
 			<label>Rank/Ranks</label>
@@ -32,9 +34,29 @@
 				<li>Isekai_Rank_LearningTrackerProgress</li>
 				<li>Isekai_Rank_LearningTrackerTree</li>
 				<li>Isekai_Rank_LearningTrackerTree_Two</li>
-				<li MayRequire = "Akenno.Tensura">Tensura_Ability_LearningTrackerTree</li>
+				<!-- li MayRequire = "Akenno.Tensura">Tensura_Ability_LearningTrackerTree</li -->
 			</learningTrackerDefs>
 			<progressTrackerDef>Isekai_ProgressTracker_Rank</progressTrackerDef>
+		</ItsSorceryFramework.SorcerySchemaDef>
+		
+
+		<!-- Magic -->
+		
+		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
+			<defName>Isekai_Magic</defName>
+			<label>Magic</label>
+			<description>Magic and everything related for your pawns.</description>
+			
+			<energyTrackerDefs>
+				<li>Isekai_Magic_MP</li>
+			</energyTrackerDefs>
+			<learningTrackerDefs>
+				<li>Isekai_Magic_LearningTrackerProgress</li>
+				<li>Isekai_Magic_LearningTrackerTree</li>
+				<li>Isekai_Magic_LearningTrackerTree_Two</li>
+				<li MayRequire = "Akenno.Tensura">Tensura_Ability_LearningTrackerTree</li>
+			</learningTrackerDefs>
+			<progressTrackerDef>Isekai_ProgressTracker_Magic</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>
 
 

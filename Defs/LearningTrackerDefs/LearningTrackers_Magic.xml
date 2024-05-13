@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Magic Setup -->
+		
+		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
+			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
+			<defName>Isekai_Magic_LearningTrackerProgress</defName>
+			<label>Summary</label>
+		</ItsSorceryFramework.LearningTrackerDef>
+		
+		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+			<defName>Isekai_Magic_LearningTrackerTree</defName>
+			<label>Basics</label>
+		</ItsSorceryFramework.LearningTrackerDef>
+		
+		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+			<defName>Isekai_Magic_LearningTrackerTree_Two</defName>
+			<label>Elements</label>
+		</ItsSorceryFramework.LearningTrackerDef>
+		
+		
+		<!-- Basics Skilltree -->
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Magic_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_MP</defName>
+			<label>Slash Ability</label>
+			<description>You can slash the enemy with this ability.</description>
+			
+			<coordX>0</coordX>
+			<coordY>0</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqsHediff>
+				<li>
+					<key>Isekai_Pain_Resistance</key>
+					<value>1</value>
+				</li>
+			</prereqsHediff>
+			
+			<hediffRemove>
+				<li><hediffDef>Isekai_Pain_Resistance</hediffDef></li>
+			</hediffRemove>
+			
+			<statOffsets>
+			</statOffsets>
+			<abilityGain>
+				<li>Isekai_Slash</li>
+			</abilityGain>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		
+		
+		<!-- Elements Skilltree -->
+		
+		
+		
+
+
+
+
+</Defs>

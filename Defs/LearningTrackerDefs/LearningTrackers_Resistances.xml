@@ -322,8 +322,8 @@
 		
 		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
-			<defName>Isekai_Node_PainResistance</defName>
-			<label>Pain Resistance</label>
+			<defName>Isekai_Node_PainResistance1</defName>
+			<label>Pain Resistance 1</label>
 			<description>You can lower down the pain you receive with this ability.</description>
 			
 			<coordX>0</coordX>
@@ -334,8 +334,87 @@
 				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>1</severity></li>
 			</hediffAdd>
 		</ItsSorceryFramework.LearningTreeNodeDef>
-
-
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_PainResistance2</defName>
+			<label>Pain Resistance 2</label>
+			<description>You can lower down the pain you receive with this ability.</description>
+			
+			<coordX>1</coordX>
+			<coordY>3</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_PainResistance1</li>
+			</prereqs>
+			
+			<hediffAdjust>
+				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>2</severity></li>
+			</hediffAdjust>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_PainResistance3</defName>
+			<label>Pain Resistance 3</label>
+			<description>You can lower down the pain you receive with this ability.</description>
+			
+			<coordX>2</coordX>
+			<coordY>3</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_PainResistance2</li>
+			</prereqs>
+			
+			<hediffAdjust>
+				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>2</severity></li>
+			</hediffAdjust>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_PainResistance4</defName>
+			<label>Pain Resistance 4</label>
+			<description>You can lower down the pain you receive with this ability.</description>
+			
+			<coordX>3</coordX>
+			<coordY>3</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_PainResistance3</li>
+			</prereqs>
+			
+			<hediffAdjust>
+				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>2</severity></li>
+			</hediffAdjust>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_PainResistance5</defName>
+			<label>Pain Resistance 5</label>
+			<description>You can lower down the pain you receive with this ability.</description>
+			
+			<coordX>4</coordX>
+			<coordY>3</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_PainResistance4</li>
+			</prereqs>
+			
+			<hediffAdjust>
+				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>3</severity></li>
+			</hediffAdjust>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
 
 		<!-- Nullifications Skilltree -->
 
@@ -347,7 +426,7 @@
 			
 			<coordX>0</coordX>
 			<coordY>0</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>10</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_BluntResistance5</li>
@@ -385,7 +464,11 @@
 			
 			<coordX>0</coordX>
 			<coordY>2</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>10</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_HeatResistance5</li>
+			</prereqs>
 			
 			<statOffsets>
 				<ArmorRating_Heat>10.0</ArmorRating_Heat>
@@ -401,8 +484,15 @@
 			
 			<coordX>0</coordX>
 			<coordY>3</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>10</pointReq>
 			
+			<prereqs>
+				<li>Isekai_Node_PainResistance5</li>
+			</prereqs>
+			
+			<hediffRemove>
+				<li>Isekai_Pain_Resistance</li>
+			</hediffRemove>
 			<hediffAdd>
 				<li><hediffDef>Isekai_Pain_Nullification</hediffDef><severity>1</severity></li>
 			</hediffAdd>
@@ -417,7 +507,7 @@
 			
 			<coordX>0</coordX>
 			<coordY>4</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>10</pointReq>
 			
 			<hediffAdd>
 				<li><hediffDef>Isekai_MentalBreak_Nullification</hediffDef><severity>1</severity></li>
@@ -433,7 +523,7 @@
 			
 			<coordX>0</coordX>
 			<coordY>5</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>10</pointReq>
 			
 			<statFactors>
 				<StaggerDurationFactor>0</StaggerDurationFactor>

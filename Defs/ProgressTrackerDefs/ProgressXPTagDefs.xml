@@ -2,6 +2,7 @@
 <Defs>
 
 		<!-- Resistances -->
+		
 		<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnDamaged">
 			<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnDamaged</workerClass>
 			<defName>Isekai_Resistances_EXPTag_OnDamaged</defName>
@@ -15,13 +16,23 @@
 		</ItsSorceryFramework.ProgressEXPTagDef>
 
 
-
 		<!-- Rank -->
+		
 		<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_Passive">
 			<workerClass>ItsSorceryFramework.ProgressEXPWorker_Passive</workerClass>
 			<defName>Isekai_Rank_EXPTag_Passive</defName>
+			<fixedEXP>0.1</fixedEXP>
+		</ItsSorceryFramework.ProgressEXPTagDef>
+		
+
+		<!-- Magic -->
+		
+		<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_Passive">
+			<workerClass>ItsSorceryFramework.ProgressEXPWorker_Passive</workerClass>
+			<defName>Isekai_Magic_EXPTag_Passive</defName>
 			<fixedEXP>1</fixedEXP>
 		</ItsSorceryFramework.ProgressEXPTagDef>
+
 
 
 
