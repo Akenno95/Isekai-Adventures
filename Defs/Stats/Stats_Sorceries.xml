@@ -33,7 +33,7 @@
 			<defName>Isekai_MPCost</defName>
 			<label>MP</label>
 			<category>Isekai_Abilities</category>
-			<description>MP also known as Magic Points or Magicule Points. This is needed to cast abilities.</description>
+			<description>MP also known as Magic Points, Mana Points or Magicule Points. This is needed to cast abilities.</description>
 			<defaultBaseValue>10</defaultBaseValue>
 			<showIfUndefined>false</showIfUndefined>
 			<displayPriorityInCategory>3</displayPriorityInCategory>
