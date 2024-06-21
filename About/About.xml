@@ -11,7 +11,11 @@
 				<packageId>Zomuro.ItsSorcery</packageId>
 				<displayName>It's Sorcery</displayName>
 				<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3013487115</steamWorkshopUrl>
-			
+			</li>
+			<li>
+				<packageId>ebsg.framework</packageId>
+				<displayName>EBSG Framework</displayName>
+				<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3112549163</steamWorkshopUrl>
 			</li>
 		</modDependencies>
 

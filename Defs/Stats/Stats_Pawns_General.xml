@@ -144,6 +144,22 @@
 			<alwaysHide>true</alwaysHide>
 			<displayPriorityInCategory>104</displayPriorityInCategory>
 		</StatDef>
+		
+		<!--StatDef>
+			<defName>warmupTime</defName>
+			<label>Test</label>
+			<description>Test.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>105</displayPriorityInCategory>
+			<statFactors>
+				<li>Ability_CastingTime</li>
+			</statFactors>
+		</StatDef-->
 
 
 

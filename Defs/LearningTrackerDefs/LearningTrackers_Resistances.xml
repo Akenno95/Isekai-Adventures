@@ -218,104 +218,6 @@
 				<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
-
-
-		<!-- Heat Resistance -->
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
-			<defName>Isekai_Node_HeatResistance1</defName>
-			<label>Heat Damage Resistance 1</label>
-			<description>You can lower down the heat damage you receive with this ability.</description>
-			
-			<coordX>0</coordX>
-			<coordY>2</coordY>
-			<pointReq>1</pointReq>
-			
-			<statOffsets>
-				<ArmorRating_Heat>0.1</ArmorRating_Heat>
-			</statOffsets>
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
-			<defName>Isekai_Node_HeatResistance2</defName>
-			<label>Heat Damage Resistance 2</label>
-			<description>You can lower down the heat damage you receive with this ability.</description>
-			
-			<coordX>1</coordX>
-			<coordY>2</coordY>
-			<pointReq>1</pointReq>
-			
-			<prereqs>
-				<li>Isekai_Node_HeatResistance1</li>
-			</prereqs>
-			
-			<statOffsets>
-				<ArmorRating_Heat>0.1</ArmorRating_Heat>
-			</statOffsets>
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
-			<defName>Isekai_Node_HeatResistance3</defName>
-			<label>Heat Damage Resistance 3</label>
-			<description>You can lower down the heat damage you receive with this ability.</description>
-			
-			<coordX>2</coordX>
-			<coordY>2</coordY>
-			<pointReq>1</pointReq>
-			
-			<prereqs>
-				<li>Isekai_Node_HeatResistance2</li>
-			</prereqs>
-			
-			<statOffsets>
-				<ArmorRating_Heat>0.1</ArmorRating_Heat>
-			</statOffsets>
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
-			<defName>Isekai_Node_HeatResistance4</defName>
-			<label>Heat Damage Resistance 4</label>
-			<description>You can lower down the heat damage you receive with this ability.</description>
-			
-			<coordX>3</coordX>
-			<coordY>2</coordY>
-			<pointReq>1</pointReq>
-			
-			<prereqs>
-				<li>Isekai_Node_HeatResistance3</li>
-			</prereqs>
-			
-			<statOffsets>
-				<ArmorRating_Heat>0.1</ArmorRating_Heat>
-			</statOffsets>
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
-			<defName>Isekai_Node_HeatResistance5</defName>
-			<label>Heat Damage Resistance 5</label>
-			<description>You can lower down the heat damage you receive with this ability.</description>
-			
-			<coordX>4</coordX>
-			<coordY>2</coordY>
-			<pointReq>1</pointReq>
-			
-			<prereqs>
-				<li>Isekai_Node_HeatResistance4</li>
-			</prereqs>
-			
-			<statOffsets>
-				<ArmorRating_Heat>0.1</ArmorRating_Heat>
-			</statOffsets>
-		</ItsSorceryFramework.LearningTreeNodeDef>
 		
 		
 		<!-- Pain Resistance -->
@@ -413,6 +315,104 @@
 			<hediffAdjust>
 				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>3</severity></li>
 			</hediffAdjust>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<!-- Heat Resistance -->
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_HeatResistance1</defName>
+			<label>Heat Damage Resistance 1</label>
+			<description>You can lower down the heat damage you receive with this ability.</description>
+			
+			<coordX>0</coordX>
+			<coordY>5</coordY>
+			<pointReq>1</pointReq>
+			
+			<statOffsets>
+				<ArmorRating_Heat>0.1</ArmorRating_Heat>
+			</statOffsets>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_HeatResistance2</defName>
+			<label>Heat Damage Resistance 2</label>
+			<description>You can lower down the heat damage you receive with this ability.</description>
+			
+			<coordX>1</coordX>
+			<coordY>5</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_HeatResistance1</li>
+			</prereqs>
+			
+			<statOffsets>
+				<ArmorRating_Heat>0.1</ArmorRating_Heat>
+			</statOffsets>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_HeatResistance3</defName>
+			<label>Heat Damage Resistance 3</label>
+			<description>You can lower down the heat damage you receive with this ability.</description>
+			
+			<coordX>2</coordX>
+			<coordY>5</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_HeatResistance2</li>
+			</prereqs>
+			
+			<statOffsets>
+				<ArmorRating_Heat>0.1</ArmorRating_Heat>
+			</statOffsets>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_HeatResistance4</defName>
+			<label>Heat Damage Resistance 4</label>
+			<description>You can lower down the heat damage you receive with this ability.</description>
+			
+			<coordX>3</coordX>
+			<coordY>5</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_HeatResistance3</li>
+			</prereqs>
+			
+			<statOffsets>
+				<ArmorRating_Heat>0.1</ArmorRating_Heat>
+			</statOffsets>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_HeatResistance5</defName>
+			<label>Heat Damage Resistance 5</label>
+			<description>You can lower down the heat damage you receive with this ability.</description>
+			
+			<coordX>4</coordX>
+			<coordY>5</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_HeatResistance4</li>
+			</prereqs>
+			
+			<statOffsets>
+				<ArmorRating_Heat>0.1</ArmorRating_Heat>
+			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
 
