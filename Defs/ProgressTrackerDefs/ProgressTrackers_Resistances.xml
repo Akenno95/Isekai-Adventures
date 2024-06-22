@@ -79,13 +79,13 @@
 				
 			</levelFactors>
 			
-			<levelLabels>
+			<!--levelLabels>
 				<li><level>1</level><label>Bad</label></li>
 				<li><level>25</level><label>Weak</label></li>
 				<li><level>50</level><label>Moderate</label></li>
 				<li><level>75</level><label>High</label></li>
 				<li><level>100</level><label>Very high</label></li>
-			</levelLabels>
+			</levelLabels-->
 			<expTags>
 				<li>Isekai_Resistances_EXPTag_OnDamaged</li>
 			</expTags>

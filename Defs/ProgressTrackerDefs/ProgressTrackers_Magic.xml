@@ -87,13 +87,13 @@
 				</li>
 			</levelSpecifics-->
 			
-			<levelLabels>
+			<!--levelLabels>
 				<li><level>1</level><label>Very low MP</label></li>
 				<li><level>25</level><label>Low MP</label></li>
 				<li><level>50</level><label>Moderate MP</label></li>
 				<li><level>75</level><label>High MP</label></li>
 				<li><level>100</level><label>Very high MP</label></li>
-			</levelLabels>
+			</levelLabels-->
 			<expTags>
 				<li>Isekai_Magic_EXPTag_Passive</li>
 			</expTags>

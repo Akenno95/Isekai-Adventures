@@ -9,9 +9,10 @@
 			<description>An adventurer who embarks on a new journey.</description>
 			<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
 			<genes>
-				<li>Isekai_Resistances_Gene</li>
+				<li>Isekai_Adventurer_Gene</li>
+				<!--li>Isekai_Resistances_Gene</li>
 				<li>Isekai_Rank_Gene</li>
-				<li>Isekai_Magic_Gene</li>
+				<li>Isekai_Magic_Gene</li-->
 			</genes>
 		</XenotypeDef>
 

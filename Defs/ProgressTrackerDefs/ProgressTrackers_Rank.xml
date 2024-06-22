@@ -91,7 +91,7 @@
 				</li>
 			</levelSpecifics>
 			
-			<levelLabels>
+			<!--levelLabels>
 				<li><level>1</level><label>F-Rank</label></li>
 				<li><level>20</level><label>E-Rank</label></li>
 				<li><level>40</level><label>D-Rank</label></li>
@@ -99,7 +99,7 @@
 				<li><level>80</level><label>B-Rank</label></li>
 				<li><level>100</level><label>A-Rank</label></li>
 				<li><level>150</level><label>S-Rank</label></li>
-			</levelLabels>
+			</levelLabels-->
 			<expTags>
 				<li>Isekai_Rank_EXPTag_Passive</li>
 			</expTags>

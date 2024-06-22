@@ -8,13 +8,12 @@
 			<label>Resistances</label>
 			<description>Resistances against multiple damage types.</description>
 			
-			<energyTrackerDefs>
+			<!--energyTrackerDefs>
 				<li>Isekai_Resistances_Defense</li>
-			</energyTrackerDefs>
+			</energyTrackerDefs-->
 			<learningTrackerDefs>
 				<li>Isekai_Resistances_LearningTrackerProgress</li>
 				<li>Isekai_Resistances_LearningTrackerTree</li>
-				<li>Isekai_Resistances_LearningTrackerTree_Two</li>
 			</learningTrackerDefs>
 			<progressTrackerDef>Isekai_ProgressTracker_Resistances</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>
@@ -24,8 +23,8 @@
 		
 		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
 			<defName>Isekai_Rank</defName>
-			<label>Rank/Ranks</label>
-			<description>Rank for your pawns including ranks.</description>
+			<label>Body</label>
+			<description>Body enhancements for your pawns.</description>
 			
 			<energyTrackerDefs>
 				<li>Isekai_Rank_Stamina</li>
@@ -34,7 +33,6 @@
 				<li>Isekai_Rank_LearningTrackerProgress</li>
 				<li>Isekai_Rank_LearningTrackerTree</li>
 				<li>Isekai_Rank_LearningTrackerTree_Two</li>
-				<!-- li MayRequire = "Akenno.Tensura">Tensura_Ability_LearningTrackerTree</li -->
 			</learningTrackerDefs>
 			<progressTrackerDef>Isekai_ProgressTracker_Rank</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>

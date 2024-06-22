@@ -12,7 +12,7 @@
 		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
 			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
 			<defName>Isekai_Rank_LearningTrackerTree</defName>
-			<label>Rank</label>
+			<label>Basics</label>
 		</ItsSorceryFramework.LearningTrackerDef>
 		
 		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
@@ -22,7 +22,7 @@
 		</ItsSorceryFramework.LearningTrackerDef>
 		
 		
-		<!-- Rank Skilltree -->
+		<!-- Basics Skilltree -->
 		
 		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 			<learningTrackerDef>Isekai_Rank_LearningTrackerTree</learningTrackerDef>
@@ -31,7 +31,7 @@
 			<description>You can slash the enemy with this ability.</description>
 			
 			<coordX>0</coordX>
-			<coordY>0</coordY>
+			<coordY>10</coordY>
 			<pointReq>1</pointReq>
 			
 			<prereqsHediff>

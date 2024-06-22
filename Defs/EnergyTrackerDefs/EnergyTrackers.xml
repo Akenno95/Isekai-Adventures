@@ -3,7 +3,7 @@
 
 		<!-- Resistances -->
 		
-		<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
+		<!--ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
 			<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
 			<defName>Isekai_Resistances_Defense</defName>
 			<label>Defense</label>
@@ -21,7 +21,7 @@
 					</damageDefs>
 				</li>
 			</comps>
-		</ItsSorceryFramework.EnergyTrackerDef>
+		</ItsSorceryFramework.EnergyTrackerDef-->
 
 
 		<!-- Rank -->

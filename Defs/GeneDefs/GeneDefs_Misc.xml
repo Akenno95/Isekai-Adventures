@@ -17,7 +17,7 @@
 					<schema>Isekai_Resistances</schema>
 				</li>
 			</modExtensions>
-			<biostatMet>-1</biostatMet>
+			<!--biostatMet>-1</biostatMet-->
 			<!-- <symbolPack>
 				<prefixSymbols>
 					<li><symbol>...</symbol></li>
@@ -43,7 +43,7 @@
 					<schema>Isekai_Rank</schema>
 				</li>
 			</modExtensions>
-			<biostatMet>-1</biostatMet>
+			<!--biostatMet>-1</biostatMet-->
 			<!-- <symbolPack>
 				<prefixSymbols>
 					<li><symbol>...</symbol></li>
@@ -68,7 +68,7 @@
 					<schema>Isekai_Magic</schema>
 				</li>
 			</modExtensions>
-			<biostatMet>-1</biostatMet>
+			<!--biostatMet>-1</biostatMet-->
 			<!-- <symbolPack>
 				<prefixSymbols>
 					<li><symbol>...</symbol></li>
@@ -78,35 +78,36 @@
 
 
 
-		<!--<!{1}** All-in-one **{1}>
+		<!-- All-in-one -->
 		
 		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
 			<defName>Isekai_Adventurer_Gene</defName>
-			<label>Adventurer Gene</label>
-			<description>This gene is featured in every adventurer out there.</description>
+			<label>Adventurer</label>
+			<description>This gene is in every adventurer out there. It gives you multiple genes at once, for example the ability to cast magic.</description>
+			<geneClass>EBSGFramework.HediffAdder</geneClass>
 			
-			<!{1}** <iconPath>UI/Icons/Genes/...</iconPath> **{1}>
+			<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
 			<displayCategory>Isekai_Genes</displayCategory>
 			<displayOrderInCategory>99</displayOrderInCategory>
 			
 			<modExtensions>
-				<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
-					<schema>Isekai_Magic</schema>
+				<li Class="EBSGFramework.EBSGExtension">
+					<hediffsToApply>
+						<li>
+							<hediff>Isekai_Adventurer</hediff>
+							<!--onlyIfNew>true</onlyIfNew>
+							<severity>1</severity-->
+						</li>
+					</hediffsToApply>
 				</li>
-				<!{1}**li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
-					<schema>Isekai_Rank</schema>
-				</li>
-				<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
-					<schema>Isekai_Resistances</schema>
-				</li**{1}>
 			</modExtensions>
 			<biostatMet>-1</biostatMet>
-			<!{1}** <symbolPack>
+			<!--symbolPack>
 				<prefixSymbols>
 					<li><symbol>...</symbol></li>
 				</prefixSymbols>
-			</symbolPack> **{1}>
-		</GeneDef>-->
+			</symbolPack>-->
+		</GeneDef>>
 
 
 
