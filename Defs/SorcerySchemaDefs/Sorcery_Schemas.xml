@@ -19,22 +19,22 @@
 		</ItsSorceryFramework.SorcerySchemaDef>
 
 
-		<!-- Rank -->
+		<!-- Body -->
 		
 		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
-			<defName>Isekai_Rank</defName>
+			<defName>Isekai_Body</defName>
 			<label>Body</label>
 			<description>Body enhancements for your pawns.</description>
 			
 			<energyTrackerDefs>
-				<li>Isekai_Rank_Stamina</li>
+				<li>Isekai_Body_Stamina</li>
 			</energyTrackerDefs>
 			<learningTrackerDefs>
-				<li>Isekai_Rank_LearningTrackerProgress</li>
-				<li>Isekai_Rank_LearningTrackerTree</li>
-				<li>Isekai_Rank_LearningTrackerTree_Two</li>
+				<li>Isekai_Body_LearningTrackerProgress</li>
+				<li>Isekai_Body_LearningTrackerTree_Basics</li>
+				<li>Isekai_Body_LearningTrackerTree_Rank</li>
 			</learningTrackerDefs>
-			<progressTrackerDef>Isekai_ProgressTracker_Rank</progressTrackerDef>
+			<progressTrackerDef>Isekai_ProgressTracker_Body</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>
 		
 
@@ -50,8 +50,8 @@
 			</energyTrackerDefs>
 			<learningTrackerDefs>
 				<li>Isekai_Magic_LearningTrackerProgress</li>
-				<li>Isekai_Magic_LearningTrackerTree</li>
-				<li>Isekai_Magic_LearningTrackerTree_Two</li>
+				<li>Isekai_Magic_LearningTrackerTree_Basics</li>
+				<li>Isekai_Magic_LearningTrackerTree_Elements</li>
 			</learningTrackerDefs>
 			<progressTrackerDef>Isekai_ProgressTracker_Magic</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>

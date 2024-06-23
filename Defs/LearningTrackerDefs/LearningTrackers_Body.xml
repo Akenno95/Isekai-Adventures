@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-		<!-- Magic Setup -->
+		<!-- Body Setup -->
 		
 		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
 			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
-			<defName>Isekai_Magic_LearningTrackerProgress</defName>
+			<defName>Isekai_Body_LearningTrackerProgress</defName>
 			<label>Summary</label>
 		</ItsSorceryFramework.LearningTrackerDef>
 		
 		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
 			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
-			<defName>Isekai_Magic_LearningTrackerTree_Basics</defName>
+			<defName>Isekai_Body_LearningTrackerTree_Basics</defName>
 			<label>Basics</label>
 		</ItsSorceryFramework.LearningTrackerDef>
 		
 		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
 			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
-			<defName>Isekai_Magic_LearningTrackerTree_Elements</defName>
-			<label>Elements</label>
+			<defName>Isekai_Body_LearningTrackerTree_Rank</defName>
+			<label>Rank</label>
 		</ItsSorceryFramework.LearningTrackerDef>
 		
 		
 		<!-- Basics Skilltree -->
 		
 		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Node_MP</defName>
+			<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+			<defName>Isekai_Node_SlashAbility</defName>
 			<label>Slash Ability</label>
 			<description>You can slash the enemy with this ability.</description>
 			
 			<coordX>0</coordX>
-			<coordY>0</coordY>
+			<coordY>10</coordY>
 			<pointReq>1</pointReq>
 			
 			<prereqsHediff>
@@ -53,12 +53,27 @@
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
 		
-		
-		
-		<!-- Elements Skilltree -->
-		
-		
-		
+		<!--ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" MayRequire = "Akenno.Tensura">
+			<learningTrackerDef>Isekai_Body_LearningTrackerTree_Two</learningTrackerDef>
+			<defName>Isekai_Node_Test</defName>
+			<label>Slash Ability</label>
+			<description>You can slash the enemy with this ability.</description>
+			
+			<coordX>0</coordX>
+			<coordY>0</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_SlashAbility</li>
+			</prereqs>
+			
+			<statOffsets>
+				<ArmorRating_Heat>10.0</ArmorRating_Heat>
+			</statOffsets>
+			<abilityGain>
+				<li>Tensura_Slash</li>
+			</abilityGain>
+		</ItsSorceryFramework.LearningTreeNodeDef-->
 
 
 

@@ -31,7 +31,7 @@
 			<pointReq>1</pointReq>
 			
 			<statOffsets>
-				<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+				<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -51,7 +51,7 @@
 			</prereqs>
 			
 			<statOffsets>
-				<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+				<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -64,14 +64,14 @@
 			
 			<coordX>2</coordX>
 			<coordY>0</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>2</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_BluntResistance2</li>
 			</prereqs>
 			
 			<statOffsets>
-				<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+				<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -84,14 +84,14 @@
 			
 			<coordX>3</coordX>
 			<coordY>0</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>2</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_BluntResistance3</li>
 			</prereqs>
 			
 			<statOffsets>
-				<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+				<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -104,7 +104,7 @@
 			
 			<coordX>4</coordX>
 			<coordY>0</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>3</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_BluntResistance4</li>
@@ -129,7 +129,7 @@
 			<pointReq>1</pointReq>
 			
 			<statOffsets>
-				<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+				<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -149,7 +149,7 @@
 			</prereqs>
 			
 			<statOffsets>
-				<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+				<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -162,14 +162,14 @@
 			
 			<coordX>2</coordX>
 			<coordY>1</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>2</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_SharpResistance2</li>
 			</prereqs>
 			
 			<statOffsets>
-				<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+				<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -182,14 +182,14 @@
 			
 			<coordX>3</coordX>
 			<coordY>1</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>2</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_SharpResistance3</li>
 			</prereqs>
 			
 			<statOffsets>
-				<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+				<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -202,7 +202,7 @@
 			
 			<coordX>4</coordX>
 			<coordY>1</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>3</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_SharpResistance4</li>
@@ -227,7 +227,7 @@
 			<pointReq>1</pointReq>
 			
 			<statOffsets>
-				<ArmorRating_Heat>0.1</ArmorRating_Heat>
+				<ArmorRating_Heat>0.05</ArmorRating_Heat>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -247,7 +247,7 @@
 			</prereqs>
 			
 			<statOffsets>
-				<ArmorRating_Heat>0.1</ArmorRating_Heat>
+				<ArmorRating_Heat>0.05</ArmorRating_Heat>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -260,14 +260,14 @@
 			
 			<coordX>2</coordX>
 			<coordY>2</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>2</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_HeatResistance2</li>
 			</prereqs>
 			
 			<statOffsets>
-				<ArmorRating_Heat>0.1</ArmorRating_Heat>
+				<ArmorRating_Heat>0.05</ArmorRating_Heat>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -280,14 +280,14 @@
 			
 			<coordX>3</coordX>
 			<coordY>2</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>2</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_HeatResistance3</li>
 			</prereqs>
 			
 			<statOffsets>
-				<ArmorRating_Heat>0.1</ArmorRating_Heat>
+				<ArmorRating_Heat>0.05</ArmorRating_Heat>
 			</statOffsets>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -300,7 +300,7 @@
 			
 			<coordX>4</coordX>
 			<coordY>2</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>3</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_HeatResistance4</li>
@@ -345,7 +345,7 @@
 			</prereqs>
 			
 			<hediffAdjust>
-				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>2</severity></li>
+				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>1</severity></li>
 			</hediffAdjust>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -358,14 +358,14 @@
 			
 			<coordX>2</coordX>
 			<coordY>3</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>2</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_PainResistance2</li>
 			</prereqs>
 			
 			<hediffAdjust>
-				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>2</severity></li>
+				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>1</severity></li>
 			</hediffAdjust>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -378,14 +378,14 @@
 			
 			<coordX>3</coordX>
 			<coordY>3</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>2</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_PainResistance3</li>
 			</prereqs>
 			
 			<hediffAdjust>
-				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>2</severity></li>
+				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>1</severity></li>
 			</hediffAdjust>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -398,14 +398,112 @@
 			
 			<coordX>4</coordX>
 			<coordY>3</coordY>
-			<pointReq>1</pointReq>
+			<pointReq>3</pointReq>
 			
 			<prereqs>
 				<li>Isekai_Node_PainResistance4</li>
 			</prereqs>
 			
 			<hediffAdjust>
-				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>3</severity></li>
+				<li><hediffDef>Isekai_Pain_Resistance</hediffDef><severity>1</severity></li>
+			</hediffAdjust>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<!-- Stagger Resistance -->
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_StaggerResistance1</defName>
+			<label>Stagger Resistance 1</label>
+			<description>You can reduce stagger or slow down effects.</description>
+			
+			<coordX>0</coordX>
+			<coordY>4</coordY>
+			<pointReq>1</pointReq>
+			
+			<hediffAdd>
+				<li><hediffDef>Isekai_Stagger_Resistance</hediffDef><severity>1</severity></li>
+			</hediffAdd>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_StaggerResistance2</defName>
+			<label>Stagger Resistance 2</label>
+			<description>You can reduce stagger or slow down effects.</description>
+			
+			<coordX>1</coordX>
+			<coordY>4</coordY>
+			<pointReq>1</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_StaggerResistance1</li>
+			</prereqs>
+			
+			<hediffAdjust>
+				<li><hediffDef>Isekai_Stagger_Resistance</hediffDef><severity>1</severity></li>
+			</hediffAdjust>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_StaggerResistance3</defName>
+			<label>Stagger Resistance 3</label>
+			<description>You can reduce stagger or slow down effects.</description>
+			
+			<coordX>2</coordX>
+			<coordY>4</coordY>
+			<pointReq>2</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_StaggerResistance2</li>
+			</prereqs>
+			
+			<hediffAdjust>
+				<li><hediffDef>Isekai_Stagger_Resistance</hediffDef><severity>1</severity></li>
+			</hediffAdjust>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_StaggerResistance4</defName>
+			<label>Stagger Resistance 4</label>
+			<description>You can reduce stagger or slow down effects.</description>
+			
+			<coordX>3</coordX>
+			<coordY>4</coordY>
+			<pointReq>2</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_StaggerResistance3</li>
+			</prereqs>
+			
+			<hediffAdjust>
+				<li><hediffDef>Isekai_Stagger_Resistance</hediffDef><severity>1</severity></li>
+			</hediffAdjust>
+		</ItsSorceryFramework.LearningTreeNodeDef>
+		
+		
+		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+			<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+			<defName>Isekai_Node_StaggerResistance5</defName>
+			<label>Stagger Resistance 5</label>
+			<description>You can reduce stagger or slow down effects.</description>
+			
+			<coordX>4</coordX>
+			<coordY>4</coordY>
+			<pointReq>3</pointReq>
+			
+			<prereqs>
+				<li>Isekai_Node_StaggerResistance4</li>
+			</prereqs>
+			
+			<hediffAdjust>
+				<li><hediffDef>Isekai_Stagger_Resistance</hediffDef><severity>1</severity></li>
 			</hediffAdjust>
 		</ItsSorceryFramework.LearningTreeNodeDef>
 		

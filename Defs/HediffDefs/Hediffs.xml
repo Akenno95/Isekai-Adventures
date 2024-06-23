@@ -3,70 +3,6 @@
 
 		
 		<HediffDef ParentName="DiseaseBase">
-			<defName>Isekai_Pain_Resistance</defName>
-			<label>Pain resistance</label>
-			<description>The ability to resist pain.</description>
-			<isBad>false</isBad>
-			<initialSeverity>1</initialSeverity>
-			<maxSeverity>10</maxSeverity>
-			<stages>
-				<li>
-					<label>tiny</label>
-					<painFactor>0.9</painFactor>
-				</li>
-				<li>
-					<minSeverity>3</minSeverity>
-					<label>minor</label>
-					<painFactor>0.8</painFactor>
-				</li>
-				<li>
-					<minSeverity>5</minSeverity>
-					<label>moderate</label>
-					<painFactor>0.7</painFactor>
-				</li>
-				<li>
-					<minSeverity>7</minSeverity>
-					<label>good</label>
-					<painFactor>0.6</painFactor>
-				</li>
-				<li>
-					<minSeverity>10</minSeverity>
-					<label>high</label>
-					<painFactor>0.5</painFactor>
-				</li>
-			</stages>
-
-		</HediffDef>		
-		
-		
-		<HediffDef ParentName="DiseaseBase">
-			<defName>Isekai_Magic_MPStrain</defName>
-			<label>MP strain</label>
-			<description>Pawn needs to rest to recover from using too much MP.</description>
-			<isBad>true</isBad>
-			<initialSeverity>0</initialSeverity>
-			<maxSeverity>1</maxSeverity>
-			<comps>
-				<li Class="HediffCompProperties_SeverityPerDay">
-					<severityPerDay>-0.5</severityPerDay>
-					<showDaysToRecover>true</showDaysToRecover>
-				</li>
-			</comps>
-			<stages>
-				<li>
-					<capMods>
-						<li>
-							<capacity>Consciousness</capacity>
-							<setMax>0.1</setMax>
-						</li>
-					</capMods>
-				</li>
-			</stages>
-
-		</HediffDef>
-
-
-		<HediffDef ParentName="DiseaseBase">
 			<defName>Isekai_Adventurer</defName>
 			<label>Adventurer</label>
 			<description>This is an adventurer who is roaming around the Rim.</description>
@@ -79,7 +15,7 @@
 						<li>
 							<genes>
 								<li>Isekai_Resistances_Gene</li>
-								<li>Isekai_Rank_Gene</li>
+								<li>Isekai_Body_Gene</li>
 								<li>Isekai_Magic_Gene</li>
 							</genes>
 							<minSeverity>0</minSeverity>
@@ -89,6 +25,90 @@
 			</comps>
 
 		</HediffDef>
+		
+		
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_Pain_Resistance</defName>
+			<label>Pain resistance</label>
+			<description>The ability to resist pain.</description>
+			<isBad>false</isBad>
+			<initialSeverity>1</initialSeverity>
+			<maxSeverity>10</maxSeverity>
+			<stages>
+				<li>
+					<label>tiny</label>
+					<painFactor>0.95</painFactor>
+				</li>
+				<li>
+					<minSeverity>2</minSeverity>
+					<label>minor</label>
+					<painFactor>0.9</painFactor>
+				</li>
+				<li>
+					<minSeverity>3</minSeverity>
+					<label>moderate</label>
+					<painFactor>0.85</painFactor>
+				</li>
+				<li>
+					<minSeverity>4</minSeverity>
+					<label>good</label>
+					<painFactor>0.8</painFactor>
+				</li>
+				<li>
+					<minSeverity>5</minSeverity>
+					<label>high</label>
+					<painFactor>0.7</painFactor>
+				</li>
+			</stages>
+
+		</HediffDef>
+		
+		
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_Stagger_Resistance</defName>
+			<label>Stagger resistance</label>
+			<description>The ability to resist stagger or slow down effects.</description>
+			<isBad>false</isBad>
+			<initialSeverity>1</initialSeverity>
+			<maxSeverity>10</maxSeverity>
+			<stages>
+				<li>
+					<label>tiny</label>
+					<statFactors>
+						<StaggerDurationFactor>0.95</StaggerDurationFactor>
+					</statFactors>
+				</li>
+				<li>
+					<minSeverity>2</minSeverity>
+					<label>minor</label>
+					<statFactors>
+						<StaggerDurationFactor>0.9</StaggerDurationFactor>
+					</statFactors>
+				</li>
+				<li>
+					<minSeverity>3</minSeverity>
+					<label>moderate</label>
+					<statFactors>
+						<StaggerDurationFactor>0.85</StaggerDurationFactor>
+					</statFactors>
+				</li>
+				<li>
+					<minSeverity>4</minSeverity>
+					<label>good</label>
+					<statFactors>
+						<StaggerDurationFactor>0.8</StaggerDurationFactor>
+					</statFactors>
+				</li>
+				<li>
+					<minSeverity>5</minSeverity>
+					<label>high</label>
+					<statFactors>
+						<StaggerDurationFactor>0.7</StaggerDurationFactor>
+					</statFactors>
+				</li>
+			</stages>
+
+		</HediffDef>		
 
 
 

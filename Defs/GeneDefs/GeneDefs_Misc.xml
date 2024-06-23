@@ -27,12 +27,12 @@
 
 
 
-		<!-- Rank -->
+		<!-- Body -->
 		
 		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
-			<defName>Isekai_Rank_Gene</defName>
+			<defName>Isekai_Body_Gene</defName>
 			<label>Rank</label>
-			<description>This gene activates the ability to gain a rank for your pawn, also improving base pawn stats.</description>
+			<description>This gene activates the ability to gain body enhancements for your pawn, also improving base pawn stats.</description>
 			
 			<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
 			<displayCategory>Isekai_Genes</displayCategory>
@@ -40,7 +40,7 @@
 			
 			<modExtensions>
 				<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
-					<schema>Isekai_Rank</schema>
+					<schema>Isekai_Body</schema>
 				</li>
 			</modExtensions>
 			<!--biostatMet>-1</biostatMet-->
@@ -78,12 +78,12 @@
 
 
 
-		<!-- All-in-one -->
+		<!-- Adventurer -->
 		
 		<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
 			<defName>Isekai_Adventurer_Gene</defName>
 			<label>Adventurer</label>
-			<description>This gene is in every adventurer out there. It gives you multiple genes at once, for example the ability to cast magic.</description>
+			<description>This gene is in every adventurer out there. It gives you multiple genes at once, for example the ability to cast magic or to strengthen your body.</description>
 			<geneClass>EBSGFramework.HediffAdder</geneClass>
 			
 			<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
@@ -101,13 +101,13 @@
 					</hediffsToApply>
 				</li>
 			</modExtensions>
-			<biostatMet>-1</biostatMet>
+			<!--biostatMet>-1</biostatMet-->
 			<!--symbolPack>
 				<prefixSymbols>
 					<li><symbol>...</symbol></li>
 				</prefixSymbols>
 			</symbolPack>-->
-		</GeneDef>>
+		</GeneDef>
 
 
 

@@ -30,10 +30,10 @@
 		</StatDef>
 
 
-		<!-- Rank -->
+		<!-- Body -->
 		
 		<StatDef>
-			<defName>Isekai_Rank_MaxStamina</defName>
+			<defName>Isekai_Body_MaxStamina</defName>
 			<label>Maximum stamina</label>
 			<description>Maximum stamina.</description>
 			<category>BasicsPawn</category>
@@ -46,7 +46,7 @@
 		</StatDef>
 		
 		<StatDef>
-			<defName>Isekai_Rank_MinStamina</defName>
+			<defName>Isekai_Body_MinStamina</defName>
 			<label>Minimum stamina</label>
 			<description>Minimum stamina.</description>
 			<category>BasicsPawn</category>
@@ -59,7 +59,7 @@
 		</StatDef>
 
 		<StatDef>
-			<defName>Isekai_Rank_StaminaRecovery</defName>
+			<defName>Isekai_Body_StaminaRecovery</defName>
 			<label>Stamina recovery</label>
 			<description>Stamina recovery rate.</description>
 			<category>BasicsPawn</category>
@@ -125,11 +125,14 @@
 			<description>Absolute minimum MP of a pawn that might cause some trouble.</description>
 			<category>BasicsPawn</category>
 			<defaultBaseValue>-1000</defaultBaseValue>
-			<minValue>-1000</minValue>
+			<minValue>-100000</minValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
 			<displayPriorityInCategory>103</displayPriorityInCategory>
+			<statFactors>
+				<li>Isekai_Magic_Factor</li>
+			</statFactors>
 		</StatDef>
 		
 		<StatDef>

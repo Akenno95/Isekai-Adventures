@@ -24,20 +24,20 @@
 		</ItsSorceryFramework.EnergyTrackerDef-->
 
 
-		<!-- Rank -->
+		<!-- Body -->
 		
 		<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
 			<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
-			<defName>Isekai_Rank_Stamina</defName>
+			<defName>Isekai_Body_Stamina</defName>
 			<label>Stamina</label>
 			
 			<energyUnitStatDef>Isekai_StaminaCost</energyUnitStatDef>
-			<energyMaxStatDef>Isekai_Rank_MaxStamina</energyMaxStatDef>
-			<energyMinStatDef>Isekai_Rank_MinStamina</energyMinStatDef>
+			<energyMaxStatDef>Isekai_Body_MaxStamina</energyMaxStatDef>
+			<energyMinStatDef>Isekai_Body_MinStamina</energyMinStatDef>
 			
 			<comps>
 				<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_PerTick">
-					<energyRecoveryStatDef>Isekai_Rank_StaminaRecovery</energyRecoveryStatDef>
+					<energyRecoveryStatDef>Isekai_Body_StaminaRecovery</energyRecoveryStatDef>
 					<overchargeRecoveryFactor>-0.5</overchargeRecoveryFactor>
 					<deficitRecoveryFactor>0.5</deficitRecoveryFactor>
 				</li>
