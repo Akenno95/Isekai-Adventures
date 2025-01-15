@@ -17,6 +17,11 @@
 				<displayName>EBSG Framework</displayName>
 				<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3112549163</steamWorkshopUrl>
 			</li>
+			<li>
+				<packageId>RedMattis.BetterPrerequisites</packageId>
+				<displayName>Better Gene Prerequisites</displayName>
+				<steamWorkshopUrl>steam://url/CommunityFilePage/2925432336</steamWorkshopUrl>
+			</li>
 		</modDependencies>
 
 </ModMetaData>
