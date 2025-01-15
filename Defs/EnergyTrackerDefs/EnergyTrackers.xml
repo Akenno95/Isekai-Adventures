@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Resistances -->
+		
+		<!--ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
+			<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
+			<defName>Isekai_Resistances_Defense</defName>
+			<label>Defense</label>
+			
+			<energyUnitStatDef>Isekai_DefenseCost</energyUnitStatDef>
+			<energyMaxStatDef>Isekai_Resistances_MaxEndurance</energyMaxStatDef>
+			<energyMinStatDef>Isekai_Resistances_MinEndurance</energyMinStatDef>
+			
+			<comps>
+				<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_DamageBase">
+					<compClass>ItsSorceryFramework.EnergyTrackerComp_OnDamaged</compClass>
+					<damageDefs>
+						<li>Bullet</li>
+						<li>Arrow</li>
+					</damageDefs>
+				</li>
+			</comps>
+		</ItsSorceryFramework.EnergyTrackerDef-->
+
+
+		<!-- Body -->
+		
+		<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
+			<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
+			<defName>Isekai_Body_Stamina</defName>
+			<label>Stamina</label>
+			
+			<energyUnitStatDef>Isekai_StaminaCost</energyUnitStatDef>
+			<energyMaxStatDef>Isekai_Body_MaxStamina</energyMaxStatDef>
+			<energyMinStatDef>Isekai_Body_MinStamina</energyMinStatDef>
+			
+			<comps>
+				<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_PerTick">
+					<energyRecoveryStatDef>Isekai_Body_StaminaRecovery</energyRecoveryStatDef>
+					<overchargeRecoveryFactor>-0.5</overchargeRecoveryFactor>
+					<deficitRecoveryFactor>0.5</deficitRecoveryFactor>
+				</li>
+			</comps>
+		</ItsSorceryFramework.EnergyTrackerDef>
+		
+
+		<!-- Magic -->
+		
+		<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
+			<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
+			<defName>Isekai_Magic_MP</defName>
+			<label>Magic Points</label>
+			
+			<energyUnitStatDef>Isekai_MPCost</energyUnitStatDef>
+			<energyMaxStatDef>Isekai_Magic_MaxMP</energyMaxStatDef>
+			<energyMinStatDef>Isekai_Magic_MinMP</energyMinStatDef>
+			
+			<energyAbsMinStatDef>Isekai_Magic_AbsMinMP</energyAbsMinStatDef>
+			<sideEffect>Isekai_Magic_MPStrain</sideEffect>
+			
+			<comps>
+				<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_PerTick">
+					<energyRecoveryStatDef>Isekai_Magic_MPRecovery</energyRecoveryStatDef>
+					<overchargeRecoveryFactor>-0.5</overchargeRecoveryFactor>
+					<deficitRecoveryFactor>0.5</deficitRecoveryFactor>
+				</li>
+			</comps>
+		</ItsSorceryFramework.EnergyTrackerDef>
+
+
+
+
+
+
+
+
+</Defs>

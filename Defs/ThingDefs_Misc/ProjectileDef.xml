@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Slash -->
+		<ThingDef ParentName="BaseBullet">
+			<defName>Isekai_SlashProjectile</defName>
+			<label>Slash shot</label>
+			<graphicData>
+				<!--texPath>Effects/BlackQiEnergyOrb</texPath-->
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>MoteGlow</shaderType>
+				<drawSize>1</drawSize>
+			</graphicData>
+			<!--thingClass>Bullet</thingClass-->
+			<projectile>
+				<speed>25</speed>
+				<damageDef>Isekai_SlashDamage</damageDef>
+				<damageAmountBase>5</damageAmountBase>
+				<armorPenetrationBase>0.30</armorPenetrationBase>
+				<stoppingPower>1</stoppingPower>
+			</projectile>
+			<comps>
+			</comps>
+		</ThingDef>
+
+
+
+
+
+
+
+
+
+
+
+
+</Defs>
+
+
+
+

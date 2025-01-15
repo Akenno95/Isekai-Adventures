@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Resistances -->
+		
+		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
+			<defName>Isekai_Resistances</defName>
+			<label>Resistances</label>
+			<description>Resistances against multiple damage types.</description>
+			
+			<!--energyTrackerDefs>
+				<li>Isekai_Resistances_Defense</li>
+			</energyTrackerDefs-->
+			<learningTrackerDefs>
+				<li>Isekai_Resistances_LearningTrackerProgress</li>
+				<li>Isekai_Resistances_LearningTrackerTree</li>
+			</learningTrackerDefs>
+			<progressTrackerDef>Isekai_ProgressTracker_Resistances</progressTrackerDef>
+		</ItsSorceryFramework.SorcerySchemaDef>
+
+
+		<!-- Body -->
+		
+		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
+			<defName>Isekai_Body</defName>
+			<label>Body</label>
+			<description>Body enhancements for your pawns.</description>
+			
+			<energyTrackerDefs>
+				<li>Isekai_Body_Stamina</li>
+			</energyTrackerDefs>
+			<learningTrackerDefs>
+				<li>Isekai_Body_LearningTrackerProgress</li>
+				<li>Isekai_Body_LearningTrackerTree_Basics</li>
+				<li>Isekai_Body_LearningTrackerTree_Rank</li>
+			</learningTrackerDefs>
+			<progressTrackerDef>Isekai_ProgressTracker_Body</progressTrackerDef>
+		</ItsSorceryFramework.SorcerySchemaDef>
+		
+
+		<!-- Magic -->
+		
+		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
+			<defName>Isekai_Magic</defName>
+			<label>Magic</label>
+			<description>Magic and everything related for your pawns.</description>
+			
+			<energyTrackerDefs>
+				<li>Isekai_Magic_MP</li>
+			</energyTrackerDefs>
+			<learningTrackerDefs>
+				<li>Isekai_Magic_LearningTrackerProgress</li>
+				<li>Isekai_Magic_LearningTrackerTree_Basics</li>
+				<li>Isekai_Magic_LearningTrackerTree_Elemental</li>
+			</learningTrackerDefs>
+			<progressTrackerDef>Isekai_ProgressTracker_Magic</progressTrackerDef>
+		</ItsSorceryFramework.SorcerySchemaDef>
+
+
+
+
+</Defs>

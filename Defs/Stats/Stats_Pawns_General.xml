@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Resistances -->
+		
+		<StatDef>
+			<defName>Isekai_Resistances_MaxEndurance</defName>
+			<label>Maximum endurance</label>
+			<description>Maximum defensive capabilities.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>100</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>100</displayPriorityInCategory>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Resistances_MinEndurance</defName>
+			<label>Minimum endurance</label>
+			<description>Minimum defensive capabilities.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>100</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>100</displayPriorityInCategory>
+		</StatDef>
+
+
+		<!-- Body -->
+		
+		<StatDef>
+			<defName>Isekai_Body_MaxStamina</defName>
+			<label>Maximum stamina</label>
+			<description>Maximum stamina.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>100</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>101</displayPriorityInCategory>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Body_MinStamina</defName>
+			<label>Minimum stamina</label>
+			<description>Minimum stamina.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>101</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef>
+			<defName>Isekai_Body_StaminaRecovery</defName>
+			<label>Stamina recovery</label>
+			<description>Stamina recovery rate.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>102</displayPriorityInCategory>
+		</StatDef>
+		
+
+		<!-- Magic -->
+		
+		<StatDef>
+			<defName>Isekai_Magic_MaxMP</defName>
+			<label>Maximum Magic Points</label>
+			<description>Maximum Magic Points.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1000</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>101</displayPriorityInCategory>
+			<statFactors>
+				<li>Isekai_Magic_Factor</li>
+			</statFactors>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Magic_MinMP</defName>
+			<label>Minimum Magic Points</label>
+			<description>Minimum Magic Points.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>101</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef>
+			<defName>Isekai_Magic_MPRecovery</defName>
+			<label>Magic Point recovery</label>
+			<description>Magic Point recovery rate.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>102</displayPriorityInCategory>
+			<statFactors>
+				<li>Isekai_Magic_Factor</li>
+			</statFactors>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Magic_AbsMinMP</defName>
+			<label>Absolute minimum Magic Points</label>
+			<description>Absolute minimum Magic Points of a pawn that might cause some trouble.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>-1000</defaultBaseValue>
+			<minValue>-100000</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>103</displayPriorityInCategory>
+			<statFactors>
+				<li>Isekai_Magic_Factor</li>
+			</statFactors>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Magic_Factor</defName>
+			<label>Magic factor</label>
+			<description>Magic factor for multiplying stats.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>104</displayPriorityInCategory>
+		</StatDef>
+		
+		<!--StatDef>
+			<defName>warmupTime</defName>
+			<label>Test</label>
+			<description>Test.</description>
+			<category>BasicsPawn</category>
+			<defaultBaseValue>1</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<alwaysHide>true</alwaysHide>
+			<displayPriorityInCategory>105</displayPriorityInCategory>
+			<statFactors>
+				<li>Ability_CastingTime</li>
+			</statFactors>
+		</StatDef-->
+
+
+
+
+
+
+
+
+
+</Defs>
+
+
+			

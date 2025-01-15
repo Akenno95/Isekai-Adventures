@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+		<!-- Slash -->
+		<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+			<sorcerySchema>Isekai_Body</sorcerySchema>
+			<defName>Isekai_Slash</defName>
+			<label>Slash</label>
+			<description>Slashing the wind.</description>
+			<level>1</level>
+			<!--<iconPath>UI/Sorceries/hea</iconPath>-->
+			<!--warmupSound>...</warmupSound-->
+			<aiCanUse>true</aiCanUse>
+			<cooldownTicksRange>200</cooldownTicksRange>
+		
+			<statBases>
+				<Isekai_StaminaCost>25</Isekai_StaminaCost>
+				<!-- <Ability_Duration>60</Ability_Duration> -->
+			</statBases>
+			<verbProperties>		
+				<verbClass>Verb_CastAbility</verbClass>
+				<range>15</range>
+				<requireLineOfSight>True</requireLineOfSight>
+				<warmupTime>0.5</warmupTime>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</verbProperties>
+		
+			<comps>
+				<li Class="CompProperties_AbilityLaunchProjectile">
+					<projectileDef>Isekai_SlashProjectile</projectileDef>
+				</li>
+			</comps>
+		</ItsSorceryFramework.SorceryDef>		
+
+
+
+
+
+</Defs>
