@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyPartGroupDef>
+    <defName>Isekai_Group_MaterialBody</defName>
+    <label>material body</label>
+    <listOrder>300</listOrder>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>Isekai_Group_SpiritualBody</defName>
+    <label>material body</label>
+    <listOrder>301</listOrder>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>Isekai_Group_AstralBody</defName>
+    <label>material body</label>
+    <listOrder>302</listOrder>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>Isekai_Group_Soul</defName>
+    <label>material body</label>
+    <listOrder>303</listOrder>
+  </BodyPartGroupDef>
+ 
+</Defs>

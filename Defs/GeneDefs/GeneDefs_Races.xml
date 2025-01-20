@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+
+	<!-- Races -->
+	
+		<!-- Human -->
+		
+			<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Human</defName>
+				<label>Human</label>
+				<description>This pawn is considered to be a human.</description>
+				<geneClass>EBSGFramework.HediffAdder</geneClass>
+				
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayCategory>Isekai_Genes</displayCategory>
+				<displayOrderInCategory>200</displayOrderInCategory>
+				
+				<modExtensions>
+					<li Class="EBSGFramework.EBSGExtension">
+						<hediffsToApply>
+							<li>
+								<hediff>Isekai_Race_Human</hediff>
+								<severity>1</severity>
+							</li>
+						</hediffsToApply>
+					</li>
+				</modExtensions>
+				<!--biostatMet>-1</biostatMet-->
+				<!--symbolPack>
+					<prefixSymbols>
+						<li><symbol>...</symbol></li>
+					</prefixSymbols>
+				</symbolPack>-->
+			</GeneDef>
+
+		
+		<!-- Adventurer -->
+		
+			<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Adventurer</defName>
+				<label>Adventurer</label>
+				<description>This gene is in every adventurer out there. It gives you multiple genes at once, for example the ability to cast magic or to strengthen your body.</description>
+				<geneClass>EBSGFramework.HediffAdder</geneClass>
+				
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayCategory>Isekai_Genes</displayCategory>
+				<displayOrderInCategory>99</displayOrderInCategory>
+				
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
+				<modExtensions>
+					<li Class="EBSGFramework.EBSGExtension">
+						<hediffsToApply>
+							<li>
+								<hediff>Isekai_Adventurer</hediff>
+								<!--onlyIfNew>true</onlyIfNew-->
+								<severity>1</severity>
+							</li>
+						</hediffsToApply>
+					</li>
+				</modExtensions>
+				<!--biostatMet>-1</biostatMet-->
+				<!--symbolPack>
+					<prefixSymbols>
+						<li><symbol>...</symbol></li>
+					</prefixSymbols>
+				</symbolPack>-->
+			</GeneDef>
+
+		
+		<!-- Otherworlder -->
+		
+			<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Otherworlder</defName>
+				<label>Otherworlder</label>
+				<description>This pawn is an Otherworlder.</description>
+				<geneClass>EBSGFramework.HediffAdder</geneClass>
+				
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayCategory>Isekai_Genes</displayCategory>
+				<displayOrderInCategory>210</displayOrderInCategory>
+
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+							
+				<modExtensions>
+					<li Class="EBSGFramework.EBSGExtension">
+						<hediffsToApply>
+							<li>
+								<hediff>Isekai_Otherworlder</hediff>
+								<severity>3</severity>
+							</li>
+						</hediffsToApply>
+					</li>
+				</modExtensions>
+				<!--biostatMet>-1</biostatMet-->
+				<!--symbolPack>
+					<prefixSymbols>
+						<li><symbol>...</symbol></li>
+					</prefixSymbols>
+				</symbolPack>-->
+			</GeneDef>
+		
+		
+
+
+
+
+
+</Defs>

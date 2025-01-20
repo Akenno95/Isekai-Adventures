@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Starting Race -->
+		<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
+			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
+			<defName>Isekai_ProgressTracker_Starting</defName>
+			<label>Starting Race</label>
+
+			<!-- <bgPath>UI/ProgressTracker/...</bgPath> -->
+			<!--progressLevelUpKey>Isekai_Body_LevelUp</progressLevelUpKey>
+			<progressLevelUpDescKey>Isekai_Body_LevelUpMessage</progressLevelUpDescKey>
+			<skillPointLabelKey>Isekai_Body_SkillPointLabel</skillPointLabelKey-->
+
+			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Starting</progressHediff>
+			
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<statOffsets>
+					</statOffsets>
+					<!-- <capMods>
+					</capMods> -->
+				</li>
+				<li>
+					<level>5</level>
+					<statOffsets>
+					</statOffsets>
+				</li>
+			</levelFactors>
+			
+			<levelSpecifics>
+			</levelSpecifics>
+			
+			<!--<levelLabels>
+				<li><level>1</level><label>F-Rank</label></li>
+				<li><level>20</level><label>E-Rank</label></li>
+				<li><level>40</level><label>D-Rank</label></li>
+				<li><level>60</level><label>C-Rank</label></li>
+				<li><level>80</level><label>B-Rank</label></li>
+				<li><level>100</level><label>A-Rank</label></li>
+				<li><level>150</level><label>S-Rank</label></li>
+				<li><level>200</level><label>SS-Rank</label></li>
+				<li><level>300</level><label>SSS-Rank</label></li>
+			</levelLabels>-->
+			<!-- <expTags>
+				<li>Isekai_Starting_EXPTag_Passive</li>
+			</expTags> -->
+		
+		
+		</ItsSorceryFramework.ProgressTrackerDef>
+		
+		<HediffDef ParentName="ProgressTrackerHediffBase">
+			<defName>Isekai_ProgressTrackerRPG_Hediff_Starting</defName>
+			<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
+			<label>Starting Race</label>
+			<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+			<description>You can choose a starting race to begin your adventure.</description>
+			<initialSeverity>1</initialSeverity>
+			<minSeverity>0</minSeverity>
+			<!--<maxSeverity>1000</maxSeverity>-->
+			<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+			<stages>
+				<li>
+					<!--minSeverity>2</minSeverity>
+					<becomeVisible>false</becomeVisible-->
+				</li>
+			</stages>
+		</HediffDef>
+
+
+
+
+</Defs>

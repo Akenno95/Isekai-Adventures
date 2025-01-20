@@ -2,30 +2,6 @@
 <Defs>
 
 		
-		<HediffDef ParentName="DiseaseBase">
-			<defName>Isekai_Adventurer</defName>
-			<label>Adventurer</label>
-			<description>This is an adventurer who is roaming around the Rim.</description>
-			<isBad>false</isBad>
-			<initialSeverity>1</initialSeverity>
-			<maxSeverity>1</maxSeverity>
-			<comps>
-				 <li Class="EBSGFramework.HediffCompProperties_TemporaryGenes">
-					<genesAtSeverities>
-						<li>
-							<genes>
-								<li>Isekai_Resistances_Gene</li>
-								<li>Isekai_Body_Gene</li>
-								<li>Isekai_Magic_Gene</li>
-							</genes>
-							<minSeverity>0</minSeverity>
-						</li>
-					</genesAtSeverities>
-				 </li>
-			</comps>
-
-		</HediffDef>
-		
 		
 		<HediffDef ParentName="DiseaseBase">
 			<defName>Isekai_Pain_Resistance</defName>
@@ -108,7 +84,62 @@
 				</li>
 			</stages>
 
-		</HediffDef>		
+		</HediffDef>
+
+
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_MaterialBody_HP</defName>
+			<label>HP</label>
+			<description>HP Buff</description>
+			<isBad>false</isBad>
+			<initialSeverity>1</initialSeverity>
+			<maxSeverity>10</maxSeverity>
+			<defaultInstallPart>Isekai_BodyParts_MaterialBody</defaultInstallPart>
+			<stages>
+				<li>
+					<label>tiny</label>
+					<statFactors>
+						<StaggerDurationFactor>0.95</StaggerDurationFactor>
+					</statFactors>
+				</li>
+				<li>
+					<minSeverity>2</minSeverity>
+					<label>minor</label>
+					<statFactors>
+						<StaggerDurationFactor>0.9</StaggerDurationFactor>
+					</statFactors>
+				</li>
+				<li>
+					<minSeverity>3</minSeverity>
+					<label>moderate</label>
+					<statFactors>
+						<StaggerDurationFactor>0.85</StaggerDurationFactor>
+					</statFactors>
+				</li>
+				<li>
+					<minSeverity>4</minSeverity>
+					<label>good</label>
+					<statFactors>
+						<StaggerDurationFactor>0.8</StaggerDurationFactor>
+					</statFactors>
+				</li>
+				<li>
+					<minSeverity>5</minSeverity>
+					<label>high</label>
+					<statFactors>
+						<StaggerDurationFactor>0.7</StaggerDurationFactor>
+					</statFactors>
+				</li>
+			</stages>
+
+			<comps>
+				<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+					<linearAdjustment>30</linearAdjustment>
+					<scaleAdjustment>0.2</scaleAdjustment>
+				</li>
+			</comps>
+
+		</HediffDef>			
 
 
 

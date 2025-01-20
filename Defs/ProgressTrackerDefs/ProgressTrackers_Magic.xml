@@ -7,11 +7,12 @@
 			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
 			<defName>Isekai_ProgressTracker_Magic</defName>
 			<label>Magic</label>
+
 			<!-- <bgPath>UI/ProgressTracker/...</bgPath> -->
-			
-			<!--progressLevelUpKey>Isekai_Rank_LevelUp</progressLevelUpKey>
-			<progressLevelUpDescKey>Isekai_Rank_LevelUpMessage</progressLevelUpDescKey>
-			<skillPointLabelKey>Isekai_Rank_SkillPointLabel</skillPointLabelKey-->
+			<progressLevelUpKey>Isekai_Magic_LevelUp</progressLevelUpKey>
+			<progressLevelUpDescKey>Isekai_Magic_LevelUpMessage</progressLevelUpDescKey>
+			<skillPointLabelKey>Isekai_Magic_SkillPointLabel</skillPointLabelKey>
+
 			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Magic</progressHediff>
 			
 			<levelRange>1~1000</levelRange>
@@ -70,6 +71,7 @@
 				</li>
 				<li>
 					<level>5</level>
+					<pointGain>2</pointGain>
 					<statOffsets>
 						<Isekai_Magic_MPRecovery>0.5</Isekai_Magic_MPRecovery>
 						<Isekai_Magic_AbsMinMP>-5</Isekai_Magic_AbsMinMP>
@@ -107,9 +109,9 @@
 		<HediffDef ParentName="ProgressTrackerHediffBase">
 			<defName>Isekai_ProgressTrackerRPG_Hediff_Magic</defName>
 			<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
-			<label>MP</label>
+			<label>Magic</label>
 			<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
-			<description>MP for your pawn.</description>
+			<description>Magic Points for your pawn.</description>
 			<initialSeverity>1</initialSeverity>
 			<minSeverity>0</minSeverity>
 			<!--<maxSeverity>1000</maxSeverity>-->

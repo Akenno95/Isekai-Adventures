@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-		<!-- Resistances -->
+	<!-- Resistances -->
 		
 		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
 			<defName>Isekai_Resistances</defName>
@@ -19,7 +19,7 @@
 		</ItsSorceryFramework.SorcerySchemaDef>
 
 
-		<!-- Body -->
+	<!-- Body -->
 		
 		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
 			<defName>Isekai_Body</defName>
@@ -33,12 +33,13 @@
 				<li>Isekai_Body_LearningTrackerProgress</li>
 				<li>Isekai_Body_LearningTrackerTree_Basics</li>
 				<li>Isekai_Body_LearningTrackerTree_Rank</li>
+				<li>Isekai_Body_LearningTrackerTree_Race</li>
 			</learningTrackerDefs>
 			<progressTrackerDef>Isekai_ProgressTracker_Body</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>
 		
 
-		<!-- Magic -->
+	<!-- Magic -->
 		
 		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
 			<defName>Isekai_Magic</defName>
@@ -51,9 +52,29 @@
 			<learningTrackerDefs>
 				<li>Isekai_Magic_LearningTrackerProgress</li>
 				<li>Isekai_Magic_LearningTrackerTree_Basics</li>
+				<li>Isekai_Magic_LearningTrackerTree_Aspectual</li>
 				<li>Isekai_Magic_LearningTrackerTree_Elemental</li>
+				<li>Isekai_Magic_LearningTrackerTree_HolyDemonic</li>
 			</learningTrackerDefs>
 			<progressTrackerDef>Isekai_ProgressTracker_Magic</progressTrackerDef>
+		</ItsSorceryFramework.SorcerySchemaDef>
+
+
+	<!-- Starting Race -->
+		
+		<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
+			<defName>Isekai_Starting</defName>
+			<label>Starting Race</label>
+			<description>You can choose a starting race to begin your adventure.</description>
+			
+			<!--energyTrackerDefs>
+				<li>Isekai_Resistances_Defense</li>
+			</energyTrackerDefs-->
+			<learningTrackerDefs>
+				<li>Isekai_Starting_LearningTrackerProgress</li>
+				<li>Isekai_Starting_LearningTrackerTree</li>
+			</learningTrackerDefs>
+			<progressTrackerDef>Isekai_ProgressTracker_Starting</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>
 
 

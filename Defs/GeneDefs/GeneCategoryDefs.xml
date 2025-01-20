@@ -6,7 +6,12 @@
 			<label>Isekai Genes</label>
 			<displayPriorityInXenotype>50</displayPriorityInXenotype>
 		</GeneCategoryDef>
+
+		<GeneCategoryDef>
+			<defName>Isekai_Genes_Schemas</defName>
+			<label>Isekai Schemas</label>
+			<displayPriorityInXenotype>49</displayPriorityInXenotype>
+		</GeneCategoryDef>
 	
 	
 </Defs>
-

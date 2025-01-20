@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+
+	<!-- Schemas -->
+
+		<!-- Resistances -->
+		
+			<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_GeneSchema_Resistances</defName>
+				<label>Resistances</label>
+				<description>This gene activates the ability to gain resistances for damage types.</description>
+				
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayCategory>Isekai_Genes_Schemas</displayCategory>
+				<displayOrderInCategory>100</displayOrderInCategory>
+				
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
+				<modExtensions>
+					<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+						<schema>Isekai_Resistances</schema>
+					</li>
+				</modExtensions>
+				<!--biostatMet>-1</biostatMet-->
+				<!-- <symbolPack>
+					<prefixSymbols>
+						<li><symbol>...</symbol></li>
+					</prefixSymbols>
+				</symbolPack> -->
+			</GeneDef>
+
+
+
+		<!-- Body -->
+		
+			<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_GeneSchema_Body</defName>
+				<label>Rank</label>
+				<description>This gene activates the ability to gain body enhancements for your pawn, also improving base pawn stats.</description>
+				
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayCategory>Isekai_Genes_Schemas</displayCategory>
+				<displayOrderInCategory>101</displayOrderInCategory>
+				
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
+				<modExtensions>
+					<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+						<schema>Isekai_Body</schema>
+					</li>
+				</modExtensions>
+				<!--biostatMet>-1</biostatMet-->
+				<!-- <symbolPack>
+					<prefixSymbols>
+						<li><symbol>...</symbol></li>
+					</prefixSymbols>
+				</symbolPack> -->
+			</GeneDef>
+		
+		
+		<!-- Magic -->
+		
+			<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_GeneSchema_Magic</defName>
+				<label>Magic</label>
+				<description>This gene activates the ability to gain Magic abilities for your pawn.</description>
+				
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayCategory>Isekai_Genes_Schemas</displayCategory>
+				<displayOrderInCategory>102</displayOrderInCategory>
+				
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
+				<modExtensions>
+					<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+						<schema>Isekai_Magic</schema>
+					</li>
+				</modExtensions>
+				<!--biostatMet>-1</biostatMet-->
+				<!-- <symbolPack>
+					<prefixSymbols>
+						<li><symbol>...</symbol></li>
+					</prefixSymbols>
+				</symbolPack> -->
+			</GeneDef>
+
+
+		<!-- Race -->
+
+			<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_GeneSchema_Starting</defName>
+				<label>Starting Race</label>
+				<description>You can choose a starting race to begin your adventure.</description>
+				
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayCategory>Isekai_Genes_Schemas</displayCategory>
+				<displayOrderInCategory>103</displayOrderInCategory>
+				
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
+				<modExtensions>
+					<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+						<schema>Isekai_Starting</schema>
+					</li>
+				</modExtensions>
+				<!--biostatMet>-1</biostatMet-->
+				<!-- <symbolPack>
+					<prefixSymbols>
+						<li><symbol>...</symbol></li>
+					</prefixSymbols>
+				</symbolPack> -->
+			</GeneDef>
+
+
+
+
+
+</Defs>

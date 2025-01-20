@@ -1,79 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-		<!-- Body Setup -->
-		
-		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
-			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
-			<defName>Isekai_Body_LearningTrackerProgress</defName>
-			<label>Summary</label>
-		</ItsSorceryFramework.LearningTrackerDef>
-		
-		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
-			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
-			<defName>Isekai_Body_LearningTrackerTree_Basics</defName>
-			<label>Basics</label>
-		</ItsSorceryFramework.LearningTrackerDef>
-		
-		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
-			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
-			<defName>Isekai_Body_LearningTrackerTree_Rank</defName>
-			<label>Rank</label>
-		</ItsSorceryFramework.LearningTrackerDef>
-		
-		
-		<!-- Basics Skilltree -->
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Body_Node_SlashAbility</defName>
-			<label>Slash Ability</label>
-			<description>You can slash the enemy with this ability.</description>
+	<!-- Body Setup -->
+				
+			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
+				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
+				<defName>Isekai_Body_LearningTrackerProgress</defName>
+				<label>Summary</label>
+			</ItsSorceryFramework.LearningTrackerDef>
 			
-			<coordX>0</coordX>
-			<coordY>10</coordY>
-			<pointReq>1</pointReq>
+			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+				<defName>Isekai_Body_LearningTrackerTree_Basics</defName>
+				<label>Basics</label>
+			</ItsSorceryFramework.LearningTrackerDef>
 			
-			<prereqsHediff>
-				<li>
-					<key>Isekai_Pain_Resistance</key>
-					<value>1</value>
-				</li>
-			</prereqsHediff>
+			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+				<defName>Isekai_Body_LearningTrackerTree_Rank</defName>
+				<label>Rank</label>
+			</ItsSorceryFramework.LearningTrackerDef>
 			
-			<hediffRemove>
-				<li><hediffDef>Isekai_Pain_Resistance</hediffDef></li>
-			</hediffRemove>
+			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+				<defName>Isekai_Body_LearningTrackerTree_Race</defName>
+				<label>Race</label>
+			</ItsSorceryFramework.LearningTrackerDef>
+				
+				
+	<!-- Basics Skilltree -->
+				
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Body_Node_SlashAbility</defName>
+				<label>Slash Ability</label>
+				<description>You can slash the enemy with this ability.</description>
+				
+				<coordX>0</coordX>
+				<coordY>10</coordY>
+				<pointReq>1</pointReq>
+				
+				<prereqsHediff>
+					<li>
+						<key>Isekai_Pain_Resistance</key>
+						<value>1</value>
+					</li>
+				</prereqsHediff>
+				
+				<hediffRemove>
+					<li><hediffDef>Isekai_Pain_Resistance</hediffDef></li>
+				</hediffRemove>
+				
+				<statOffsets>
+				</statOffsets>
+				<abilityGain>
+					<li>Isekai_Slash</li>
+				</abilityGain>
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-			<statOffsets>
-			</statOffsets>
-			<abilityGain>
-				<li>Isekai_Slash</li>
-			</abilityGain>
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<!--ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" MayRequire = "Akenno.Tensura">
-			<learningTrackerDef>Isekai_Body_LearningTrackerTree_Two</learningTrackerDef>
-			<defName>Isekai_Body_Node_Test</defName>
-			<label>Slash Ability</label>
-			<description>You can slash the enemy with this ability.</description>
 			
-			<coordX>0</coordX>
-			<coordY>0</coordY>
-			<pointReq>1</pointReq>
+			<!--ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" MayRequire = "Akenno.Tensura">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Two</learningTrackerDef>
+				<defName>Isekai_Body_Node_Test</defName>
+				<label>Slash Ability</label>
+				<description>You can slash the enemy with this ability.</description>
+				
+				<coordX>0</coordX>
+				<coordY>0</coordY>
+				<pointReq>1</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_SlashAbility</li>
+				</prereqs>
+				
+				<statOffsets>
+					<ArmorRating_Heat>10.0</ArmorRating_Heat>
+				</statOffsets>
+				<abilityGain>
+					<li>Tensura_Slash</li>
+				</abilityGain>
+			</ItsSorceryFramework.LearningTreeNodeDef-->
+
+
+	<!-- Races Skilltree -->
+				
+		<!-- Human -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Race</learningTrackerDef>
+				<defName>Isekai_Node_Body_Race_Human</defName>
+				<label>Enlightened Human</label>
+				<description>This pawn is considered to be an enlightened human.</description>
+				
+				<coordX>0</coordX>
+				<coordY>0</coordY>
+				<pointReq>0</pointReq>
+				
+				<prereqsHediff>
+					<li>
+						<key>Isekai_Race_Human</key>
+						<value>1</value>
+					</li>
+				</prereqsHediff>
+				
+				<hediffAdjust>
+					<li><hediffDef>Isekai_Race_Human</hediffDef><severity>1</severity></li>
+				</hediffAdjust>
+				
+				<!-- <statOffsets>
+					<ArmorRating_Blunt>10.0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>10.0</ArmorRating_Sharp>
+				</statOffsets> -->
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-			<prereqs>
-				<li>Isekai_Body_Node_SlashAbility</li>
-			</prereqs>
 			
-			<statOffsets>
-				<ArmorRating_Heat>10.0</ArmorRating_Heat>
-			</statOffsets>
-			<abilityGain>
-				<li>Tensura_Slash</li>
-			</abilityGain>
-		</ItsSorceryFramework.LearningTreeNodeDef-->
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Race</learningTrackerDef>
+				<defName>Isekai_Node_Body_Race_Human1</defName>
+				<label>Saint Human</label>
+				<description>This pawn is considered to be a saint human.</description>
+				
+				<coordX>1</coordX>
+				<coordY>0</coordY>
+				<pointReq>0</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Node_Body_Race_Human</li>
+				</prereqs>
+				
+				<hediffAdjust>
+					<li><hediffDef>Isekai_Race_Human</hediffDef><severity>1</severity></li>
+				</hediffAdjust>
+				
+				<!-- <statOffsets>
+					<ArmorRating_Blunt>10.0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>10.0</ArmorRating_Sharp>
+				</statOffsets> -->
+			</ItsSorceryFramework.LearningTreeNodeDef>
+			
+			
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Race</learningTrackerDef>
+				<defName>Isekai_Node_Body_Race_Human2</defName>
+				<label>Divine Human</label>
+				<description>This pawn is considered to be a divine human.</description>
+				
+				<coordX>2</coordX>
+				<coordY>0</coordY>
+				<pointReq>0</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Node_Body_Race_Human1</li>
+				</prereqs>
+				
+				<hediffAdjust>
+					<li><hediffDef>Isekai_Race_Human</hediffDef><severity>1</severity></li>
+				</hediffAdjust>
+				
+				<!-- <statOffsets>
+					<ArmorRating_Blunt>10.0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>10.0</ArmorRating_Sharp>
+				</statOffsets> -->
+			</ItsSorceryFramework.LearningTreeNodeDef>
+			
+			
+		<!-- Slime -->		
+			
+			<ItsSorceryFramework.LearningTreeNodeDef MayRequire="Akenno.Tensura" ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Race</learningTrackerDef>
+				<defName>Tensura_Node_Body_Race_Slime</defName>
+				<label>Demon Slime</label>
+				<description>This pawn is considered to be a demon slime in human form.</description>
+				
+				<coordX>0</coordX>
+				<coordY>1</coordY>
+				<pointReq>0</pointReq>
+				
+				<prereqsHediff>
+					<li>
+						<key>Tensura_Race_Slime</key>
+						<value>1</value>
+					</li>
+				</prereqsHediff>
+				
+				<hediffAdjust>
+					<li><hediffDef>Tensura_Race_Slime</hediffDef><severity>1</severity></li>
+				</hediffAdjust>
+				
+				<!-- <statOffsets>
+					<ArmorRating_Blunt>10.0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>10.0</ArmorRating_Sharp>
+				</statOffsets> -->
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+
 
 
 

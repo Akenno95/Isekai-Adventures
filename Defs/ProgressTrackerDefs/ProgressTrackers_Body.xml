@@ -6,11 +6,12 @@
 			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
 			<defName>Isekai_ProgressTracker_Body</defName>
 			<label>Body</label>
+
 			<!-- <bgPath>UI/ProgressTracker/...</bgPath> -->
-			
-			<!--progressLevelUpKey>Isekai_Body_LevelUp</progressLevelUpKey>
+			<progressLevelUpKey>Isekai_Body_LevelUp</progressLevelUpKey>
 			<progressLevelUpDescKey>Isekai_Body_LevelUpMessage</progressLevelUpDescKey>
-			<skillPointLabelKey>Isekai_Body_SkillPointLabel</skillPointLabelKey-->
+			<skillPointLabelKey>Isekai_Body_SkillPointLabel</skillPointLabelKey>
+
 			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Body</progressHediff>
 			
 			<levelRange>1~1000</levelRange>
@@ -73,6 +74,7 @@
 				</li>
 				<li>
 					<level>5</level>
+					<pointGain>2</pointGain>
 					<statOffsets>
 						<!--PainShockThreshold>1.0</PainShockThreshold>
 						<InjuryHealingFactor>10</InjuryHealingFactor-->

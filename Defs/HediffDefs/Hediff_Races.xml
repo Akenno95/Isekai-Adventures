@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		
+		<!-- Races and more -->
+		
+		<!-- Adventurer -->
+		
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_Adventurer</defName>
+			<label>Adventurer</label>
+			<description>This is an adventurer who is roaming around the Rim.</description>
+			<isBad>false</isBad>
+			<everCurableByItem>false</everCurableByItem>
+			<initialSeverity>1</initialSeverity>
+			<maxSeverity>1</maxSeverity>
+			<comps>
+				 <li Class="EBSGFramework.HediffCompProperties_TemporaryGenes">
+					<genesAtSeverities>
+						<li>
+							<genes>
+								<li>Isekai_GeneSchema_Resistances</li>
+								<li>Isekai_GeneSchema_Body</li>
+								<li>Isekai_GeneSchema_Magic</li>
+							</genes>
+							<minSeverity>0</minSeverity>
+						</li>
+					</genesAtSeverities>
+				 </li>
+			</comps>
+
+		</HediffDef>
+
+		
+		<!-- Otherworlder -->
+		
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_Otherworlder</defName>
+			<label>Otherworlder</label>
+			<description>This pawn comes from another rim and was summoned or reincarnated.</description>
+			<isBad>false</isBad>
+			<everCurableByItem>false</everCurableByItem>
+			<initialSeverity>1</initialSeverity>
+			<maxSeverity>10</maxSeverity>
+			<comps>
+				 <li Class="EBSGFramework.HediffCompProperties_TemporaryGenes">
+					<genesAtSeverities>
+						<li>
+							<genes>
+								<!-- <li>Isekai_GeneSchema_Resistances</li>
+								<li>Isekai_GeneSchema_Body</li>
+								<li>Isekai_GeneSchema_Magic</li> -->
+								<li>Isekai_GeneSchema_Starting</li>
+							</genes>
+							<minSeverity>0</minSeverity>
+						</li>
+					</genesAtSeverities>
+				 </li>
+			</comps>
+			<stages>
+				<li>
+					<label>Summoned</label>			
+				</li>
+				<li>
+					<minSeverity>2</minSeverity>
+					<label>Stray</label>
+				</li>
+				<li>
+					<minSeverity>3</minSeverity>
+					<label>Reincarnated</label>
+				</li>
+			</stages>
+			
+			
+		</HediffDef>
+		
+		
+		<!-- Human -->
+		
+		<HediffDef ParentName="DiseaseBase">
+			<defName>Isekai_Race_Human</defName>
+			<label>Race</label>
+			<description>This pawn is considered to be a human.</description>
+			<isBad>false</isBad>
+			<everCurableByItem>false</everCurableByItem>
+			<initialSeverity>1</initialSeverity>
+			<maxSeverity>10</maxSeverity>
+			<!-- <defaultInstallPart>Stomach</defaultInstallPart> -->
+			<stages>
+				<li>
+					<label>Human</label>
+				</li>
+				<li>
+					<minSeverity>2</minSeverity>
+					<label>Enlightened Human</label>
+				</li>
+				<li>
+					<minSeverity>3</minSeverity>
+					<label>Saint Human</label>
+				</li>
+				<li>
+					<minSeverity>4</minSeverity>
+					<label>Divine Human</label>
+				</li>
+			</stages>
+			
+			
+		</HediffDef>
+		
+		
+		
+		
+		
+		
+		
+		
+</Defs>

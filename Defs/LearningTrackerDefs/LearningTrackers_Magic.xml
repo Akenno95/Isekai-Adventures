@@ -1,205 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-		<!-- Magic Setup -->
+	<!-- Magic Setup -->
 		
-		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
-			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
-			<defName>Isekai_Magic_LearningTrackerProgress</defName>
-			<label>Summary</label>
-		</ItsSorceryFramework.LearningTrackerDef>
+			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
+				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
+				<defName>Isekai_Magic_LearningTrackerProgress</defName>
+				<label>Summary</label>
+			</ItsSorceryFramework.LearningTrackerDef>
+			
+			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+				<defName>Isekai_Magic_LearningTrackerTree_Basics</defName>
+				<label>Basics</label>
+			</ItsSorceryFramework.LearningTrackerDef>
+
+			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+				<defName>Isekai_Magic_LearningTrackerTree_Aspectual</defName>
+				<label>Aspectual Magic</label>
+
+				<defaultLocked>true</defaultLocked>
+				<lockedLabel>Unknown</lockedLabel>
+				<unlockTip>Learn more about magic types and how to cast them.</unlockTip>
+			</ItsSorceryFramework.LearningTrackerDef>
+			
+			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+				<defName>Isekai_Magic_LearningTrackerTree_Elemental</defName>
+				<label>Elemental Magic</label>
+
+				<defaultLocked>true</defaultLocked>
+				<lockedLabel>Unknown</lockedLabel>
+				<unlockTip>Learn more about magic types and how to cast them.</unlockTip>
+			</ItsSorceryFramework.LearningTrackerDef>
+
+			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+				<defName>Isekai_Magic_LearningTrackerTree_HolyDemonic</defName>
+				<label>Holy / Demonic Magic</label>
+
+				<defaultLocked>true</defaultLocked>
+				<lockedLabel>Unknown</lockedLabel>
+				<unlockTip>Learn more about magic types and how to cast them.</unlockTip>
+			</ItsSorceryFramework.LearningTrackerDef>
 		
-		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
-			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
-			<defName>Isekai_Magic_LearningTrackerTree_Basics</defName>
-			<label>Basics</label>
-		</ItsSorceryFramework.LearningTrackerDef>
-		
-		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
-			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
-			<defName>Isekai_Magic_LearningTrackerTree_Elemental</defName>
-			<label>Elemental Magic</label>
-		</ItsSorceryFramework.LearningTrackerDef>
-		
-		<!-- Bases -->
+	<!-- Bases -->
 		
 		
 		
 		<!-- Basics Skilltree -->
 		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Magic_Node_MagicalUnderstanding</defName>
-			<label>Magical understanding</label>
-			<description>Understand that this world contains magic.</description>
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_MagicalUnderstanding</defName>
+				<label>Magical understanding</label>
+				<description>Understand that this world contains MP, also known as Magic Points, Mana Points or Magicule Points.</description>
+				
+				<coordX>0</coordX>
+				<coordY>0</coordY>
+				<pointReq>1</pointReq>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>		
 			
-			<coordX>0</coordX>
-			<coordY>0</coordY>
-			<pointReq>1</pointReq>
 			
-		</ItsSorceryFramework.LearningTreeNodeDef>		
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Magic_Node_MagicalSense</defName>
-			<label>Magical sense</label>
-			<description>Understand how to sense magic. It is everywhere!</description>
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_MagicalSense</defName>
+				<label>Magical sense</label>
+				<description>Understand how to sense magic. It is everywhere!</description>
+				
+				<coordX>1</coordX>
+				<coordY>0</coordY>
+				<pointReq>1</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Magic_Node_MagicalUnderstanding</li>
+				</prereqs>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-			<coordX>1</coordX>
-			<coordY>0</coordY>
-			<pointReq>1</pointReq>
 			
-			<prereqs>
-				<li>Isekai_Magic_Node_MagicalUnderstanding</li>
-			</prereqs>
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_MagicalTypes</defName>
+				<label>Magical types</label>
+				<description>Understand that there are several magic types. Aspectual magic, elemental magic, holy magic, demonic magic...</description>
+				
+				<coordX>2</coordX>
+				<coordY>0</coordY>
+				<pointReq>1</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Magic_Node_MagicalSense</li>
+				</prereqs>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Magic_Node_MagicalTypes</defName>
-			<label>Magical types</label>
-			<description>Understand that there are several magic types. Aspectual magic, elemental magic, holy magic, demonic magic...</description>
 			
-			<coordX>2</coordX>
-			<coordY>0</coordY>
-			<pointReq>1</pointReq>
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_MagicalCasting</defName>
+				<label>Magical casting</label>
+				<description>Understand how to cast magic. Some pawns might need incantations / the ability to speak to perform them. If they are trained enough, they might be able to cast without that requirement.</description>
+				
+				<coordX>3</coordX>
+				<coordY>0</coordY>
+				<pointReq>1</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Magic_Node_MagicalTypes</li>
+				</prereqs>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-			<prereqs>
-				<li>Isekai_Magic_Node_MagicalSense</li>
-			</prereqs>
 			
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Magic_Node_MagicalCasting</defName>
-			<label>Magical casting</label>
-			<description>Understand how to cast magic.</description>
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_MagicalCompounding</defName>
+				<label>Magical compounding</label>
+				<description>Understand that you can combine magic schools to perform a higher magic ability, for example fire and explosive results in explosive flame magic.</description>
+				
+				<coordX>4</coordX>
+				<coordY>0</coordY>
+				<pointReq>1</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Magic_Node_MagicalCasting</li>
+				</prereqs>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-			<coordX>3</coordX>
-			<coordY>0</coordY>
-			<pointReq>1</pointReq>
 			
-			<prereqs>
-				<li>Isekai_Magic_Node_MagicalTypes</li>
-			</prereqs>
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_AspectualMagic</defName>
+				<label>Aspectual Magic</label>
+				<description>Aspectual magic, also known as magic schools, is magic cast directly using MP. This is the common way to cast magic. It is unaffected by physical factors for example, magical flames can't be extinguished by ordinary water. Rewrites law of nature.</description>
+				
+				<coordX>5</coordX>
+				<coordY>0</coordY>
+				<pointReq>2</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Magic_Node_MagicalCompounding</li>
+				</prereqs>
+
+				<!-- <unlocks>
+					<li>ISFE_Logos_LearningTrackerTree_Two</li>
+				</unlocks> -->
+
+				<condVisiblePrereq>true</condVisiblePrereq>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Magic_Node_MagicalCompounding</defName>
-			<label>Magical compounding</label>
-			<description>Understand how to combine magic types.</description>
 			
-			<coordX>4</coordX>
-			<coordY>0</coordY>
-			<pointReq>1</pointReq>
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_ElementalMagic</defName>
+				<label>Elemental Magic</label>
+				<description>Elemental magic borrows the power of spirits. You need some sort of affinity in that given element or a blessing by spirits to perform true elemental magic. Obeys law of nature.</description>
+				
+				<coordX>5</coordX>
+				<coordY>1</coordY>
+				<pointReq>2</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Magic_Node_MagicalCompounding</li>
+				</prereqs>
+
+				<!-- <unlocks>
+					<li>ISFE_Logos_LearningTrackerTree_Two</li>
+				</unlocks> -->
+
+				<condVisiblePrereq>true</condVisiblePrereq>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_HolyDemonicMagic</defName>
+				<label>Holy / Demonic Magic</label>
+				<description>Holy and demonic magic are quite different. Holy magic applies threw the power of faith in something or someone and is considered to be an elemental magic, while demonic magic utilizes MP and is mostly available by monsters. If someone have both alignments it is referred to as chaos magic.</description>
+				
+				<coordX>5</coordX>
+				<coordY>2</coordY>
+				<pointReq>2</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Magic_Node_MagicalCompounding</li>
+				</prereqs>
+
+				<!-- <unlocks>
+					<li>ISFE_Logos_LearningTrackerTree_Two</li>
+				</unlocks> -->
+
+				<condVisiblePrereq>true</condVisiblePrereq>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-			<prereqs>
-				<li>Isekai_Magic_Node_MagicalCasting</li>
-			</prereqs>
 			
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Magic_Node_AspectualMagic</defName>
-			<label>Aspectual Magic</label>
-			<description>Aspectual magic is magic cast directly using MP. It is unaffected by physical factors for example, magical flames can't be extinguished by ordinary water. </description>
 			
-			<coordX>5</coordX>
-			<coordY>0</coordY>
-			<pointReq>1</pointReq>
 			
-			<prereqs>
-				<li>Isekai_Magic_Node_MagicalCompounding</li>
-			</prereqs>
 			
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Magic_Node_ElementalMagic</defName>
-			<label>Elemental Magic</label>
-			<description>Elemental magic borrows the power of spirits. </description>
 			
-			<coordX>5</coordX>
-			<coordY>1</coordY>
-			<pointReq>1</pointReq>
 			
-			<prereqs>
-				<li>Isekai_Magic_Node_MagicalCompounding</li>
-			</prereqs>
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_MagicSight</defName>
+				<label>Magic sight</label>
+				<description>The ability to see threw magic. May enhance vision for those who can already see. Might fry human brains.</description>
+				
+				<coordX>4</coordX>
+				<coordY>1</coordY>
+				<pointReq>5</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Magic_Node_MagicalCasting</li>
+				</prereqs>
+
+				<condVisiblePrereq>true</condVisiblePrereq>
+				
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>1.0</offset>
+					</li>
+				</capMods>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		
-		
-		
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Magic_Node_MagicSight</defName>
-			<label>Magic sight</label>
-			<description>The ability to see threw magic. May enhance vision for those who can already see. Might fry human brains.</description>
 			
-			<coordX>3</coordX>
-			<coordY>1</coordY>
-			<pointReq>5</pointReq>
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Magic_Node_MP</defName>
+				<label>Slash Ability</label>
+				<description>You can slash the enemy with this ability.</description>
+				
+				<coordX>4</coordX>
+				<coordY>4</coordY>
+				<pointReq>1</pointReq>
+				
+				<prereqsHediff>
+					<li>
+						<key>Isekai_Pain_Resistance</key>
+						<value>1</value>
+					</li>
+				</prereqsHediff>
+				
+				<hediffRemove>
+					<li><hediffDef>Isekai_Pain_Resistance</hediffDef></li>
+				</hediffRemove>
+				
+				<statOffsets>
+				</statOffsets>
+				<abilityGain>
+					<li>Isekai_Slash</li>
+				</abilityGain>
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
-			<prereqs>
-				<li>Isekai_Magic_Node_MagicalCasting</li>
-			</prereqs>
 			
-			<capMods>
-				<li>
-					<capacity>Sight</capacity>
-					<offset>1.0</offset>
-				</li>
-			</capMods>
-			
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
-		<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-			<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
-			<defName>Isekai_Magic_Node_MP</defName>
-			<label>Slash Ability</label>
-			<description>You can slash the enemy with this ability.</description>
-			
-			<coordX>4</coordX>
-			<coordY>4</coordY>
-			<pointReq>1</pointReq>
-			
-			<prereqsHediff>
-				<li>
-					<key>Isekai_Pain_Resistance</key>
-					<value>1</value>
-				</li>
-			</prereqsHediff>
-			
-			<hediffRemove>
-				<li><hediffDef>Isekai_Pain_Resistance</hediffDef></li>
-			</hediffRemove>
-			
-			<statOffsets>
-			</statOffsets>
-			<abilityGain>
-				<li>Isekai_Slash</li>
-			</abilityGain>
-		</ItsSorceryFramework.LearningTreeNodeDef>
-		
-		
 		
 		
 		<!-- Elements Skilltree -->

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!--ISFE_Logos_Brainpower_Message_HitLimit>{PAWN} is mentally burnt out. {PAWN_possessive} mind can barely function.</ISFE_Logos_Brainpower_Message_HitLimit-->
+	
+	<!-- Body Tracker -->
+
+			<Isekai_Body_LevelUp>Body got stronger: {0}</Isekai_Body_LevelUp>
+			<Isekai_Body_LevelUpMessage>The body of {PAWN} got stronger and increased the level from {0} to {1}.</Isekai_Body_LevelUpMessage>
+			<Isekai_Body_SkillPointLabel>Skill points</Isekai_Body_SkillPointLabel>
+
+	<!-- Magic Tracker -->
+
+			<Isekai_Magic_LevelUp>Magic got stronger: {0}</Isekai_Magic_LevelUp>
+			<Isekai_Magic_LevelUpMessage>The magic of {PAWN} got stronger and increased the level from {0} to {1}.</Isekai_Magic_LevelUpMessage>
+			<Isekai_Magic_SkillPointLabel>Skill points</Isekai_Magic_SkillPointLabel>	
+
+	<!-- Resistances Tracker -->
+
+			<Isekai_Resistances_LevelUp>Resistance got stronger: {0}</Isekai_Resistances_LevelUp>
+			<Isekai_Resistances_LevelUpMessage>The resistance of {PAWN} got stronger and increased the level from {0} to {1}.</Isekai_Resistances_LevelUpMessage>
+			<Isekai_Resistances_SkillPointLabel>Skill points</Isekai_Resistances_SkillPointLabel>	
+
+
+
+
+	
+	<!-- <SWPotF_DisableReason_ForcePoints>{0}'s Force points have been depleted!</SWPotF_DisableReason_ForcePoints> -->
+	
+	
+
+
+
+</LanguageData>
