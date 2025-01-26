@@ -33,9 +33,82 @@
 				</li>
 			</comps>
 		</ItsSorceryFramework.SorceryDef>		
+		
+	<!-- Aspectual Skilltree -->
+
+		<!-- Slash -->
+
+			<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+				<sorcerySchema>Isekai_Magic</sorcerySchema>
+				<defName>Isekai_WindSlash</defName>
+				<label>Wind slash</label>
+				<description>Slashing the wind.</description>
+				<level>1</level>
+				<iconPath>Projectile/WindCut</iconPath>
+				<!--warmupSound>...</warmupSound-->
+				<aiCanUse>true</aiCanUse>
+				<cooldownTicksRange>200</cooldownTicksRange>  <!-- 60 ticks = 1 sec -->
+			
+				<statBases>
+					<Isekai_MPCost>25</Isekai_MPCost>
+					<!-- <Ability_Duration>60</Ability_Duration> -->
+				</statBases>
+				<verbProperties>		
+					<verbClass>Verb_CastAbility</verbClass>
+					<range>15</range>
+					<requireLineOfSight>True</requireLineOfSight>
+					<warmupTime>0.5</warmupTime>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+				</verbProperties>
+			
+				<comps>
+					<li Class="CompProperties_AbilityLaunchProjectile">
+						<projectileDef>Isekai_Projectile_WindSlash</projectileDef>
+					</li>
+				</comps>
+			</ItsSorceryFramework.SorceryDef>	
 
 
-
+<!-- Gluttony Passive -->
+		
+		<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+			<sorcerySchema>Isekai_Magic</sorcerySchema>
+			<defName>Isekai_Ability_WindSlash</defName>
+			<label>Powering Wind</label>
+			<description>Powering wind slash</description>
+			<level>1</level>
+			<!--<iconPath>UI/Sorceries/hea</iconPath>-->
+			<!--warmupSound>...</warmupSound-->
+			<aiCanUse>true</aiCanUse>
+			<cooldownTicksRange>100</cooldownTicksRange>
+		
+			<statBases>
+				<Isekai_MPCost>100</Isekai_MPCost>
+				<Ability_Duration>60</Ability_Duration>
+			</statBases>
+			<verbProperties>		
+				<verbClass>Verb_CastAbility</verbClass>
+				<range>15</range>
+				<!-- requireLineOfSight>True</requireLineOfSight -->
+				<warmupTime>1</warmupTime>
+				<targetParams>
+					<canTargetSelf>true</canTargetSelf>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetMechs>false</canTargetMechs>
+				</targetParams>
+			</verbProperties>
+		
+			<comps>
+				<li Class = "CompProperties_AbilityGiveHediff">
+					<compClass>CompAbilityEffect_GiveHediff</compClass>
+					<hediffDef>Isekai_Hediff_WindSlash</hediffDef>
+					<psychic>false</psychic>
+					<applicableToMechs>False</applicableToMechs>
+				</li>
+			</comps>
+		</ItsSorceryFramework.SorceryDef>				
 
 
 </Defs>

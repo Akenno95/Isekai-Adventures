@@ -5,20 +5,20 @@
 	
 	<!-- Body Tracker -->
 
-			<Isekai_Body_LevelUp>Body got stronger: {0}</Isekai_Body_LevelUp>
-			<Isekai_Body_LevelUpMessage>The body of {PAWN} got stronger and increased the level from {0} to {1}.</Isekai_Body_LevelUpMessage>
+			<Isekai_Body_LevelUp>Body lvlup: {0}</Isekai_Body_LevelUp>
+			<Isekai_Body_LevelUpMessage>The body of the pawn got stronger and increased the level from {0} to {1}.</Isekai_Body_LevelUpMessage>
 			<Isekai_Body_SkillPointLabel>Skill points</Isekai_Body_SkillPointLabel>
 
 	<!-- Magic Tracker -->
 
-			<Isekai_Magic_LevelUp>Magic got stronger: {0}</Isekai_Magic_LevelUp>
-			<Isekai_Magic_LevelUpMessage>The magic of {PAWN} got stronger and increased the level from {0} to {1}.</Isekai_Magic_LevelUpMessage>
+			<Isekai_Magic_LevelUp>Magic lvlup: {0}</Isekai_Magic_LevelUp>
+			<Isekai_Magic_LevelUpMessage>The magic of the pawn got stronger and increased the level from {0} to {1}.</Isekai_Magic_LevelUpMessage>
 			<Isekai_Magic_SkillPointLabel>Skill points</Isekai_Magic_SkillPointLabel>	
 
 	<!-- Resistances Tracker -->
 
-			<Isekai_Resistances_LevelUp>Resistance got stronger: {0}</Isekai_Resistances_LevelUp>
-			<Isekai_Resistances_LevelUpMessage>The resistance of {PAWN} got stronger and increased the level from {0} to {1}.</Isekai_Resistances_LevelUpMessage>
+			<Isekai_Resistances_LevelUp>Resistance lvlup: {0}</Isekai_Resistances_LevelUp>
+			<Isekai_Resistances_LevelUpMessage>The resistance of the pawn got stronger and increased the level from {0} to {1}.</Isekai_Resistances_LevelUpMessage>
 			<Isekai_Resistances_SkillPointLabel>Skill points</Isekai_Resistances_SkillPointLabel>	
 
 

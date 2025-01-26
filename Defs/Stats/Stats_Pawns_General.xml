@@ -3,7 +3,7 @@
 
 		<!-- Resistances -->
 		
-		<StatDef>
+		<!-- <StatDef>
 			<defName>Isekai_Resistances_MaxEndurance</defName>
 			<label>Maximum endurance</label>
 			<description>Maximum defensive capabilities.</description>
@@ -27,7 +27,7 @@
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
 			<displayPriorityInCategory>100</displayPriorityInCategory>
-		</StatDef>
+		</StatDef> -->
 
 
 		<!-- Body -->
@@ -55,7 +55,7 @@
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
-			<displayPriorityInCategory>101</displayPriorityInCategory>
+			<displayPriorityInCategory>102</displayPriorityInCategory>
 		</StatDef>
 
 		<StatDef>
@@ -68,7 +68,7 @@
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
-			<displayPriorityInCategory>102</displayPriorityInCategory>
+			<displayPriorityInCategory>103</displayPriorityInCategory>
 		</StatDef>
 		
 
@@ -79,12 +79,12 @@
 			<label>Maximum Magic Points</label>
 			<description>Maximum Magic Points.</description>
 			<category>BasicsPawn</category>
-			<defaultBaseValue>1000</defaultBaseValue>
+			<defaultBaseValue>0</defaultBaseValue>
 			<minValue>0</minValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
-			<displayPriorityInCategory>101</displayPriorityInCategory>
+			<displayPriorityInCategory>104</displayPriorityInCategory>
 			<statFactors>
 				<li>Isekai_Magic_Factor</li>
 			</statFactors>
@@ -100,7 +100,7 @@
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
-			<displayPriorityInCategory>101</displayPriorityInCategory>
+			<displayPriorityInCategory>105</displayPriorityInCategory>
 		</StatDef>
 
 		<StatDef>
@@ -108,12 +108,12 @@
 			<label>Magic Point recovery</label>
 			<description>Magic Point recovery rate.</description>
 			<category>BasicsPawn</category>
-			<defaultBaseValue>1</defaultBaseValue>
+			<defaultBaseValue>0</defaultBaseValue>
 			<minValue>0</minValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
-			<displayPriorityInCategory>102</displayPriorityInCategory>
+			<displayPriorityInCategory>106</displayPriorityInCategory>
 			<statFactors>
 				<li>Isekai_Magic_Factor</li>
 			</statFactors>
@@ -124,12 +124,12 @@
 			<label>Absolute minimum Magic Points</label>
 			<description>Absolute minimum Magic Points of a pawn that might cause some trouble.</description>
 			<category>BasicsPawn</category>
-			<defaultBaseValue>-1000</defaultBaseValue>
-			<minValue>-100000</minValue>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>-1000000</minValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
-			<displayPriorityInCategory>103</displayPriorityInCategory>
+			<displayPriorityInCategory>107</displayPriorityInCategory>
 			<statFactors>
 				<li>Isekai_Magic_Factor</li>
 			</statFactors>
@@ -145,7 +145,7 @@
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<alwaysHide>true</alwaysHide>
-			<displayPriorityInCategory>104</displayPriorityInCategory>
+			<displayPriorityInCategory>108</displayPriorityInCategory>
 		</StatDef>
 		
 		<!--StatDef>

@@ -3,10 +3,10 @@
 
 
 		<HediffDef ParentName="InjuryBase">
-			<defName>Isekai_Slash</defName>
-			<label>Slash hit</label>
-			<labelNoun>A slash hit.</labelNoun>
-			<description>A slash hit.</description>
+			<defName>Isekai_Cut_Small</defName>
+			<label>Cut</label>
+			<labelNoun>A small cut.</labelNoun>
+			<description>A small cut.</description>
 			<comps>
 				<li Class="HediffCompProperties_TendDuration">
 					<labelTendedWell>treated</labelTendedWell>
@@ -17,16 +17,16 @@
 					<infectionChance>0.15</infectionChance>
 				</li>
 				<li Class="HediffCompProperties_GetsPermanent">
-					<permanentLabel>Slash scar</permanentLabel>
+					<permanentLabel>cut scar</permanentLabel>
 				</li>
 			</comps>
 			<injuryProps>
-				<painPerSeverity>0.0125</painPerSeverity>
-				<averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
-				<bleedRate>0.06</bleedRate>
+				<painPerSeverity>0.005</painPerSeverity>
+				<averagePainPerSeverityPermanent>0.00325</averagePainPerSeverityPermanent>
+				<bleedRate>0.02</bleedRate>
 				<canMerge>false</canMerge>
-				<destroyedLabel>Burned off</destroyedLabel>
-				<destroyedOutLabel>Burned out</destroyedOutLabel>
+				<destroyedLabel>Cut off</destroyedLabel>
+				<destroyedOutLabel>Cut out</destroyedOutLabel>
 			</injuryProps>
 		</HediffDef>
 
@@ -39,7 +39,3 @@
 
 
 </Defs>
-
-
-
-

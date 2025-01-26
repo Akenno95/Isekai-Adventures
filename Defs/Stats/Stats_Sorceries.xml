@@ -3,7 +3,7 @@
 
 		<!-- Resistances -->
 		
-		<StatDef>
+		<!-- <StatDef>
 			<defName>Isekai_DefenseCost</defName>
 			<label>Defense</label>
 			<category>Isekai_Abilities</category>
@@ -11,7 +11,7 @@
 			<defaultBaseValue>10</defaultBaseValue>
 			<showIfUndefined>false</showIfUndefined>
 			<displayPriorityInCategory>1</displayPriorityInCategory>
-		</StatDef>
+		</StatDef> -->
 
 
 		<!-- Rank -->

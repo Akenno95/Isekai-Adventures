@@ -52,9 +52,12 @@
 			<learningTrackerDefs>
 				<li>Isekai_Magic_LearningTrackerProgress</li>
 				<li>Isekai_Magic_LearningTrackerTree_Basics</li>
+				<li>Isekai_Magic_LearningTrackerTree_Advanced</li>
+				<li>Isekai_Magic_LearningTrackerTree_Master</li>
 				<li>Isekai_Magic_LearningTrackerTree_Aspectual</li>
 				<li>Isekai_Magic_LearningTrackerTree_Elemental</li>
 				<li>Isekai_Magic_LearningTrackerTree_HolyDemonic</li>
+				<li>Isekai_Magic_LearningTrackerTree_Training</li>
 			</learningTrackerDefs>
 			<progressTrackerDef>Isekai_ProgressTracker_Magic</progressTrackerDef>
 		</ItsSorceryFramework.SorcerySchemaDef>

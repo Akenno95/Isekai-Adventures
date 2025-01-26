@@ -23,6 +23,35 @@
 			</comps>
 		</ThingDef>
 
+	<!-- Aspectual Skilltree -->
+
+		<!-- Slash -->
+
+			<ThingDef ParentName="BaseBullet">
+				<defName>Isekai_Projectile_WindSlash</defName>
+				<label>Wind slash</label>
+
+				<graphicData>
+					<texPath>Projectile/WindCut</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>1</drawSize>
+				</graphicData>
+
+				<!--thingClass>Bullet</thingClass-->
+
+				<projectile>
+					<damageDef>Isekai_SlashDamage</damageDef>
+					<damageAmountBase>10</damageAmountBase>
+					<armorPenetrationBase>0</armorPenetrationBase>
+					<stoppingPower>1</stoppingPower>
+					<speed>50</speed>
+				</projectile>
+
+				<comps>
+				</comps>
+
+			</ThingDef>
 
 
 
@@ -35,7 +64,3 @@
 
 
 </Defs>
-
-
-
-

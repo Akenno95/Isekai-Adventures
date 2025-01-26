@@ -19,6 +19,9 @@
 				<li>
 					<level>1</level>
 					<statOffsets>
+						<ArmorRating_Blunt>0.001</ArmorRating_Blunt>
+						<ArmorRating_Sharp>0.001</ArmorRating_Sharp>
+						<ArmorRating_Heat>0.001</ArmorRating_Heat>
 						<!--<PainShockThreshold>0.1</PainShockThreshold>
 						<InjuryHealingFactor>1</InjuryHealingFactor>
 						<ImmunityGainSpeed>1</ImmunityGainSpeed>
@@ -74,22 +77,29 @@
 				</li>
 				<li>
 					<level>5</level>
-					<pointGain>2</pointGain>
+					<!-- <pointGain>2</pointGain> -->
 					<statOffsets>
 						<PainShockThreshold>0.02</PainShockThreshold>
+						<ArmorRating_Blunt>0.003</ArmorRating_Blunt>
+						<ArmorRating_Sharp>0.003</ArmorRating_Sharp>
+						<ArmorRating_Heat>0.003</ArmorRating_Heat>
 						<!--<InjuryHealingFactor>10</InjuryHealingFactor>-->
 					</statOffsets>
 				</li>
 				
 			</levelFactors>
 			
-			<levelLabels>
-				<li><level>1</level><label>Bad</label></li>
-				<li><level>25</level><label>Weak</label></li>
-				<li><level>50</level><label>Moderate</label></li>
-				<li><level>75</level><label>High</label></li>
-				<li><level>100</level><label>Very high</label></li>
-			</levelLabels>
+			<!--<levelLabels>
+				<li><level>1</level><label>F-Rank</label></li>
+				<li><level>20</level><label>E-Rank</label></li>
+				<li><level>50</level><label>D-Rank</label></li>
+				<li><level>80</level><label>C-Rank</label></li>
+				<li><level>120</level><label>B-Rank</label></li>
+				<li><level>150</level><label>A-Rank</label></li>
+				<li><level>250</level><label>S-Rank</label></li>
+				<li><level>300</level><label>SS-Rank</label></li>
+				<li><level>400</level><label>SSS-Rank</label></li>
+			</levelLabels>-->
 			<expTags>
 				<li>Isekai_Resistances_EXPTag_OnDamaged</li>
 			</expTags>

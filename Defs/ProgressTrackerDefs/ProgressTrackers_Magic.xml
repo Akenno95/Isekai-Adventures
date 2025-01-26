@@ -73,6 +73,7 @@
 					<level>5</level>
 					<pointGain>2</pointGain>
 					<statOffsets>
+						<Isekai_Magic_MaxMP>30</Isekai_Magic_MaxMP>
 						<Isekai_Magic_MPRecovery>0.5</Isekai_Magic_MPRecovery>
 						<Isekai_Magic_AbsMinMP>-5</Isekai_Magic_AbsMinMP>
 					</statOffsets>
@@ -92,13 +93,17 @@
 				</li>
 			</levelSpecifics-->
 			
-			<levelLabels>
-				<li><level>1</level><label>Very low MP</label></li>
-				<li><level>25</level><label>Low MP</label></li>
-				<li><level>50</level><label>Moderate MP</label></li>
-				<li><level>75</level><label>High MP</label></li>
-				<li><level>100</level><label>Very high MP</label></li>
-			</levelLabels>
+			<!--<levelLabels>
+				<li><level>1</level><label>F-Rank</label></li>
+				<li><level>20</level><label>E-Rank</label></li>
+				<li><level>40</level><label>D-Rank</label></li>
+				<li><level>60</level><label>C-Rank</label></li>
+				<li><level>80</level><label>B-Rank</label></li>
+				<li><level>100</level><label>A-Rank</label></li>
+				<li><level>150</level><label>S-Rank</label></li>
+				<li><level>200</level><label>SS-Rank</label></li>
+				<li><level>300</level><label>SSS-Rank</label></li>
+			</levelLabels>-->
 			<expTags>
 				<li>Isekai_Magic_EXPTag_Passive</li>
 			</expTags>

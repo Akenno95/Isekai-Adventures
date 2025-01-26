@@ -76,6 +76,7 @@
 					<level>5</level>
 					<pointGain>2</pointGain>
 					<statOffsets>
+						<ImmunityGainSpeed>0.02</ImmunityGainSpeed>
 						<!--PainShockThreshold>1.0</PainShockThreshold>
 						<InjuryHealingFactor>10</InjuryHealingFactor-->
 					</statOffsets>
