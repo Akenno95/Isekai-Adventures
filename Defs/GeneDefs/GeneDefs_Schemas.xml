@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	
+
 
 	<!-- Schemas -->
 
@@ -11,24 +11,20 @@
 				<label>Resistances</label>
 				<description>This gene activates the ability to gain resistances for damage types.</description>
 				
+				<biostatCpx>0</biostatCpx>
+				<biostatMet>0</biostatMet>
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
 				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
 				<displayCategory>Isekai_Genes_Schemas</displayCategory>
 				<displayOrderInCategory>100</displayOrderInCategory>
-				
-				<selectionWeight>0</selectionWeight>
-				<canGenerateInGeneSet>false</canGenerateInGeneSet>
 				
 				<modExtensions>
 					<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
 						<schema>Isekai_Resistances</schema>
 					</li>
 				</modExtensions>
-				<!--biostatMet>-1</biostatMet-->
-				<!-- <symbolPack>
-					<prefixSymbols>
-						<li><symbol>...</symbol></li>
-					</prefixSymbols>
-				</symbolPack> -->
 			</GeneDef>
 
 
@@ -40,24 +36,20 @@
 				<label>Rank</label>
 				<description>This gene activates the ability to gain body enhancements for your pawn, also improving base pawn stats.</description>
 				
+				<biostatCpx>0</biostatCpx>
+				<biostatMet>0</biostatMet>
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
 				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
 				<displayCategory>Isekai_Genes_Schemas</displayCategory>
 				<displayOrderInCategory>101</displayOrderInCategory>
-				
-				<selectionWeight>0</selectionWeight>
-				<canGenerateInGeneSet>false</canGenerateInGeneSet>
 				
 				<modExtensions>
 					<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
 						<schema>Isekai_Body</schema>
 					</li>
 				</modExtensions>
-				<!--biostatMet>-1</biostatMet-->
-				<!-- <symbolPack>
-					<prefixSymbols>
-						<li><symbol>...</symbol></li>
-					</prefixSymbols>
-				</symbolPack> -->
 			</GeneDef>
 		
 		
@@ -68,24 +60,20 @@
 				<label>Magic</label>
 				<description>This gene activates the ability to gain Magic abilities for your pawn.</description>
 				
+				<biostatCpx>0</biostatCpx>
+				<biostatMet>0</biostatMet>
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
 				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
 				<displayCategory>Isekai_Genes_Schemas</displayCategory>
 				<displayOrderInCategory>102</displayOrderInCategory>
-				
-				<selectionWeight>0</selectionWeight>
-				<canGenerateInGeneSet>false</canGenerateInGeneSet>
 				
 				<modExtensions>
 					<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
 						<schema>Isekai_Magic</schema>
 					</li>
 				</modExtensions>
-				<!--biostatMet>-1</biostatMet-->
-				<!-- <symbolPack>
-					<prefixSymbols>
-						<li><symbol>...</symbol></li>
-					</prefixSymbols>
-				</symbolPack> -->
 			</GeneDef>
 
 
@@ -96,24 +84,20 @@
 				<label>Starting Race</label>
 				<description>You can choose a starting race to begin your adventure.</description>
 				
+				<biostatCpx>0</biostatCpx>
+				<biostatMet>0</biostatMet>
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
 				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
 				<displayCategory>Isekai_Genes_Schemas</displayCategory>
 				<displayOrderInCategory>103</displayOrderInCategory>
-				
-				<selectionWeight>0</selectionWeight>
-				<canGenerateInGeneSet>false</canGenerateInGeneSet>
 				
 				<modExtensions>
 					<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
 						<schema>Isekai_Starting</schema>
 					</li>
 				</modExtensions>
-				<!--biostatMet>-1</biostatMet-->
-				<!-- <symbolPack>
-					<prefixSymbols>
-						<li><symbol>...</symbol></li>
-					</prefixSymbols>
-				</symbolPack> -->
 			</GeneDef>
 
 

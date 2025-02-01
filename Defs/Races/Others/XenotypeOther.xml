@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+
+	<!-- Races -->
+
+		
+		<!-- Adventurer -->
+	
+			<XenotypeDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Xeno_Adventurer</defName>
+				<label>Adventurer</label>
+				<description>An adventurer who embarks on a new journey.</description>
+				<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
+
+				<combatPowerFactor>0</combatPowerFactor>
+				<inheritable>true</inheritable>
+				<factionlessGenerationWeight>0</factionlessGenerationWeight>
+
+				<genes>
+					<li>Isekai_Gene_Adventurer</li>
+					<!--li>Isekai_GeneSchema_Resistances</li>
+					<li>Isekai_GeneSchema_Body</li>
+					<li>Isekai_GeneSchema_Magic</li-->
+				</genes>
+			</XenotypeDef>
+
+
+		<!-- Otherworlder -->
+	
+			<XenotypeDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Xeno_Otherworlder</defName>
+				<label>Otherworlder</label>
+				<description>This pawn comes from another rim and was summoned or reincarnated.</description>
+				<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
+				
+				<combatPowerFactor>0</combatPowerFactor>
+				<inheritable>true</inheritable>
+				<factionlessGenerationWeight>0</factionlessGenerationWeight>
+				
+				<genes>
+					<li>Isekai_Gene_Otherworlder</li>
+				</genes>
+			</XenotypeDef>
+		
+		
+		
+		
+
+
+</Defs>

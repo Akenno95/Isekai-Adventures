@@ -9,10 +9,10 @@
 			<externalViolence>true</externalViolence>
 			<deathMessage>{0} has been cut to death.</deathMessage>
 			<hediff>Isekai_Cut_Small</hediff>
-			<hediffSolid>Crush</hediffSolid>
+			<!-- <hediffSolid>Crush</hediffSolid> -->
 			<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 			<impactSoundType>Slice</impactSoundType>
-			<armorCategory>Sharp</armorCategory>
+			<armorCategory>Magic</armorCategory>
 			<overkillPctToDestroyPart>0.8~1.5</overkillPctToDestroyPart>
 			<isRanged>true</isRanged>
 			<makesAnimalsFlee>true</makesAnimalsFlee>

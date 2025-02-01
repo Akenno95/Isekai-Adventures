@@ -96,40 +96,7 @@
 				<maxSeverity>10</maxSeverity>
 				<defaultInstallPart>Isekai_BodyParts_MaterialBody</defaultInstallPart>
 				<stages>
-					<li>
-						<label>tiny</label>
-						<statFactors>
-							<StaggerDurationFactor>0.95</StaggerDurationFactor>
-						</statFactors>
-					</li>
-					<li>
-						<minSeverity>2</minSeverity>
-						<label>minor</label>
-						<statFactors>
-							<StaggerDurationFactor>0.9</StaggerDurationFactor>
-						</statFactors>
-					</li>
-					<li>
-						<minSeverity>3</minSeverity>
-						<label>moderate</label>
-						<statFactors>
-							<StaggerDurationFactor>0.85</StaggerDurationFactor>
-						</statFactors>
-					</li>
-					<li>
-						<minSeverity>4</minSeverity>
-						<label>good</label>
-						<statFactors>
-							<StaggerDurationFactor>0.8</StaggerDurationFactor>
-						</statFactors>
-					</li>
-					<li>
-						<minSeverity>5</minSeverity>
-						<label>high</label>
-						<statFactors>
-							<StaggerDurationFactor>0.7</StaggerDurationFactor>
-						</statFactors>
-					</li>
+					
 				</stages>
 
 				<comps>
@@ -191,55 +158,64 @@
 				<stages>
 				</stages>
 				<comps>
-					<li Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver">
-					<verbs>
-						<li>
-							<verbClass>Verb_Shoot</verbClass>
-							<label>Wind slash</label>
-							<hasStandardCommand>True</hasStandardCommand>
-							<defaultProjectile>Isekai_Projectile_WindSlash</defaultProjectile>
-							<!-- <forcedMissRadius>4.9</forcedMissRadius> -->
-							<burstShotCount>3</burstShotCount>
-							<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
-							<warmupTime>0.5</warmupTime>
-							<!-- <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius> -->
-							<range>15</range>
-							<soundCast>InfernoCannon_Fire</soundCast>
-							<soundCastTail>GunTail_Heavy</soundCastTail>
-							<onlyManualCast>true</onlyManualCast>
-							<stopBurstWithoutLos>false</stopBurstWithoutLos>
-							<targetParams>
-								<canTargetLocations>true</canTargetLocations>
-							</targetParams>
-							<muzzleFlashScale>14</muzzleFlashScale>
-							<commandIcon>Things/Item/Equipment/WeaponRanged/Minigun</commandIcon>
-						</li>
-					</verbs>
-					<verbProps>
-						<li>
-						<label>test</label>
-						<canBeToggled>true</canBeToggled>
-						<comps>
-							<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
-							<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
-							<cooldownTime>600</cooldownTime>
-							</li>
-							<!-- <li Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable">
-							<compClass>MVCF.Reloading.Comps.VerbComp_Reloadable</compClass>
-							<AmmoFilter>
-								<thingDefs>
-								<li>Chemfuel</li>
-								</thingDefs>
-							</AmmoFilter>
-							<ItemsPerShot>5</ItemsPerShot>
-							<MaxShots>8</MaxShots>
-							<ReloadSound>Reload_Standard</ReloadSound>
-							<ReloadTimePerShot>1</ReloadTimePerShot>
-							</li> -->
-						</comps>
-						</li>
-					</verbProps>
+					<li Class="HediffCompProperties_Disappears">
+						<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+						<showRemainingTime>True</showRemainingTime>
 					</li>
+					<li Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver">
+						<verbs>
+							<li>
+								<verbClass>Verb_Shoot</verbClass>
+								<label>Wind slash</label>
+								<hasStandardCommand>True</hasStandardCommand>
+								<defaultProjectile>Isekai_Projectile_WindSlash</defaultProjectile>
+								<!-- <forcedMissRadius>4.9</forcedMissRadius> -->
+								<burstShotCount>3</burstShotCount>
+								<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+								<warmupTime>0.5</warmupTime>
+								<!-- <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius> -->
+								<range>15</range>
+								<soundCast>InfernoCannon_Fire</soundCast>
+								<soundCastTail>GunTail_Heavy</soundCastTail>
+								<onlyManualCast>true</onlyManualCast>
+								<stopBurstWithoutLos>false</stopBurstWithoutLos>
+								<targetParams>
+									<canTargetLocations>true</canTargetLocations>
+								</targetParams>
+								<muzzleFlashScale>14</muzzleFlashScale>
+								<commandIcon>Projectile/WindCut</commandIcon>
+							</li>
+						</verbs>
+						<verbProps>
+							<li>
+								<label>test</label>
+								<canBeToggled>true</canBeToggled>
+								<comps>
+									<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+									<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+									<cooldownTime>600</cooldownTime>
+									</li>
+									<!-- <li Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable">
+									<compClass>MVCF.Reloading.Comps.VerbComp_Reloadable</compClass>
+									<AmmoFilter>
+										<thingDefs>
+										<li>Chemfuel</li>
+										</thingDefs>
+									</AmmoFilter>
+									<ItemsPerShot>5</ItemsPerShot>
+									<MaxShots>8</MaxShots>
+									<ReloadSound>Reload_Standard</ReloadSound>
+									<ReloadTimePerShot>1</ReloadTimePerShot>
+									</li> -->
+								</comps>
+							</li>
+						</verbProps>
+					</li>
+					<!-- <li Class="HediffCompProperties_RemoveIfOtherHediff">
+						<hediffs>
+							<li>Tensura_Race_Slime</li>
+						</hediffs>
+					</li> -->
 				</comps>
 								
 				

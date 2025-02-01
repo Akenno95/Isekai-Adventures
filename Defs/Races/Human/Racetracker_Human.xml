@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		
+	<!-- Races and more -->		
+		
+		<!-- Human -->
+		
+		<HediffDef>
+			<defName>Isekai_Race_Human</defName>
+			<description>This is a human with special abilities.</description>
+			<label>Human</label>
+
+			<!-- Include this class for best behaviour. -->
+			<hediffClass>BigAndSmall.RaceTracker</hediffClass>
+			<defaultLabelColor>(0.5, 0.5, 1.0)</defaultLabelColor>
+	
+			<!-- Make sure healer mech serums don't decide to remove the tracker. -->
+			<isBad>false</isBad>
+			<everCurableByItem>false</everCurableByItem>
+	
+			<initialSeverity>1</initialSeverity>
+	
+			<disablesNeeds>
+				<!-- <li>Comfort</li> -->
+				<!-- <li>Mood</li> -->
+				<!-- <li>Rest</li>
+				<li>Beauty</li>
+				<li>Outdoors</li>
+				<li>Indoors</li> -->
+				<!-- <li>Joy</li> -->
+				<!-- <li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
+				<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
+				<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
+				<li>Food</li> -->
+			</disablesNeeds>
+	
+			<!--
+			"Stages", even if you just have one is a useful way to control a lot of rimworld behaviour.
+	
+			They will also show up for the user, so you may want to put some statOffsets and such in here simply for the sake of clarity.
+			-->
+			<stages Inherit="False">
+				<li>
+					<label>Human</label>
+
+					<statOffsets>
+						<!-- <Isekai_Magic_MaxMP>1000</Isekai_Magic_MaxMP>
+						<Isekai_Magic_MPRecovery>5</Isekai_Magic_MPRecovery>
+						<Isekai_Magic_AbsMinMP>-500</Isekai_Magic_AbsMinMP> -->
+					</statOffsets>
+					<statFactors>
+						<!-- <Isekai_Magic_MaxMP>3</Isekai_Magic_MaxMP>
+						<Isekai_Magic_MPRecovery>2</Isekai_Magic_MPRecovery>
+						<Isekai_Magic_AbsMinMP>1.5</Isekai_Magic_AbsMinMP>
+						<InjuryHealingFactor>5</InjuryHealingFactor> -->
+					</statFactors>
+					<capMods>
+					</capMods>
+			
+					<makeImmuneTo>
+						<!-- <li>Flu</li>
+						<li>Malaria</li>
+						<li>SleepingSickness</li>
+						<li>Plague</li>
+						<li>WoundInfection</li>
+						<li>LungRot</li>
+						<li>GutWorms</li>
+						<li>MuscleParasites</li>
+						<li>OrganDecay</li>
+						<li>LungRot</li>
+						<li>FoodPoisoning</li>
+						<li>HeartArteryBlockage</li>
+						<li>Asthma</li>
+						<li>Alzheimers</li>
+						<li>Dementia</li>
+						<li>HearingLoss</li>
+						<li>Cataract</li>
+						<li>Frail</li>
+						<li>BadBack</li>
+						<li>Carcinoma</li>
+						<li>HeartAttack</li> -->
+					</makeImmuneTo>
+				</li>
+				<li>
+					<minSeverity>2</minSeverity>
+					<label>Enlightened Human</label>
+
+					<statOffsets>
+						<!-- <Isekai_Magic_MaxMP>1000</Isekai_Magic_MaxMP>
+						<Isekai_Magic_MPRecovery>5</Isekai_Magic_MPRecovery>
+						<Isekai_Magic_AbsMinMP>-500</Isekai_Magic_AbsMinMP> -->
+					</statOffsets>
+					<statFactors>
+						<!-- <Isekai_Magic_MaxMP>3</Isekai_Magic_MaxMP>
+						<Isekai_Magic_MPRecovery>2</Isekai_Magic_MPRecovery>
+						<Isekai_Magic_AbsMinMP>1.5</Isekai_Magic_AbsMinMP>
+						<InjuryHealingFactor>5</InjuryHealingFactor> -->
+					</statFactors>
+					<capMods>
+					</capMods>
+			
+					<makeImmuneTo>
+						<!-- <li>Flu</li>
+						<li>Malaria</li>
+						<li>SleepingSickness</li>
+						<li>Plague</li>
+						<li>WoundInfection</li>
+						<li>LungRot</li>
+						<li>GutWorms</li>
+						<li>MuscleParasites</li>
+						<li>OrganDecay</li>
+						<li>LungRot</li>
+						<li>FoodPoisoning</li>
+						<li>HeartArteryBlockage</li>
+						<li>Asthma</li>
+						<li>Alzheimers</li>
+						<li>Dementia</li>
+						<li>HearingLoss</li>
+						<li>Cataract</li>
+						<li>Frail</li>
+						<li>BadBack</li>
+						<li>Carcinoma</li>
+						<li>HeartAttack</li> -->
+					</makeImmuneTo>
+				</li>
+				<li>
+					<minSeverity>3</minSeverity>
+					<label>Saint Human</label>
+
+					<statOffsets>
+						<!-- <Isekai_Magic_MaxMP>1000</Isekai_Magic_MaxMP>
+						<Isekai_Magic_MPRecovery>5</Isekai_Magic_MPRecovery>
+						<Isekai_Magic_AbsMinMP>-500</Isekai_Magic_AbsMinMP> -->
+					</statOffsets>
+					<statFactors>
+						<!-- <Isekai_Magic_MaxMP>3</Isekai_Magic_MaxMP>
+						<Isekai_Magic_MPRecovery>2</Isekai_Magic_MPRecovery>
+						<Isekai_Magic_AbsMinMP>1.5</Isekai_Magic_AbsMinMP>
+						<InjuryHealingFactor>5</InjuryHealingFactor> -->
+					</statFactors>
+					<capMods>
+					</capMods>
+			
+					<makeImmuneTo>
+						<!-- <li>Flu</li>
+						<li>Malaria</li>
+						<li>SleepingSickness</li>
+						<li>Plague</li>
+						<li>WoundInfection</li>
+						<li>LungRot</li>
+						<li>GutWorms</li>
+						<li>MuscleParasites</li>
+						<li>OrganDecay</li>
+						<li>LungRot</li>
+						<li>FoodPoisoning</li>
+						<li>HeartArteryBlockage</li>
+						<li>Asthma</li>
+						<li>Alzheimers</li>
+						<li>Dementia</li>
+						<li>HearingLoss</li>
+						<li>Cataract</li>
+						<li>Frail</li>
+						<li>BadBack</li>
+						<li>Carcinoma</li>
+						<li>HeartAttack</li> -->
+					</makeImmuneTo>
+				</li>
+				<li>
+					<minSeverity>4</minSeverity>
+					<label>Divine Human</label>
+
+					<statOffsets>
+						<!-- <Isekai_Magic_MaxMP>1000</Isekai_Magic_MaxMP>
+						<Isekai_Magic_MPRecovery>5</Isekai_Magic_MPRecovery>
+						<Isekai_Magic_AbsMinMP>-500</Isekai_Magic_AbsMinMP> -->
+					</statOffsets>
+					<statFactors>
+						<!-- <Isekai_Magic_MaxMP>3</Isekai_Magic_MaxMP>
+						<Isekai_Magic_MPRecovery>2</Isekai_Magic_MPRecovery>
+						<Isekai_Magic_AbsMinMP>1.5</Isekai_Magic_AbsMinMP>
+						<InjuryHealingFactor>5</InjuryHealingFactor> -->
+					</statFactors>
+					<capMods>
+					</capMods>
+			
+					<makeImmuneTo>
+						<!-- <li>Flu</li>
+						<li>Malaria</li>
+						<li>SleepingSickness</li>
+						<li>Plague</li>
+						<li>WoundInfection</li>
+						<li>LungRot</li>
+						<li>GutWorms</li>
+						<li>MuscleParasites</li>
+						<li>OrganDecay</li>
+						<li>LungRot</li>
+						<li>FoodPoisoning</li>
+						<li>HeartArteryBlockage</li>
+						<li>Asthma</li>
+						<li>Alzheimers</li>
+						<li>Dementia</li>
+						<li>HearingLoss</li>
+						<li>Cataract</li>
+						<li>Frail</li>
+						<li>BadBack</li>
+						<li>Carcinoma</li>
+						<li>HeartAttack</li> -->
+					</makeImmuneTo>
+				</li>
+			</stages>
+
+			<comps>
+			<!--
+			This comp inherits from one made for shape-shifting, but it has some useful settings for races.
+       
+			For more of its properties check out CompProperties_ColorAndFur.
+			-->
+				<li Class="BigAndSmall.CompProperties_Race">
+					<!-- Determines of genes or the like can change the race of the creature. -->
+					<canSwapAwayFrom>true</canSwapAwayFrom>
+
+					<!--disableBeards>true</disableBeards>
+					<disableHair>true</disableHair-->
+	
+					<!-- Still a good idea to set this for fur-like bodies since Biotech stuff will still check skin color otherwise. -->
+					<!--skinIsHairColor>true</skinIsHairColor-->
+
+					<!-- Override the headTypeDef. I guess the NekoHarpies all appear female? -->
+					<!--headDefOverride>Female_AveragePointy</headDefOverride>
+					<headDefOverride_Female>Female_AverageNormal</headDefOverride_Female-->
+
+					<!-- Oh, of course...-->
+					<!--bodyDefOverride>Female</bodyDefOverride>
+					<bodyDefOverride_Female>Hulk</bodyDefOverride_Female-->
+				</li>
+			</comps>
+
+			<modExtensions>
+				<li Class="BigAndSmall.PawnExtension">
+					<hediffFilters>
+						<banlist>
+							<!-- Example of blocking common hediffs.
+							More powerful than the vanilla system since it will remove them if applied by unusual means. -->
+							<!-- <li>Flu</li>
+							<li>Malaria</li>
+							<li>SleepingSickness</li>
+							<li>Plague</li>
+							<li>WoundInfection</li>
+							<li>LungRot</li>
+							<li>GutWorms</li>
+							<li>MuscleParasites</li>
+							<li>OrganDecay</li>
+							<li>LungRot</li>
+							<li>FoodPoisoning</li>
+							<li>HeartArteryBlockage</li>
+							<li>Asthma</li>
+							<li>Alzheimers</li>
+							<li>Dementia</li>
+							<li>HearingLoss</li>
+							<li>Cataract</li>
+							<li>Frail</li>
+							<li>BadBack</li>
+							<li>Carcinoma</li>
+							<li>HeartAttack</li> -->
+
+							<li>Isekai_ProgressTrackerRPG_Hediff_Starting</li>
+						</banlist>
+					</hediffFilters>
+					<traitFilters>
+						<blacklist>
+							<!-- <li>Wimp</li> -->
+						</blacklist>
+					</traitFilters>
+					<nullsThoughts>
+						<!-- <li MayRequire="Ludeon.Rimworld.Ideology">AgeReversalReceived</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">AgeReversalDemanded</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinUncovered_Disapproved_Male</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinUncovered_Disapproved_Social_Male</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinOrChestUncovered_Disapproved_Male</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinOrChestUncovered_Disapproved_Social_Male</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinChestOrHairUncovered_Disapproved_Male</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinChestOrHairUncovered_Disapproved_Social_Male</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinUncovered_Disapproved_Female</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinUncovered_Disapproved_Social_Female</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinOrChestUncovered_Disapproved_Female</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinOrChestUncovered_Disapproved_Social_Female</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinChestOrHairUncovered_Disapproved_Female</li>
+						<li MayRequire="Ludeon.Rimworld.Ideology">GroinChestOrHairUncovered_Disapproved_Social_Female</li>
+						<li>Naked</li>
+						<li>AteWithoutTable</li>
+						<li>SoakingWet</li>
+						<li>ButcheredHumanlikeCorpse</li>
+						<li>KnowButcheredHumanlikeCorpse</li>
+						<li>ButcheredHumanlikeCorpseOpinion</li>
+						<li>ObservedLayingCorpse</li>
+						<li>ObservedLayingRottingCorpse</li>
+						<li>WitnessedDeathNonAlly</li> -->
+					</nullsThoughts>
+					<geneTagFilters>
+						<blacklist>
+							<!-- We've already got wings. We don't want to permit genes that add extra wings ontop. -->
+							<!-- <li>Wing</li>
+							<li>Wings</li> -->
+						</blacklist>
+					</geneTagFilters>
+					<immutableEndogenes>
+						<!-- Perhaps Perhaps you find the idea of bearded neko-harpies absolutely unacceptable? If so you can force a gene, 
+						and prevent any other xenogenes or endogenes from overriding it. -->
+						<!--<li MayRequire="Ludeon.Rimworld.Biotech">Beard_NoBeardOnly</li>-->
+						<!--<li>Tensura_Gene_Slime_Body</li>
+						<li>Tensura_Gene_Slime_Head</li>-->
+						<li>Isekai_Gene_Adventurer</li>
+					</immutableEndogenes>
+					<geneFilters>
+						<blacklist>
+							<!-- Facial ridges on our neko harpies? Ew! No wai! -->
+							<!--<li MayRequire="Ludeon.Rimworld.Biotech">Brow_Heavy</li>
+							<li MayRequire="Ludeon.Rimworld.Biotech">FacialRidges</li>
+							<li MayRequire="Ludeon.Rimworld.Biotech">Pain_Extra</li>-->
+						</blacklist>
+					</geneFilters>
+		
+					<!-- <babyStartAge>20</babyStartAge> -->
+	
+					<aptitudes>
+						<!-- <Melee>-5</Melee>
+						<Shooting>-5</Shooting>
+						<Construction>-5</Construction>
+						<Mining>-5</Mining>
+						<Cooking>-5</Cooking>
+						<Plants>-5</Plants>
+						<Animals>-5</Animals> 
+						<Crafting>-5</Crafting>
+						<Artistic>-5</Artistic> 
+						<Medicine>-5</Medicine> 
+						<Social>-5</Social>
+						<Intellectual>-5</Intellectual> -->
+					</aptitudes>
+		
+					<!--<apparelRestrictions>
+						<!{1}**<thingDefs>
+							<blacklist>
+								<Screw flophats apparently? **{1}>
+							<!{1}**<li MayRequire="Ludeon.Rimworld.Ideology">Apparel_Flophat</li>
+							</blacklist>
+						</thingDefs>
+						<apparelLayers>
+							<blacklist>
+								<Nekoharpies can't fit in power armor.>
+								<li>Shell</li>
+							</blacklist>
+						</apparelLayers>**{1}>
+						<bodyPartGroups>
+							<whitelist>
+								
+							</whitelist>
+						</bodyPartGroups>
+					</apparelRestrictions>-->
+					
+					<surgeryRecipes>
+						<blacklist>
+							<!-- <li>InstallNaturalLiver</li>
+							<li>InstallNaturalLung</li>
+							<li>InstallNaturalKidney</li>
+							<li>InstallNaturalHeart</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty">InstallStoneskinGland</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty">InstallArmorskinGland</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty">InstallToughskinGland</li> -->
+						</blacklist>
+						<!-- <allowlist> -->
+							<!-- You can drop race-specific recipes in here -->
+						<!-- </allowlist> -->
+					</surgeryRecipes>
+
+					<!-- Not super-neccecary since we force a female body anyway, but it might help avoid confusing other mods. -->
+					<!--forceFemaleBody>true</forceFemaleBody-->
+		
+				</li>
+				
+			</modExtensions>
+			
+		</HediffDef>
+
+		
+</Defs>

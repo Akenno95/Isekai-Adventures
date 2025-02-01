@@ -12,6 +12,12 @@
 			<label>Isekai Schemas</label>
 			<displayPriorityInXenotype>49</displayPriorityInXenotype>
 		</GeneCategoryDef>
+
+		<GeneCategoryDef>
+			<defName>Isekai_Genes_Morphing</defName>
+			<label>Isekai Schemas</label>
+			<displayPriorityInXenotype>48</displayPriorityInXenotype>
+		</GeneCategoryDef>
 	
 	
 </Defs>

@@ -50,25 +50,65 @@
 				<cooldownTicksRange>200</cooldownTicksRange>  <!-- 60 ticks = 1 sec -->
 			
 				<statBases>
-					<Isekai_MPCost>25</Isekai_MPCost>
-					<!-- <Ability_Duration>60</Ability_Duration> -->
+					<Isekai_MPCost>50</Isekai_MPCost>
+					<!-- <Ability_Duration>5</Ability_Duration> -->
 				</statBases>
 				<verbProperties>		
 					<verbClass>Verb_CastAbility</verbClass>
 					<range>15</range>
 					<requireLineOfSight>True</requireLineOfSight>
-					<warmupTime>0.5</warmupTime>
+					<warmupTime>1.5</warmupTime>
 					<targetParams>
 						<canTargetLocations>true</canTargetLocations>
 					</targetParams>
 				</verbProperties>
 			
 				<comps>
+					<li Class="AthenaFramework.CompProperties_AbilityLaunchProjectileBurst">
+						<projectileDef>Isekai_Projectile_WindSlash</projectileDef>
+						<burstCount>5</burstCount>
+						<ticksBetweenShots>5</ticksBetweenShots>
+						<!-- <firingSound>...</firingSound> -->
+					</li>
+				</comps>
+			</ItsSorceryFramework.SorceryDef>
+		<!-- Slash -->
+
+			<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+				<sorcerySchema>Isekai_Magic</sorcerySchema>
+				<defName>Isekai_WindSlash1</defName>
+				<label>Wind slash</label>
+				<description>Slashing the wind.</description>
+				<level>1</level>
+				<iconPath>Projectile/WindCut</iconPath>
+				<!--warmupSound>...</warmupSound-->
+				<aiCanUse>true</aiCanUse>
+				<cooldownTicksRange>200</cooldownTicksRange>  <!-- 60 ticks = 1 sec -->
+			
+				<statBases>
+					<Isekai_MPCost>50</Isekai_MPCost>
+					<!-- <Ability_Duration>5</Ability_Duration> -->
+				</statBases>
+				<verbProperties>		
+					<verbClass>Verb_AbilityShoot</verbClass>
+					<range>15</range>
+					<requireLineOfSight>True</requireLineOfSight>
+					<warmupTime>1.5</warmupTime>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<burstShotCount>5</burstShotCount>
+					<ticksBetweenBurstShots>16</ticksBetweenBurstShots>
+					
+					<defaultProjectile>Isekai_Projectile_WindSlash</defaultProjectile>
+				</verbProperties>
+			
+				<!-- <comps>
 					<li Class="CompProperties_AbilityLaunchProjectile">
 						<projectileDef>Isekai_Projectile_WindSlash</projectileDef>
 					</li>
-				</comps>
-			</ItsSorceryFramework.SorceryDef>	
+				</comps> -->
+			</ItsSorceryFramework.SorceryDef>
 
 
 <!-- Gluttony Passive -->
@@ -86,7 +126,7 @@
 		
 			<statBases>
 				<Isekai_MPCost>100</Isekai_MPCost>
-				<Ability_Duration>60</Ability_Duration>
+				<Ability_Duration>10</Ability_Duration>		<!-- Hediff needs disappear to function -->
 			</statBases>
 			<verbProperties>		
 				<verbClass>Verb_CastAbility</verbClass>

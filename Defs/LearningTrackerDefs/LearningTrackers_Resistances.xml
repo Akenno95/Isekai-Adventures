@@ -369,6 +369,58 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
+		<!-- Magic Armor -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+				<defName>Isekai_Resistances_Node_MagicResistance1</defName>
+				<label>Magic Damage Resistance 1</label>
+				<description>You can lower down the magic damage you receive with this ability.</description>
+				
+				<coordX>0</coordX>
+				<coordY>6</coordY>
+				<pointReq>1</pointReq>
+				
+				<statOffsets>
+					<ArmorRating_Magic>0.2</ArmorRating_Magic>
+				</statOffsets>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+			
+			
+		<!-- Elemental Armor -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+				<defName>Isekai_Resistances_Node_ElementalResistance1</defName>
+				<label>Elemental Damage Resistance 1</label>
+				<description>You can lower down the elemental damage you receive with this ability.</description>
+				
+				<coordX>1</coordX>
+				<coordY>6</coordY>
+				<pointReq>1</pointReq>
+				
+				<statOffsets>
+					<ArmorRating_Elemental>0.2</ArmorRating_Elemental>
+				</statOffsets>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+			
+			
+		<!-- HolyDemonic Armor -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Resistances_LearningTrackerTree</learningTrackerDef>
+				<defName>Isekai_Resistances_Node_HolyResistance1</defName>
+				<label>Holy Damage Resistance 1</label>
+				<description>You can lower down the holy damage you receive with this ability.</description>
+				
+				<coordX>2</coordX>
+				<coordY>6</coordY>
+				<pointReq>1</pointReq>
+				
+				<statOffsets>
+					<ArmorRating_Holy>0.2</ArmorRating_Holy>
+				</statOffsets>
+			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
 

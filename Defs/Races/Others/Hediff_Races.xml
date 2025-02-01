@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+
+	<!-- Races -->
+
+		
+		<!-- Adventurer -->
+		
+			<HediffDef ParentName="DiseaseBase">
+				<defName>Isekai_Hediff_Adventurer</defName>
+				<label>Adventurer</label>
+				<description>This is an adventurer who is roaming around the Rim.</description>
+				<isBad>false</isBad>
+				<everCurableByItem>false</everCurableByItem>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>1</maxSeverity>
+				<comps>
+					<li Class="EBSGFramework.HediffCompProperties_TemporaryGenes">
+						<genesAtSeverities>
+							<li>
+								<genes>
+									<li>Isekai_GeneSchema_Resistances</li>
+									<li>Isekai_GeneSchema_Body</li>
+									<li>Isekai_GeneSchema_Magic</li>
+								</genes>
+								<minSeverity>0</minSeverity>
+							</li>
+						</genesAtSeverities>
+					</li>
+				</comps>
+			</HediffDef>
+
+		
+		<!-- Otherworlder -->
+		
+			<HediffDef ParentName="DiseaseBase">
+				<defName>Isekai_Hediff_Otherworlder</defName>
+				<label>Otherworlder</label>
+				<description>This pawn comes from another rim and was summoned or reincarnated.</description>
+				<isBad>false</isBad>
+				<everCurableByItem>false</everCurableByItem>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>10</maxSeverity>
+				<comps>
+					<li Class="EBSGFramework.HediffCompProperties_TemporaryGenes">
+						<genesAtSeverities>
+							<li>
+								<genes>
+									<!-- <li>Isekai_GeneSchema_Resistances</li>
+									<li>Isekai_GeneSchema_Body</li>
+									<li>Isekai_GeneSchema_Magic</li> -->
+									<li>Isekai_GeneSchema_Starting</li>
+								</genes>
+								<minSeverity>0</minSeverity>
+							</li>
+						</genesAtSeverities>
+					</li>
+				</comps>
+				<stages>
+					<li>
+						<label>Summoned</label>			
+					</li>
+					<li>
+						<minSeverity>2</minSeverity>
+						<label>Stray</label>
+					</li>
+					<li>
+						<minSeverity>3</minSeverity>
+						<label>Reincarnated</label>
+					</li>
+				</stages>
+			</HediffDef>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+</Defs>

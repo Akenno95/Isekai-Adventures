@@ -26,7 +26,7 @@
 						<MeleeDamageFactor MayRequire="ludeon.rimworld.biotech">2.0</MeleeDamageFactor-->
 					</statOffsets>
 					<capMods>
-						<li>
+						<!-- <li>
 							<capacity>BloodFiltration</capacity>
 							<offset>0.001</offset>
 						</li>
@@ -69,7 +69,7 @@
 						<li>
 							<capacity>Talking</capacity>
 							<offset>0.001</offset>
-						</li>
+						</li> -->
 					</capMods>
 				</li>
 				<li>
@@ -80,6 +80,52 @@
 						<!--PainShockThreshold>1.0</PainShockThreshold>
 						<InjuryHealingFactor>10</InjuryHealingFactor-->
 					</statOffsets>
+					<capMods>
+						<li>
+							<capacity>BloodFiltration</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>BloodPumping</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Breathing</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Consciousness</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Eating</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Hearing</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Manipulation</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Metabolism</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Moving</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Talking</capacity>
+							<offset>0.01</offset>
+						</li>
+					</capMods>
 				</li>
 				
 			</levelFactors>

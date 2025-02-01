@@ -42,13 +42,9 @@
 				</exclusiveNodes>
 				
 				<hediffAdd>
-					<li><hediffDef>Isekai_Race_Human</hediffDef><severity>1</severity></li>
+					<li><hediffDef>Isekai_Morph_Human</hediffDef><severity>1</severity></li>
 				</hediffAdd>
 				
-				<!-- <statOffsets>
-					<ArmorRating_Blunt>10.0</ArmorRating_Blunt>
-					<ArmorRating_Sharp>10.0</ArmorRating_Sharp>
-				</statOffsets> -->
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -66,7 +62,7 @@
 				
 				<prereqsHediff>
 					<li>
-						<key>Isekai_Otherworlder</key>
+						<key>Isekai_Hediff_Otherworlder</key>
 						<value>3</value>
 					</li>
 				</prereqsHediff>
@@ -79,10 +75,6 @@
 					<li><hediffDef>Tensura_Morph_Slime</hediffDef><severity>1</severity></li>
 				</hediffAdd>
 				
-				<!-- <statOffsets>
-					<ArmorRating_Blunt>10.0</ArmorRating_Blunt>
-					<ArmorRating_Sharp>10.0</ArmorRating_Sharp>
-				</statOffsets> -->
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			

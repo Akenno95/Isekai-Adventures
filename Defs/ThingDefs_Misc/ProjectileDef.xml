@@ -46,6 +46,14 @@
 					<armorPenetrationBase>0</armorPenetrationBase>
 					<stoppingPower>1</stoppingPower>
 					<speed>50</speed>
+					<!-- <extraDamages>
+						<li>
+							<def>Isekai_SlashDamage</def>
+							<amount>50</amount>
+							<armorPenetration>0</armorPenetration>
+							<chance>90</chance>
+						</li>
+					</extraDamages> -->
 				</projectile>
 
 				<comps>
