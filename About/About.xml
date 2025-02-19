@@ -5,7 +5,7 @@
 		<author>Akenno</author>
 		<supportedVersions><li>1.5</li></supportedVersions>
 		<packageId>Akenno.Isekai</packageId>
-		<description>Isekai Adventures - Mod Project with abilities and races from Isekai Animes like "Reincarnated as a Slime"!</description>
+		<description>Isekai Adventures - Mod Project with abilities and races from typical isekai / reincarnated animes!</description>
 		<modDependencies>
 			<li>
 				<packageId>Zomuro.ItsSorcery</packageId>
@@ -21,6 +21,11 @@
 				<packageId>RedMattis.BetterPrerequisites</packageId>
 				<displayName>Better Gene Prerequisites</displayName>
 				<steamWorkshopUrl>steam://url/CommunityFilePage/2925432336</steamWorkshopUrl>
+			</li>
+			<li>
+				<packageId>RedMattis.BigSmall.Core</packageId>
+				<displayName>Big and Small - Genes &amp; More</displayName>
+				<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2920751126</steamWorkshopUrl>
 			</li>
 			<li>
 				<packageId>smartkar.athenaframework</packageId>

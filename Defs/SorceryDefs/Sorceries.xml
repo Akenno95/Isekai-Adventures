@@ -64,7 +64,7 @@
 				</verbProperties>
 			
 				<comps>
-					<li Class="AthenaFramework.CompProperties_AbilityLaunchProjectileBurst">
+					<li Class="IsekaiAdventures.CompProperties_AbilityLaunchProjectileBurst">
 						<projectileDef>Isekai_Projectile_WindSlash</projectileDef>
 						<burstCount>5</burstCount>
 						<ticksBetweenShots>5</ticksBetweenShots>
@@ -131,10 +131,11 @@
 			<verbProperties>		
 				<verbClass>Verb_CastAbility</verbClass>
 				<range>15</range>
-				<!-- requireLineOfSight>True</requireLineOfSight -->
+				<requireLineOfSight>True</requireLineOfSight>
 				<warmupTime>1</warmupTime>
 				<targetParams>
-					<canTargetSelf>true</canTargetSelf>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetSelf>false</canTargetSelf>
 					<canTargetBuildings>false</canTargetBuildings>
 					<canTargetMechs>false</canTargetMechs>
 				</targetParams>

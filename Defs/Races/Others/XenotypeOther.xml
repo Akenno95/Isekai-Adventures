@@ -4,8 +4,7 @@
 
 	<!-- Races -->
 
-		
-		<!-- Adventurer -->
+		<!-- Adventurer + BodySwitch -->
 	
 			<XenotypeDef MayRequire = "Ludeon.RimWorld.Biotech">
 				<defName>Isekai_Xeno_Adventurer</defName>
@@ -18,11 +17,19 @@
 				<factionlessGenerationWeight>0</factionlessGenerationWeight>
 
 				<genes>
-					<li>Isekai_Gene_Adventurer</li>
+					<!-- <li>Isekai_Gene_Adventurer</li> -->
 					<!--li>Isekai_GeneSchema_Resistances</li>
 					<li>Isekai_GeneSchema_Body</li>
 					<li>Isekai_GeneSchema_Magic</li-->
 				</genes>
+				<modExtensions>
+				<!-- This makes the game toggle to your race when the pawn is spawned in as a new creature. It does not require any special genes to do so. -->
+					<li Class="BetterPrerequisites.XenotypeExtension">
+						<setRace>Isekai_Race_Human</setRace>
+						<!-- If set to true it will also be able to force itself over other races, such as HAR races. -->
+						<forceRace>true</forceRace>
+					</li>
+				</modExtensions>
 			</XenotypeDef>
 
 

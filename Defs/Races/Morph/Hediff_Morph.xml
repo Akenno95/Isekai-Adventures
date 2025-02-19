@@ -2,9 +2,9 @@
 <Defs>
 
 		
-	<!-- Body Switch -->		
+	<!-- Human -->		
 		
-		<!-- Hediff -->
+		<!-- Morph Human -->
 			
 			<HediffDef ParentName="DiseaseBase">
 				<defName>Isekai_Morph_Human</defName>
@@ -25,6 +25,30 @@
 				<stages>
 				</stages>
 			</HediffDef>
+		
+
+		<!-- XenoChange Human -->				<!-- only for visuals -->
+			
+			<HediffDef ParentName="DiseaseBase">
+				<defName>Isekai_XenoChange_Human</defName>
+				<label>Human morphing</label>
+				<description>Morphing into a human...</description>
+				<isBad>false</isBad>
+				<everCurableByItem>false</everCurableByItem>
+				<initialSeverity>1</initialSeverity>
+				<comps>
+					<li Class="EBSGFramework.HediffCompProperties_AlterXenotype">
+						<xenotypes>
+							<Isekai_XenoChange_Human>1</Isekai_XenoChange_Human>
+						</xenotypes>
+						<severities>1~999</severities>
+						<setXenotype>True</setXenotype>		<!-- Changed -->
+					</li>
+				</comps>
+				<stages>
+				</stages>
+			</HediffDef>
+
 
 
 		

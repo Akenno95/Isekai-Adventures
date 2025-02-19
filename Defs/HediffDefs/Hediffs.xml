@@ -53,6 +53,12 @@
 						<statFactors>
 							<StaggerDurationFactor>0.95</StaggerDurationFactor>
 						</statFactors>
+						<!-- <capMods>
+							<li>
+								<capacity>Sight</capacity>
+								<offset>0.5</offset>
+							</li>
+						</capMods> -->
 					</li>
 					<li>
 						<minSeverity>2</minSeverity>
@@ -217,11 +223,114 @@
 						</hediffs>
 					</li> -->
 				</comps>
-								
-				
-		</HediffDef>
+			</HediffDef>
 		
 
+		<!-- Magical Sight -->
+		
+			<HediffDef ParentName="DiseaseBase">
+				<defName>Isekai_Hediff_MagicalSight</defName>
+				<label>Magical sight</label>
+				<description>Might reveal hidden monsters.</description>
+				<defaultLabelColor>(1.0, 1.0, 1.0)</defaultLabelColor>
+				<isBad>false</isBad>
+				<minSeverity>0</minSeverity>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>1</maxSeverity>
+				<stages>
+					<li>
+						<capMods>
+							<li>
+								<capacity>Sight</capacity>
+								<offset>1.0</offset>
+							</li>
+						</capMods>
+
+						<statOffsets>
+							<Isekai_Magic_MaxMP>-500</Isekai_Magic_MaxMP>
+						</statOffsets>
+					</li>
+				</stages>
+				<comps>
+					<li Class="EBSGFramework.HediffCompProperties_GiveHediffsToNonAlliesInRange">
+						<hediff>Isekai_Hediff_MagicalSeen</hediff>
+						<range>30</range>
+						<!-- <rangeStat>SHG_Debuffer_Range</rangeStat> -->
+						<!-- <mote>Mote_SparkThrown</mote> -->
+						<!-- <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted> -->
+						<psychic>false</psychic>
+						<onlyWhileDrafted>false</onlyWhileDrafted>
+						<targetingParameters>
+							<canTargetBuildings>false</canTargetBuildings>
+							<canTargetAnimals>True</canTargetAnimals>
+							<canTargetMechs>True</canTargetMechs>
+						</targetingParameters>
+					</li>
+				</comps>
+			</HediffDef>
+
+		
+			<HediffDef ParentName="DiseaseBase">
+				<defName>Isekai_Hediff_MagicalSeen</defName>
+				<label>Magically seen</label>
+				<description>Invisibility is useless. You can't hide anymore. Leaves a hidden mark on the pawn that removes invisibility in range.</description>
+				<defaultLabelColor>(1.0, 1.0, 1.0)</defaultLabelColor>
+				<isBad>false</isBad>
+				<minSeverity>0</minSeverity>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>1</maxSeverity>
+				<stages>
+					<li>
+						<makeImmuneTo>
+							<li MayRequire="Ludeon.Rimworld.Anomaly">HoraxianInvisibility</li>
+						</makeImmuneTo>
+					</li>
+				</stages>
+				<comps>
+					<li Class="HediffCompProperties_Disappears">
+						<!-- <disappearsAfterTicks>36000</disappearsAfterTicks>
+						<showRemainingTime>True</showRemainingTime> -->
+					</li>
+				</comps>
+				<modExtensions>
+					<li Class="BigAndSmall.PawnExtension">
+						<hediffFilters>
+							<banlist>
+								<li MayRequire="Ludeon.Rimworld.Anomaly">HoraxianInvisibility</li>
+							</banlist>
+						</hediffFilters>
+					</li>
+				</modExtensions>
+			</HediffDef>
+
+
+	<!-- Skill Points -->
+
+		<!--  -->
+
+			<HediffDef ParentName="DiseaseBase">
+				<defName>Isekai_SkillPoints</defName>
+				<label>Skill points available</label>
+				<description>Skill Points that can used to get special boni.</description>
+				<defaultLabelColor>(0.6, 0.6, 0.0)</defaultLabelColor>
+				<isBad>false</isBad>
+				<minSeverity>0</minSeverity>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>100</maxSeverity>
+				<stages>
+					
+				</stages>
+
+				 <comps>
+					<li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+						<prependString>Skill Points : </prependString>
+						<!-- <appendString>%</appendString> -->
+						<!-- <postFactor>20</postFactor> -->
+						<roundDigits>0</roundDigits>
+					</li>
+				</comps>
+
+			</HediffDef>
 
 
 </Defs>

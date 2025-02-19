@@ -19,6 +19,10 @@
 				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
 				<defName>Isekai_Body_LearningTrackerTree_Rank</defName>
 				<label>Rank</label>
+
+				<defaultLocked>true</defaultLocked>
+				<lockedLabel>Unknown</lockedLabel>
+				<unlockTip>May need more training of the body.</unlockTip>
 			</ItsSorceryFramework.LearningTrackerDef>
 			
 			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
@@ -26,9 +30,558 @@
 				<defName>Isekai_Body_LearningTrackerTree_Race</defName>
 				<label>Race</label>
 			</ItsSorceryFramework.LearningTrackerDef>
-				
+
+
+	<!-- Bases -->
+
+		<!-- Debug -->
+		
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiBodyDebugNodeHiding">
+				<condVisiblePrereq>false</condVisiblePrereq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+		<!-- Basics -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyDebugNodeHiding" Abstract="True" Name="IsekaiBodyBasicsNode">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+				<coordY>0</coordY>
+				<pointReq>1</pointReq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyDebugNodeHiding" Abstract="True" Name="IsekaiBodyBasicsLearningNode">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+				<coordX>2</coordX>
+				<pointReq>1</pointReq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyDebugNodeHiding" Abstract="True" Name="IsekaiBodyBodyNode">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+				<coordX>3</coordX>
+				<pointReq>1</pointReq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyDebugNodeHiding" Abstract="True" Name="IsekaiBodyCombatNode">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+				<coordX>4</coordX>
+				<pointReq>1</pointReq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyDebugNodeHiding" Abstract="True" Name="IsekaiBodySocialNode">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+				<coordX>5</coordX>
+				<pointReq>1</pointReq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyDebugNodeHiding" Abstract="True" Name="IsekaiBodyAnimalNode">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+				<coordX>6</coordX>
+				<pointReq>1</pointReq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
 				
 	<!-- Basics Skilltree -->
+
+		<!-- Basics 0y -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsNode">
+				<defName>Isekai_Body_Node_BasicsUnderstanding</defName>
+				<label>Basics understanding</label>
+				<description>Understand that you are in a new world with a lot to discover. There might be some monsters nearby.</description>
+				
+				<coordX>0</coordX>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsNode">
+				<defName>Isekai_Body_Node_BasicsLearning</defName>
+				<label>Basics learning</label>
+				<description>Learn the basics on what you need to survive, from building a shelter to gather some food, you'll find anything you want.</description>
+				
+				<coordX>1</coordX>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BasicsUnderstanding</li>
+				</prereqs>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsNode">
+				<defName>Isekai_Body_Node_BodyTraining</defName>
+				<label>Body training</label>
+				<description>After knowing the basics, you need to train your body to get stronger.</description>
+				
+				<coordX>2</coordX>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BasicsLearning</li>
+				</prereqs>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsNode">
+				<defName>Isekai_Body_Node_CombatTraining</defName>
+				<label>Combat training</label>
+				<description>You know the basics, your body is trained and you are in a good mental state. Now is the time to train your combat skills.</description>
+				
+				<coordX>3</coordX>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BodyTraining</li>
+				</prereqs>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsNode">
+				<defName>Isekai_Body_Node_SocialTraining</defName>
+				<label>Social training</label>
+				<description>If you trained way to less, maybe it is time to learn something about socialising.</description>
+				
+				<coordX>4</coordX>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_CombatTraining</li>
+				</prereqs>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsNode">
+				<defName>Isekai_Body_Node_AnimalTraining</defName>
+				<label>Animal training</label>
+				<description>Why don't you try to talk to animals, maybe they are better companions after all.</description>
+				
+				<coordX>5</coordX>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_SocialTraining</li>
+				</prereqs>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsNode">
+				<defName>Isekai_Body_Node_BasicsComplete</defName>
+				<label>Basics complete</label>
+				<description>You know all the basics and trained a bit. Now is the time to train even more and specialise in what you want to achieve in your adventure.</description>
+				
+				<coordX>7</coordX>
+
+				<pointReq>5</pointReq>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_AnimalTraining</li>
+				</prereqs>
+
+				<unlocks>
+					<li>Isekai_Body_LearningTrackerTree_Rank</li>
+				</unlocks>
+
+				<hediffAdd>
+					<li><hediffDef>Isekai_Hediff_Rank_F</hediffDef><severity>1</severity></li>
+				</hediffAdd>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+		<!-- Basics learning 2x -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsLearningNode">
+				<defName>Isekai_Body_Node_Basics_Plant</defName>
+				<label>Plant knowledge</label>
+				<description>Learn the basics of plants, how to sow and harvest them.</description>
+				
+				<coordY>1</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BasicsLearning</li>
+				</prereqs>
+
+				<statOffsets>
+					<PlantWorkSpeed>0.1</PlantWorkSpeed>
+					<PlantHarvestYield>0.1</PlantHarvestYield>
+					<ForagedNutritionPerDay>0.1</ForagedNutritionPerDay>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsLearningNode">
+				<defName>Isekai_Body_Node_Basics_Construct</defName>
+				<label>Construct knowledge</label>
+				<description>Learn the basics of construction, how to build them correctly and fast.</description>
+				
+				<coordY>2</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BasicsLearning</li>
+				</prereqs>
+
+				<statOffsets>
+					<ConstructionSpeed>0.1</ConstructionSpeed>
+					<ConstructSuccessChance>0.1</ConstructSuccessChance>
+					<FixBrokenDownBuildingSuccessChance>0.1</FixBrokenDownBuildingSuccessChance>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsLearningNode">
+				<defName>Isekai_Body_Node_Basics_Butchery</defName>
+				<label>Butchery knowledge</label>
+				<description>Learn the basics of butchery, how to butcher flesh from creatures correctly and fast.</description>
+				
+				<coordY>3</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BasicsLearning</li>
+				</prereqs>
+
+				<statOffsets>
+					<ButcheryFleshSpeed>0.1</ButcheryFleshSpeed>
+					<ButcheryFleshEfficiency>0.1</ButcheryFleshEfficiency>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsLearningNode">
+				<defName>Isekai_Body_Node_Basics_Cooking</defName>
+				<label>Cooking knowledge</label>
+				<description>Learn the basics of butchery, how to butcher flesh from creatures correctly and fast.</description>
+				
+				<coordY>4</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BasicsLearning</li>
+				</prereqs>
+
+				<statOffsets>
+					<CookSpeed>0.3</CookSpeed>
+					<FoodPoisonChance>-0.1</FoodPoisonChance>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBasicsLearningNode">
+				<defName>Isekai_Body_Node_Basics_Medical</defName>
+				<label>Medical knowledge</label>
+				<description>Learn the basics of medicine and how to tend your wounds.</description>
+				
+				<coordY>5</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BasicsLearning</li>
+				</prereqs>
+
+				<statOffsets>
+					<MedicalTendSpeed>0.1</MedicalTendSpeed>
+					<MedicalTendQuality>0.1</MedicalTendQuality>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+		<!-- Body training 3x -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBodyNode">
+				<defName>Isekai_Body_Node_Body_Movement</defName>
+				<label>Movement knowledge</label>
+				<description>Learn the basics of moving threw the rim, from general move speed to crawl speed.</description>
+				
+				<coordY>1</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BodyTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<MoveSpeed>0.3</MoveSpeed>
+					<CrawlSpeed>0.05</CrawlSpeed>
+					<CaravanRidingSpeedFactor>0.1</CaravanRidingSpeedFactor>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBodyNode">
+				<defName>Isekai_Body_Node_Body_Carrying</defName>
+				<label>Carrying knowledge</label>
+				<description>Learn the basics of carrying stuff.</description>
+				
+				<coordY>2</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BodyTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<CarryingCapacity>10</CarryingCapacity>
+					<VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">10</VEF_MassCarryCapacity>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBodyNode">
+				<defName>Isekai_Body_Node_Body_Stealth</defName>
+				<label>Stealth knowledge</label>
+				<description>Learn the basics of stealth and how to hunt without problems.</description>
+				
+				<coordY>3</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BodyTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<HuntingStealth>0.1</HuntingStealth>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBodyNode">
+				<defName>Isekai_Body_Node_Body_Temperature</defName>
+				<label>Temperature knowledge</label>
+				<description>Learn the basics of controlling the temperature of your body.</description>
+				
+				<coordY>4</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BodyTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<ComfyTemperatureMin>-5</ComfyTemperatureMin>
+					<ComfyTemperatureMax>5</ComfyTemperatureMax>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBodyNode">
+				<defName>Isekai_Body_Node_Body_Immunity</defName>
+				<label>Immunity knowledge</label>
+				<description>Learn the basics of germs and diseases to gain better immunity.</description>
+				
+				<coordY>5</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BodyTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+					<ToxicResistance>0.1</ToxicResistance>
+					<ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyBodyNode">
+				<defName>Isekai_Body_Node_Body_Mental</defName>
+				<label>Mental knowledge</label>
+				<description>Learn the basics of mental health and counter mental breaks.</description>
+				
+				<coordY>6</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_BodyTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<MentalBreakThreshold>-0.05</MentalBreakThreshold>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+		<!-- Combat training 4x -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyCombatNode">
+				<defName>Isekai_Body_Node_Combat_Melee</defName>
+				<label>Melee knowledge</label>
+				<description>Learn the basics of melee combat.</description>
+				
+				<coordY>1</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_CombatTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<MeleeDamageFactor>0.05</MeleeDamageFactor>
+					<MeleeCooldownFactor>-0.05</MeleeCooldownFactor>
+					<MeleeDoorDamageFactor MayRequire="Ludeon.Rimworld.Biotech">0.05</MeleeDoorDamageFactor>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyCombatNode">
+				<defName>Isekai_Body_Node_Combat_Dodge</defName>
+				<label>Dodge knowledge</label>
+				<description>Learn the basics of dodging and hitting targets.</description>
+				
+				<coordY>2</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_CombatTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<MeleeHitChance>5</MeleeHitChance>
+					<MeleeDodgeChance>5</MeleeDodgeChance>
+					<PawnTrapSpringChance>-0.05</PawnTrapSpringChance>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyCombatNode">
+				<defName>Isekai_Body_Node_Combat_Ranged</defName>
+				<label>Ranged knowledge</label>
+				<description>Learn the basics of ranged combat.</description>
+				
+				<coordY>3</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_CombatTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<RangedCooldownFactor>-0.05</RangedCooldownFactor>
+					<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+					<AimingDelayFactor>-0.05</AimingDelayFactor>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyCombatNode">
+				<defName>Isekai_Body_Node_Combat_Defense</defName>
+				<label>Defense knowledge</label>
+				<description>Learn the basics of defending yourself.</description>
+				
+				<coordY>4</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_CombatTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<ArmorRating_Blunt>0.01</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.01</ArmorRating_Sharp>
+					<ArmorRating_Heat>0.01</ArmorRating_Heat>
+					<ArmorRating_Magic>0.01</ArmorRating_Magic>
+					<ArmorRating_Elemental>0.01</ArmorRating_Elemental>
+					<ArmorRating_Holy>0.01</ArmorRating_Holy>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+		<!-- Social training 5x -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodySocialNode">
+				<defName>Isekai_Body_Node_Social_Talking</defName>
+				<label>Talking knowledge</label>
+				<description>Learn the basics of talking and negotiation.</description>
+				
+				<coordY>1</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_SocialTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<NegotiationAbility>0.1</NegotiationAbility>
+					<TradePriceImprovement>0.05</TradePriceImprovement>
+					<DrugSellPriceImprovement>0.1</DrugSellPriceImprovement>
+					<SocialImpact>0.05</SocialImpact>
+					<AnimalProductsSellImprovement MayRequire="Ludeon.Rimworld.Ideology">0.05</AnimalProductsSellImprovement>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodySocialNode">
+				<defName>Isekai_Body_Node_Social_Conversion</defName>
+				<label>Conversion knowledge</label>
+				<description>Learn the basics of conversion and how to work with slaves.</description>
+				
+				<coordY>2</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_SocialTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<ArrestSuccessChance>0.1</ArrestSuccessChance>
+					<ConversionPower MayRequire="Ludeon.Rimworld.Ideology">0.05</ConversionPower>
+					<CertaintyLossFactor MayRequire="Ludeon.Rimworld.Ideology">-0.1</CertaintyLossFactor>
+					<SocialIdeoSpreadFrequencyFactor MayRequire="Ludeon.Rimworld.Ideology">0.05</SocialIdeoSpreadFrequencyFactor>
+					<SuppressionPower MayRequire="Ludeon.Rimworld.Ideology">0.1</SuppressionPower>
+					<ActivitySuppressionRate MayRequire="Ludeon.Rimworld.Anomaly">0.02</ActivitySuppressionRate>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+		<!-- Animal training 6x -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyAnimalNode">
+				<defName>Isekai_Body_Node_Animal_Tame</defName>
+				<label>Taming knowledge</label>
+				<description>Learn the basics of taming and training animals.</description>
+				
+				<coordY>1</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_AnimalTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<TameAnimalChance>0.1</TameAnimalChance>
+					<TrainAnimalChance>0.05</TrainAnimalChance>
+					<BondAnimalChanceFactor>0.05</BondAnimalChanceFactor>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyAnimalNode">
+				<defName>Isekai_Body_Node_Animal_Husbandry</defName>
+				<label>Husbandry knowledge</label>
+				<description>Learn the basics of livestock farming.</description>
+				
+				<coordY>2</coordY>
+				
+				<prereqs>
+					<li>Isekai_Body_Node_AnimalTraining</li>
+				</prereqs>
+
+				<statOffsets>
+					<AnimalGatherSpeed>0.1</AnimalGatherSpeed>
+					<AnimalGatherYield>0.1</AnimalGatherYield>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+	<!-- Rank Skilltree -->
+
+
+
+
+
+
+
 				
 			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
@@ -37,19 +590,75 @@
 				<description>You can slash the enemy with this ability.</description>
 				
 				<coordX>0</coordX>
-				<coordY>10</coordY>
-				<pointReq>1</pointReq>
+				<coordY>4</coordY>
+				<pointReq>0</pointReq>
 				
 				<prereqsHediff>
 					<li>
-						<key>Isekai_Pain_Resistance</key>
+						<key>Isekai_SkillPoints</key>
 						<value>1</value>
 					</li>
 				</prereqsHediff>
 				
-				<hediffRemove>
-					<li><hediffDef>Isekai_Pain_Resistance</hediffDef></li>
-				</hediffRemove>
+				<hediffAdjust>
+					<li><hediffDef>Isekai_SkillPoints</hediffDef><severity>-1</severity></li>
+				</hediffAdjust>
+				
+				<statOffsets>
+				</statOffsets>
+				<abilityGain>
+					<li>Isekai_Slash</li>
+				</abilityGain>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+			
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Body_Node_SlashAbility1</defName>
+				<label>Slash Ability</label>
+				<description>You can slash the enemy with this ability.</description>
+				
+				<coordX>0</coordX>
+				<coordY>5</coordY>
+				<pointReq>0</pointReq>
+				
+				<prereqsHediff>
+					<li>
+						<key>Isekai_SkillPoints</key>
+						<value>1</value>
+					</li>
+				</prereqsHediff>
+				
+				<hediffAdjust>
+					<li><hediffDef>Isekai_SkillPoints</hediffDef><severity>-1</severity></li>
+				</hediffAdjust>
+				
+				<statOffsets>
+				</statOffsets>
+				<abilityGain>
+					<li>Isekai_Slash</li>
+				</abilityGain>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+			
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Basics</learningTrackerDef>
+				<defName>Isekai_Body_Node_SlashAbility2</defName>
+				<label>Slash Ability</label>
+				<description>You can slash the enemy with this ability.</description>
+				
+				<coordX>0</coordX>
+				<coordY>6</coordY>
+				<pointReq>0</pointReq>
+				
+				<prereqsHediff>
+					<li>
+						<key>Isekai_SkillPoints</key>
+						<value>2</value>
+					</li>
+				</prereqsHediff>
+				
+				<hediffAdjust>
+					<li><hediffDef>Isekai_SkillPoints</hediffDef><severity>-2</severity></li>
+				</hediffAdjust>
 				
 				<statOffsets>
 				</statOffsets>

@@ -77,7 +77,7 @@
 			</GeneDef>
 
 
-		<!-- Race -->
+		<!-- Starting Race -->
 
 			<GeneDef MayRequire = "Ludeon.RimWorld.Biotech">
 				<defName>Isekai_GeneSchema_Starting</defName>

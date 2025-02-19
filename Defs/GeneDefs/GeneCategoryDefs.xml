@@ -15,7 +15,7 @@
 
 		<GeneCategoryDef>
 			<defName>Isekai_Genes_Morphing</defName>
-			<label>Isekai Schemas</label>
+			<label>Isekai Morphing</label>
 			<displayPriorityInXenotype>48</displayPriorityInXenotype>
 		</GeneCategoryDef>
 	

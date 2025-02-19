@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+
+	<!-- Rank -->
+
+		<!-- F-Rank -->
+
+			<HediffDef ParentName="DiseaseBase">
+				<defName>Isekai_Hediff_Rank_F</defName>
+				<label>F-Rank</label>
+				<description>F-Rank. Not really a thread to anyone.</description>
+				<defaultLabelColor>(0.6, 0.6, 0.0)</defaultLabelColor>
+				<isBad>false</isBad>
+				<everCurableByItem>false</everCurableByItem>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>1</maxSeverity>
+				<stages>
+					<li>
+						<statOffsets>
+							<Isekai_Magic_MaxMP>200</Isekai_Magic_MaxMP>
+							<Isekai_Magic_AbsMinMP>-50</Isekai_Magic_AbsMinMP>
+							<Isekai_Magic_MPRecovery>1</Isekai_Magic_MPRecovery>
+						</statOffsets>
+					</li>
+				</stages>
+				<comps>
+				</comps>
+			</HediffDef>
+
 		
 		<HediffDef ParentName="DiseaseBase">
 			<defName>Isekai_Hediff_Rank</defName>
@@ -13,14 +40,14 @@
 			<stages>
 				<li>
 					<label>F-Rank</label>
-					<!--painFactor>0.9</painFactor-->
+
 					<statOffsets>
 						<Isekai_Magic_MaxMP>200</Isekai_Magic_MaxMP>
 						<Isekai_Magic_AbsMinMP>-50</Isekai_Magic_AbsMinMP>
 						<Isekai_Magic_MPRecovery>1</Isekai_Magic_MPRecovery>
 					</statOffsets>
 				</li>
-				<li>
+				<!-- <li>
 					<minSeverity>2</minSeverity>
 					<label>E-Rank</label>
 					<statOffsets>
@@ -91,7 +118,7 @@
 						<Isekai_Magic_AbsMinMP>-5000</Isekai_Magic_AbsMinMP>
 						<Isekai_Magic_MPRecovery>50</Isekai_Magic_MPRecovery>
 					</statOffsets>
-				</li>
+				</li> -->
 			</stages>
 			<!--comps>
 				 <li Class="EBSGFramework.HediffCompProperties_TemporaryGenes">

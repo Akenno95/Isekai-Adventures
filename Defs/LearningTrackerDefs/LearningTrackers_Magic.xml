@@ -58,7 +58,7 @@
 			<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
 				<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
 				<defName>Isekai_Magic_LearningTrackerTree_HolyDemonic</defName>
-				<label>Holy / Demonic Magic</label>
+				<label>Holy Magic</label>
 
 				<defaultLocked>true</defaultLocked>
 				<lockedLabel>Unknown</lockedLabel>
@@ -77,85 +77,81 @@
 		
 	<!-- Bases -->
 
+		<!-- Debug -->
+		
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicDebugNodeHiding">
+				<condVisiblePrereq>false</condVisiblePrereq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
 		<!-- Basics -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicBasicsNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
 				<coordY>0</coordY>
 				<pointReq>1</pointReq>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicUnlockNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicTypesNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
 				<coordX>3</coordX>
 				<pointReq>1</pointReq>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicFormNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicFormNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
 				<coordX>5</coordX>
 				<pointReq>1</pointReq>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicPhenomenaNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicPhenomenaNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
 				<coordX>6</coordX>
 				<pointReq>1</pointReq>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 		<!-- Advanced -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicAdvancedNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicAdvancedNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Advanced</learningTrackerDef>
 				<coordY>0</coordY>
 				<pointReq>2</pointReq>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicCompoundingNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicCompoundingNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Advanced</learningTrackerDef>
 				<coordX>5</coordX>
 				<pointReq>2</pointReq>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 		<!-- Master -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicMasterNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicMasterNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Master</learningTrackerDef>
 				<coordY>0</coordY>
 				<pointReq>3</pointReq>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicElementNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicElementNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Master</learningTrackerDef>
 				<coordX>5</coordX>
 				<pointReq>3</pointReq>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 		<!-- Aspectual -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicAspectualNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicAspectualNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Aspectual</learningTrackerDef>
 				<pointReq>1</pointReq>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 		<!-- Magical Training -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicTrainingNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicTrainingNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Training</learningTrackerDef>
 				<pointReq>1</pointReq>
 				<coordX>0</coordX>
 				<coordY>0</coordY>
-				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 		
 		
@@ -163,7 +159,7 @@
 
 		<!-- Basics 0y -->
 		
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<defName>Isekai_Magic_Node_MagicalUnderstanding</defName>
 				<label>Magical understanding</label>
 				<description>Understand that this world contains MP, also known as Magic Points, Mana Points or Magicule Points.</description>
@@ -173,7 +169,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>		
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<defName>Isekai_Magic_Node_MagicalSense</defName>
 				<label>Magical sense</label>
 				<description>Understand how to sense magic. It is everywhere! Also good to learn how to control and feel magic.</description>
@@ -187,7 +183,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<defName>Isekai_Magic_Node_MagicalTypes</defName>
 				<label>Magical types</label>
 				<description>Understand that there are several magic types. Aspectual magic, elemental magic, holy magic, demonic magic...</description>
@@ -201,7 +197,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<defName>Isekai_Magic_Node_MagicalCasting</defName>
 				<label>Magical casting</label>
 				<description>Understand how to cast magic. Some pawns might need incantations or the ability to speak to perform them. If they are trained enough, they might be able to cast without that requirement.</description>
@@ -215,7 +211,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<defName>Isekai_Magic_Node_MagicalShaping</defName>
 				<label>Magical shaping</label>
 				<description>Understand that you can shape magic in several formes. There is no limit to form the magic you want.</description>
@@ -229,7 +225,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<defName>Isekai_Magic_Node_MagicalPhenomena</defName>
 				<label>Magical phenomena</label>
 				<description>Understand that you can use phenomena such as fire or wind to materialise your magic. Aspectual magic will use this to give magic their look, while elemental magic will use this to deal damage in that category.</description>
@@ -243,7 +239,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<defName>Isekai_Magic_Node_MagicalTraining</defName>
 				<label>Magical training</label>
 				<description>Train your magic skills to evolve further.</description>
@@ -261,7 +257,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<defName>Isekai_Magic_Node_BasicsComplete</defName>
 				<label>Basics Complete</label>
 				<description>You learned the basics to cast magic! Try to improve what you know or learn even more about magic.</description>
@@ -283,7 +279,7 @@
 			
 		<!-- Magic Types 3x -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicUnlockNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTypesNode">
 				<defName>Isekai_Magic_Node_AspectualMagic</defName>
 				<label>Aspectual Magic</label>
 				<description>Aspectual magic, also known as magic schools, is magic cast directly using MP. This is the common way to cast magic. It is unaffected by physical factors for example, magical flames can't be extinguished by ordinary water. Rewrites law of nature.</description>
@@ -302,7 +298,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicUnlockNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTypesNode">
 				<defName>Isekai_Magic_Node_ElementalMagic</defName>
 				<label>Elemental Magic</label>
 				<description>Elemental magic borrows the power of spirits. You need some sort of affinity in that given element or a blessing by spirits to perform true elemental magic. Obeys law of nature.</description>
@@ -321,7 +317,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicUnlockNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTypesNode">
 				<defName>Isekai_Magic_Node_HolyDemonicMagic</defName>
 				<label>Holy / Demonic Magic</label>
 				<description>Holy and demonic magic are quite different. Holy magic applies threw the power of faith in something or someone and is considered to be an elemental magic, while demonic magic utilizes MP and is mostly available by monsters. If someone have both alignments it is referred to as chaos magic.</description>
@@ -342,7 +338,7 @@
 
 		<!-- Form types 5x -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicFormNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicFormNode">
 				<defName>Isekai_Magic_Node_Form_Ball</defName>
 				<label>Ball Form</label>
 				<description>Shape magic into the form of a ball.</description>
@@ -356,7 +352,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicFormNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicFormNode">
 				<defName>Isekai_Magic_Node_Form_Blade</defName>
 				<label>Blade Form</label>
 				<description>Shape magic into the form of a flying blade.</description>
@@ -370,7 +366,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicFormNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicFormNode">
 				<defName>Isekai_Magic_Node_Form_Stream</defName>
 				<label>Stream Form</label>
 				<description>Shape magic into the form of a stream.</description>
@@ -386,7 +382,7 @@
 
 		<!-- Phenomena types 6x -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicPhenomenaNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicPhenomenaNode">
 				<defName>Isekai_Magic_Node_Phenomena_Wind</defName>
 				<label>Wind phenomena</label>
 				<description>Learn to play with wind magic or create a visual phenomena out of it.</description>
@@ -400,7 +396,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicPhenomenaNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicPhenomenaNode">
 				<defName>Isekai_Magic_Node_Phenomena_Fire</defName>
 				<label>Fire phenomena</label>
 				<description>Learn to play with fire magic or create a visual phenomena out of it.</description>
@@ -414,7 +410,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicPhenomenaNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicPhenomenaNode">
 				<defName>Isekai_Magic_Node_Phenomena_Water</defName>
 				<label>Water phenomena</label>
 				<description>Learn to play with water magic or create a visual phenomena out of it.</description>
@@ -428,7 +424,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicPhenomenaNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicPhenomenaNode">
 				<defName>Isekai_Magic_Node_Phenomena_Earth</defName>
 				<label>Earth phenomena</label>
 				<description>Learn to play with earth magic or create a visual phenomena out of it.</description>
@@ -444,10 +440,10 @@
 
 		<!-- Abilities -->
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<defName>Isekai_Magic_Node_MagicPerception</defName>
 				<label>Magic perception</label>
-				<description>The ability to see threw magic. May enhance vision for those who can already see. Might fry human brains.</description>
+				<description>The ability to see threw magic. May enhance vision for those who can already see and might reveal whats hidden. Might fry human brains.</description>
 				
 				<coordX>4</coordX>
 				<coordY>1</coordY>
@@ -457,7 +453,7 @@
 					<li>Isekai_Magic_Node_MagicalCasting</li>
 				</prereqs>
 
-				<capMods>
+				<!-- <capMods>
 					<li>
 						<capacity>Sight</capacity>
 						<offset>1.0</offset>
@@ -466,7 +462,11 @@
 
 				<statOffsets>
 					<Isekai_Magic_MaxMP>-500</Isekai_Magic_MaxMP>
-				</statOffsets>
+				</statOffsets> -->
+
+				<hediffAdjust>
+					<li><hediffDef>Isekai_Hediff_MagicalSight</hediffDef><severity>1</severity></li>
+				</hediffAdjust>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
@@ -475,7 +475,7 @@
 
 
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicBasicsNode">
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
 				<defName>Isekai_Magic_Node_MP</defName>
 				<label>Slash Ability</label>
@@ -508,7 +508,7 @@
 
 		<!-- Basics 0y -->	
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNode">
 				<defName>Isekai_Magic_Node_AdvancedUnderstanding</defName>
 				<label>Advanced understanding</label>
 				<description>Advanced understanding of magic. Casting higher tier magic take longer and will need more MP.</description>
@@ -528,7 +528,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNode">
 				<defName>Isekai_Magic_Node_AdvancedControl</defName>
 				<label>Advanced control</label>
 				<description>Advanced understanding how magic sense and control works. Might help you out to cast low tier magic stronger.</description>
@@ -542,7 +542,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNode">
 				<defName>Isekai_Magic_Node_AdvancedCasting</defName>
 				<label>Advanced casting</label>
 				<description>Advanced understanding how magic casting works. Might help you out to cast low tier magic faster.</description>
@@ -556,7 +556,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNode">
 				<defName>Isekai_Magic_Node_AdvancedShaping</defName>
 				<label>Advanced shaping</label>
 				<description>Advanced understanding how magic shaping works. Might help you out to cast low tier magic in different ways.</description>
@@ -570,7 +570,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNode">
 				<defName>Isekai_Magic_Node_MagicalCompounding</defName>
 				<label>Magical compounding</label>
 				<description>Understand that you can combine magic schools to perform a higher magic ability, for example fire and air results in lightning magic.</description>
@@ -584,12 +584,12 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAdvancedNode">
 				<defName>Isekai_Magic_Node_AdvancedComplete</defName>
 				<label>Advanced Complete</label>
 				<description>You learned advanced magic! Try to improve what you know or learn even more about magic.</description>
 				
-				<coordX>10</coordX>
+				<coordX>7</coordX>
 
 				<pointReq>10</pointReq>
 				
@@ -606,7 +606,7 @@
 
 		<!-- Compounding types 5x -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicCompoundingNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicCompoundingNode">
 				<defName>Isekai_Magic_Node_Compounding_Lightning</defName>
 				<label>Lightning phenomena</label>
 				<description>Learn to play with lightning magic or create a visual phenomena out of it.</description>
@@ -622,7 +622,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicCompoundingNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicCompoundingNode">
 				<defName>Isekai_Magic_Node_Compounding_Magma</defName>
 				<label>Magma phenomena</label>
 				<description>Learn to play with magma magic or create a visual phenomena out of it.</description>
@@ -638,7 +638,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicCompoundingNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicCompoundingNode">
 				<defName>Isekai_Magic_Node_Compounding_Ice</defName>
 				<label>Ice phenomena</label>
 				<description>Learn to play with ice magic or create a visual phenomena out of it.</description>
@@ -653,7 +653,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicCompoundingNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicCompoundingNode">
 				<defName>Isekai_Magic_Node_Compounding_Life</defName>
 				<label>Life/Wood phenomena</label>
 				<description>Learn to play with life/wood magic or create a visual phenomena out of it.</description>
@@ -673,7 +673,7 @@
 
 		<!-- Basics 0y -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNode">
 				<defName>Isekai_Magic_Node_MasterUnderstanding</defName>
 				<label>Master understanding</label>
 				<description>Master understanding of magic. You can cast almost any magic but be aware of magic in this category, it is devastating.</description>
@@ -693,7 +693,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNode">
 				<defName>Isekai_Magic_Node_MasterControl</defName>
 				<label>Master control</label>
 				<description>Master understanding how magic sense and control works. Might help you out to cast low and mid tier magic stronger.</description>
@@ -707,7 +707,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNode">
 				<defName>Isekai_Magic_Node_MasterCasting</defName>
 				<label>Master casting</label>
 				<description>Master understanding how magic casting works. Might help you out to cast low and mid tier magic faster.</description>
@@ -721,7 +721,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNode">
 				<defName>Isekai_Magic_Node_MasterShaping</defName>
 				<label>Master shaping</label>
 				<description>Master understanding how magic shaping works. Might help you out to cast low and mid tier magic in different ways.</description>
@@ -735,7 +735,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicMasterNode">
 				<defName>Isekai_Magic_Node_MagicalElement</defName>
 				<label>Magical element</label>
 				<description>Understand that you can use higher tier phenomenas like storm from wind or inferno from fire to materialise your magic. Aspectual magic will use this to give magic their look, while elemental magic will use this to deal damage in that category.</description>
@@ -751,7 +751,7 @@
 
 		<!-- Element 5x -->	
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicElementNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicElementNode">
 				<defName>Isekai_Magic_Node_Element_Storm</defName>
 				<label>Storm phenomena</label>
 				<description>Learn to play with storm magic or create a visual phenomena out of it.</description>
@@ -766,7 +766,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicElementNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicElementNode">
 				<defName>Isekai_Magic_Node_Element_Inferno</defName>
 				<label>Inferno phenomena</label>
 				<description>Learn to play with inferno magic or create a visual phenomena out of it.</description>
@@ -781,7 +781,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicElementNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicElementNode">
 				<defName>Isekai_Magic_Node_Element_Ocean</defName>
 				<label>Ocean phenomena</label>
 				<description>Learn to play with ocean magic or create a visual phenomena out of it.</description>
@@ -796,7 +796,7 @@
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicElementNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicElementNode">
 				<defName>Isekai_Magic_Node_Element_Land</defName>
 				<label>Land phenomena</label>
 				<description>Learn to play with land magic or create a visual phenomena out of it.</description>
@@ -816,7 +816,7 @@
 
 		<!-- Basics -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAspectualNodeHiding">
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicAspectualNode">
 				<defName>Isekai_Magic_Node_WindSlash</defName>
 				<label>Wind Slash</label>
 				<description>Shape magic into the form of a blade combined with the wind phenomena to create a wind slash. This is a basic ability and it can be enhanced if you train more.</description>

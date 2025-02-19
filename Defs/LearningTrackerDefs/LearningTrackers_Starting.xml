@@ -30,12 +30,12 @@
 				<coordY>0</coordY>
 				<pointReq>0</pointReq>
 				
-				<!--prereqsHediff>
+				<prereqsHediff>
 					<li>
-						<key>Tensura_Otherworlder</key>
-						<value>0</value>
+						<key>Isekai_Hediff_Otherworlder</key>
+						<value>1</value>
 					</li>
-				</prereqsHediff-->
+				</prereqsHediff>
 				
 				<exclusiveNodes>
 					<li>Tensura_Node_Starting_Slime</li>

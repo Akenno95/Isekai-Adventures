@@ -41,7 +41,7 @@
 			<minValue>0</minValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
-			<alwaysHide>true</alwaysHide>
+			<!-- <alwaysHide>true</alwaysHide> -->
 			<displayPriorityInCategory>101</displayPriorityInCategory>
 		</StatDef>
 		
@@ -67,7 +67,7 @@
 			<minValue>0</minValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
-			<alwaysHide>true</alwaysHide>
+			<!-- <alwaysHide>true</alwaysHide> -->
 			<displayPriorityInCategory>103</displayPriorityInCategory>
 		</StatDef>
 		
@@ -83,7 +83,7 @@
 			<minValue>0</minValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
-			<alwaysHide>true</alwaysHide>
+			<!-- <alwaysHide>true</alwaysHide> -->
 			<displayPriorityInCategory>104</displayPriorityInCategory>
 			<statFactors>
 				<li>Isekai_Magic_Factor</li>
@@ -112,7 +112,7 @@
 			<minValue>0</minValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
-			<alwaysHide>true</alwaysHide>
+			<!-- <alwaysHide>true</alwaysHide> -->
 			<displayPriorityInCategory>106</displayPriorityInCategory>
 			<statFactors>
 				<li>Isekai_Magic_Factor</li>
