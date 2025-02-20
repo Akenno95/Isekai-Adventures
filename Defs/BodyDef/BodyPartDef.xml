@@ -1,7 +1,7 @@
 <Defs>
 
 
- 		 <!-- Monster Core -->
+ 	<!-- Monster Core -->
 
 		<BodyPartDef>
 			<defName>Isekai_BodyParts_Monster_Core</defName>
@@ -40,7 +40,7 @@
 		</BodyPartDef>
 
 		
-		<!-- Material Body -->
+	<!-- Material Body -->
 
 		<BodyPartDef>
 			<defName>Isekai_BodyParts_MaterialBody</defName>
@@ -85,7 +85,7 @@
 		</BodyPartDef>
 
 
-		<!-- Spiritual Body -->
+	<!-- Spiritual Body -->
 
 		<BodyPartDef>
 			<defName>Isekai_BodyParts_SpiritualBody</defName>
@@ -133,7 +133,7 @@
 		</BodyPartDef>
 
 
-		<!-- Astral Body -->
+	<!-- Astral Body -->
 
 		<BodyPartDef>
 			<defName>Isekai_BodyParts_AstralBody</defName>
@@ -181,7 +181,7 @@
 		</BodyPartDef>
 
 
-		<!-- Soul -->
+	<!-- Soul -->
 
 		<BodyPartDef>
 			<defName>Isekai_BodyParts_Soul</defName>

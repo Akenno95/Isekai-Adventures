@@ -311,7 +311,7 @@
 			<HediffDef ParentName="DiseaseBase">
 				<defName>Isekai_SkillPoints</defName>
 				<label>Skill points available</label>
-				<description>Skill Points that can used to get special boni.</description>
+				<description>Skill Points that can be used to get special boni.</description>
 				<defaultLabelColor>(0.6, 0.6, 0.0)</defaultLabelColor>
 				<isBad>false</isBad>
 				<minSeverity>0</minSeverity>

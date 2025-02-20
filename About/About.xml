@@ -28,11 +28,6 @@
 				<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2920751126</steamWorkshopUrl>
 			</li>
 			<li>
-				<packageId>smartkar.athenaframework</packageId>
-				<displayName>Athena Framework</displayName>
-				<steamWorkshopUrl>steam://url/CommunityFilePage/2903359518</steamWorkshopUrl>
-			</li>
-			<li>
 				<packageId>v1024.ebframework</packageId>
 				<displayName>Elite Bionics Framework</displayName>
 				<steamWorkshopUrl>steam://url/CommunityFilePage/1665403571</steamWorkshopUrl>

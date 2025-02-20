@@ -28,6 +28,37 @@
 				</comps>
 			</HediffDef>
 
+
+		<!-- E-Rank -->
+
+			<HediffDef ParentName="DiseaseBase">
+				<defName>Isekai_Hediff_Rank_E</defName>
+				<label>E-Rank</label>
+				<description>E-Rank. Knows the basics but is still weak.</description>
+				<defaultLabelColor>(0.65, 0.65, 0.0)</defaultLabelColor>
+				<isBad>false</isBad>
+				<everCurableByItem>false</everCurableByItem>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>1</maxSeverity>
+				<stages>
+					<li>
+						<statOffsets>
+							<Isekai_Magic_MaxMP>400</Isekai_Magic_MaxMP>
+							<Isekai_Magic_AbsMinMP>-100</Isekai_Magic_AbsMinMP>
+							<Isekai_Magic_MPRecovery>1</Isekai_Magic_MPRecovery>
+							<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+							<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+							<ArmorRating_Heat>0.05</ArmorRating_Heat>
+							<ArmorRating_Magic>0.05</ArmorRating_Magic>
+							<ArmorRating_Elemental>0.02</ArmorRating_Elemental>
+							<ArmorRating_Holy>0.02</ArmorRating_Holy>
+						</statOffsets>
+					</li>
+				</stages>
+				<comps>
+				</comps>
+			</HediffDef>
+
 		
 		<HediffDef ParentName="DiseaseBase">
 			<defName>Isekai_Hediff_Rank</defName>

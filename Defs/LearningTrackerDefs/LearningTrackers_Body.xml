@@ -77,6 +77,25 @@
 				<coordX>6</coordX>
 				<pointReq>1</pointReq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
+
+		<!-- Rank -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyDebugNodeHiding" Abstract="True" Name="IsekaiRankNode">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Rank</learningTrackerDef>
+				<coordY>0</coordY>
+				<coordX>0</coordX>
+				<pointReq>1</pointReq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+		<!-- Race -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiBodyDebugNodeHiding" Abstract="True" Name="IsekaiRaceNode">
+				<learningTrackerDef>Isekai_Body_LearningTrackerTree_Race</learningTrackerDef>
+				<coordY>0</coordY>
+				<coordX>0</coordX>
+				<pointReq>0</pointReq>
+			</ItsSorceryFramework.LearningTreeNodeDef>
+		
 				
 	<!-- Basics Skilltree -->
 
@@ -88,6 +107,10 @@
 				<description>Understand that you are in a new world with a lot to discover. There might be some monsters nearby.</description>
 				
 				<coordX>0</coordX>
+
+				<hediffAdd>
+					<li><hediffDef>Isekai_Hediff_Rank_F</hediffDef><severity>1</severity></li>
+				</hediffAdd>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -179,8 +202,12 @@
 					<li>Isekai_Body_LearningTrackerTree_Rank</li>
 				</unlocks>
 
+				<hediffRemove>
+					<li><hediffDef>Isekai_Hediff_Rank_F</hediffDef></li>
+				</hediffRemove>
+
 				<hediffAdd>
-					<li><hediffDef>Isekai_Hediff_Rank_F</hediffDef><severity>1</severity></li>
+					<li><hediffDef>Isekai_Hediff_Rank_E</hediffDef><severity>1</severity></li>
 				</hediffAdd>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
