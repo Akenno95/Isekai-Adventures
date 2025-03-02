@@ -247,7 +247,7 @@
 						</capMods>
 
 						<statOffsets>
-							<Isekai_Magic_MaxMP>-500</Isekai_Magic_MaxMP>
+							<!-- <Isekai_Magic_MaxMP>-500</Isekai_Magic_MaxMP> -->
 						</statOffsets>
 					</li>
 				</stages>

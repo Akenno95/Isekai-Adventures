@@ -453,16 +453,16 @@
 					<li>Isekai_Magic_Node_MagicalCasting</li>
 				</prereqs>
 
-				<!-- <capMods>
-					<li>
+				<capMods>
+					<!-- <li>
 						<capacity>Sight</capacity>
 						<offset>1.0</offset>
-					</li>
+					</li> -->
 				</capMods>
 
 				<statOffsets>
 					<Isekai_Magic_MaxMP>-500</Isekai_Magic_MaxMP>
-				</statOffsets> -->
+				</statOffsets>
 
 				<hediffAdjust>
 					<li><hediffDef>Isekai_Hediff_MagicalSight</hediffDef><severity>1</severity></li>
