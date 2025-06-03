@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-		<!-- Body -->
+<!-- Body -->
+	<!-- Progress Tracker Setup -->
 		<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
 			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
 			<defName>Isekai_ProgressTracker_Body</defName>
@@ -13,7 +14,29 @@
 			<skillPointLabelKey>Isekai_Body_SkillPointLabel</skillPointLabelKey>
 
 			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Body</progressHediff>
-			
+			<baseClass>Isekai_Body_Class_Basic</baseClass>
+		</ItsSorceryFramework.ProgressTrackerDef>
+
+	<!-- Class Setup -->
+		<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "Isekai_Body_ClassBase" ParentName = "ProgressTrackerClassBase">
+			<progressTrackerDef>Isekai_ProgressTracker_Body</progressTrackerDef>
+		</ItsSorceryFramework.ProgressTrackerClassDef>	
+
+	<!-- Class Body Basic -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Body_ClassBase" >
+			<defName>Isekai_Body_Class_Basic</defName>
+			<label>Body Class Basic</label>
+			<description>Body class basic for Isekai Adventures.</description>
+
+			<linkedClasses>
+				<!-- <li>
+					<classDef>Isekai_Body_Class_Test2</classDef>
+					<levelReset>true</levelReset>
+					<benefitReset>true</benefitReset>
+					<removePostClassChange>true</removePostClassChange>
+				</li> -->
+			</linkedClasses>
+
 			<levelRange>1~1000</levelRange>
 			<levelFactors>
 				<li>
@@ -142,7 +165,7 @@
 				</li>-->
 			</levelSpecifics>
 			
-			<!--<levelLabels>
+			<levelLabels>
 				<li><level>1</level><label>F-Rank</label></li>
 				<li><level>20</level><label>E-Rank</label></li>
 				<li><level>40</level><label>D-Rank</label></li>
@@ -152,14 +175,13 @@
 				<li><level>150</level><label>S-Rank</label></li>
 				<li><level>200</level><label>SS-Rank</label></li>
 				<li><level>300</level><label>SSS-Rank</label></li>
-			</levelLabels>-->
+			</levelLabels>
 			<expTags>
 				<li>Isekai_Body_EXPTag_Passive</li>
 			</expTags>
-		
-		
-		</ItsSorceryFramework.ProgressTrackerDef>
-		
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+	<!-- Hediff Setup -->
 		<HediffDef ParentName="ProgressTrackerHediffBase">
 			<defName>Isekai_ProgressTrackerRPG_Hediff_Body</defName>
 			<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>

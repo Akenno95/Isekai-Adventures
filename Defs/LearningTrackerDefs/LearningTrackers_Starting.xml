@@ -30,12 +30,12 @@
 				<coordY>0</coordY>
 				<pointReq>0</pointReq>
 				
-				<prereqsHediff>
+				<prereqHediffs>
 					<li>
 						<key>Isekai_Hediff_Otherworlder</key>
 						<value>1</value>
 					</li>
-				</prereqsHediff>
+				</prereqHediffs>
 				
 				<exclusiveNodes>
 					<li>Tensura_Node_Starting_Slime</li>
@@ -60,12 +60,12 @@
 				<coordY>1</coordY>
 				<pointReq>0</pointReq>
 				
-				<prereqsHediff>
+				<prereqHediffs>
 					<li>
 						<key>Isekai_Hediff_Otherworlder</key>
 						<value>3</value>
 					</li>
-				</prereqsHediff>
+				</prereqHediffs>
 				
 				<exclusiveNodes>
 					<li>Isekai_Node_Starting_Human</li>

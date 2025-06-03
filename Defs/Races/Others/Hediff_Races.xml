@@ -24,7 +24,7 @@
 									<li>Isekai_GeneSchema_Body</li>
 									<li>Isekai_GeneSchema_Magic</li>
 								</genes>
-								<minSeverity>0</minSeverity>
+								<validSeverity>0</validSeverity>
 							</li>
 						</genesAtSeverities>
 					</li>
@@ -52,7 +52,7 @@
 									<li>Isekai_GeneSchema_Magic</li> -->
 									<li>Isekai_GeneSchema_Starting</li>
 								</genes>
-								<minSeverity>0</minSeverity>
+								<validSeverity>0</validSeverity>
 							</li>
 						</genesAtSeverities>
 					</li>

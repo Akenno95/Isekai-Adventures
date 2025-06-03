@@ -137,9 +137,10 @@
 				<defName>Isekai_Resistances_Node_BluntResistance2</defName>
 				<label>Blunt Damage Resistance 2</label>			
 				<coordX>1</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_BluntResistance1</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -147,9 +148,10 @@
 				<defName>Isekai_Resistances_Node_BluntResistance3</defName>
 				<label>Blunt Damage Resistance 3</label>			
 				<coordX>2</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_BluntResistance2</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -157,9 +159,10 @@
 				<defName>Isekai_Resistances_Node_BluntResistance4</defName>
 				<label>Blunt Damage Resistance 4</label>			
 				<coordX>3</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_BluntResistance3</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -167,9 +170,10 @@
 				<defName>Isekai_Resistances_Node_BluntResistance5</defName>
 				<label>Blunt Damage Resistance 5</label>			
 				<coordX>4</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_BluntResistance4</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 		
@@ -186,9 +190,10 @@
 				<defName>Isekai_Resistances_Node_SharpResistance2</defName>
 				<label>Sharp Damage Resistance 2</label>
 				<coordX>1</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_SharpResistance1</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -196,9 +201,10 @@
 				<defName>Isekai_Resistances_Node_SharpResistance3</defName>
 				<label>Sharp Damage Resistance 3</label>
 				<coordX>2</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_SharpResistance2</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -206,9 +212,10 @@
 				<defName>Isekai_Resistances_Node_SharpResistance4</defName>
 				<label>Sharp Damage Resistance 4</label>
 				<coordX>3</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_SharpResistance3</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -216,9 +223,10 @@
 				<defName>Isekai_Resistances_Node_SharpResistance5</defName>
 				<label>Sharp Damage Resistance 5</label>
 				<coordX>4</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_SharpResistance4</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 		
@@ -235,9 +243,10 @@
 				<defName>Isekai_Resistances_Node_HeatResistance2</defName>
 				<label>Heat Damage Resistance 2</label>
 				<coordX>1</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_HeatResistance1</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -245,9 +254,10 @@
 				<defName>Isekai_Resistances_Node_HeatResistance3</defName>
 				<label>Heat Damage Resistance 3</label>
 				<coordX>2</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_HeatResistance2</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -255,9 +265,10 @@
 				<defName>Isekai_Resistances_Node_HeatResistance4</defName>
 				<label>Heat Damage Resistance 4</label>
 				<coordX>3</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_HeatResistance3</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -265,9 +276,10 @@
 				<defName>Isekai_Resistances_Node_HeatResistance5</defName>
 				<label>Heat Damage Resistance 5</label>
 				<coordX>4</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_HeatResistance4</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 		
 		
@@ -284,9 +296,10 @@
 				<defName>Isekai_Resistances_Node_PainResistance2</defName>
 				<label>Pain Resistance 2</label>
 				<coordX>1</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_PainResistance1</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -294,9 +307,10 @@
 				<defName>Isekai_Resistances_Node_PainResistance3</defName>
 				<label>Pain Resistance 3</label>
 				<coordX>2</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_PainResistance2</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -304,9 +318,10 @@
 				<defName>Isekai_Resistances_Node_PainResistance4</defName>
 				<label>Pain Resistance 4</label>
 				<coordX>3</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_PainResistance3</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -314,9 +329,10 @@
 				<defName>Isekai_Resistances_Node_PainResistance5</defName>
 				<label>Pain Resistance 5</label>
 				<coordX>4</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_PainResistance4</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 		
@@ -333,9 +349,10 @@
 				<defName>Isekai_Resistances_Node_StaggerResistance2</defName>
 				<label>Stagger Resistance 2</label>
 				<coordX>1</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_StaggerResistance1</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -343,9 +360,10 @@
 				<defName>Isekai_Resistances_Node_StaggerResistance3</defName>
 				<label>Stagger Resistance 3</label>
 				<coordX>2</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_StaggerResistance2</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -353,9 +371,10 @@
 				<defName>Isekai_Resistances_Node_StaggerResistance4</defName>
 				<label>Stagger Resistance 4</label>
 				<coordX>3</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_StaggerResistance3</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			
@@ -363,9 +382,10 @@
 				<defName>Isekai_Resistances_Node_StaggerResistance5</defName>
 				<label>Stagger Resistance 5</label>
 				<coordX>4</coordX>
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Resistances_Node_StaggerResistance4</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			

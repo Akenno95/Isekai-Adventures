@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-		<!-- Starting Race -->
+<!-- Starting Race -->
+	<!-- Progress Tracker Setup -->
 		<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
 			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
 			<defName>Isekai_ProgressTracker_Starting</defName>
@@ -13,6 +14,28 @@
 			<skillPointLabelKey>Isekai_Body_SkillPointLabel</skillPointLabelKey-->
 
 			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Starting</progressHediff>
+			<baseClass>Isekai_Starting_Class_Basic</baseClass>
+		</ItsSorceryFramework.ProgressTrackerDef>
+			
+	<!-- Class Setup -->
+		<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "Isekai_Starting_ClassBase" ParentName = "ProgressTrackerClassBase">
+			<progressTrackerDef>Isekai_ProgressTracker_Starting</progressTrackerDef>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+	<!-- Class Starting Basic -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Starting_ClassBase" >
+			<defName>Isekai_Starting_Class_Basic</defName>
+			<label>Starting Class Basic</label>
+			<description>Starting class basic for Isekai Adventures.</description>
+
+			<linkedClasses>
+				<!-- <li>
+					<classDef>Isekai_Body_Class_Test2</classDef>
+					<levelReset>true</levelReset>
+					<benefitReset>true</benefitReset>
+					<removePostClassChange>true</removePostClassChange>
+				</li> -->
+			</linkedClasses>
 			
 			<levelRange>1~1000</levelRange>
 			<levelFactors>
@@ -49,7 +72,7 @@
 			</expTags> -->
 		
 		
-		</ItsSorceryFramework.ProgressTrackerDef>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
 		
 		<HediffDef ParentName="ProgressTrackerHediffBase">
 			<defName>Isekai_ProgressTrackerRPG_Hediff_Starting</defName>

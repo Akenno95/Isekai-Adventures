@@ -176,9 +176,10 @@
 				
 				<coordX>1</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalUnderstanding</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
@@ -190,9 +191,10 @@
 				
 				<coordX>2</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalSense</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
@@ -204,9 +206,10 @@
 				
 				<coordX>3</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalTypes</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
@@ -218,9 +221,10 @@
 				
 				<coordX>4</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalCasting</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
@@ -232,9 +236,10 @@
 				
 				<coordX>5</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalShaping</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
@@ -246,9 +251,10 @@
 				
 				<coordX>6</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalPhenomena</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<unlocks>
 					<li>Isekai_Magic_LearningTrackerTree_Training</li>
@@ -266,9 +272,10 @@
 
 				<pointReq>5</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<unlocks>
 					<li>Isekai_Magic_LearningTrackerTree_Advanced</li>
@@ -287,9 +294,10 @@
 				<coordY>1</coordY>
 				<pointReq>2</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalTypes</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<unlocks>
 					<li>Isekai_Magic_LearningTrackerTree_Aspectual</li>
@@ -306,9 +314,10 @@
 				<coordY>2</coordY>
 				<pointReq>2</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalTypes</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<unlocks>
 					<li>Isekai_Magic_LearningTrackerTree_Elemental</li>
@@ -325,9 +334,10 @@
 				<coordY>3</coordY>
 				<pointReq>2</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalTypes</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<unlocks>
 					<li>Isekai_Magic_LearningTrackerTree_HolyDemonic</li>
@@ -345,9 +355,10 @@
 				
 				<coordY>1</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalShaping</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -359,9 +370,10 @@
 				
 				<coordY>2</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalShaping</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -373,9 +385,10 @@
 				
 				<coordY>3</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalShaping</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -389,9 +402,10 @@
 				
 				<coordY>1</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalPhenomena</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -403,9 +417,10 @@
 				
 				<coordY>2</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalPhenomena</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -417,9 +432,10 @@
 				
 				<coordY>3</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalPhenomena</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -431,9 +447,10 @@
 				
 				<coordY>4</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalPhenomena</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 		
@@ -449,9 +466,10 @@
 				<coordY>1</coordY>
 				<pointReq>5</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalCasting</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<capMods>
 					<!-- <li>
@@ -485,12 +503,12 @@
 				<coordY>4</coordY>
 				<pointReq>1</pointReq>
 				
-				<prereqsHediff>
+				<prereqHediffs>
 					<li>
 						<key>Isekai_Pain_Resistance</key>
 						<value>1</value>
 					</li>
-				</prereqsHediff>
+				</prereqHediffs>
 				
 				<hediffRemove>
 					<li><hediffDef>Isekai_Pain_Resistance</hediffDef></li>
@@ -515,9 +533,10 @@
 				
 				<coordX>0</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_BasicsComplete</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<Isekai_Magic_MaxMP>100</Isekai_Magic_MaxMP>
@@ -535,9 +554,10 @@
 				
 				<coordX>1</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_AdvancedUnderstanding</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -549,9 +569,10 @@
 				
 				<coordX>2</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_AdvancedControl</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -563,9 +584,10 @@
 				
 				<coordX>3</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_AdvancedCasting</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -577,9 +599,10 @@
 				
 				<coordX>4</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_AdvancedShaping</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
@@ -593,9 +616,10 @@
 
 				<pointReq>10</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalCompounding</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 				<unlocks>
 					<li>Isekai_Magic_LearningTrackerTree_Master</li>
@@ -613,11 +637,12 @@
 				
 				<coordY>1</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalCompounding</li>
 					<li>Isekai_Magic_Node_Phenomena_Wind</li>
 					<li>Isekai_Magic_Node_Phenomena_Fire</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -629,11 +654,12 @@
 				
 				<coordY>2</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalCompounding</li>
 					<li>Isekai_Magic_Node_Phenomena_Earth</li>
 					<li>Isekai_Magic_Node_Phenomena_Fire</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -645,11 +671,12 @@
 				
 				<coordY>3</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalCompounding</li>
 					<li>Isekai_Magic_Node_Phenomena_Wind</li>
 					<li>Isekai_Magic_Node_Phenomena_Water</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 
@@ -660,11 +687,12 @@
 				
 				<coordY>4</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalCompounding</li>
 					<li>Isekai_Magic_Node_Phenomena_Earth</li>
 					<li>Isekai_Magic_Node_Phenomena_Water</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -680,9 +708,10 @@
 				
 				<coordX>0</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_AdvancedComplete</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<Isekai_Magic_MaxMP>1000</Isekai_Magic_MaxMP>
@@ -700,9 +729,10 @@
 				
 				<coordX>1</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MasterUnderstanding</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -714,9 +744,10 @@
 				
 				<coordX>2</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MasterControl</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -728,9 +759,10 @@
 				
 				<coordX>3</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MasterCasting</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -742,9 +774,10 @@
 				
 				<coordX>4</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MasterShaping</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -758,10 +791,11 @@
 				
 				<coordY>1</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalElement</li>
 					<li>Isekai_Magic_Node_Compounding_Lightning</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -773,10 +807,11 @@
 				
 				<coordY>2</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalElement</li>
 					<li>Isekai_Magic_Node_Compounding_Magma</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -788,10 +823,11 @@
 				
 				<coordY>3</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalElement</li>
 					<li>Isekai_Magic_Node_Compounding_Ice</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -803,10 +839,11 @@
 				
 				<coordY>4</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_MagicalElement</li>
 					<li>Isekai_Magic_Node_Compounding_Life</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 			
@@ -824,10 +861,11 @@
 				<coordX>0</coordX>
 				<coordY>0</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Magic_Node_Form_Blade</li>
 					<li>Isekai_Magic_Node_Phenomena_Wind</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<abilityGain>
 					<li>Isekai_WindSlash</li>

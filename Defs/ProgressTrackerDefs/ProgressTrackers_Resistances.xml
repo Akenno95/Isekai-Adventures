@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-		<!-- Resistances -->
+<!-- Resistances -->
+	<!-- Progress Tracker Setup -->
 		<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
 			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
 			<defName>Isekai_ProgressTracker_Resistances</defName>
@@ -13,6 +14,28 @@
 			<skillPointLabelKey>Isekai_Resistances_SkillPointLabel</skillPointLabelKey>
 
 			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Resistances</progressHediff>
+			<baseClass>Isekai_Resistances_Class_Basic</baseClass>
+		</ItsSorceryFramework.ProgressTrackerDef>
+			
+	<!-- Class Setup -->
+		<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "Isekai_Resistances_ClassBase" ParentName = "ProgressTrackerClassBase">
+			<progressTrackerDef>Isekai_ProgressTracker_Resistances</progressTrackerDef>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+	<!-- Class Resistances Basic -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Resistances_ClassBase" >
+			<defName>Isekai_Resistances_Class_Basic</defName>
+			<label>Resistances Class Basic</label>
+			<description>Resistances class basic for Isekai Adventures.</description>
+
+			<linkedClasses>
+				<!-- <li>
+					<classDef>Isekai_Body_Class_Test2</classDef>
+					<levelReset>true</levelReset>
+					<benefitReset>true</benefitReset>
+					<removePostClassChange>true</removePostClassChange>
+				</li> -->
+			</linkedClasses>
 			
 			<levelRange>1~1000</levelRange>
 			<levelFactors>
@@ -103,10 +126,10 @@
 			<expTags>
 				<li>Isekai_Resistances_EXPTag_OnDamaged</li>
 			</expTags>
-		
-		
-		</ItsSorceryFramework.ProgressTrackerDef>
-		
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Hediff Setup -->
 		<HediffDef ParentName="ProgressTrackerHediffBase">
 			<defName>Isekai_ProgressTrackerRPG_Hediff_Resistances</defName>
 			<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>

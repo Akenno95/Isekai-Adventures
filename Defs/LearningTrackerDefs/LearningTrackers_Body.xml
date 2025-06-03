@@ -122,9 +122,10 @@
 				
 				<coordX>1</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BasicsUnderstanding</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -136,9 +137,10 @@
 				
 				<coordX>2</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BasicsLearning</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -150,9 +152,10 @@
 				
 				<coordX>3</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BodyTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -164,9 +167,10 @@
 				
 				<coordX>4</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_CombatTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -178,9 +182,10 @@
 				
 				<coordX>5</coordX>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_SocialTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
@@ -194,9 +199,10 @@
 
 				<pointReq>5</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_AnimalTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<unlocks>
 					<li>Isekai_Body_LearningTrackerTree_Rank</li>
@@ -222,9 +228,10 @@
 				
 				<coordY>1</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BasicsLearning</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<PlantWorkSpeed>0.1</PlantWorkSpeed>
@@ -242,9 +249,10 @@
 				
 				<coordY>2</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BasicsLearning</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<ConstructionSpeed>0.1</ConstructionSpeed>
@@ -262,9 +270,10 @@
 				
 				<coordY>3</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BasicsLearning</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<ButcheryFleshSpeed>0.1</ButcheryFleshSpeed>
@@ -281,9 +290,10 @@
 				
 				<coordY>4</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BasicsLearning</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<CookSpeed>0.3</CookSpeed>
@@ -300,9 +310,10 @@
 				
 				<coordY>5</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BasicsLearning</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<MedicalTendSpeed>0.1</MedicalTendSpeed>
@@ -321,9 +332,10 @@
 				
 				<coordY>1</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BodyTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<MoveSpeed>0.3</MoveSpeed>
@@ -341,9 +353,10 @@
 				
 				<coordY>2</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BodyTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<CarryingCapacity>10</CarryingCapacity>
@@ -360,9 +373,10 @@
 				
 				<coordY>3</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BodyTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<HuntingStealth>0.1</HuntingStealth>
@@ -378,9 +392,10 @@
 				
 				<coordY>4</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BodyTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<ComfyTemperatureMin>-5</ComfyTemperatureMin>
@@ -397,9 +412,10 @@
 				
 				<coordY>5</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BodyTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
@@ -417,9 +433,10 @@
 				
 				<coordY>6</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_BodyTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<MentalBreakThreshold>-0.05</MentalBreakThreshold>
@@ -437,9 +454,10 @@
 				
 				<coordY>1</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_CombatTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<MeleeDamageFactor>0.05</MeleeDamageFactor>
@@ -457,9 +475,10 @@
 				
 				<coordY>2</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_CombatTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<MeleeHitChance>5</MeleeHitChance>
@@ -477,9 +496,10 @@
 				
 				<coordY>3</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_CombatTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<RangedCooldownFactor>-0.05</RangedCooldownFactor>
@@ -497,9 +517,10 @@
 				
 				<coordY>4</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_CombatTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<ArmorRating_Blunt>0.01</ArmorRating_Blunt>
@@ -522,9 +543,10 @@
 				
 				<coordY>1</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_SocialTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<NegotiationAbility>0.1</NegotiationAbility>
@@ -544,9 +566,10 @@
 				
 				<coordY>2</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_SocialTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<ArrestSuccessChance>0.1</ArrestSuccessChance>
@@ -569,9 +592,10 @@
 				
 				<coordY>1</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_AnimalTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<TameAnimalChance>0.1</TameAnimalChance>
@@ -589,9 +613,10 @@
 				
 				<coordY>2</coordY>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_AnimalTraining</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 
 				<statOffsets>
 					<AnimalGatherSpeed>0.1</AnimalGatherSpeed>
@@ -620,12 +645,12 @@
 				<coordY>4</coordY>
 				<pointReq>0</pointReq>
 				
-				<prereqsHediff>
+				<prereqHediffs>
 					<li>
 						<key>Isekai_SkillPoints</key>
 						<value>1</value>
 					</li>
-				</prereqsHediff>
+				</prereqHediffs>
 				
 				<hediffAdjust>
 					<li><hediffDef>Isekai_SkillPoints</hediffDef><severity>-1</severity></li>
@@ -648,12 +673,12 @@
 				<coordY>5</coordY>
 				<pointReq>0</pointReq>
 				
-				<prereqsHediff>
+				<prereqHediffs>
 					<li>
 						<key>Isekai_SkillPoints</key>
 						<value>1</value>
 					</li>
-				</prereqsHediff>
+				</prereqHediffs>
 				
 				<hediffAdjust>
 					<li><hediffDef>Isekai_SkillPoints</hediffDef><severity>-1</severity></li>
@@ -676,12 +701,12 @@
 				<coordY>6</coordY>
 				<pointReq>0</pointReq>
 				
-				<prereqsHediff>
+				<prereqHediffs>
 					<li>
 						<key>Isekai_SkillPoints</key>
 						<value>2</value>
 					</li>
-				</prereqsHediff>
+				</prereqHediffs>
 				
 				<hediffAdjust>
 					<li><hediffDef>Isekai_SkillPoints</hediffDef><severity>-2</severity></li>
@@ -705,9 +730,10 @@
 				<coordY>0</coordY>
 				<pointReq>1</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Body_Node_SlashAbility</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 				<statOffsets>
 					<ArmorRating_Heat>10.0</ArmorRating_Heat>
@@ -732,12 +758,12 @@
 				<coordY>0</coordY>
 				<pointReq>0</pointReq>
 				
-				<prereqsHediff>
+				<prereqHediffs>
 					<li>
 						<key>Isekai_Race_Human</key>
 						<value>1</value>
 					</li>
-				</prereqsHediff>
+				</prereqHediffs>
 				
 				<hediffAdjust>
 					<li><hediffDef>Isekai_Race_Human</hediffDef><severity>1</severity></li>
@@ -760,9 +786,10 @@
 				<coordY>0</coordY>
 				<pointReq>0</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Node_Body_Race_Human</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 				<hediffAdjust>
 					<li><hediffDef>Isekai_Race_Human</hediffDef><severity>1</severity></li>
@@ -785,9 +812,10 @@
 				<coordY>0</coordY>
 				<pointReq>0</pointReq>
 				
-				<prereqs>
+				<prereqNodes>
 					<li>Isekai_Node_Body_Race_Human1</li>
-				</prereqs>
+				</prereqNodes>
+				<prereqNodeMode>All</prereqNodeMode>
 				
 				<hediffAdjust>
 					<li><hediffDef>Isekai_Race_Human</hediffDef><severity>1</severity></li>
@@ -812,12 +840,12 @@
 				<coordY>1</coordY>
 				<pointReq>0</pointReq>
 				
-				<prereqsHediff>
+				<prereqHediffs>
 					<li>
 						<key>Tensura_Race_Slime</key>
 						<value>1</value>
 					</li>
-				</prereqsHediff>
+				</prereqHediffs>
 				
 				<hediffAdjust>
 					<li><hediffDef>Tensura_Race_Slime</hediffDef><severity>1</severity></li>
