@@ -6,7 +6,7 @@
 		<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnDamaged">
 			<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnDamaged</workerClass>
 			<defName>Isekai_Resistances_EXPTag_OnDamaged</defName>
-			<expFactor>1</expFactor>
+			<!-- <expFactor>1</expFactor> -->
 			<!-- <damageDefs>
 				<li>Cut</li>
 				<li>Blunt</li>
