@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Spirits -->
+
+		<!-- Wind Spirit -->
+
+			<HediffDef ParentName="IsekaiSpirit">
+				<defName>Isekai_Hediff_Spirit_Wind</defName>
+				<label>Wind Spirit</label>
+				<description>Blessed by a wind spirit. Greater forms may give more advantages.</description>
+				<defaultLabelColor>(0.0, 0.8, 0.0)</defaultLabelColor>
+				<stages>
+					<li>
+						<label>lesser</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Wind>0.2</ArmorRating_Isekai_Wind>
+							<ArmorRating_Heat>-0.1</ArmorRating_Heat>
+							<MoveSpeed>0.2</MoveSpeed>
+							<CrawlSpeed>0.04</CrawlSpeed>
+							<CaravanRidingSpeedFactor>0.1</CaravanRidingSpeedFactor>
+							<ToxicResistance>0.2</ToxicResistance>
+							<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.2</ToxicEnvironmentResistance>
+						</statOffsets>
+					</li>
+					<li>
+						<minSeverity>2</minSeverity>
+						<label>medium</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Wind>0.5</ArmorRating_Isekai_Wind>
+							<ArmorRating_Heat>-0.2</ArmorRating_Heat>
+							<MoveSpeed>0.5</MoveSpeed>
+							<CrawlSpeed>0.07</CrawlSpeed>
+							<CaravanRidingSpeedFactor>0.2</CaravanRidingSpeedFactor>
+							<ToxicResistance>0.5</ToxicResistance>
+							<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.5</ToxicEnvironmentResistance>
+						</statOffsets>
+					</li>
+					<li>
+						<minSeverity>3</minSeverity>
+						<label>greater</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Wind>0.7</ArmorRating_Isekai_Wind>
+							<ArmorRating_Heat>-0.3</ArmorRating_Heat>
+							<MoveSpeed>1.0</MoveSpeed>
+							<CrawlSpeed>0.1</CrawlSpeed>
+							<CaravanRidingSpeedFactor>0.5</CaravanRidingSpeedFactor>
+							<ToxicResistance>1</ToxicResistance>
+							<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+						</statOffsets>
+					</li>
+				</stages>
+				<comps>
+				</comps>
+			</HediffDef>
+
+		<!-- Fire Spirit -->
+
+			<HediffDef ParentName="IsekaiSpirit">
+				<defName>Isekai_Hediff_Spirit_Fire</defName>
+				<label>Fire Spirit</label>
+				<description>Blessed by a fire spirit. Greater forms may give more advantages.</description>
+				<defaultLabelColor>(0.8, 0.0, 0.0)</defaultLabelColor>
+				<stages>
+					<li>
+						<label>lesser</label>
+						<statOffsets>
+							<ArmorRating_Heat>0.2</ArmorRating_Heat>
+							<ArmorRating_Isekai_Water>-0.1</ArmorRating_Isekai_Water>
+							<ArmorRating_Heat>0.2</ArmorRating_Heat>
+						</statOffsets>
+						<statFactors>
+    						<Flammability>0</Flammability>
+						</statFactors>
+						<damageFactors>
+							<Flame>0.8</Flame>
+							<Burn>0.8</Burn>
+						</damageFactors>
+					</li>
+					<li>
+						<minSeverity>2</minSeverity>
+						<label>medium</label>
+						<statOffsets>
+							<ArmorRating_Heat>0.5</ArmorRating_Heat>
+							<ArmorRating_Isekai_Water>-0.2</ArmorRating_Isekai_Water>
+							<ArmorRating_Heat>0.5</ArmorRating_Heat>
+						</statOffsets>
+						<statFactors>
+    						<Flammability>0</Flammability>
+						</statFactors>
+						<damageFactors>
+							<Flame>0.5</Flame>
+							<Burn>0.5</Burn>
+						</damageFactors>
+					</li>
+					<li>
+						<minSeverity>3</minSeverity>
+						<label>greater</label>
+						<statOffsets>
+							<ArmorRating_Heat>0.7</ArmorRating_Heat>
+							<ArmorRating_Isekai_Water>-0.3</ArmorRating_Isekai_Water>
+							<ArmorRating_Heat>0.7</ArmorRating_Heat>
+						</statOffsets>
+						<statFactors>
+    						<Flammability>0</Flammability>
+						</statFactors>
+						<damageFactors>
+							<Flame>0</Flame>	<!-- Vanilla immunity basically -->
+							<Burn>0</Burn>
+						</damageFactors>
+					</li>
+				</stages>
+				<comps>
+				</comps>
+			</HediffDef>
+
+		<!-- Water Spirit -->
+
+			<HediffDef ParentName="IsekaiSpirit">
+				<defName>Isekai_Hediff_Spirit_Water</defName>
+				<label>Water Spirit</label>
+				<description>Blessed by a water spirit. Greater forms may give more advantages.</description>
+				<defaultLabelColor>(0.0, 0.4, 0.8)</defaultLabelColor>
+				<stages>
+					<li>
+						<label>lesser</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Water>0.2</ArmorRating_Isekai_Water>
+							<ArmorRating_Isekai_Earth>-0.1</ArmorRating_Isekai_Earth>
+						</statOffsets>
+						<statFactors>
+    						<Flammability>0</Flammability>
+						</statFactors>
+						<damageFactors>
+							<Flame>0.8</Flame>
+							<Burn>0.8</Burn>
+						</damageFactors>
+					</li>
+					<li>
+						<minSeverity>2</minSeverity>
+						<label>medium</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Water>0.5</ArmorRating_Isekai_Water>
+							<ArmorRating_Isekai_Earth>-0.2</ArmorRating_Isekai_Earth>
+						</statOffsets>
+						<statFactors>
+    						<Flammability>0</Flammability>
+						</statFactors>
+						<damageFactors>
+							<Flame>0.5</Flame>
+							<Burn>0.5</Burn>
+						</damageFactors>
+					</li>
+					<li>
+						<minSeverity>3</minSeverity>
+						<label>greater</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Water>0.7</ArmorRating_Isekai_Water>
+							<ArmorRating_Isekai_Earth>-0.3</ArmorRating_Isekai_Earth>
+						</statOffsets>
+						<statFactors>
+    						<Flammability>0</Flammability>
+						</statFactors>
+						<damageFactors>
+							<Flame>0</Flame>	<!-- Vanilla immunity basically -->
+							<Burn>0</Burn>
+						</damageFactors>
+					</li>
+				</stages>
+				<comps>
+					<li Class="AnimalBehaviours.HediffCompProperties_Waterstriding"/>
+				</comps>
+			</HediffDef>
+
+		<!-- Earth Spirit -->
+
+			<HediffDef ParentName="IsekaiSpirit">
+				<defName>Isekai_Hediff_Spirit_Earth</defName>
+				<label>Earth Spirit</label>
+				<description>Blessed by an earth spirit. Greater forms may give more advantages.</description>
+				<defaultLabelColor>(0.8, 0.4, 0.0)</defaultLabelColor>
+				<stages>
+					<li>
+						<label>lesser</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Earth>0.2</ArmorRating_Isekai_Earth>
+							<ArmorRating_Isekai_Wind>-0.1</ArmorRating_Isekai_Wind>
+						</statOffsets>
+					</li>
+					<li>
+						<minSeverity>2</minSeverity>
+						<label>medium</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Earth>0.5</ArmorRating_Isekai_Earth>
+							<ArmorRating_Isekai_Wind>-0.2</ArmorRating_Isekai_Wind>
+						</statOffsets>
+					</li>
+					<li>
+						<minSeverity>3</minSeverity>
+						<label>greater</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Earth>0.7</ArmorRating_Isekai_Earth>
+							<ArmorRating_Isekai_Wind>-0.3</ArmorRating_Isekai_Wind>
+						</statOffsets>
+					</li>
+				</stages>
+				<comps>
+				</comps>
+			</HediffDef>
+
+		<!-- Light / Holy Spirit -->
+
+			<HediffDef ParentName="IsekaiSpirit">
+				<defName>Isekai_Hediff_Spirit_Light</defName>
+				<label>Light Spirit</label>
+				<description>Blessed by a light spirit, also known as holy spirit. Greater forms may give more advantages.</description>
+				<defaultLabelColor>(0.9, 0.9, 0.0)</defaultLabelColor>
+				<stages>
+					<li>
+						<label>lesser</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Light>0.2</ArmorRating_Isekai_Light>
+						</statOffsets>
+					</li>
+					<li>
+						<minSeverity>2</minSeverity>
+						<label>medium</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Light>0.5</ArmorRating_Isekai_Light>
+						</statOffsets>
+					</li>
+					<li>
+						<minSeverity>3</minSeverity>
+						<label>greater</label>
+						<statOffsets>
+							<ArmorRating_Isekai_Light>0.7</ArmorRating_Isekai_Light>
+						</statOffsets>
+					</li>
+				</stages>
+				<comps>
+				</comps>
+			</HediffDef>
+
+
+
+
+
+</Defs>

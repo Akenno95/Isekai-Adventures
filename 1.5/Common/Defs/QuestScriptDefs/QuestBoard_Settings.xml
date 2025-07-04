@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Quest Board Settings -->
+		<IsekaiAdventures.QuestBoardSettingsDef>
+			<defName>Isekai_QuestBoardSettings</defName>
+			<questCategories>
+				<li>
+					<category>Beginner Quests</category>
+					<quests>
+						<li>OpportunitySite_BanditCamp</li>
+						<li>OpportunitySite_ItemStash</li>
+					</quests>
+				</li>
+				<li>
+					<category>Advanced Quests</category>
+					<quests>
+						<li>OpportunitySite_AncientComplex_Mechanitor</li>
+					</quests>
+				</li>
+			</questCategories>
+			<questCooldowns>
+				<li>
+					<key>OpportunitySite_BanditCamp</key>
+					<value>60000</value> <!-- Cooldown (60000 ticks = 1 in-game day) -->
+				</li>
+				<li>
+					<key>OpportunitySite_ItemStash</key>
+					<value>120000</value> <!-- Cooldown (120000 ticks = 2 in-game days) -->
+				</li>
+			</questCooldowns>
+		</IsekaiAdventures.QuestBoardSettingsDef>
+
+
+</Defs>

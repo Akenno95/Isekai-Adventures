@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Bases -->
+	<!-- Affinity -->
+		<GeneCategoryDef Name="IsekaiGeneAffinityBase" Abstract="true">
+			<displayCategory>Isekai_Genes_Affinity</displayCategory>
+			<biostatCpx>0</biostatCpx>
+			<biostatMet>0</biostatMet>
+			<selectionWeight>0</selectionWeight>
+			<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		</GeneCategoryDef>
+
+<!-- Affinity -->
+
+	<!-- Basics -->
+
+		<!-- Wind -->
+
+		 	<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Wind_Lesser</defName>
+				<label>Wind (lesser) affinity</label>
+				<description>This gene makes the user more attuned to wind magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>100</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Wind>0.1</ArmorRating_Isekai_Wind>
+					<ArmorRating_Heat>-0.1</ArmorRating_Heat>
+				</statOffsets>
+			</GeneDef>
+
+		 	<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Wind_Medium</defName>
+				<label>Wind (medium) affinity</label>
+				<description>This gene makes the user more attuned to wind magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>101</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Wind>0.3</ArmorRating_Isekai_Wind>
+					<ArmorRating_Heat>-0.2</ArmorRating_Heat>
+				</statOffsets>
+			</GeneDef>
+
+		 	<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Wind_Greater</defName>
+				<label>Wind (greater) affinity</label>
+				<description>This gene makes the user more attuned to wind magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>102</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Wind>0.5</ArmorRating_Isekai_Wind>
+					<ArmorRating_Heat>-0.3</ArmorRating_Heat>
+				</statOffsets>
+			</GeneDef>
+
+		
+		<!-- Fire -->
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Fire_Lesser</defName>
+				<label>Fire (lesser) affinity</label>
+				<description>This gene makes the user more attuned to fire magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>103</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Heat>0.1</ArmorRating_Heat>
+					<ArmorRating_Isekai_Water>-0.1</ArmorRating_Isekai_Water>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Fire_Medium</defName>
+				<label>Fire (medium) affinity</label>
+				<description>This gene makes the user more attuned to fire magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>104</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Heat>0.3</ArmorRating_Heat>
+					<ArmorRating_Isekai_Water>-0.2</ArmorRating_Isekai_Water>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Fire_Greater</defName>
+				<label>Fire (greater) affinity</label>
+				<description>This gene makes the user more attuned to fire magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>105</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Heat>0.5</ArmorRating_Heat>
+					<ArmorRating_Isekai_Water>-0.3</ArmorRating_Isekai_Water>
+				</statOffsets>
+			</GeneDef>
+
+
+		<!-- Water -->
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Water_Lesser</defName>
+				<label>Water (lesser) affinity</label>
+				<description>This gene makes the user more attuned to water magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>106</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Water>0.1</ArmorRating_Isekai_Water>
+					<ArmorRating_Isekai_Earth>-0.1</ArmorRating_Isekai_Earth>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Water_Medium</defName>
+				<label>Water (medium) affinity</label>
+				<description>This gene makes the user more attuned to water magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>107</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Water>0.3</ArmorRating_Isekai_Water>
+					<ArmorRating_Isekai_Earth>-0.2</ArmorRating_Isekai_Earth>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Water_Greater</defName>
+				<label>Water (greater) affinity</label>
+				<description>This gene makes the user more attuned to water magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>108</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Water>0.5</ArmorRating_Isekai_Water>
+					<ArmorRating_Isekai_Earth>-0.3</ArmorRating_Isekai_Earth>
+				</statOffsets>
+			</GeneDef>
+
+		
+		<!-- Earth -->
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Earth_Lesser</defName>
+				<label>Earth (lesser) affinity</label>
+				<description>This gene makes the user more attuned to earth magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>109</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Earth>0.1</ArmorRating_Isekai_Earth>
+					<ArmorRating_Isekai_Wind>-0.1</ArmorRating_Isekai_Wind>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Earth_Medium</defName>
+				<label>Earth (medium) affinity</label>
+				<description>This gene makes the user more attuned to earth magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>110</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Earth>0.3</ArmorRating_Isekai_Earth>
+					<ArmorRating_Isekai_Wind>-0.2</ArmorRating_Isekai_Wind>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Earth_Greater</defName>
+				<label>Earth (greater) affinity</label>
+				<description>This gene makes the user more attuned to earth magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>111</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Earth>0.5</ArmorRating_Isekai_Earth>
+					<ArmorRating_Isekai_Wind>-0.3</ArmorRating_Isekai_Wind>
+				</statOffsets>
+			</GeneDef>
+
+		
+		<!-- Light -->
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Light_Lesser</defName>
+				<label>Light (lesser) affinity</label>
+				<description>This gene makes the user more attuned to light magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>112</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Light>0.1</ArmorRating_Isekai_Light>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Light_Medium</defName>
+				<label>Light (medium) affinity</label>
+				<description>This gene makes the user more attuned to light magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>113</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Light>0.3</ArmorRating_Isekai_Light>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Light_Greater</defName>
+				<label>Light (greater) affinity</label>
+				<description>This gene makes the user more attuned to light magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>114</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Light>0.5</ArmorRating_Isekai_Light>
+				</statOffsets>
+			</GeneDef>
+
+			
+		<!-- Dark -->
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Dark_Lesser</defName>
+				<label>Dark (lesser) affinity</label>
+				<description>This gene makes the user more attuned to dark magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>115</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Dark>0.1</ArmorRating_Isekai_Dark>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Dark_Medium</defName>
+				<label>Dark (medium) affinity</label>
+				<description>This gene makes the user more attuned to dark magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>116</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Dark>0.3</ArmorRating_Isekai_Dark>
+				</statOffsets>
+			</GeneDef>
+
+			<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Gene_Affinity_Dark_Greater</defName>
+				<label>Dark (greater) affinity</label>
+				<description>This gene makes the user more attuned to dark magic.</description>
+				<!-- <iconPath>UI/Icons/Genes/...</iconPath> -->
+				<displayOrderInCategory>117</displayOrderInCategory>
+				
+				<statOffsets>
+					<ArmorRating_Isekai_Dark>0.5</ArmorRating_Isekai_Dark>
+				</statOffsets>
+			</GeneDef>
+
+
+
+</Defs>

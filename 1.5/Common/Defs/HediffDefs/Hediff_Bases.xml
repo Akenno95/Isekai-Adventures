@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+<!-- Base -->
+
+	<HediffDef Name="IsekaiSpirit" Abstract="True">
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+		<isBad>false</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>3</maxSeverity>
+	</HediffDef>
+ 
+	<HediffDef Name="IsekaiHediffBase" Abstract="True">
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+		<isBad>false</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>3</maxSeverity>
+	</HediffDef>
+
+
+
+
+
+
+
+
+
+</Defs>

@@ -9,6 +9,12 @@
 			<Isekai_Body_LevelUpMessage>The body of the pawn got stronger and increased the level from {0} to {1}.</Isekai_Body_LevelUpMessage>
 			<Isekai_Body_SkillPointLabel>Skill points</Isekai_Body_SkillPointLabel>
 
+	<!-- Job Tracker -->
+
+			<Isekai_Job_LevelUp>Job lvlup: {0}</Isekai_Job_LevelUp>
+			<Isekai_Job_LevelUpMessage>The Job of the pawn got stronger and increased the level from {0} to {1}.</Isekai_Job_LevelUpMessage>
+			<Isekai_Job_SkillPointLabel>Skill points</Isekai_Job_SkillPointLabel>
+
 	<!-- Magic Tracker -->
 
 			<Isekai_Magic_LevelUp>Magic lvlup: {0}</Isekai_Magic_LevelUp>

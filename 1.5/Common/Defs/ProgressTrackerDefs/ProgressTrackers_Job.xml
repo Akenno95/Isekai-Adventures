@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Job -->
+
+	<!-- Progress Tracker Setup -->
+
+		<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
+			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
+			<defName>Isekai_ProgressTracker_Job</defName>
+			<label>Job</label>
+
+			<!-- <bgPath>UI/ProgressTracker/...</bgPath> -->
+			<progressLevelUpKey>Isekai_Job_LevelUp</progressLevelUpKey>
+			<progressLevelUpDescKey>Isekai_Job_LevelUpMessage</progressLevelUpDescKey>
+			<skillPointLabelKey>Isekai_Job_SkillPointLabel</skillPointLabelKey>
+
+			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Job</progressHediff>
+			<baseClass>Isekai_Job_Class_Jobless</baseClass>
+		</ItsSorceryFramework.ProgressTrackerDef>
+
+
+	<!-- Hediff Setup -->
+
+		<HediffDef ParentName="ProgressTrackerHediffBase">
+			<defName>Isekai_ProgressTrackerRPG_Hediff_Job</defName>
+			<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
+			<label>Job</label>
+			<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+			<description>Jobs for your pawn.</description>
+			<initialSeverity>1</initialSeverity>
+			<minSeverity>0</minSeverity>
+			<!--<maxSeverity>1000</maxSeverity>-->
+			<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+			<stages>
+				<li>
+					<!--minSeverity>2</minSeverity>
+					<becomeVisible>false</becomeVisible-->
+				</li>
+			</stages>
+		</HediffDef>
+
+
+	<!-- Class Setup -->
+
+		<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "Isekai_Job_ClassBase" ParentName = "ProgressTrackerClassBase">
+			<progressTrackerDef>Isekai_ProgressTracker_Job</progressTrackerDef>
+			<linkedClasses>
+				<li>
+					<classDef>Isekai_Job_Class_Jobless</classDef>
+					<levelReset>true</levelReset>							<!-- Maintain Level or not -->
+					<benefitReset>true</benefitReset>						<!-- Maintain Benefits or not -->
+					<removePostClassChange>false</removePostClassChange>	<!-- Remove Class from choices -->
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Cook</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Hunter</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Farmer</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Rancher</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Builder</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Smith</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Miner</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Doctor</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Adventurer</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Knight</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Fisher</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+			</linkedClasses>
+			<levelSpecifics>
+				<li>
+					<level>2</level>
+					<pointGain>0</pointGain>
+					<specialClasses>
+						<li>
+							<classDef>Isekai_Job_Class_Jobless</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Cook</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Hunter</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Farmer</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Rancher</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Builder</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Smith</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Miner</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Doctor</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Adventurer</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Knight</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Fisher</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+					</specialClasses>
+				</li>
+			</levelSpecifics>
+		</ItsSorceryFramework.ProgressTrackerClassDef>	
+
+
+	<!-- Class Jobless -->
+
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Jobless</defName>
+			<label>Jobless</label>
+			<description>Jobless. Thats it. Go get one.</description>
+
+			<!-- <linkedClasses>
+				<li>
+					<classDef>Isekai_Job_Class_Cook</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Hunter</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+			</linkedClasses> -->
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+				</li>
+			</levelFactors>
+			
+			<!-- <levelSpecifics>
+				<li>
+					<level>2</level>
+					<pointGain>0</pointGain>
+					<specialClasses>
+						<li>
+							<classDef>Isekai_Job_Class_Cook</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Hunter</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+					</specialClasses>
+				</li>
+			</levelSpecifics> -->
+			
+			<levelLabels>
+				<li><level>1</level><label>Jobless</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Class Cook -->
+
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Cook</defName>
+			<label>Cook</label>
+			<description>Cook and prepare food.</description>
+
+			<!-- <linkedClasses>
+				<li>
+					<classDef>Isekai_Job_Class_Jobless</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Hunter</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+			</linkedClasses> -->
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<CookSpeed>0.01</CookSpeed>
+						<ButcheryFleshSpeed>0.01</ButcheryFleshSpeed>
+						<DrugCookingSpeed>0.01</DrugCookingSpeed>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<CookSpeed>0.02</CookSpeed>
+						<FoodPoisonChance>-0.1</FoodPoisonChance>
+						<ButcheryFleshSpeed>0.02</ButcheryFleshSpeed>
+						<ButcheryFleshEfficiency>0.1</ButcheryFleshEfficiency>
+						<DrugCookingSpeed>0.02</DrugCookingSpeed>
+					</statOffsets>
+					<!-- <capMods>
+						<li>
+							<capacity>Eating</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Manipulation</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Metabolism</capacity>
+							<offset>0.01</offset>
+						</li>
+					</capMods> -->
+				</li>
+			</levelFactors>
+			<!-- <levelSpecifics>
+				<li>
+					<level>2</level>
+					<pointGain>0</pointGain>
+					<specialClasses>
+						<li>
+							<classDef>Isekai_Job_Class_Jobless</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Hunter</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+					</specialClasses>
+				</li>
+			</levelSpecifics> -->
+			<levelLabels>
+				<li><level>1</level><label>Novice Cook</label></li>
+				<li><level>5</level><label>Experienced Cook</label></li>
+				<li><level>10</level><label>Expert Cook</label></li>
+				<li><level>20</level><label>Master Cook</label></li>
+				<li><level>50</level><label>God of Cuisine</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Class Hunter -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Hunter</defName>
+			<label>Hunter</label>
+			<description>Hunt for food and resources. They are also good archers.</description>
+
+			<!-- <linkedClasses>
+				<li>
+					<classDef>Isekai_Job_Class_Jobless</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Cook</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+			</linkedClasses> -->
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<RangedCooldownFactor>-0.01</RangedCooldownFactor>
+						<AimingDelayFactor>-0.01</AimingDelayFactor>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<HuntingStealth>0.1</HuntingStealth>
+						<RangedCooldownFactor>-0.02</RangedCooldownFactor>
+						<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
+						<AimingDelayFactor>-0.02</AimingDelayFactor>
+						<PawnTrapSpringChance>-0.02</PawnTrapSpringChance>
+					</statOffsets>
+				</li>
+			</levelFactors>
+
+			<!-- <levelSpecifics>
+				<li>
+					<level>2</level>
+					<pointGain>0</pointGain>
+					<specialClasses>
+						<li>
+							<classDef>Isekai_Job_Class_Jobless</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Cook</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+					</specialClasses>
+				</li>
+			</levelSpecifics> -->
+
+			<levelLabels>
+				<li><level>1</level><label>Novice Hunter</label></li>
+				<li><level>5</level><label>Experienced Hunter</label></li>
+				<li><level>10</level><label>Expert Hunter</label></li>
+				<li><level>20</level><label>Master Hunter</label></li>
+				<li><level>50</level><label>God of the Wild</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Class Farmer -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Farmer</defName>
+			<label>Farmer</label>
+			<description>Farm for food and resources.</description>
+
+			<!-- <linkedClasses>
+				<li>
+					<classDef>Isekai_Job_Class_Jobless</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Cook</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+				<li>
+					<classDef>Isekai_Job_Class_Hunter</classDef>
+					<levelReset>false</levelReset>
+					<benefitReset>false</benefitReset>
+					<removePostClassChange>false</removePostClassChange>
+				</li>
+			</linkedClasses> -->
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<PlantWorkSpeed>0.01</PlantWorkSpeed>
+						<ForagedNutritionPerDay>0.1</ForagedNutritionPerDay>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<PlantWorkSpeed>0.02</PlantWorkSpeed>
+						<PlantHarvestYield>0.1</PlantHarvestYield>
+						<DrugHarvestYield>0.1</DrugHarvestYield>
+						<ForagedNutritionPerDay>0.2</ForagedNutritionPerDay>
+					</statOffsets>
+				</li>
+			</levelFactors>
+
+			<!-- <levelSpecifics>
+				<li>
+					<level>2</level>
+					<pointGain>0</pointGain>
+					<specialClasses>
+						<li>
+							<classDef>Isekai_Job_Class_Jobless</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Cook</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+						<li>
+							<classDef>Isekai_Job_Class_Hunter</classDef>
+							<levelReset>false</levelReset>
+							<benefitReset>false</benefitReset>
+							<removePostClassChange>false</removePostClassChange>
+						</li>
+					</specialClasses>
+				</li>
+			</levelSpecifics> -->
+			<levelLabels>
+				<li><level>1</level><label>Novice Farmer</label></li>
+				<li><level>5</level><label>Experienced Farmer</label></li>
+				<li><level>10</level><label>Expert Farmer</label></li>
+				<li><level>20</level><label>Master Farmer</label></li>
+				<li><level>50</level><label>God of the Fields</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+	
+	<!-- Class Rancher -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Rancher</defName>
+			<label>Rancher</label>
+			<description>Ranch for food and resources.</description>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<TameAnimalChance>0.01</TameAnimalChance>
+						<TrainAnimalChance>0.01</TrainAnimalChance>
+						<AnimalGatherSpeed>0.01</AnimalGatherSpeed>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<TameAnimalChance>0.02</TameAnimalChance>
+						<TrainAnimalChance>0.02</TrainAnimalChance>
+						<AnimalGatherSpeed>0.02</AnimalGatherSpeed>
+						<AnimalGatherYield>0.1</AnimalGatherYield>
+						<BondAnimalChanceFactor>0.01</BondAnimalChanceFactor>
+					</statOffsets>
+				</li>
+			</levelFactors>
+			<levelLabels>
+				<li><level>1</level><label>Novice Rancher</label></li>
+				<li><level>5</level><label>Experienced Rancher</label></li>
+				<li><level>10</level><label>Expert Rancher</label></li>
+				<li><level>20</level><label>Master Rancher</label></li>
+				<li><level>50</level><label>God of the Herds</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+	
+	<!-- Class Builder -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Builder</defName>
+			<label>Builder</label>
+			<description>Build and construct structures.</description>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<ConstructionSpeed>0.01</ConstructionSpeed>
+						<SmoothingSpeed>0.01</SmoothingSpeed>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<ConstructionSpeed>0.02</ConstructionSpeed>
+						<SmoothingSpeed>0.02</SmoothingSpeed>
+						<ConstructSuccessChance>0.1</ConstructSuccessChance>
+						<FixBrokenDownBuildingSuccessChance>0.1</FixBrokenDownBuildingSuccessChance>
+					</statOffsets>
+				</li>
+			</levelFactors>
+			<levelLabels>
+				<li><level>1</level><label>Novice Builder</label></li>
+				<li><level>5</level><label>Experienced Builder</label></li>
+				<li><level>10</level><label>Expert Builder</label></li>
+				<li><level>20</level><label>Master Builder</label></li>
+				<li><level>50</level><label>God of Construction</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		 </ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Class Smith -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Smith</defName>
+			<label>Smith</label>
+			<description>Forge and smith weapons and armor.</description>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<GeneralLaborSpeed>0.01</GeneralLaborSpeed>
+						<SmeltingSpeed>0.01</SmeltingSpeed>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<GeneralLaborSpeed>0.03</GeneralLaborSpeed>
+						<SmeltingSpeed>0.03</SmeltingSpeed>
+					</statOffsets>
+				</li>
+			</levelFactors>
+			<levelLabels>
+				<li><level>1</level><label>Novice Smith</label></li>
+				<li><level>5</level><label>Experienced Smith</label></li>
+				<li><level>10</level><label>Expert Smith</label></li>
+				<li><level>20</level><label>Master Smith</label></li>
+				<li><level>50</level><label>God of the Forge</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		 </ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Class Miner -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Miner</defName>
+			<label>Miner</label>
+			<description>Mine for resources and ores.</description>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<MiningSpeed>0.01</MiningSpeed>
+						<DeepDrillingSpeed>0.01</DeepDrillingSpeed>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<MiningSpeed>0.02</MiningSpeed>
+						<DeepDrillingSpeed>0.02</DeepDrillingSpeed>
+						<MiningYield>0.1</MiningYield>
+					</statOffsets>
+				</li>
+			</levelFactors>
+			<levelLabels>
+				<li><level>1</level><label>Novice Miner</label></li>
+				<li><level>5</level><label>Experienced Miner</label></li>
+				<li><level>10</level><label>Expert Miner</label></li>
+				<li><level>20</level><label>Master Miner</label></li>
+				<li><level>50</level><label>God of the Depths</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		 </ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Class Doctor -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Doctor</defName>
+			<label>Doctor</label>
+			<description>Heal and treat injuries and illnesses.</description>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<MedicalTendSpeed>0.01</MedicalTendSpeed>
+						<MedicalOperationSpeed>0.01</MedicalOperationSpeed>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<MedicalTendSpeed>0.02</MedicalTendSpeed>
+						<MedicalTendQuality>0.1</MedicalTendQuality>
+						<MedicalOperationSpeed>0.02</MedicalOperationSpeed>
+						<MedicalSurgerySuccessChance>0.1</MedicalSurgerySuccessChance>
+					</statOffsets>
+				</li>
+			</levelFactors>
+			<levelLabels>
+				<li><level>1</level><label>Novice Doctor</label></li>
+				<li><level>5</level><label>Experienced Doctor</label></li>
+				<li><level>10</level><label>Expert Doctor</label></li>
+				<li><level>20</level><label>Master Doctor</label></li>
+				<li><level>50</level><label>God of Healing</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		 </ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Class Adventurer -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Adventurer</defName>
+			<label>Adventurer</label>
+			<description>Adventurers are the brave souls who venture into the unknown, seeking glory and treasure.</description>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<MoveSpeed>0.01</MoveSpeed>
+						<CaravanRidingSpeedFactor>0.01</CaravanRidingSpeedFactor>
+						<GlobalLearningFactor>0.01</GlobalLearningFactor>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<MoveSpeed>0.03</MoveSpeed>
+						<CrawlSpeed>0.01</CrawlSpeed>
+						<CaravanRidingSpeedFactor>0.02</CaravanRidingSpeedFactor>
+						<CarryingCapacity>5</CarryingCapacity>
+						<VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">5</VEF_MassCarryCapacity>
+						<MeleeDodgeChance>0.02</MeleeDodgeChance>
+						<MeleeHitChance>0.02</MeleeHitChance>
+						<GlobalLearningFactor>0.03</GlobalLearningFactor>
+					</statOffsets>
+				</li>
+			</levelFactors>
+			<levelLabels>
+				<li><level>1</level><label>Novice Adventurer</label></li>
+				<li><level>5</level><label>Experienced Adventurer</label></li>
+				<li><level>10</level><label>Expert Adventurer</label></li>
+				<li><level>20</level><label>Master Adventurer</label></li>
+				<li><level>50</level><label>God of Adventure</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		 </ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Class Knight -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Knight</defName>
+			<label>Knight</label>
+			<description>Knight is a noble warrior, skilled in combat and chivalry.</description>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<MeleeHitChance>0.02</MeleeHitChance>
+						<MeleeCooldownFactor>-0.01</MeleeCooldownFactor>
+						<PainShockThreshold>0.01</PainShockThreshold>
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<MeleeDodgeChance>0.01</MeleeDodgeChance>
+						<MeleeHitChance>0.04</MeleeHitChance>
+						<MeleeCooldownFactor>-0.02</MeleeCooldownFactor>
+						<PainShockThreshold>0.03</PainShockThreshold>
+						<CarryingCapacity>5</CarryingCapacity>
+						<VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">5</VEF_MassCarryCapacity>
+					</statOffsets>
+				</li>
+			</levelFactors>
+			<levelLabels>
+				<li><level>1</level><label>Novice Knight</label></li>
+				<li><level>5</level><label>Experienced Knight</label></li>
+				<li><level>10</level><label>Expert Knight</label></li>
+				<li><level>20</level><label>Master Knight</label></li>
+				<li><level>50</level><label>God of Chivalry</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		 </ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Class Fisher -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+			<defName>Isekai_Job_Class_Fisher</defName>
+			<label>Fisher</label>
+			<description>Fish for food and resources.</description>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<!-- <FishingSpeed>0.01</FishingSpeed>
+						<FishingYield>0.01</FishingYield> -->
+					</statOffsets>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>0</pointGain>
+					<statOffsets>
+						<!-- <FishingSpeed>0.02</FishingSpeed>
+						<FishingYield>0.02</FishingYield> -->
+					</statOffsets>
+				</li>
+			</levelFactors>
+
+			<levelLabels>
+				<li><level>1</level><label>Novice Fisher</label></li>
+				<li><level>5</level><label>Experienced Fisher</label></li>
+				<li><level>10</level><label>Expert Fisher</label></li>
+				<li><level>20</level><label>Master Fisher</label></li>
+				<li><level>50</level><label>God of the Waters</label></li>
+			</levelLabels>
+
+			<expTags>
+				<li>Isekai_Job_EXPTag_Passive</li>
+			</expTags>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+</Defs>

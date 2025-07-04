@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+<!-- Armor Category -->
+    <!-- Old -->
+        <!-- Magic -->
+
+            <DamageArmorCategoryDef>
+                <defName>Magic</defName>
+                <multStat>MagicDamageMultiplier</multStat>
+                <armorRatingStat>ArmorRating_Magic</armorRatingStat>
+            </DamageArmorCategoryDef>
+
+
+        <!-- Elemental -->
+
+            <DamageArmorCategoryDef>
+                <defName>Elemental</defName>
+                <multStat>ElementalDamageMultiplier</multStat>
+                <armorRatingStat>ArmorRating_Elemental</armorRatingStat>
+            </DamageArmorCategoryDef>
+
+
+        <!-- Holy -->
+
+            <DamageArmorCategoryDef>
+                <defName>Holy</defName>
+                <multStat>HolyDamageMultiplier</multStat>
+                <armorRatingStat>ArmorRating_Holy</armorRatingStat>
+            </DamageArmorCategoryDef>
+            
+
+    <!-- Basic -->
+        <!-- Water -->
+            <DamageArmorCategoryDef>
+                <defName>Isekai_Water</defName>
+                <multStat>Isekai_WaterDamageMultiplier</multStat>
+                <armorRatingStat>ArmorRating_Isekai_Water</armorRatingStat>
+            </DamageArmorCategoryDef>
+
+        <!-- Fire -->
+            <!-- <DamageArmorCategoryDef>
+                <defName>Isekai_Fire</defName>
+                <multStat>Isekai_FireDamageMultiplier</multStat>
+                <armorRatingStat>ArmorRating_Isekai_Fire</armorRatingStat>
+            </DamageArmorCategoryDef> -->
+
+        <!-- Earth -->
+            <DamageArmorCategoryDef>
+                <defName>Isekai_Earth</defName>
+                <multStat>Isekai_EarthDamageMultiplier</multStat>
+                <armorRatingStat>ArmorRating_Isekai_Earth</armorRatingStat>
+            </DamageArmorCategoryDef>
+        
+        <!-- Wind -->
+            <DamageArmorCategoryDef>
+                <defName>Isekai_Wind</defName>
+                <multStat>Isekai_WindDamageMultiplier</multStat>
+                <armorRatingStat>ArmorRating_Isekai_Wind</armorRatingStat>
+            </DamageArmorCategoryDef>
+
+        <!-- Light -->
+            <DamageArmorCategoryDef>
+                <defName>Isekai_Light</defName>
+                <multStat>Isekai_LightDamageMultiplier</multStat>
+                <armorRatingStat>ArmorRating_Isekai_Light</armorRatingStat>
+            </DamageArmorCategoryDef>
+
+        <!-- Dark -->
+            <DamageArmorCategoryDef>
+                <defName>Isekai_Dark</defName>
+                <multStat>Isekai_DarkDamageMultiplier</multStat>
+                <armorRatingStat>ArmorRating_Isekai_Dark</armorRatingStat>
+            </DamageArmorCategoryDef>
+
+        
+<!-- Armor StuffPower -->
+    <!-- Old -->
+        <!-- Magic -->
+
+            <StatDef>
+                <defName>StuffPower_Armor_Isekai_Magic</defName>
+                <label>Armor - Magic</label>
+                <labelForFullStatList>Armor - Magic (material factor)</labelForFullStatList>
+                <description>Armor against magic damage like abilities threw magical attacks like aspectual magic.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>0</defaultBaseValue>
+                <minValue>0</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4511</displayPriorityInCategory>
+            </StatDef>
+
+
+        <!-- Elemental -->
+
+            <StatDef>
+                <defName>StuffPower_Armor_Isekai_Elemental</defName>
+                <label>Armor - Elemental</label>
+                <labelForFullStatList>Armor - Elemental (material factor)</labelForFullStatList>
+                <description>Armor against elemental damage like abilities threw elemental attacks like ice or fire magic.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>0</defaultBaseValue>
+                <minValue>0</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4512</displayPriorityInCategory>
+            </StatDef>
+
+
+        <!-- Holy -->
+
+            <StatDef>
+                <defName>StuffPower_Armor_Isekai_Holy</defName>
+                <label>Armor - Holy</label>
+                <labelForFullStatList>Armor - Holy (material factor)</labelForFullStatList>
+                <description>Armor against holy damage like abilities threw holy attacks like light and healing magic.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>0</defaultBaseValue>
+                <minValue>0</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4513</displayPriorityInCategory>
+            </StatDef>
+
+    <!-- Basic -->
+        <!-- Water -->
+            <StatDef>
+                <defName>StuffPower_Armor_Isekai_Water</defName>
+                <label>Armor - Water</label>
+                <labelForFullStatList>Armor - Water (material factor)</labelForFullStatList>
+                <description>Armor against water or ice damage.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>0</defaultBaseValue>
+                <minValue>0</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4514</displayPriorityInCategory>
+            </StatDef>
+        
+        <!-- Fire -->
+            <!-- <StatDef>
+                <defName>StuffPower_Armor_Isekai_Fire</defName>
+                <label>Armor - Fire</label>
+                <labelForFullStatList>Armor - Fire (material factor)</labelForFullStatList>
+                <description>Armor against fire or lava damage.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>0</defaultBaseValue>
+                <minValue>0</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4515</displayPriorityInCategory>
+            </StatDef> -->
+        
+        <!-- Earth -->
+            <StatDef>
+                <defName>StuffPower_Armor_Isekai_Earth</defName>
+                <label>Armor - Earth</label>
+                <labelForFullStatList>Armor - Earth (material factor)</labelForFullStatList>
+                <description>Armor against earth or nature damage.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>0</defaultBaseValue>
+                <minValue>0</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4516</displayPriorityInCategory>
+            </StatDef>
+
+        <!-- Wind -->
+            <StatDef>
+                <defName>StuffPower_Armor_Isekai_Wind</defName>
+                <label>Armor - Wind</label>
+                <labelForFullStatList>Armor - Wind (material factor)</labelForFullStatList>
+                <description>Armor against wind or lightning damage.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>0</defaultBaseValue>
+                <minValue>0</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4517</displayPriorityInCategory>
+            </StatDef>
+
+        <!-- Light -->
+            <StatDef>
+                <defName>StuffPower_Armor_Isekai_Light</defName>
+                <label>Armor - Light</label>
+                <labelForFullStatList>Armor - Light (material factor)</labelForFullStatList>
+                <description>Armor against light damage like abilities threw light attacks.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>0</defaultBaseValue>
+                <minValue>0</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4518</displayPriorityInCategory>
+            </StatDef>
+
+        <!-- Dark -->
+            <StatDef>
+                <defName>StuffPower_Armor_Isekai_Dark</defName>
+                <label>Armor - Dark</label>
+                <labelForFullStatList>Armor - Dark (material factor)</labelForFullStatList>
+                <description>Armor against dark damage like abilities threw dark attacks.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>0</defaultBaseValue>
+                <minValue>0</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4519</displayPriorityInCategory>
+            </StatDef>
+
+<!-- Armor Multiplier -->
+    <!-- Old -->
+        <!-- Magic -->
+
+            <StatDef>
+                <defName>MagicDamageMultiplier</defName>
+                <label>magic damage</label>
+                <description>A multiplier on damage from magic-type attacks for weapons made of this material.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>1</defaultBaseValue>
+                <minValue>0.05</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4507</displayPriorityInCategory>
+            </StatDef>
+
+
+        <!-- Elemental -->
+
+            <StatDef>
+                <defName>ElementalDamageMultiplier</defName>
+                <label>elemental damage</label>
+                <description>A multiplier on damage from elemental-type attacks for weapons made of this material.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>1</defaultBaseValue>
+                <minValue>0.05</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4508</displayPriorityInCategory>
+            </StatDef>
+
+
+        <!-- Holy -->
+
+            <StatDef>
+                <defName>HolyDamageMultiplier</defName>
+                <label>holy damage</label>
+                <description>A multiplier on damage from holy-type attacks for weapons made of this material.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>1</defaultBaseValue>
+                <minValue>0.05</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4509</displayPriorityInCategory>
+            </StatDef>
+
+
+    <!-- Basic -->
+        <!-- Water -->
+            <StatDef>
+                <defName>Isekai_WaterDamageMultiplier</defName>
+                <label>water damage</label>
+                <description>A multiplier on damage from water-ice-type attacks for weapons made of this material.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>1</defaultBaseValue>
+                <minValue>0.05</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4510</displayPriorityInCategory>
+            </StatDef>
+
+        <!-- Fire -->
+            <!-- <StatDef>
+                <defName>Isekai_FireDamageMultiplier</defName>
+                <label>fire damage</label>
+                <description>A multiplier on damage from fire-type attacks for weapons made of this material.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>1</defaultBaseValue>
+                <minValue>0.05</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4511</displayPriorityInCategory>
+            </StatDef> -->
+
+        <!-- Earth -->
+            <StatDef>
+                <defName>Isekai_EarthDamageMultiplier</defName>
+                <label>earth damage</label>
+                <description>A multiplier on damage from earth-nature-type attacks for weapons made of this material.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>1</defaultBaseValue>
+                <minValue>0.05</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4512</displayPriorityInCategory>
+            </StatDef>
+
+        <!-- Wind -->
+            <StatDef>
+                <defName>Isekai_WindDamageMultiplier</defName>
+                <label>wind damage</label>
+                <description>A multiplier on damage from wind-lightning-type attacks for weapons made of this material.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>1</defaultBaseValue>
+                <minValue>0.05</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4513</displayPriorityInCategory>
+            </StatDef>
+
+        <!-- Light -->
+            <StatDef>
+                <defName>Isekai_LightDamageMultiplier</defName>
+                <label>light damage</label>
+                <description>A multiplier on damage from light-type attacks for weapons made of this material.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>1</defaultBaseValue>
+                <minValue>0.05</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4514</displayPriorityInCategory>
+            </StatDef>
+
+        <!-- Dark -->
+            <StatDef>
+                <defName>Isekai_DarkDamageMultiplier</defName>
+                <label>dark damage</label>
+                <description>A multiplier on damage from dark-type attacks for weapons made of this material.</description>
+                <category>StuffStatFactors</category>
+                <defaultBaseValue>1</defaultBaseValue>
+                <minValue>0.05</minValue>
+                <toStringStyle>PercentZero</toStringStyle>
+                <showIfUndefined>false</showIfUndefined>
+                <displayPriorityInCategory>4515</displayPriorityInCategory>
+            </StatDef>
+
+<!-- Armor Rating -->
+    <!-- Old -->
+        <!-- Magic -->
+
+            <StatDef ParentName="ArmorRatingBase">
+                <defName>ArmorRating_Magic</defName>
+                <label>Armor - Magic</label>
+                <labelForFullStatList>Armor - Magic (armor stat)</labelForFullStatList>
+                <description>The protection given against magic damage like abilities threw magical attacks like aspectual magic. \n\nUpon taking damage, first this armor rating is reduced by the attack's armor penetration value. \n\nThe remaining armor rating is then compared against a random number from 0 to 100. \n\n    - If the random number is under half the armor rating, the damage deflects harmlessly. \n    - If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt. \n    - If the random number is greater than the armor rating, the armor has no effect. \n\nFor example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage. \n\nEach layer of armor is applied separately, from the outside in.</description>
+                <displayPriorityInCategory>101</displayPriorityInCategory>
+                <parts>
+                    <li Class="StatPart_Stuff">
+                        <priority>100</priority>
+                        <stuffPowerStat>StuffPower_Armor_Isekai_Magic</stuffPowerStat>
+                        <multiplierStat>StuffEffectMultiplierArmor</multiplierStat>
+                    </li>
+                </parts>
+            </StatDef>
+
+
+        <!-- Elemental -->
+
+            <StatDef ParentName="ArmorRatingBase">
+                <defName>ArmorRating_Elemental</defName>
+                <label>Armor - Elemental</label>
+                <labelForFullStatList>Armor - Elemental (armor stat)</labelForFullStatList>
+                <description>The protection given against elemental damage like abilities threw elemental attacks like ice or fire magic. \n\nUpon taking damage, first this armor rating is reduced by the attack's armor penetration value. \n\nThe remaining armor rating is then compared against a random number from 0 to 100. \n\n    - If the random number is under half the armor rating, the damage deflects harmlessly. \n    - If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt. \n    - If the random number is greater than the armor rating, the armor has no effect. \n\nFor example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage. \n\nEach layer of armor is applied separately, from the outside in.</description>
+                <displayPriorityInCategory>102</displayPriorityInCategory>
+                <parts>
+                    <li Class="StatPart_Stuff">
+                        <priority>100</priority>
+                        <stuffPowerStat>StuffPower_Armor_Isekai_Elemental</stuffPowerStat>
+                        <multiplierStat>StuffEffectMultiplierArmor</multiplierStat>
+                    </li>
+                </parts>
+            </StatDef>
+
+
+        <!-- Holy -->
+
+            <StatDef ParentName="ArmorRatingBase">
+                <defName>ArmorRating_Holy</defName>
+                <label>Armor - Holy</label>
+                <labelForFullStatList>Armor - Holy (armor stat)</labelForFullStatList>
+                <description>The protection given against holy damage like abilities threw holy attacks like light and healing magic. \n\nUpon taking damage, first this armor rating is reduced by the attack's armor penetration value. \n\nThe remaining armor rating is then compared against a random number from 0 to 100. \n\n    - If the random number is under half the armor rating, the damage deflects harmlessly. \n    - If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt. \n    - If the random number is greater than the armor rating, the armor has no effect. \n\nFor example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage. \n\nEach layer of armor is applied separately, from the outside in.</description>
+                <displayPriorityInCategory>103</displayPriorityInCategory>
+                <parts>
+                    <li Class="StatPart_Stuff">
+                        <priority>100</priority>
+                        <stuffPowerStat>StuffPower_Armor_Isekai_Holy</stuffPowerStat>
+                        <multiplierStat>StuffEffectMultiplierArmor</multiplierStat>
+                    </li>
+                </parts>
+            </StatDef>
+
+
+    <!-- Basic -->
+        <!-- Water -->
+            <StatDef ParentName="ArmorRatingBase">
+                <defName>ArmorRating_Isekai_Water</defName>
+                <label>Armor - Water</label>
+                <labelForFullStatList>Armor - Water (armor stat)</labelForFullStatList>
+                <description>The protection given against water or ice damage like abilities threw water attacks. \n\nUpon taking damage, first this armor rating is reduced by the attack's armor penetration value. \n\nThe remaining armor rating is then compared against a random number from 0 to 100. \n\n    - If the random number is under half the armor rating, the damage deflects harmlessly. \n    - If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt. \n    - If the random number is greater than the armor rating, the armor has no effect. \n\nFor example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage. \n\nEach layer of armor is applied separately, from the outside in.</description>
+                <displayPriorityInCategory>104</displayPriorityInCategory>
+                <parts>
+                    <li Class="StatPart_Stuff">
+                        <priority>100</priority>
+                        <stuffPowerStat>StuffPower_Armor_Isekai_Water</stuffPowerStat>
+                        <multiplierStat>StuffEffectMultiplierArmor</multiplierStat>
+                    </li>
+                </parts>
+            </StatDef>
+
+        <!-- Fire -->
+            <!-- <StatDef ParentName="ArmorRatingBase">
+                <defName>ArmorRating_Isekai_Fire</defName>
+                <label>Armor - Fire</label>
+                <labelForFullStatList>Armor - Fire (armor stat)</labelForFullStatList>
+                <description>The protection given against fire damage like abilities threw fire attacks. \n\nUpon taking damage, first this armor rating is reduced by the attack's armor penetration value. \n\nThe remaining armor rating is then compared against a random number from 0 to 100. \n\n    - If the random number is under half the armor rating, the damage deflects harmlessly. \n    - If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt. \n    - If the random number is greater than the armor rating, the armor has no effect. \n\nFor example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage. \n\nEach layer of armor is applied separately, from the outside in.</description>
+                <displayPriorityInCategory>105</displayPriorityInCategory>
+                <parts>
+                    <li Class="StatPart_Stuff">
+                        <priority>100</priority>
+                        <stuffPowerStat>StuffPower_Armor_Isekai_Fire</stuffPowerStat>
+                        <multiplierStat>StuffEffectMultiplierArmor</multiplierStat>
+                    </li>
+                </parts>
+            </StatDef> -->
+        
+        <!-- Earth -->
+            <StatDef ParentName="ArmorRatingBase">
+                <defName>ArmorRating_Isekai_Earth</defName>
+                <label>Armor - Earth</label>
+                <labelForFullStatList>Armor - Earth (armor stat)</labelForFullStatList>
+                <description>The protection given against earth or nature damage like abilities threw earth attacks. \n\nUpon taking damage, first this armor rating is reduced by the attack's armor penetration value. \n\nThe remaining armor rating is then compared against a random number from 0 to 100. \n\n    - If the random number is under half the armor rating, the damage deflects harmlessly. \n    - If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt. \n    - If the random number is greater than the armor rating, the armor has no effect. \n\nFor example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage. \n\nEach layer of armor is applied separately, from the outside in.</description>
+                <displayPriorityInCategory>106</displayPriorityInCategory>
+                <parts>
+                    <li Class="StatPart_Stuff">
+                        <priority>100</priority>
+                        <stuffPowerStat>StuffPower_Armor_Isekai_Earth</stuffPowerStat>
+                        <multiplierStat>StuffEffectMultiplierArmor</multiplierStat>
+                    </li>
+                </parts>
+            </StatDef>
+
+        <!-- Wind -->
+            <StatDef ParentName="ArmorRatingBase">
+                <defName>ArmorRating_Isekai_Wind</defName>
+                <label>Armor - Wind</label>
+                <labelForFullStatList>Armor - Wind (armor stat)</labelForFullStatList>
+                <description>The protection given against wind or lightning damage like abilities threw wind attacks. \n\nUpon taking damage, first this armor rating is reduced by the attack's armor penetration value. \n\nThe remaining armor rating is then compared against a random number from 0 to 100. \n\n    - If the random number is under half the armor rating, the damage deflects harmlessly. \n    - If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt. \n    - If the random number is greater than the armor rating, the armor has no effect. \n\nFor example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage. \n\nEach layer of armor is applied separately, from the outside in.</description>
+                <displayPriorityInCategory>107</displayPriorityInCategory>
+                <parts>
+                    <li Class="StatPart_Stuff">
+                        <priority>100</priority>
+                        <stuffPowerStat>StuffPower_Armor_Isekai_Wind</stuffPowerStat>
+                        <multiplierStat>StuffEffectMultiplierArmor</multiplierStat>
+                    </li>
+                </parts>
+            </StatDef>
+
+        <!-- Light -->
+            <StatDef ParentName="ArmorRatingBase">
+                <defName>ArmorRating_Isekai_Light</defName>
+                <label>Armor - Light</label>
+                <labelForFullStatList>Armor - Light (armor stat)</labelForFullStatList>
+                <description>The protection given against light damage like abilities threw light attacks. \n\nUpon taking damage, first this armor rating is reduced by the attack's armor penetration value. \n\nThe remaining armor rating is then compared against a random number from 0 to 100. \n\n    - If the random number is under half the armor rating, the damage deflects harmlessly. \n    - If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt. \n    - If the random number is greater than the armor rating, the armor has no effect. \n\nFor example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage. \n\nEach layer of armor is applied separately, from the outside in.</description>
+                <displayPriorityInCategory>108</displayPriorityInCategory>
+                <parts>
+                    <li Class="StatPart_Stuff">
+                        <priority>100</priority>
+                        <stuffPowerStat>StuffPower_Armor_Isekai_Light</stuffPowerStat>
+                        <multiplierStat>StuffEffectMultiplierArmor</multiplierStat>
+                    </li>
+                </parts>
+            </StatDef>
+
+        <!-- Dark -->
+            <StatDef ParentName="ArmorRatingBase">
+                <defName>ArmorRating_Isekai_Dark</defName>
+                <label>Armor - Dark</label>
+                <labelForFullStatList>Armor - Dark (armor stat)</labelForFullStatList>
+                <description>The protection given against dark damage like abilities threw dark attacks. \n\nUpon taking damage, first this armor rating is reduced by the attack's armor penetration value. \n\nThe remaining armor rating is then compared against a random number from 0 to 100. \n\n    - If the random number is under half the armor rating, the damage deflects harmlessly. \n    - If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt. \n    - If the random number is greater than the armor rating, the armor has no effect. \n\nFor example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage. \n\nEach layer of armor is applied separately, from the outside in.</description>
+                <displayPriorityInCategory>109</displayPriorityInCategory>
+                <parts>
+                    <li Class="StatPart_Stuff">
+                        <priority>100</priority>
+                        <stuffPowerStat>StuffPower_Armor_Isekai_Dark</stuffPowerStat>
+                        <multiplierStat>StuffEffectMultiplierArmor</multiplierStat>
+                    </li>
+                </parts>
+            </StatDef>
+
+
+            
+
+</Defs>

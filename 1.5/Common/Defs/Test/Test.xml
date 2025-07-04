@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+
+		<!-- <ThingDef ParentName="BuildingBase">
+		<defName>Isekai_QuestBoard</defName>
+		<label>quest board</label>
+		<thingClass>IsekaiAdventures.Building_QuestBoard</thingClass>
+		<graphicData>
+			<texPath>Things/QuestBoard</texPath>
+			<drawSize>(1.5,1.5)</drawSize>
+		</graphicData>
+		</ThingDef>
+
+		<IsekaiAdventures.QuestBoardSettingsDef>
+			<defName>Isekai_QuestBoardSettings</defName>
+			<questCategories>
+			<li>
+				<category>Beginner Quests</category>
+				<quests>
+					<li>KillSlimesQuest</li>
+					<li>GatherHerbsQuest</li>
+				</quests>
+			</li>
+			<li>
+				<category>Advanced Quests</category>
+				<quests>
+					<li>ClearBanditCamp</li>
+					<li>ScoutCave</li>
+				</quests>
+			</li>
+			</questCategories>
+		</IsekaiAdventures.QuestBoardSettingsDef>
+
+		<QuestScriptDef>
+			<defName>KillSlimesQuest</defName>
+			<root>KillSlimes</root>
+			<label>Hunt Slimes</label>
+			<description>Eliminate the nearby slime nest threatening the colony.</description>
+		</QuestScriptDef> 
+		
+		<QuestScriptDef>
+			<defName>Isekai_Quest_SlimeRaid</defName>
+			<root>
+				<nodeClass>QuestNode_Root</nodeClass>
+				<node>
+				<li Class="QuestNode_Sequence">
+					<nodes>
+					<li Class="QuestNode_Letter">
+						<label>Slimes are invading!</label>
+						<text>A group of magical slimes has been detected nearby. Prepare your defenses!</text>
+						<letterDef>ThreatBig</letterDef>
+					</li>
+
+					<li Class="QuestNode_RunIncident">
+						<incident>RaidEnemy</incident>
+						<points>
+						<range>
+							<min>150</min>
+							<max>300</max>
+						</range>
+						</points>
+						<faction>SlimeFaction</faction>
+						<spawnPawnsOnMap>PlayerHome</spawnPawnsOnMap>
+					</li>
+					</nodes>
+				</li>
+				</node>
+			</root>
+		</QuestScriptDef>
+
+		
+		-->
+
+
+</Defs>

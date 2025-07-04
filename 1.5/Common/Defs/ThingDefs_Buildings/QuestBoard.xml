@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+
+		<ThingDef ParentName="BuildingBase">
+			<defName>Isekai_QuestBoard</defName>
+			<label>quest board</label>
+			<description>A board listing quests available to adventurers.</description>
+			<thingClass>IsekaiAdventures.Building_QuestBoard</thingClass>
+
+			<graphicData>
+				<texPath>Things/Building/QuestBoard</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+    			<!-- <shaderType>CutoutComplex</shaderType> -->
+				<drawSize>(2.5,1.5)</drawSize>
+			</graphicData>
+   			<size>(2,1)</size>
+
+			<altitudeLayer>Building</altitudeLayer>
+			<passability>PassThroughOnly</passability>
+			<useHitPoints>true</useHitPoints>
+			<selectable>true</selectable>
+			<designationCategory>Misc</designationCategory>
+    		<minifiedDef>MinifiedThing</minifiedDef>
+			<thingCategories>
+				<li>BuildingsMisc</li>
+			</thingCategories>
+
+			<statBases>
+				<WorkToBuild>200</WorkToBuild>
+				<MaxHitPoints>150</MaxHitPoints>
+				<Flammability>0.5</Flammability>
+				<Mass>10</Mass>
+			</statBases>
+
+			<!-- <costList>
+				<WoodLog>50</WoodLog>
+			</costList> -->
+			<stuffCategories>
+				<li>Stony</li>
+				<li>Woody</li>
+			</stuffCategories>
+			<costStuffCount>50</costStuffCount>
+
+  			<techLevel>Medieval</techLevel>
+
+			<building>
+				<isEdifice>true</isEdifice>
+     			<paintable>true</paintable>
+			</building>
+		</ThingDef>
+
+
+
+
+</Defs>

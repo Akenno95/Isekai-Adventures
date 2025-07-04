@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Body -->
+	<!-- Progress Tracker Setup -->
+		<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
+			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
+			<defName>Isekai_ProgressTracker_Body</defName>
+			<label>Body</label>
+
+			<!-- <bgPath>UI/ProgressTracker/...</bgPath> -->
+			<progressLevelUpKey>Isekai_Body_LevelUp</progressLevelUpKey>
+			<progressLevelUpDescKey>Isekai_Body_LevelUpMessage</progressLevelUpDescKey>
+			<skillPointLabelKey>Isekai_Body_SkillPointLabel</skillPointLabelKey>
+
+			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Body</progressHediff>
+			<baseClass>Isekai_Body_Class_Basic</baseClass>
+		</ItsSorceryFramework.ProgressTrackerDef>
+
+	<!-- Class Setup -->
+		<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "Isekai_Body_ClassBase" ParentName = "ProgressTrackerClassBase">
+			<progressTrackerDef>Isekai_ProgressTracker_Body</progressTrackerDef>
+		</ItsSorceryFramework.ProgressTrackerClassDef>	
+
+	<!-- Class Body Basic -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Body_ClassBase" >
+			<defName>Isekai_Body_Class_Basic</defName>
+			<label>Body Class Basic</label>
+			<description>Body class basic for Isekai Adventures.</description>
+
+			<linkedClasses>
+				<!-- <li>
+					<classDef>Isekai_Body_Class_Test2</classDef>
+					<levelReset>true</levelReset>
+					<benefitReset>true</benefitReset>
+					<removePostClassChange>true</removePostClassChange>
+				</li> -->
+			</linkedClasses>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<statOffsets>
+						<!--PainShockThreshold>0.1</PainShockThreshold>
+						<InjuryHealingFactor>1</InjuryHealingFactor>
+						<ImmunityGainSpeed>1</ImmunityGainSpeed>
+						<MeleeDodgeChance>1.0</MeleeDodgeChance>
+						<MeleeDamageFactor MayRequire="ludeon.rimworld.biotech">2.0</MeleeDamageFactor-->
+					</statOffsets>
+					<capMods>
+						<!-- <li>
+							<capacity>BloodFiltration</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>BloodPumping</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>Breathing</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>Consciousness</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>Eating</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>Hearing</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>Manipulation</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>Metabolism</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>Moving</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<offset>0.001</offset>
+						</li>
+						<li>
+							<capacity>Talking</capacity>
+							<offset>0.001</offset>
+						</li> -->
+					</capMods>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>2</pointGain>
+					<statOffsets>
+						<ImmunityGainSpeed>0.02</ImmunityGainSpeed>
+						<!--PainShockThreshold>1.0</PainShockThreshold>
+						<InjuryHealingFactor>10</InjuryHealingFactor-->
+					</statOffsets>
+					<capMods>
+						<li>
+							<capacity>BloodFiltration</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>BloodPumping</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Breathing</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Consciousness</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Eating</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Hearing</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Manipulation</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Metabolism</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Moving</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<offset>0.01</offset>
+						</li>
+						<li>
+							<capacity>Talking</capacity>
+							<offset>0.01</offset>
+						</li>
+					</capMods>
+				</li>
+				
+			</levelFactors>
+			
+			<levelSpecifics>
+				<!--<li>
+					<level>2</level>
+					<hediffAdd>
+						<li>
+							<hediffDef>Isekai_Pain_Resistance</hediffDef><severity>1</severity>
+						</li>
+						
+					</hediffAdd>
+				</li>-->
+			</levelSpecifics>
+			
+			<levelLabels>
+				<li><level>1</level><label>F-Rank</label></li>
+				<li><level>20</level><label>E-Rank</label></li>
+				<li><level>40</level><label>D-Rank</label></li>
+				<li><level>60</level><label>C-Rank</label></li>
+				<li><level>80</level><label>B-Rank</label></li>
+				<li><level>100</level><label>A-Rank</label></li>
+				<li><level>150</level><label>S-Rank</label></li>
+				<li><level>200</level><label>SS-Rank</label></li>
+				<li><level>300</level><label>SSS-Rank</label></li>
+			</levelLabels>
+			<expTags>
+				<li>Isekai_Body_EXPTag_Passive</li>
+			</expTags>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+	<!-- Hediff Setup -->
+		<HediffDef ParentName="ProgressTrackerHediffBase">
+			<defName>Isekai_ProgressTrackerRPG_Hediff_Body</defName>
+			<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
+			<label>Body</label>
+			<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+			<description>Body enhancements for your pawn.</description>
+			<initialSeverity>1</initialSeverity>
+			<minSeverity>0</minSeverity>
+			<!--<maxSeverity>1000</maxSeverity>-->
+			<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+			<stages>
+				<li>
+					<!--minSeverity>2</minSeverity>
+					<becomeVisible>false</becomeVisible-->
+				</li>
+			</stages>
+		</HediffDef>
+
+
+
+
+</Defs>

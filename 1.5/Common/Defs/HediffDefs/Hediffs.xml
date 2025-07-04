@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		
+		
+			<HediffDef ParentName="IsekaiHediffBase">
+				<defName>Isekai_Pain_Resistance</defName>
+				<label>Pain resistance</label>
+				<description>The ability to resist pain.</description>
+				<isBad>false</isBad>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>10</maxSeverity>
+				<stages>
+					<li>
+						<label>tiny</label>
+						<painFactor>0.95</painFactor>
+					</li>
+					<li>
+						<minSeverity>2</minSeverity>
+						<label>minor</label>
+						<painFactor>0.9</painFactor>
+					</li>
+					<li>
+						<minSeverity>3</minSeverity>
+						<label>moderate</label>
+						<painFactor>0.85</painFactor>
+					</li>
+					<li>
+						<minSeverity>4</minSeverity>
+						<label>good</label>
+						<painFactor>0.8</painFactor>
+					</li>
+					<li>
+						<minSeverity>5</minSeverity>
+						<label>high</label>
+						<painFactor>0.7</painFactor>
+					</li>
+				</stages>
+
+			</HediffDef>
+			
+			
+			<HediffDef ParentName="IsekaiHediffBase">
+				<defName>Isekai_Stagger_Resistance</defName>
+				<label>Stagger resistance</label>
+				<description>The ability to resist stagger or slow down effects.</description>
+				<isBad>false</isBad>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>10</maxSeverity>
+				<stages>
+					<li>
+						<label>tiny</label>
+						<statFactors>
+							<StaggerDurationFactor>0.95</StaggerDurationFactor>
+						</statFactors>
+						<!-- <capMods>
+							<li>
+								<capacity>Sight</capacity>
+								<offset>0.5</offset>
+							</li>
+						</capMods> -->
+					</li>
+					<li>
+						<minSeverity>2</minSeverity>
+						<label>minor</label>
+						<statFactors>
+							<StaggerDurationFactor>0.9</StaggerDurationFactor>
+						</statFactors>
+					</li>
+					<li>
+						<minSeverity>3</minSeverity>
+						<label>moderate</label>
+						<statFactors>
+							<StaggerDurationFactor>0.85</StaggerDurationFactor>
+						</statFactors>
+					</li>
+					<li>
+						<minSeverity>4</minSeverity>
+						<label>good</label>
+						<statFactors>
+							<StaggerDurationFactor>0.8</StaggerDurationFactor>
+						</statFactors>
+					</li>
+					<li>
+						<minSeverity>5</minSeverity>
+						<label>high</label>
+						<statFactors>
+							<StaggerDurationFactor>0.7</StaggerDurationFactor>
+						</statFactors>
+					</li>
+				</stages>
+
+			</HediffDef>
+
+
+			<HediffDef ParentName="IsekaiHediffBase">
+				<defName>Isekai_MaterialBody_HP</defName>
+				<label>HP</label>
+				<description>HP Buff</description>
+				<isBad>false</isBad>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>10</maxSeverity>
+				<defaultInstallPart>Isekai_BodyParts_MaterialBody</defaultInstallPart>
+				<stages>
+					
+				</stages>
+
+				<comps>
+					<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+						<linearAdjustment>30</linearAdjustment>
+						<scaleAdjustment>0.2</scaleAdjustment>
+					</li>
+				</comps>
+
+			</HediffDef>
+
+
+		<!-- Monster -->
+
+			<HediffDef ParentName="IsekaiHediffBase">
+				<defName>Isekai_Hediff_Monster</defName>
+				<label>Monster</label>
+				<description>This is a monster. Monster usually spawn inside dungeons.</description>
+				<isBad>false</isBad>
+				<everCurableByItem>false</everCurableByItem>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>10</maxSeverity>
+				<defaultInstallPart>Isekai_BodyParts_Monster_Core</defaultInstallPart>
+				<stages>
+					<!-- <li>
+						<label>tiny</label>
+						<statFactors>
+							<StaggerDurationFactor>0.95</StaggerDurationFactor>
+						</statFactors>
+					</li> -->
+				</stages>
+
+				<comps>
+					<!-- <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+						<damage>Burn</damage>
+						<createFilth>False</createFilth>
+						<damageAttachedPart>True</damageAttachedPart>
+						<tickInterval>60</tickInterval>
+						<damageAmount>2</damageAmount>
+					</li> -->
+					<li Class="EBSGFramework.HediffCompProperties_DestroyOnDeath"> <!-- despawns dead Body -->
+						<!-- <thingSpawn>GW_KoG_Warp</thingSpawn> -->
+					</li>
+				</comps>
+			</HediffDef>
+
+
+		<!-- Wind Slash -->
+
+			<HediffDef ParentName="IsekaiHediffBase">
+				<defName>Isekai_Hediff_WindSlash</defName>
+				<label>Wind Slash</label>
+				<description>Might slash the wind</description>
+				<isBad>false</isBad>
+				<everCurableByItem>false</everCurableByItem>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>10</maxSeverity>
+				<!-- <defaultInstallPart>Hand</defaultInstallPart> -->
+				<stages>
+				</stages>
+				<comps>
+					<li Class="HediffCompProperties_Disappears">
+						<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+						<showRemainingTime>True</showRemainingTime>
+					</li>
+					<li Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver">
+						<verbs>
+							<li>
+								<verbClass>Verb_Shoot</verbClass>
+								<label>Wind slash</label>
+								<hasStandardCommand>True</hasStandardCommand>
+								<defaultProjectile>Isekai_Projectile_WindSlash</defaultProjectile>
+								<!-- <forcedMissRadius>4.9</forcedMissRadius> -->
+								<burstShotCount>3</burstShotCount>
+								<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+								<warmupTime>0.5</warmupTime>
+								<!-- <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius> -->
+								<range>15</range>
+								<soundCast>InfernoCannon_Fire</soundCast>
+								<soundCastTail>GunTail_Heavy</soundCastTail>
+								<onlyManualCast>true</onlyManualCast>
+								<stopBurstWithoutLos>false</stopBurstWithoutLos>
+								<targetParams>
+									<canTargetLocations>true</canTargetLocations>
+								</targetParams>
+								<muzzleFlashScale>14</muzzleFlashScale>
+								<commandIcon>Projectile/WindCut</commandIcon>
+							</li>
+						</verbs>
+						<verbProps>
+							<li>
+								<label>test</label>
+								<canBeToggled>true</canBeToggled>
+								<comps>
+									<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+									<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+									<cooldownTime>600</cooldownTime>
+									</li>
+									<!-- <li Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable">
+									<compClass>MVCF.Reloading.Comps.VerbComp_Reloadable</compClass>
+									<AmmoFilter>
+										<thingDefs>
+										<li>Chemfuel</li>
+										</thingDefs>
+									</AmmoFilter>
+									<ItemsPerShot>5</ItemsPerShot>
+									<MaxShots>8</MaxShots>
+									<ReloadSound>Reload_Standard</ReloadSound>
+									<ReloadTimePerShot>1</ReloadTimePerShot>
+									</li> -->
+								</comps>
+							</li>
+						</verbProps>
+					</li>
+					<!-- <li Class="HediffCompProperties_RemoveIfOtherHediff">
+						<hediffs>
+							<li>Tensura_Race_Slime</li>
+						</hediffs>
+					</li> -->
+				</comps>
+			</HediffDef>
+		
+
+		<!-- Magical Sight -->
+		
+			<HediffDef ParentName="IsekaiHediffBase">
+				<defName>Isekai_Hediff_MagicalSight</defName>
+				<label>Magical sight</label>
+				<description>Might reveal hidden monsters.</description>
+				<defaultLabelColor>(1.0, 1.0, 1.0)</defaultLabelColor>
+				<isBad>false</isBad>
+				<minSeverity>0</minSeverity>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>1</maxSeverity>
+				<stages>
+					<li>
+						<capMods>
+							<li>
+								<capacity>Sight</capacity>
+								<offset>1.0</offset>
+							</li>
+						</capMods>
+
+						<statOffsets>
+							<!-- <Isekai_Magic_MaxMP>-500</Isekai_Magic_MaxMP> -->
+						</statOffsets>
+					</li>
+				</stages>
+				<comps>
+					<li Class="EBSGFramework.HediffCompProperties_GiveHediffsToNonAlliesInRange">
+						<hediff>Isekai_Hediff_MagicalSeen</hediff>
+						<range>30</range>
+						<!-- <rangeStat>SHG_Debuffer_Range</rangeStat> -->
+						<!-- <mote>Mote_SparkThrown</mote> -->
+						<!-- <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted> -->
+						<psychic>false</psychic>
+						<onlyWhileDrafted>false</onlyWhileDrafted>
+						<targetingParameters>
+							<canTargetBuildings>false</canTargetBuildings>
+							<canTargetAnimals>True</canTargetAnimals>
+							<canTargetMechs>True</canTargetMechs>
+						</targetingParameters>
+					</li>
+				</comps>
+			</HediffDef>
+
+		
+			<HediffDef ParentName="IsekaiHediffBase">
+				<defName>Isekai_Hediff_MagicalSeen</defName>
+				<label>Magically seen</label>
+				<description>Invisibility is useless. You can't hide anymore. Leaves a hidden mark on the pawn that removes invisibility in range.</description>
+				<defaultLabelColor>(1.0, 1.0, 1.0)</defaultLabelColor>
+				<isBad>false</isBad>
+				<minSeverity>0</minSeverity>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>1</maxSeverity>
+				<stages>
+					<li>
+						<makeImmuneTo>
+							<li MayRequire="Ludeon.Rimworld.Anomaly">HoraxianInvisibility</li>
+						</makeImmuneTo>
+					</li>
+				</stages>
+				<comps>
+					<li Class="HediffCompProperties_Disappears">
+						<!-- <disappearsAfterTicks>36000</disappearsAfterTicks>
+						<showRemainingTime>True</showRemainingTime> -->
+					</li>
+				</comps>
+				<modExtensions>
+					<li Class="BigAndSmall.PawnExtension">
+						<hediffFilters>
+							<banlist>
+								<li MayRequire="Ludeon.Rimworld.Anomaly">HoraxianInvisibility</li>
+							</banlist>
+						</hediffFilters>
+					</li>
+				</modExtensions>
+			</HediffDef>
+
+
+	<!-- Skill Points -->
+
+		<!--  -->
+
+			<HediffDef ParentName="IsekaiHediffBase">
+				<defName>Isekai_SkillPoints</defName>
+				<label>Skill points available</label>
+				<description>Skill Points that can be used to get special boni.</description>
+				<defaultLabelColor>(0.6, 0.6, 0.0)</defaultLabelColor>
+				<isBad>false</isBad>
+				<minSeverity>0</minSeverity>
+				<initialSeverity>1</initialSeverity>
+				<maxSeverity>100</maxSeverity>
+				<stages>
+					
+				</stages>
+
+				 <comps>
+					<li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+						<prependString>Skill Points : </prependString>
+						<!-- <appendString>%</appendString> -->
+						<!-- <postFactor>20</postFactor> -->
+						<roundDigits>0</roundDigits>
+					</li>
+				</comps>
+
+			</HediffDef>
+
+
+</Defs>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Base -->
+		<StatDef Abstract="true" Name="Isekai_Stat_Base">
+			<category>PawnCombat</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<displayPriorityInCategory>1000</displayPriorityInCategory>
+		</StatDef>
+
+		<!-- Wind -->
+			<StatDef Abstract="true" Name="Isekai_Stat_WindDamage" ParentName="Isekai_Stat_Base" >
+				<label>Wind Damage</label>
+				<description>Wind Damage upgrade for the pawn. This is a multiplier for the base damage of wind attacks.</description>
+			</StatDef>
+			
+			<StatDef Abstract="true" Name="Isekai_Stat_WindPen" ParentName="Isekai_Stat_Base" >
+				<label>Wind Penetration</label>
+				<description>Wind Penetration upgrade for the pawn. This is a multiplier for the effectiveness of wind attacks against armor.</description>
+			</StatDef>
+			
+			<StatDef Abstract="true" Name="Isekai_Stat_WindBurst" ParentName="Isekai_Stat_Base" >
+				<label>Wind Burst Shot</label>
+				<description>Wind Burst Shot upgrade for the pawn. This is a multiplier for burst counts of wind attacks.</description>
+			</StatDef>
+
+		<!-- Fire -->
+			<StatDef Abstract="true" Name="Isekai_Stat_FireDamage" ParentName="Isekai_Stat_Base" >
+				<label>Fire Damage</label>
+				<description>Fire Damage upgrade for the pawn. This is a multiplier for the base damage of fire attacks.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_FirePen" ParentName="Isekai_Stat_Base" >
+				<label>Fire Penetration</label>
+				<description>Fire Penetration upgrade for the pawn. This is a multiplier for the effectiveness of fire attacks against armor.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_FireBurst" ParentName="Isekai_Stat_Base" >
+				<label>Fire Burst Shot</label>
+				<description>Fire Burst Shot upgrade for the pawn. This is a multiplier for burst counts of fire attacks.</description>
+			</StatDef>
+
+		<!-- Water -->
+			<StatDef Abstract="true" Name="Isekai_Stat_WaterDamage" ParentName="Isekai_Stat_Base" >
+				<label>Water Damage</label>
+				<description>Water Damage upgrade for the pawn. This is a multiplier for the base damage of water attacks.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_WaterPen" ParentName="Isekai_Stat_Base" >
+				<label>Water Penetration</label>
+				<description>Water Penetration upgrade for the pawn. This is a multiplier for the effectiveness of water attacks against armor.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_WaterBurst" ParentName="Isekai_Stat_Base" >
+				<label>Water Burst Shot</label>
+				<description>Water Burst Shot upgrade for the pawn. This is a multiplier for burst counts of water attacks.</description>
+			</StatDef>
+
+		<!-- Earth -->
+			<StatDef Abstract="true" Name="Isekai_Stat_EarthDamage" ParentName="Isekai_Stat_Base" >
+				<label>Earth Damage</label>
+				<description>Earth Damage upgrade for the pawn. This is a multiplier for the base damage of earth attacks.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_EarthPen" ParentName="Isekai_Stat_Base" >
+				<label>Earth Penetration</label>
+				<description>Earth Penetration upgrade for the pawn. This is a multiplier for the effectiveness of earth attacks against armor.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_EarthBurst" ParentName="Isekai_Stat_Base" >
+				<label>Earth Burst Shot</label>
+				<description>Earth Burst Shot upgrade for the pawn. This is a multiplier for burst counts of earth attacks.</description>
+			</StatDef>
+
+		<!-- Light -->
+			<StatDef Abstract="true" Name="Isekai_Stat_LightDamage" ParentName="Isekai_Stat_Base" >
+				<label>Light Damage</label>
+				<description>Light Damage upgrade for the pawn. This is a multiplier for the base damage of light attacks.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_LightPen" ParentName="Isekai_Stat_Base" >
+				<label>Light Penetration</label>
+				<description>Light Penetration upgrade for the pawn. This is a multiplier for the effectiveness of light attacks against armor.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_LightBurst" ParentName="Isekai_Stat_Base" >
+				<label>Light Burst Shot</label>
+				<description>Light Burst Shot upgrade for the pawn. This is a multiplier for burst counts of light attacks.</description>
+			</StatDef>
+
+		<!-- Dark -->
+			<StatDef Abstract="true" Name="Isekai_Stat_DarkDamage" ParentName="Isekai_Stat_Base" >
+				<label>Dark Damage</label>
+				<description>Dark Damage upgrade for the pawn. This is a multiplier for the base damage of dark attacks.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_DarkPen" ParentName="Isekai_Stat_Base" >
+				<label>Dark Penetration</label>
+				<description>Dark Penetration upgrade for the pawn. This is a multiplier for the effectiveness of dark attacks against armor.</description>
+			</StatDef>
+
+			<StatDef Abstract="true" Name="Isekai_Stat_DarkBurst" ParentName="Isekai_Stat_Base" >
+				<label>Dark Burst Shot</label>
+				<description>Dark Burst Shot upgrade for the pawn. This is a multiplier for burst counts of dark attacks.</description>
+			</StatDef>
+
+
+	<!-- Magic -->
+
+		<!-- Wind -->
+			<StatDef ParentName="Isekai_Stat_WindDamage">
+				<defName>Isekai_Stat_Wind_Damage</defName>
+				<displayPriorityInCategory>999</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_WindPen">
+				<defName>Isekai_Stat_Wind_Penetration</defName>
+				<displayPriorityInCategory>998</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_WindBurst">
+				<defName>Isekai_Stat_Wind_BurstShotCount</defName>
+				<displayPriorityInCategory>997</displayPriorityInCategory>
+			</StatDef>
+
+		<!-- Fire -->
+			<StatDef ParentName="Isekai_Stat_FireDamage">
+				<defName>Isekai_Stat_Fire_Damage</defName>
+				<displayPriorityInCategory>996</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_FirePen">
+				<defName>Isekai_Stat_Fire_Penetration</defName>
+				<displayPriorityInCategory>995</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_FireBurst">
+				<defName>Isekai_Stat_Fire_BurstShotCount</defName>
+				<displayPriorityInCategory>994</displayPriorityInCategory>
+			</StatDef>
+
+		<!-- Water -->
+			<StatDef ParentName="Isekai_Stat_WaterDamage">
+				<defName>Isekai_Stat_Water_Damage</defName>
+				<displayPriorityInCategory>993</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_WaterPen">
+				<defName>Isekai_Stat_Water_Penetration</defName>
+				<displayPriorityInCategory>992</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_WaterBurst">
+				<defName>Isekai_Stat_Water_BurstShotCount</defName>
+				<displayPriorityInCategory>991</displayPriorityInCategory>
+			</StatDef>
+
+		<!-- Earth -->
+			<StatDef ParentName="Isekai_Stat_EarthDamage">
+				<defName>Isekai_Stat_Earth_Damage</defName>
+				<displayPriorityInCategory>990</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_EarthPen">
+				<defName>Isekai_Stat_Earth_Penetration</defName>
+				<displayPriorityInCategory>989</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_EarthBurst">
+				<defName>Isekai_Stat_Earth_BurstShotCount</defName>
+				<displayPriorityInCategory>988</displayPriorityInCategory>
+			</StatDef>
+
+		<!-- Light -->
+			<StatDef ParentName="Isekai_Stat_LightDamage">
+				<defName>Isekai_Stat_Light_Damage</defName>
+				<displayPriorityInCategory>987</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_LightPen">
+				<defName>Isekai_Stat_Light_Penetration</defName>
+				<displayPriorityInCategory>986</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_LightBurst">
+				<defName>Isekai_Stat_Light_BurstShotCount</defName>
+				<displayPriorityInCategory>985</displayPriorityInCategory>
+			</StatDef>
+		
+		<!-- Dark -->
+			<StatDef ParentName="Isekai_Stat_DarkDamage">
+				<defName>Isekai_Stat_Dark_Damage</defName>
+				<displayPriorityInCategory>984</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_DarkPen">
+				<defName>Isekai_Stat_Dark_Penetration</defName>
+				<displayPriorityInCategory>983</displayPriorityInCategory>
+			</StatDef>
+
+			<StatDef ParentName="Isekai_Stat_DarkBurst">
+				<defName>Isekai_Stat_Dark_BurstShotCount</defName>
+				<displayPriorityInCategory>982</displayPriorityInCategory>
+			</StatDef>
+
+
+
+	<!-- Basic Magic -->
+		
+		<StatDef>
+			<defName>Isekai_Magic_Damage</defName>
+			<label>Magic Damage</label>
+			<description>Magic Damage dealt by the pawn. This is a multiplier for the base damage of magic attacks.</description>
+			<category>PawnCombat</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<!-- <alwaysHide>true</alwaysHide> -->
+			<displayPriorityInCategory>999</displayPriorityInCategory>
+		</StatDef>
+		
+		<StatDef>
+			<defName>Isekai_Magic_Penetration</defName>
+			<label>Magic Penetration</label>
+			<description>Magic Penetration of the pawn. This is a multiplier for the effectiveness of magic attacks against armor.</description>
+			<category>PawnCombat</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<displayPriorityInCategory>998</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef>
+			<defName>Isekai_Magic_BurstShotCount</defName>
+			<label>Magic Burst Shot Count</label>
+			<description>Number of burst shots for magic attacks.</description>
+			<category>PawnCombat</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>Integer</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<displayPriorityInCategory>997</displayPriorityInCategory>
+		</StatDef>
+
+		<!-- <StatDef>
+			<defName>Isekai_Magic_Cooldown</defName>
+			<label>Magic Cooldown</label>
+			<description>Cooldown time for magic abilities.</description>
+			<category>PawnCombat</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<displayPriorityInCategory>107</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef>
+			<defName>Isekai_Magic_Range</defName>
+			<label>Magic Range</label>
+			<description>Range of magic attacks.</description>
+			<category>PawnCombat</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<minValue>0</minValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<displayPriorityInCategory>108</displayPriorityInCategory>
+		</StatDef> -->
+
+
+</Defs>

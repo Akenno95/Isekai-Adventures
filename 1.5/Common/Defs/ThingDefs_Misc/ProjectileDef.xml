@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<!-- Slash -->
+		<ThingDef ParentName="BaseBullet">
+			<defName>Isekai_SlashProjectile</defName>
+			<label>Slash shot</label>
+			<graphicData>
+				<!--texPath>Effects/BlackQiEnergyOrb</texPath-->
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>MoteGlow</shaderType>
+				<drawSize>1</drawSize>
+			</graphicData>
+			<!--thingClass>Bullet</thingClass-->
+			<projectile>
+				<speed>25</speed>
+				<damageDef>Isekai_SlashDamage</damageDef>
+				<damageAmountBase>5</damageAmountBase>
+				<armorPenetrationBase>0.30</armorPenetrationBase>
+				<stoppingPower>1</stoppingPower>
+			</projectile>
+			<comps>
+			</comps>
+		</ThingDef>
+
+	<!-- Aspectual Skilltree -->
+
+		<!-- Slash -->
+
+			<ThingDef ParentName="BaseBullet">
+				<defName>Isekai_Projectile_WindSlash</defName>
+				<label>Wind slash</label>
+
+				<thingClass>IsekaiAdventures.Bullet_Scaling</thingClass>
+
+				<graphicData>
+					<texPath>Projectile/WindCut</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<shaderType>MoteGlow</shaderType>
+					<drawSize>1</drawSize>
+				</graphicData>
+
+				<projectile>
+					<damageDef>Isekai_SlashDamage</damageDef>
+					<damageAmountBase>10</damageAmountBase>
+					<armorPenetrationBase>0.1</armorPenetrationBase>
+					<stoppingPower>1</stoppingPower>
+					<speed>50</speed>
+					<!-- <extraDamages>
+						<li>
+							<def>Isekai_SlashDamage</def>
+							<amount>50</amount>
+							<armorPenetration>0</armorPenetration>
+							<chance>90</chance>
+						</li>
+					</extraDamages> -->
+				</projectile>
+
+				<comps>
+				</comps>
+				<modExtensions>		
+					<!-- damageBase + (damageStat * damageMultiplier) // Shield damage = damageBase -->
+					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
+						<damageStat>Isekai_Magic_Damage</damageStat>
+						<damageMultiplier>5.0</damageMultiplier>
+						<armorPenetrationStat>Isekai_Magic_Penetration</armorPenetrationStat>
+						<armorPenetrationMultiplier>5.0</armorPenetrationMultiplier>
+						<!-- <burstShotCountStat>Isekai_Magic_BurstShotCount</burstShotCountStat>
+						<burstShotMultiplier>5.0</burstShotMultiplier>
+						<cooldownStat>Isekai_Magic_Cooldown</cooldownStat>
+						<cooldownMultiplier>5.0</cooldownMultiplier>
+						<rangeStat>Isekai_Magic_Range</rangeStat>
+						<rangeMultiplier>5.0</rangeMultiplier> -->
+					</li>
+				</modExtensions>
+			</ThingDef>
+
+
+
+
+
+
+
+
+
+
+
+</Defs>
