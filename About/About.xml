@@ -3,7 +3,9 @@
 
 		<name>Isekai Adventures</name>
 		<author>Akenno</author>
-		<supportedVersions><li>1.5</li></supportedVersions>
+		<supportedVersions>
+			<li>1.5</li>
+		</supportedVersions>
 		<packageId>Akenno.Isekai</packageId>
 		<description>Isekai Adventures - Mod Project with abilities and races from typical isekai / reincarnated animes!</description>
 		<modDependencies>
@@ -19,7 +21,7 @@
 			</li>
 			<li>
 				<packageId>RedMattis.BetterPrerequisites</packageId>
-				<displayName>Better Gene Prerequisites</displayName>
+				<displayName>Big and Small - Framework</displayName>
 				<steamWorkshopUrl>steam://url/CommunityFilePage/2925432336</steamWorkshopUrl>
 			</li>
 			<li>
@@ -39,5 +41,21 @@
 				<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
 			</li>
 		</modDependencies>
+
+		<loadAfter>
+			<li>Ludeon.RimWorld</li>
+			<li>Ludeon.RimWorld.Royalty</li>
+			<li>Ludeon.RimWorld.Ideology</li>
+			<li>Ludeon.RimWorld.Biotech</li>
+			<li>Ludeon.RimWorld.Anomaly</li>
+			<li>Ludeon.RimWorld.Odyssey</li>
+			<li>brrainz.harmony</li>
+			<li>ebsg.framework</li>
+			<li>RedMattis.BetterPrerequisites</li>
+			<li>RedMattis.BigSmall.Core</li>
+			<li>v1024.ebframework</li>
+			<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+			<li>Zomuro.ItsSorcery</li>
+		</loadAfter>
 
 </ModMetaData>
