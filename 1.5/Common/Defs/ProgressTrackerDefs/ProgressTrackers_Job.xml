@@ -808,7 +808,7 @@
 
 
 	<!-- Class Fisher -->
-		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" MayRequire="RimWorld.Odyssey">
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" MayRequire="Ludeon.RimWorld.Odyssey">
 			<defName>Isekai_Job_Class_Fisher</defName>
 			<label>Fisher</label>
 			<description>Fish for food and resources.</description>
