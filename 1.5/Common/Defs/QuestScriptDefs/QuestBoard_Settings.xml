@@ -22,7 +22,7 @@
 			<questCooldowns>
 				<li>
 					<key>OpportunitySite_BanditCamp</key>
-					<value>60000</value> <!-- Cooldown (60000 ticks = 1 in-game day) -->
+					<value>60000</value> <!-- Cooldown (60000 ticks = 1 in-game day) DEFAULT -->
 				</li>
 				<li>
 					<key>OpportunitySite_ItemStash</key>
