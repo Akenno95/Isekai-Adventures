@@ -808,7 +808,7 @@
 
 
 	<!-- Class Fisher -->
-		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" >
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Job_ClassBase" MayRequire="RimWorld.Odyssey">
 			<defName>Isekai_Job_Class_Fisher</defName>
 			<label>Fisher</label>
 			<description>Fish for food and resources.</description>
@@ -819,16 +819,16 @@
 					<level>1</level>
 					<pointGain>0</pointGain>
 					<statOffsets>
-						<!-- <FishingSpeed>0.01</FishingSpeed>
-						<FishingYield>0.01</FishingYield> -->
+						<FishingSpeed>0.01</FishingSpeed>
+						<FishingYield>0.01</FishingYield>
 					</statOffsets>
 				</li>
 				<li>
 					<level>5</level>
 					<pointGain>0</pointGain>
 					<statOffsets>
-						<!-- <FishingSpeed>0.02</FishingSpeed>
-						<FishingYield>0.02</FishingYield> -->
+						<FishingSpeed>0.02</FishingSpeed>
+						<FishingYield>0.02</FishingYield>
 					</statOffsets>
 				</li>
 			</levelFactors>
