@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>	
+		
+	<!-- Base -->
+	 	<!-- Base Sorcery -->
+			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Base" ParentName="SorceryBase">
+				<sorcerySchema>Isekai_Magic</sorcerySchema>
+				<verbProperties>		
+					<verbClass>IsekaiAdventures.Verb_AbilityShoot_Scaling</verbClass>
+				</verbProperties>
+			</ItsSorceryFramework.SorceryDef>
+
+		<!-- Wind -->
+			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Wind" ParentName="Isekai_SorceryScaling_Base">
+				<modExtensions>		
+					<!-- damageBase + (damageStat * damageMultiplier) // Shield damage = damageBase -->
+					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
+						<burstShotCountStat>Isekai_Stat_Wind_BurstShotCount</burstShotCountStat>
+						<burstShotMultiplier>1.0</burstShotMultiplier>
+					</li>
+				</modExtensions>
+			</ItsSorceryFramework.SorceryDef>
+
+		<!-- Fire -->
+			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Fire" ParentName="Isekai_SorceryScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
+						<burstShotCountStat>Isekai_Stat_Fire_BurstShotCount</burstShotCountStat>
+						<burstShotMultiplier>1.0</burstShotMultiplier>
+					</li>
+				</modExtensions>
+			</ItsSorceryFramework.SorceryDef>
+
+		<!-- Water -->
+			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Water" ParentName="Isekai_SorceryScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
+						<burstShotCountStat>Isekai_Stat_Water_BurstShotCount</burstShotCountStat>
+						<burstShotMultiplier>1.0</burstShotMultiplier>
+					</li>
+				</modExtensions>
+			</ItsSorceryFramework.SorceryDef>
+
+		<!-- Earth -->
+			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Earth" ParentName="Isekai_SorceryScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
+						<burstShotCountStat>Isekai_Stat_Earth_BurstShotCount</burstShotCountStat>
+						<burstShotMultiplier>1.0</burstShotMultiplier>
+					</li>
+				</modExtensions>
+			</ItsSorceryFramework.SorceryDef>
+
+		<!-- Light -->
+			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Light" ParentName="Isekai_SorceryScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
+						<burstShotCountStat>Isekai_Stat_Light_BurstShotCount</burstShotCountStat>
+						<burstShotMultiplier>1.0</burstShotMultiplier>
+					</li>
+				</modExtensions>
+			</ItsSorceryFramework.SorceryDef>
+
+		<!-- Dark -->
+			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Dark" ParentName="Isekai_SorceryScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
+						<burstShotCountStat>Isekai_Stat_Dark_BurstShotCount</burstShotCountStat>
+						<burstShotMultiplier>1.0</burstShotMultiplier>
+					</li>
+				</modExtensions>
+			</ItsSorceryFramework.SorceryDef>
+
+
+	<!-- Magic -->
+
+		<!-- Wind -->
+
+			<ItsSorceryFramework.SorceryDef ParentName="Isekai_SorceryScaling_Wind">
+				<defName>Isekai_WindSlash</defName>
+				<label>Wind slash</label>
+				<description>Slashing the wind.</description>
+				<level>1</level>
+				<iconPath>Projectile/WindCut</iconPath>
+				<!--warmupSound>...</warmupSound-->
+				<aiCanUse>true</aiCanUse>
+				<cooldownTicksRange>200</cooldownTicksRange>  <!-- 60 ticks = 1 sec -->
+			
+				<statBases>
+					<Isekai_MPCost>50</Isekai_MPCost>
+					<!-- <Ability_Duration>5</Ability_Duration> -->
+				</statBases>
+				<verbProperties>		
+					<defaultProjectile>Isekai_Projectile_WindSlash</defaultProjectile>
+					
+					<burstShotCount>2</burstShotCount>
+					<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+					<warmupTime>1.0</warmupTime>
+					<range>10</range>
+
+					<accuracyTouch>0.9</accuracyTouch>
+					<accuracyShort>0.8</accuracyShort>
+					<accuracyMedium>0.7</accuracyMedium>
+					<accuracyLong>0.6</accuracyLong>
+
+					<soundCast>Heatspikes_Shot</soundCast>
+					<soundCastTail>Heatspikes_Tail</soundCastTail>
+					<muzzleFlashScale>9</muzzleFlashScale>
+
+					<ai_IsWeapon>false</ai_IsWeapon>
+
+					<requireLineOfSight>True</requireLineOfSight>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+				</verbProperties>
+
+				<comps>
+				</comps>
+			</ItsSorceryFramework.SorceryDef>
+
+
+
+</Defs>

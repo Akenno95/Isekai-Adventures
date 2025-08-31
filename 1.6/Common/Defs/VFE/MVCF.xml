@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+		<MVCF.ModDef>
+			<defName>Isekai_MultiAttack</defName>
+			<label>Isekai MultiAttack</label>
+			<description>Adding multi attacks for abilities.</description>
+			<ActivateFeatures>
+				<li>RangedAnimals</li>			<!-- Animals / Race -->
+				<li>HediffVerbs</li>			<!-- Hediffs -->
+				<li>IntegratedToggle</li>		<!-- Animals / Race -->
+				<li>ApparelVerbs</li>			<!-- Apparel -->
+				<li>ExtraEquipmentVerbs</li>	<!-- Weapons -->
+			</ActivateFeatures>
+		</MVCF.ModDef>
+
+
+</Defs>

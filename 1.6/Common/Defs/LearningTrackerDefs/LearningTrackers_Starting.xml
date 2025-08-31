@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Setup -->
+		
+		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
+			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
+			<defName>Isekai_Starting_LearningTrackerProgress</defName>
+			<label>Summary</label>
+		</ItsSorceryFramework.LearningTrackerDef>
+
+		<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+			<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+			<defName>Isekai_Starting_LearningTrackerTree</defName>
+			<label>Starting Race</label>
+		</ItsSorceryFramework.LearningTrackerDef>
+
+		
+	<!-- Starting Options -->
+
+		<!-- Human Start -->
+		
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Starting_LearningTrackerTree</learningTrackerDef>
+				<defName>Isekai_Node_Starting_Human</defName>
+				<label>Human Start</label>
+				<description>This pawn will morph into a human.</description>
+				
+				<coordX>0</coordX>
+				<coordY>0</coordY>
+				<pointReq>0</pointReq>
+				
+				<prereqHediffs>
+					<li>
+						<key>Isekai_Hediff_Otherworlder</key>
+						<value>1</value>
+					</li>
+				</prereqHediffs>
+				
+				<exclusiveNodes>
+					<li>Tensura_Node_Starting_Slime</li>
+				</exclusiveNodes>
+				
+				<hediffAdd>
+					<li><hediffDef>Isekai_Morph_Human</hediffDef><severity>1</severity></li>
+				</hediffAdd>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+			
+			
+		<!-- Slime Start -->
+
+			<ItsSorceryFramework.LearningTreeNodeDef MayRequire="Akenno.Tensura" ParentName = "LearningTreeNodeBase">
+				<learningTrackerDef>Isekai_Starting_LearningTrackerTree</learningTrackerDef>
+				<defName>Tensura_Node_Starting_Slime</defName>
+				<label>Slime Start</label>
+				<description>This pawn will morph into a slime.</description>
+				
+				<coordX>0</coordX>
+				<coordY>1</coordY>
+				<pointReq>0</pointReq>
+				
+				<prereqHediffs>
+					<li>
+						<key>Isekai_Hediff_Otherworlder</key>
+						<value>3</value>
+					</li>
+				</prereqHediffs>
+				
+				<exclusiveNodes>
+					<li>Isekai_Node_Starting_Human</li>
+				</exclusiveNodes>
+				
+				<hediffAdd>
+					<li><hediffDef>Tensura_Morph_Slime</hediffDef><severity>1</severity></li>
+				</hediffAdd>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>
+			
+			
+			
+
+
+
+
+
+</Defs>

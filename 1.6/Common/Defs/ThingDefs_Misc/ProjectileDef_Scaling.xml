@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Base -->
+	 	<!-- Base Projectile -->
+			<ThingDef Abstract="true" Name="Isekai_ProjectileScaling_Base" ParentName="BaseBullet">
+				<thingClass>IsekaiAdventures.Bullet_Scaling</thingClass>
+			</ThingDef>
+
+
+		<!-- Wind -->
+			<ThingDef Abstract="true" Name="Isekai_ProjectileScaling_Wind" ParentName="Isekai_ProjectileScaling_Base">
+				<modExtensions>		
+					<!-- damageBase + (damageStat * damageMultiplier) // Shield damage = damageBase -->
+					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
+						<damageStat>Isekai_Stat_Wind_Damage</damageStat>
+						<damageMultiplier>1.0</damageMultiplier>
+						<armorPenetrationStat>Isekai_Stat_Wind_Penetration</armorPenetrationStat>
+						<armorPenetrationMultiplier>1.0</armorPenetrationMultiplier>
+					</li>
+				</modExtensions>
+			</ThingDef>
+
+		<!-- Fire -->
+			<ThingDef Abstract="true" Name="Isekai_ProjectileScaling_Fire" ParentName="Isekai_ProjectileScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
+						<damageStat>Isekai_Stat_Fire_Damage</damageStat>
+						<damageMultiplier>1.0</damageMultiplier>
+						<armorPenetrationStat>Isekai_Stat_Fire_Penetration</armorPenetrationStat>
+						<armorPenetrationMultiplier>1.0</armorPenetrationMultiplier>
+					</li>
+				</modExtensions>
+			</ThingDef>
+
+		<!-- Water -->
+			<ThingDef Abstract="true" Name="Isekai_ProjectileScaling_Water" ParentName="Isekai_ProjectileScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
+						<damageStat>Isekai_Stat_Water_Damage</damageStat>
+						<damageMultiplier>1.0</damageMultiplier>
+						<armorPenetrationStat>Isekai_Stat_Water_Penetration</armorPenetrationStat>
+						<armorPenetrationMultiplier>1.0</armorPenetrationMultiplier>
+					</li>
+				</modExtensions>
+			</ThingDef>
+
+		<!-- Earth -->
+			<ThingDef Abstract="true" Name="Isekai_ProjectileScaling_Earth" ParentName="Isekai_ProjectileScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
+						<damageStat>Isekai_Stat_Earth_Damage</damageStat>
+						<damageMultiplier>1.0</damageMultiplier>
+						<armorPenetrationStat>Isekai_Stat_Earth_Penetration</armorPenetrationStat>
+						<armorPenetrationMultiplier>1.0</armorPenetrationMultiplier>
+					</li>
+				</modExtensions>
+			</ThingDef>
+
+		<!-- Light -->
+			<ThingDef Abstract="true" Name="Isekai_ProjectileScaling_Light" ParentName="Isekai_ProjectileScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
+						<damageStat>Isekai_Stat_Light_Damage</damageStat>
+						<damageMultiplier>1.0</damageMultiplier>
+						<armorPenetrationStat>Isekai_Stat_Light_Penetration</armorPenetrationStat>
+						<armorPenetrationMultiplier>1.0</armorPenetrationMultiplier>
+					</li>
+				</modExtensions>
+			</ThingDef>
+
+		<!-- Dark -->
+			<ThingDef Abstract="true" Name="Isekai_ProjectileScaling_Dark" ParentName="Isekai_ProjectileScaling_Base">
+				<modExtensions>
+					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
+						<damageStat>Isekai_Stat_Dark_Damage</damageStat>
+						<damageMultiplier>1.0</damageMultiplier>
+						<armorPenetrationStat>Isekai_Stat_Dark_Penetration</armorPenetrationStat>
+						<armorPenetrationMultiplier>1.0</armorPenetrationMultiplier>
+					</li>
+				</modExtensions>
+			</ThingDef>
+
+
+
+
+
+
+
+
+
+
+
+</Defs>

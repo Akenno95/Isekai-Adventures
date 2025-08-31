@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+
+	<!-- Races -->
+
+		<!-- Adventurer + BodySwitch -->
+	
+			<XenotypeDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Xeno_Adventurer</defName>
+				<label>Adventurer</label>
+				<description>An adventurer who embarks on a new journey.</description>
+				<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
+
+				<combatPowerFactor>0</combatPowerFactor>
+				<inheritable>true</inheritable>
+				<factionlessGenerationWeight>0</factionlessGenerationWeight>
+
+				<genes>
+					<!-- <li>Isekai_Gene_Adventurer</li> -->
+					<!--li>Isekai_GeneSchema_Resistances</li>
+					<li>Isekai_GeneSchema_Body</li>
+					<li>Isekai_GeneSchema_Magic</li-->
+				</genes>
+				<modExtensions>
+				<!-- This makes the game toggle to your race when the pawn is spawned in as a new creature. It does not require any special genes to do so. -->
+					<li Class="BetterPrerequisites.XenotypeExtension">
+						<setRace>Isekai_Race_Human</setRace>
+						<!-- If set to true it will also be able to force itself over other races, such as HAR races. -->
+						<forceRace>true</forceRace>
+					</li>
+				</modExtensions>
+			</XenotypeDef>
+
+
+		<!-- Otherworlder -->
+	
+			<XenotypeDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Xeno_Otherworlder</defName>
+				<label>Otherworlder</label>
+				<description>This pawn comes from another rim and was summoned or reincarnated.</description>
+				<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
+				
+				<combatPowerFactor>0</combatPowerFactor>
+				<inheritable>true</inheritable>
+				<factionlessGenerationWeight>0</factionlessGenerationWeight>
+				
+				<genes>
+					<li>Isekai_Gene_Otherworlder</li>
+				</genes>
+			</XenotypeDef>
+		
+		
+		
+		
+
+
+</Defs>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		
+	<!-- Human -->		
+		
+		<!-- Morph Human -->
+	
+			<XenotypeDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_Morph_Human</defName>
+				<label>Human</label>
+				<description>This is a human with special abilities.</description>
+				<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
+				
+				<combatPowerFactor>0</combatPowerFactor>
+				<inheritable>true</inheritable>
+				<factionlessGenerationWeight>0</factionlessGenerationWeight>
+				
+				<genes>
+					<li>Isekai_BodySwitch_Human</li>
+				</genes>
+			</XenotypeDef>
+
+
+		<!-- XenoChange Human -->				<!-- only for visuals -->
+	
+			<XenotypeDef MayRequire = "Ludeon.RimWorld.Biotech">
+				<defName>Isekai_XenoChange_Human</defName>
+				<label>Human</label>
+				<description>This is a human with special abilities.</description>
+				<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
+				
+				<combatPowerFactor>0</combatPowerFactor>
+				<inheritable>true</inheritable>
+				<factionlessGenerationWeight>0</factionlessGenerationWeight>
+				
+				<genes>
+				</genes>
+			</XenotypeDef>
+
+
+		
+		
+		
+		
+		
+		
+</Defs>

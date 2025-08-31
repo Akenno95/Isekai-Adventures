@@ -28,9 +28,9 @@
 					<ArmorRating_Isekai_Wind>0.1</ArmorRating_Isekai_Wind>
 					<ArmorRating_Heat>-0.1</ArmorRating_Heat>
 				</statOffsets>
-				<!-- <statFactors>
+				<statFactors>
 					<PawnHealthScale>1.5</PawnHealthScale>
-				</statFactors> -->
+				</statFactors>
 			</GeneDef>
 
 		 	<GeneDef ParentName="IsekaiGeneAffinityBase" MayRequire = "Ludeon.RimWorld.Biotech">

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Magic -->
+	<!-- Progress Tracker Setup -->
+		<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
+			<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
+			<defName>Isekai_ProgressTracker_Magic</defName>
+			<label>Magic</label>
+
+			<!-- <bgPath>UI/ProgressTracker/...</bgPath> -->
+			<progressLevelUpKey>Isekai_Magic_LevelUp</progressLevelUpKey>
+			<progressLevelUpDescKey>Isekai_Magic_LevelUpMessage</progressLevelUpDescKey>
+			<skillPointLabelKey>Isekai_Magic_SkillPointLabel</skillPointLabelKey>
+
+			<progressHediff>Isekai_ProgressTrackerRPG_Hediff_Magic</progressHediff>
+			<baseClass>Isekai_Magic_Class_Basic</baseClass>
+		</ItsSorceryFramework.ProgressTrackerDef>
+			
+	<!-- Class Setup -->
+		<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "Isekai_Magic_ClassBase" ParentName = "ProgressTrackerClassBase">
+			<progressTrackerDef>Isekai_ProgressTracker_Magic</progressTrackerDef>
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+	<!-- Class Magic Basic -->
+		<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "Isekai_Magic_ClassBase" >
+			<defName>Isekai_Magic_Class_Basic</defName>
+			<label>Magic Class Basic</label>
+			<description>Magic class basic for Isekai Adventures.</description>
+
+			<linkedClasses>
+				<!-- <li>
+					<classDef>Isekai_Body_Class_Test2</classDef>
+					<levelReset>true</levelReset>
+					<benefitReset>true</benefitReset>
+					<removePostClassChange>true</removePostClassChange>
+				</li> -->
+			</linkedClasses>
+
+			<levelRange>1~1000</levelRange>
+			<levelFactors>
+				<li>
+					<level>1</level>
+					<statOffsets>
+						<Isekai_Magic_MaxMP>10</Isekai_Magic_MaxMP>
+					</statOffsets>
+					<capMods>
+						<!--li>
+							<capacity>BloodFiltration</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>BloodPumping</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Breathing</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Consciousness</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Eating</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Hearing</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Manipulation</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Metabolism</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Moving</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<offset>0.1</offset>
+						</li>
+						<li>
+							<capacity>Talking</capacity>
+							<offset>0.1</offset>
+						</li-->
+					</capMods>
+				</li>
+				<li>
+					<level>5</level>
+					<pointGain>2</pointGain>
+					<statOffsets>
+						<Isekai_Magic_MaxMP>30</Isekai_Magic_MaxMP>
+						<Isekai_Magic_MPRecovery>0.5</Isekai_Magic_MPRecovery>
+						<Isekai_Magic_AbsMinMP>-5</Isekai_Magic_AbsMinMP>
+					</statOffsets>
+				</li>
+				
+			</levelFactors>
+			
+			<!--levelSpecifics>
+				<li>
+					<level>2</level>
+					<hediffAdd>
+						<li>
+							<hediffDef>Isekai_Pain_Resistance</hediffDef><severity>1</severity>
+						</li>
+						
+					</hediffAdd>
+				</li>
+			</levelSpecifics-->
+			
+			<!--<levelLabels>
+				<li><level>1</level><label>F-Rank</label></li>
+				<li><level>20</level><label>E-Rank</label></li>
+				<li><level>40</level><label>D-Rank</label></li>
+				<li><level>60</level><label>C-Rank</label></li>
+				<li><level>80</level><label>B-Rank</label></li>
+				<li><level>100</level><label>A-Rank</label></li>
+				<li><level>150</level><label>S-Rank</label></li>
+				<li><level>200</level><label>SS-Rank</label></li>
+				<li><level>300</level><label>SSS-Rank</label></li>
+			</levelLabels>-->
+			<expTags>
+				<li>Isekai_Magic_EXPTag_Passive</li>
+			</expTags>
+
+		</ItsSorceryFramework.ProgressTrackerClassDef>
+
+
+	<!-- Hediff Setup -->
+		<HediffDef ParentName="ProgressTrackerHediffBase">
+			<defName>Isekai_ProgressTrackerRPG_Hediff_Magic</defName>
+			<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
+			<label>Magic</label>
+			<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+			<description>Magic Points for your pawn.</description>
+			<initialSeverity>1</initialSeverity>
+			<minSeverity>0</minSeverity>
+			<!--<maxSeverity>1000</maxSeverity>-->
+			<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+			<stages>
+				<li>
+					<!--minSeverity>2</minSeverity>
+					<becomeVisible>false</becomeVisible-->
+				</li>
+			</stages>
+		</HediffDef>
+
+
+
+
+</Defs>

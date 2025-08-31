@@ -5,5 +5,10 @@
 		<li>1.5/Common</li>
 		<li>1.5/Main</li>
 	</v1.5>
+	<v1.6>
+		<li>/</li>
+		<li>1.6/Common</li>
+		<li>1.6/Main</li>
+	</v1.6>
 
 </loadFolders>

@@ -1,0 +1,5 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Isekai-Adventures\Source\Isekai Adventures\obj\Debug\IsekaiAdventures.csproj.AssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Isekai-Adventures\Source\Isekai Adventures\obj\Debug\IsekaiAdventures.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Isekai-Adventures\Assemblies\IsekaiAdventures.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Isekai-Adventures\Source\Isekai Adventures\obj\Debug\IsekaiAdventures.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Isekai-Adventures\Source\Isekai Adventures\obj\Debug\IsekaiAd.8F516549.Up2Date

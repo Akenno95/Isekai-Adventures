@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+		<!-- Slash -->
+		<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+			<sorcerySchema>Isekai_Body</sorcerySchema>
+			<defName>Isekai_Slash</defName>
+			<label>Slash</label>
+			<description>Slashing the wind.</description>
+			<level>1</level>
+			<!--<iconPath>UI/Sorceries/hea</iconPath>-->
+			<!--warmupSound>...</warmupSound-->
+			<aiCanUse>true</aiCanUse>
+			<cooldownTicksRange>200</cooldownTicksRange>
+		
+			<statBases>
+				<Isekai_StaminaCost>25</Isekai_StaminaCost>
+				<!-- <Ability_Duration>60</Ability_Duration> -->
+			</statBases>
+			<verbProperties>		
+				<verbClass>Verb_CastAbility</verbClass>
+				<range>15</range>
+				<requireLineOfSight>True</requireLineOfSight>
+				<warmupTime>0.5</warmupTime>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</verbProperties>
+		
+			<comps>
+				<li Class="CompProperties_AbilityLaunchProjectile">
+					<projectileDef>Isekai_SlashProjectile</projectileDef>
+				</li>
+			</comps>
+		</ItsSorceryFramework.SorceryDef>		
+		
+	<!-- Aspectual Skilltree -->
+
+		<!-- Slash -->
+
+			<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+				<sorcerySchema>Isekai_Magic</sorcerySchema>
+				<defName>Isekai_WindSlash0</defName>
+				<label>Wind slash</label>
+				<description>Slashing the wind.</description>
+				<level>1</level>
+				<iconPath>Projectile/WindCut</iconPath>
+				<!--warmupSound>...</warmupSound-->
+				<aiCanUse>true</aiCanUse>
+				<cooldownTicksRange>200</cooldownTicksRange>  <!-- 60 ticks = 1 sec -->
+			
+				<statBases>
+					<Isekai_MPCost>50</Isekai_MPCost>
+					<!-- <Ability_Duration>5</Ability_Duration> -->
+				</statBases>
+				<verbProperties>		
+					<verbClass>IsekaiAdventures.Verb_AbilityShoot_Scaling</verbClass>
+					<defaultProjectile>Isekai_Projectile_WindSlash</defaultProjectile>
+					<burstShotCount>2</burstShotCount>
+					<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+					<warmupTime>1.0</warmupTime>
+					<range>10</range>
+
+					<accuracyTouch>0.9</accuracyTouch>
+					<accuracyShort>0.8</accuracyShort>
+					<accuracyMedium>0.7</accuracyMedium>
+					<accuracyLong>0.6</accuracyLong>
+
+					<soundCast>Heatspikes_Shot</soundCast>
+					<soundCastTail>Heatspikes_Tail</soundCastTail>
+					<muzzleFlashScale>9</muzzleFlashScale>
+
+					<ai_IsWeapon>false</ai_IsWeapon>
+
+					<requireLineOfSight>True</requireLineOfSight>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+				</verbProperties>
+
+				<comps>
+				</comps>
+
+				<modExtensions>		
+					<!-- damageBase + (damageStat * damageMultiplier) // Shield damage = damageBase -->
+					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
+						<!-- <damageStat>Isekai_Magic_Damage</damageStat>
+						<damageMultiplier>5.0</damageMultiplier>
+						<armorPenetrationStat>Isekai_Magic_Penetration</armorPenetrationStat>
+						<armorPenetrationMultiplier>5.0</armorPenetrationMultiplier> -->
+						<burstShotCountStat>Isekai_Magic_BurstShotCount</burstShotCountStat>
+						<burstShotMultiplier>5.0</burstShotMultiplier>
+						<!-- <cooldownStat>Isekai_Magic_Cooldown</cooldownStat>
+						<cooldownMultiplier>5.0</cooldownMultiplier>
+						<rangeStat>Isekai_Magic_Range</rangeStat>
+						<rangeMultiplier>5.0</rangeMultiplier> -->
+					</li>
+				</modExtensions>
+			</ItsSorceryFramework.SorceryDef>
+
+		<!-- Slash -->
+
+			<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+				<sorcerySchema>Isekai_Magic</sorcerySchema>
+				<defName>Isekai_WindSlash1</defName>
+				<label>Wind slash</label>
+				<description>Slashing the wind.</description>
+				<level>1</level>
+				<iconPath>Projectile/WindCut</iconPath>
+				<!--warmupSound>...</warmupSound-->
+				<aiCanUse>true</aiCanUse>
+				<cooldownTicksRange>200</cooldownTicksRange>  <!-- 60 ticks = 1 sec -->
+			
+				<statBases>
+					<Isekai_MPCost>50</Isekai_MPCost>
+					<!-- <Ability_Duration>5</Ability_Duration> -->
+				</statBases>
+				<verbProperties>		
+					<verbClass>Verb_CastAbility</verbClass>
+					<range>15</range>
+					<requireLineOfSight>True</requireLineOfSight>
+					<warmupTime>1.5</warmupTime>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+				</verbProperties>
+			
+				<comps>
+					<!-- <li Class="IsekaiAdventures.CompProperties_AbilityLaunchProjectileBurst">
+						<projectileDef>Isekai_Projectile_WindSlash</projectileDef>
+						<burstCount>1</burstCount>
+						<ticksBetweenShots>5</ticksBetweenShots>
+					</li> -->
+				</comps>
+			</ItsSorceryFramework.SorceryDef>
+		<!-- Slash -->
+
+			<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+				<sorcerySchema>Isekai_Magic</sorcerySchema>
+				<defName>Isekai_WindSlash2</defName>
+				<label>Wind slash</label>
+				<description>Slashing the wind.</description>
+				<level>1</level>
+				<iconPath>Projectile/WindCut</iconPath>
+				<!--warmupSound>...</warmupSound-->
+				<aiCanUse>true</aiCanUse>
+				<cooldownTicksRange>200</cooldownTicksRange>  <!-- 60 ticks = 1 sec -->
+			
+				<statBases>
+					<Isekai_MPCost>50</Isekai_MPCost>
+					<!-- <Ability_Duration>5</Ability_Duration> -->
+				</statBases>
+				<verbProperties>		
+					<verbClass>Verb_AbilityShoot</verbClass>
+					<range>15</range>
+					<requireLineOfSight>True</requireLineOfSight>
+					<warmupTime>1.5</warmupTime>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<burstShotCount>5</burstShotCount>
+					<ticksBetweenBurstShots>16</ticksBetweenBurstShots>
+					
+					<defaultProjectile>Isekai_Projectile_WindSlash</defaultProjectile>
+				</verbProperties>
+			
+				<!-- <comps>
+					<li Class="CompProperties_AbilityLaunchProjectile">
+						<projectileDef>Isekai_Projectile_WindSlash</projectileDef>
+					</li>
+				</comps> -->
+			</ItsSorceryFramework.SorceryDef>
+
+
+<!-- Gluttony Passive -->
+		
+		<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+			<sorcerySchema>Isekai_Magic</sorcerySchema>
+			<defName>Isekai_Ability_WindSlash</defName>
+			<label>Powering Wind</label>
+			<description>Powering wind slash</description>
+			<level>1</level>
+			<!--<iconPath>UI/Sorceries/hea</iconPath>-->
+			<!--warmupSound>...</warmupSound-->
+			<aiCanUse>true</aiCanUse>
+			<cooldownTicksRange>100</cooldownTicksRange>
+		
+			<statBases>
+				<Isekai_MPCost>100</Isekai_MPCost>
+				<Ability_Duration>10</Ability_Duration>		<!-- Hediff needs disappear to function -->
+			</statBases>
+			<verbProperties>		
+				<verbClass>Verb_CastAbility</verbClass>
+				<range>15</range>
+				<requireLineOfSight>True</requireLineOfSight>
+				<warmupTime>1</warmupTime>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetSelf>false</canTargetSelf>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetMechs>false</canTargetMechs>
+				</targetParams>
+			</verbProperties>
+		
+			<comps>
+				<li Class = "CompProperties_AbilityGiveHediff">
+					<compClass>CompAbilityEffect_GiveHediff</compClass>
+					<hediffDef>Isekai_Hediff_WindSlash</hediffDef>
+					<psychic>false</psychic>
+					<applicableToMechs>False</applicableToMechs>
+				</li>
+			</comps>
+		</ItsSorceryFramework.SorceryDef>				
+
+
+</Defs>

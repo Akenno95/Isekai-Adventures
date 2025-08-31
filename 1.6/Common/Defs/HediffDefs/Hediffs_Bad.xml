@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		
+		<HediffDef ParentName="IsekaiHediffBase">
+			<defName>Isekai_Magic_MPStrain</defName>
+			<label>MP strain</label>
+			<description>Pawn needs to rest to recover from using too much MP.</description>
+			<isBad>true</isBad>
+			<initialSeverity>0</initialSeverity>
+			<maxSeverity>1</maxSeverity>
+			<comps>
+				<li Class="HediffCompProperties_SeverityPerDay">
+					<severityPerDay>-0.5</severityPerDay>
+					<showDaysToRecover>true</showDaysToRecover>
+				</li>
+			</comps>
+			<stages>
+				<li>
+					<capMods>
+						<li>
+							<capacity>Consciousness</capacity>
+							<setMax>0.1</setMax>
+						</li>
+					</capMods>
+				</li>
+			</stages>
+
+		</HediffDef>
+
+
+	
+
+
+</Defs>

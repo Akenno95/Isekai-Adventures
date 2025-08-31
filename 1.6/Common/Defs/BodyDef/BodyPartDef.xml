@@ -1,0 +1,232 @@
+<Defs>
+
+
+ 	<!-- Monster Core -->
+
+		<BodyPartDef>
+			<defName>Isekai_BodyParts_Monster_Core</defName>
+			<label>Core</label>
+			<hitPoints>20</hitPoints>
+			<skinCovered>false</skinCovered>
+			<canScarify>false</canScarify>
+			<canSuggestAmputation>false</canSuggestAmputation>
+			<bleedRate>0</bleedRate>
+			<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+			<solid>true</solid>
+			<delicate>true</delicate>
+			<!-- <hitChanceFactors>
+				<li>
+					<key>Blunt</key>
+					<value>0</value>
+				</li>
+			</hitChanceFactors> -->
+			<tags>	<!-- 0% Consciousness, Blood Filtration, Blood Pumping, Breathing, or Digestion. -->
+				<!--li>BreathingSourceCage</li-->
+				<!-- <li>ConsciousnessSource</li> -->
+				<!--<li>SightSource</li>
+				<li>HearingSource</li>-->
+				<li>EatingSource</li>
+				<li>TalkingSource</li>
+				<li>BloodPumpingSource</li>
+				<li>BreathingSource</li>
+				<li>BloodFiltrationKidney</li>
+				<li>BloodFiltrationLiver</li>
+				<li>MetabolismSource</li>
+				<li>MovingLimbCore</li>
+				<li>ManipulationLimbCore</li>
+				<!--li>Mirrored</li-->
+			</tags>
+			<!--spawnThingOnRemoved>Monster_Core</spawnThingOnRemoved-->
+		</BodyPartDef>
+
+		
+	<!-- Material Body -->
+
+		<BodyPartDef>
+			<defName>Isekai_BodyParts_MaterialBody</defName>
+			<label>Material Body</label>
+			<hitPoints>100</hitPoints>
+			<skinCovered>false</skinCovered>
+			<canScarify>false</canScarify>
+			<canSuggestAmputation>false</canSuggestAmputation>
+			<bleedRate>0</bleedRate>
+			<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+			<solid>false</solid>
+			<delicate>true</delicate>
+			<destroyableByDamage>false</destroyableByDamage>
+			<!-- <hitChanceFactors>
+				<li>
+					<key>Blunt</key>
+					<value>0</value>
+				</li>
+			</hitChanceFactors> -->
+			<tags>
+				<!--li>BreathingSourceCage</li-->
+				<!-- <li>ConsciousnessSource</li> -->
+				<!--<li>SightSource</li>
+				<li>HearingSource</li>-->
+				<!-- <li>EatingSource</li>
+				<li>TalkingSource</li> -->
+				<!-- <li>BloodPumpingSource</li>
+				<li>BreathingSource</li>
+				<li>BloodFiltrationKidney</li>
+				<li>BloodFiltrationLiver</li> -->
+				<!-- <li>MetabolismSource</li> -->
+				<!-- <li>MovingLimbCore</li> -->
+				<li>MovingLimbSegment</li>
+				<!-- <li>ManipulationLimbCore</li> -->
+				<li>ManipulationLimbSegment</li>
+				<li>BreathingPathway</li>
+				<li>EatingPathway</li>
+				<li>TalkingPathway</li>
+				<!--li>Mirrored</li-->
+			</tags>
+			<!--spawnThingOnRemoved>Monster_Core</spawnThingOnRemoved-->
+		</BodyPartDef>
+
+
+	<!-- Spiritual Body -->
+
+		<BodyPartDef>
+			<defName>Isekai_BodyParts_SpiritualBody</defName>
+			<label>Spiritual Body</label>
+			<hitPoints>100</hitPoints>
+			<skinCovered>false</skinCovered>
+			<canScarify>false</canScarify>
+			<canSuggestAmputation>false</canSuggestAmputation>
+			<bleedRate>0</bleedRate>
+			<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+			<solid>false</solid>
+			<delicate>true</delicate>
+			<destroyableByDamage>false</destroyableByDamage>
+			<hitChanceFactors>
+				<li>
+					<key>Blunt</key>
+					<value>0</value>
+				</li> 
+				<!-- <li>
+					<key>Sharp</key>
+					<value>0</value>
+				</li> -->
+				<!-- <li>
+					<key>Heat</key>
+					<value>0</value>
+				</li> -->
+			</hitChanceFactors>
+			<tags>
+				<!--li>BreathingSourceCage</li-->
+				<!-- <li>ConsciousnessSource</li>			only for demi-spiritual lifeforms -->
+				<!--<li>SightSource</li>
+				<li>HearingSource</li>-->
+				<!-- <li>EatingSource</li>
+				<li>TalkingSource</li> -->
+				<!-- <li>BloodPumpingSource</li>
+				<li>BreathingSource</li>
+				<li>BloodFiltrationKidney</li>
+				<li>BloodFiltrationLiver</li> -->
+				<!-- <li>MetabolismSource</li>
+				<li>MovingLimbCore</li>
+				<li>ManipulationLimbCore</li> -->
+				<!--li>Mirrored</li-->
+			</tags>
+			<!--spawnThingOnRemoved>Monster_Core</spawnThingOnRemoved-->
+		</BodyPartDef>
+
+
+	<!-- Astral Body -->
+
+		<BodyPartDef>
+			<defName>Isekai_BodyParts_AstralBody</defName>
+			<label>Astral Body</label>
+			<hitPoints>100</hitPoints>
+			<skinCovered>false</skinCovered>
+			<canScarify>false</canScarify>
+			<canSuggestAmputation>false</canSuggestAmputation>
+			<bleedRate>0</bleedRate>
+			<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+			<solid>false</solid>
+			<delicate>true</delicate>
+			<destroyableByDamage>false</destroyableByDamage>
+			<hitChanceFactors>
+				<li>
+					<key>Blunt</key>
+					<value>0</value>
+				</li>
+				<!-- <li>
+					<key>Sharp</key>
+					<value>0</value>
+				</li> -->
+				<!-- <li>
+					<key>Heat</key>
+					<value>0</value>
+				</li> -->
+			</hitChanceFactors>
+			<tags>
+				<!--li>BreathingSourceCage</li-->
+				<!-- <li>ConsciousnessSource</li> -->
+				<!--<li>SightSource</li>
+				<li>HearingSource</li>-->
+				<!-- <li>EatingSource</li>
+				<li>TalkingSource</li> -->
+				<!-- <li>BloodPumpingSource</li>
+				<li>BreathingSource</li>
+				<li>BloodFiltrationKidney</li>
+				<li>BloodFiltrationLiver</li> -->
+				<!-- <li>MetabolismSource</li>
+				<li>MovingLimbCore</li>
+				<li>ManipulationLimbCore</li> -->
+				<!--li>Mirrored</li-->
+			</tags>
+			<!--spawnThingOnRemoved>Monster_Core</spawnThingOnRemoved-->
+		</BodyPartDef>
+
+
+	<!-- Soul -->
+
+		<BodyPartDef>
+			<defName>Isekai_BodyParts_Soul</defName>
+			<label>Soul</label>
+			<hitPoints>10</hitPoints>
+			<skinCovered>false</skinCovered>
+			<canScarify>false</canScarify>
+			<canSuggestAmputation>false</canSuggestAmputation>
+			<bleedRate>0</bleedRate>
+			<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+			<solid>false</solid>
+			<delicate>true</delicate>
+			<hitChanceFactors>
+				<li>
+					<key>Blunt</key>
+					<value>0</value>
+				</li>
+				<!-- <li>
+					<key>Sharp</key>
+					<value>0</value>
+				</li> -->
+				<!-- <li>
+					<key>Heat</key>
+					<value>0</value>
+				</li> -->
+			</hitChanceFactors>
+			<tags>	<!-- 0% Consciousness, Blood Filtration, Blood Pumping, Breathing, or Digestion. -->
+				<!--li>BreathingSourceCage</li-->
+				<li>ConsciousnessSource</li>
+				<!--<li>SightSource</li>
+				<li>HearingSource</li>-->
+				<!-- <li>EatingSource</li>
+				<li>TalkingSource</li> -->
+				<!-- <li>BloodPumpingSource</li>
+				<li>BreathingSource</li>
+				<li>BloodFiltrationKidney</li>
+				<li>BloodFiltrationLiver</li> -->
+				<!-- <li>MetabolismSource</li>
+				<li>MovingLimbCore</li>
+				<li>ManipulationLimbCore</li> -->
+				<!--li>Mirrored</li-->
+			</tags>
+			<!--spawnThingOnRemoved>Monster_Core</spawnThingOnRemoved-->
+		</BodyPartDef>
+
+
+  
+</Defs>

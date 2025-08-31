@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+
+	<!-- Body Switch -->
+
+		<!-- Human -->
+
+			<GeneDef MayRequire = "Ludeon.RimWorld.Biotech" ParentName="BS_BodySwitch">
+				<defName>Isekai_BodySwitch_Human</defName>
+				<label>Morphing human</label>
+				<description>Morphing into a human...</description>
+				
+				<biostatCpx>0</biostatCpx>
+				<biostatMet>0</biostatMet>
+				<selectionWeight>0</selectionWeight>
+				<canGenerateInGeneSet>false</canGenerateInGeneSet>
+				
+				<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath> 
+				<displayCategory>Isekai_Genes_Morphing</displayCategory>
+				<displayOrderInCategory>1</displayOrderInCategory>
+				
+				<modExtensions>
+				<li Class="BigAndSmall.PawnExtension">
+					<hideInGenePicker>true</hideInGenePicker>
+					<thingDefSwap>Isekai_Race_Human</thingDefSwap>
+					<forceThingDefSwap>false</forceThingDefSwap>
+				</li>
+				</modExtensions>
+			</GeneDef>
+
+
+
+
+</Defs>
