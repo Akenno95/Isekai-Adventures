@@ -192,6 +192,30 @@
 				</statOffsets>
 				
 			</ItsSorceryFramework.LearningTreeNodeDef>	
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTrainingNode">
+				<defName>Isekai_Magic_Node_Cooldown</defName>
+				<label>Magical cooldown</label>
+				<description>Understand that this world contains MP, also known as Magic Points, Mana Points or Magicule Points.</description>
+				
+				<coordX>3</coordX>
+				<statOffsets>
+					<Isekai_Magic_Cooldown>-0.8</Isekai_Magic_Cooldown>
+				</statOffsets>
+				
+			</ItsSorceryFramework.LearningTreeNodeDef>	
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTrainingNode">
+				<defName>Isekai_Magic_Node_TicksBetween</defName>
+				<label>Magical ticks between</label>
+				<description>Understand that this world contains MP, also known as Magic Points, Mana Points or Magicule Points.</description>
+				
+				<coordX>4</coordX>
+				<statOffsets>
+					<Isekai_Magic_TicksBetween>-5</Isekai_Magic_TicksBetween>
+				</statOffsets>
+
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTrainingNode">
 				<defName>Isekai_Magic_Node_Cooldown</defName>

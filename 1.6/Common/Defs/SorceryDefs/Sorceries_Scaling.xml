@@ -6,7 +6,7 @@
 			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Base" ParentName="SorceryBase">
 				<sorcerySchema>Isekai_Magic</sorcerySchema>
 				<verbProperties>		
-					<verbClass>IsekaiAdventures.Verb_AbilityShoot_Scaling</verbClass>
+					<verbClass>IsekaiAdventures.Verb_AbilityBurstScaling</verbClass>
 				</verbProperties>
 			</ItsSorceryFramework.SorceryDef>
 
@@ -78,7 +78,7 @@
 
 			<ItsSorceryFramework.SorceryDef ParentName="Isekai_SorceryScaling_Wind">
 				<defName>Isekai_WindSlash</defName>
-				<label>Wind slash</label>
+				<label>Wind slash scaling</label>
 				<description>Slashing the wind.</description>
 				<level>1</level>
 				<iconPath>Projectile/WindCut</iconPath>
@@ -117,6 +117,24 @@
 
 				<comps>
 				</comps>
+				<modExtensions>
+					<li Class="IsekaiAdventures.MDO_BurstScaling">
+						<burstCountMode>BasePlusAddThenMultiply</burstCountMode>
+						<ticksBetweenMode>BasePlusAdd</ticksBetweenMode>
+
+						<minShots>1</minShots>
+						<maxShots>20</maxShots>
+						<minTicksBetween>0</minTicksBetween>
+						<maxTicksBetween>25</maxTicksBetween>
+
+						<burstCountStat>Isekai_Magic_BurstShotCount</burstCountStat>
+						<!-- <burstMultiplierStat></burstMultiplierStat> -->
+						<ticksBetweenStat>Isekai_Magic_TicksBetween</ticksBetweenStat>
+						<cooldownFactorStat>Isekai_Magic_Cooldown</cooldownFactorStat>
+						<!-- optional -->
+						<!-- <damageFactorStat>Isekai_Magic_Damage</damageFactorStat> -->
+					</li>
+			</modExtensions>
 			</ItsSorceryFramework.SorceryDef>
 
 

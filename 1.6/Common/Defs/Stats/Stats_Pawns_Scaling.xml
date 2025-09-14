@@ -216,7 +216,8 @@
 			<description>Magic Damage dealt by the pawn. This is a multiplier for the base damage of magic attacks.</description>
 			<category>PawnCombat</category>
 			<defaultBaseValue>0</defaultBaseValue>
-			<minValue>0</minValue>
+			<minValue>-50</minValue>
+			<maxValue>50</maxValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<!-- <alwaysHide>true</alwaysHide> -->
@@ -247,29 +248,84 @@
 			<displayPriorityInCategory>997</displayPriorityInCategory>
 		</StatDef>
 
-		<!-- <StatDef>
+		<StatDef>
 			<defName>Isekai_Magic_Cooldown</defName>
 			<label>Magic Cooldown</label>
-			<description>Cooldown time for magic abilities.</description>
+			<description>Cooldown time for magic abilities. The less the better.</description>
 			<category>PawnCombat</category>
-			<defaultBaseValue>0</defaultBaseValue>
-			<minValue>0</minValue>
+			<defaultBaseValue>1</defaultBaseValue>
+			<minValue>0.1</minValue>
+			<maxValue>5</maxValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<displayPriorityInCategory>107</displayPriorityInCategory>
 		</StatDef>
 
 		<StatDef>
-			<defName>Isekai_Magic_Range</defName>
-			<label>Magic Range</label>
-			<description>Range of magic attacks.</description>
+			<defName>Isekai_Magic_TicksBetween</defName>
+			<label>Ticks between shots</label>
+			<description>Ticks of magic attacks.</description>
 			<category>PawnCombat</category>
 			<defaultBaseValue>0</defaultBaseValue>
-			<minValue>0</minValue>
+			<minValue>0.1</minValue>
+			<maxValue>50</maxValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<displayPriorityInCategory>108</displayPriorityInCategory>
-		</StatDef> -->
+		</StatDef>
+
+
+	<!-- Threshold Stats -->
+
+		<StatDef>
+			<defName>Magic_IceFlat</defName>
+			<category>PawnCombat</category>
+			<label>Ice Magic Affinity</label>
+			<description>Affinity for ice magic.</description>
+			<defaultBaseValue>0</defaultBaseValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<parts>
+				<li Class="IsekaiAdventures.StatPart_Threshold">
+					<threshold>6</threshold>	<!-- Erst ab 10 wird gerechnet / Sources zum stat addiert -->
+					
+					<mode>Positive</mode>		
+					<!-- Mode: 	Positive = Unter threshold wird auf <defaultBaseValue> gesetzt
+								Negative = Unter threshold wird negativ gerechnet und Wert weiter gegeben -->
+
+					<multiplier>1</multiplier>		<!-- Multiplikativ auf Endergebnis // 1 für flat, 0.01 für multiplier -->
+					
+					<sources>
+						<li><stat>Isekai_Magic_Damage</stat><weight>1</weight></li>
+						<li><stat>Isekai_Magic_BurstShotCount</stat><weight>1</weight></li>
+					</sources>
+				</li>
+			</parts>
+		</StatDef>
+
+		<StatDef>
+			<defName>Magic_LavaFlat</defName>
+			<category>PawnCombat</category>
+			<label>Lava Magic Affinity</label>
+			<description>Affinity for lava magic.</description>
+			<defaultBaseValue>0</defaultBaseValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<parts>
+				<li Class="IsekaiAdventures.StatPart_Threshold">
+					<threshold>10</threshold>	<!-- Erst ab 10 wird gerechnet / Sources zum stat addiert -->
+					
+					<mode>Negative</mode>		
+					<!-- Mode: 	Positive = Unter threshold wird auf <defaultBaseValue> gesetzt
+								Negative = Unter threshold wird negativ gerechnet und Wert weiter gegeben -->
+
+					<multiplier>1</multiplier>		<!-- Multiplikativ auf Endergebnis // 1 für flat, 0.01 für multiplier -->
+					
+					<sources>
+						<li><stat>Isekai_Magic_Damage</stat><weight>-1</weight></li>
+						<li><stat>Isekai_Magic_BurstShotCount</stat><weight>1</weight></li>
+					</sources>
+				</li>
+			</parts>
+		</StatDef>
 
 
 </Defs>

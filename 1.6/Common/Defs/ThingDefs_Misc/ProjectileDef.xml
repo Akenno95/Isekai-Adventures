@@ -6,17 +6,17 @@
 			<defName>Isekai_SlashProjectile</defName>
 			<label>Slash shot</label>
 			<graphicData>
-				<!--texPath>Effects/BlackQiEnergyOrb</texPath-->
+				<texPath>Projectile/WindCut</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>MoteGlow</shaderType>
 				<drawSize>1</drawSize>
 			</graphicData>
 			<!--thingClass>Bullet</thingClass-->
 			<projectile>
-				<speed>25</speed>
+				<speed>30</speed>
 				<damageDef>Isekai_SlashDamage</damageDef>
-				<damageAmountBase>5</damageAmountBase>
-				<armorPenetrationBase>0.30</armorPenetrationBase>
+				<damageAmountBase>10</damageAmountBase>
+				<armorPenetrationBase>0.1</armorPenetrationBase>
 				<stoppingPower>1</stoppingPower>
 			</projectile>
 			<comps>
@@ -58,19 +58,19 @@
 
 				<comps>
 				</comps>
-				<modExtensions>		
-					<!-- damageBase + (damageStat * damageMultiplier) // Shield damage = damageBase -->
+				<modExtensions>
 					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
-						<damageStat>Isekai_Magic_Damage</damageStat>
-						<damageMultiplier>5.0</damageMultiplier>
-						<armorPenetrationStat>Isekai_Magic_Penetration</armorPenetrationStat>
-						<armorPenetrationMultiplier>5.0</armorPenetrationMultiplier>
-						<!-- <burstShotCountStat>Isekai_Magic_BurstShotCount</burstShotCountStat>
-						<burstShotMultiplier>5.0</burstShotMultiplier>
-						<cooldownStat>Isekai_Magic_Cooldown</cooldownStat>
-						<cooldownMultiplier>5.0</cooldownMultiplier>
-						<rangeStat>Isekai_Magic_Range</rangeStat>
-						<rangeMultiplier>5.0</rangeMultiplier> -->
+						<!-- Stat Description
+							✅ damageStat = Der Stat, dessen Wert in Punkte übersetzt wird.
+							✅ damageMultiplier = Der Faktor, der angibt, wie stark damageStat in Punkte übersetzt wird.
+							✅ damageMultiplierStat = Multiplier-Stat für den gesamten Schaden (Base + Flat).
+							✅ damageMultiplierScale = Umrechnungsfaktor, um damageMultiplierStat sinnvoll in einen Multiplikator zu verwandeln (z. B. Prozentwerte → Faktor). -->
+						<flatBonusStat>Isekai_Magic_Damage</flatBonusStat>
+						<flatBonusFactor>1.0</flatBonusFactor>
+						<damageMultStat>Isekai_Stat_Wind_DamageMultiplier</damageMultStat>
+						<damageMultScale>1.0</damageMultScale>
+						<armorPenetrationStat>Isekai_Stat_Wind_Penetration</armorPenetrationStat>
+						<armorPenetrationFactor>1.0</armorPenetrationFactor>
 					</li>
 				</modExtensions>
 			</ThingDef>

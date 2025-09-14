@@ -15,6 +15,8 @@
 					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
 						<damageStat>Isekai_Stat_Wind_Damage</damageStat>
 						<damageMultiplier>1.0</damageMultiplier>
+						<damageMultiplierStat>Isekai_Stat_Wind_DamageMultiplier</damageMultiplierStat>
+						<damageMultiplierScale>1.0</damageMultiplierScale>
 						<armorPenetrationStat>Isekai_Stat_Wind_Penetration</armorPenetrationStat>
 						<armorPenetrationMultiplier>1.0</armorPenetrationMultiplier>
 					</li>
