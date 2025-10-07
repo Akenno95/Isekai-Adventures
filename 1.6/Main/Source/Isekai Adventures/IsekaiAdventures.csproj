@@ -9,11 +9,17 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IsekaiAdventures</RootNamespace>
     <AssemblyName>IsekaiAdventures</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
     <LangVersion>9.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <!-- WICHTIG: leer lassen, damit VS nicht im Game-Ordner nach System.* sucht -->
+    <ReferencePath>
+    </ReferencePath>
+    <!-- Pfade ANPASSEN -->
+    <RimWorldDir>D:\SteamLibrary\steamapps\common\RimWorld</RimWorldDir>
+    <WorkshopDir>D:\SteamLibrary\steamapps\workshop\content\294100</WorkshopDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -32,44 +38,71 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <!-- .NET 4.7.2 Framework-Assemblies (ohne HintPath!) -->
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <!-- Game/Unity -->
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(RimWorldDir)\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(RimWorldDir)\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
+  <!-- Harmony-Fallback: Wenn HarmonyLib im Managed-Ordner existiert, nimm das;
+       sonst 0Harmony aus Workshop (Vanilla Expanded). -->
+  <Choose>
+    <When Condition="Exists('$(RimWorldDir)\RimWorldWin64_Data\Managed\HarmonyLib.dll')">
+      <ItemGroup>
+        <Reference Include="HarmonyLib">
+          <HintPath>$(RimWorldDir)\RimWorldWin64_Data\Managed\HarmonyLib.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="0Harmony">
+          <HintPath>$(WorkshopDir)\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <!-- Deine .cs-Dateien -->
   <ItemGroup>
-    <Compile Include="AbilityCooldownPatch.cs" />
-    <Compile Include="Building_QuestBoard.cs" />
-    <Compile Include="BurstCalc.cs" />
-    <Compile Include="Dialog_QuestBoard.cs" />
+    <Compile Include="AbilityScaling\AbilityCooldownPatch.cs" />
+    <Compile Include="AbilityScaling\BurstCalc.cs" />
+    <Compile Include="AbilityScaling\MDO_BurstScaling.cs" />
+    <Compile Include="AbilityScaling\VerbBurstPostfix.cs" />
+    <Compile Include="AbilityScaling\Verb_AbilityBurstScaling.cs" />
     <Compile Include="Harmony_Startup.cs" />
-    <Compile Include="MDO_BurstScaling.cs" />
-    <Compile Include="ModExt_AbilityScaling.cs" />
-    <Compile Include="QuestBoardSettings.cs" />
-    <Compile Include="QuestBoardSettingsDef.cs" />
-    <Compile Include="QuestCooldownTracker.cs" />
-    <Compile Include="ModExt_ProjectileScaling.cs" />
-    <Compile Include="Bullet_Scaling.cs" />
+    <Compile Include="HealthRegen\Regenerate.cs" />
+    <Compile Include="MaxHealth\Hediff_MaxHPBonus.cs" />
+    <Compile Include="MaxHealth\MaxHPBonusExtension.cs" />
+    <Compile Include="MaxHealth\Patch_MaxHP.cs" />
+    <Compile Include="ProjectileScaling\Bullet_Scaling.cs" />
+    <Compile Include="ProjectileScaling\ModExt_ProjectileScaling.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatPart_ThresholdFromStats.cs" />
-    <Compile Include="VerbBurstPostfix.cs" />
-    <Compile Include="Verb_AbilityBurstScaling.cs" />
+    <Compile Include="QuestBoard\Building_QuestBoard.cs" />
+    <Compile Include="QuestBoard\Dialog_QuestBoard.cs" />
+    <Compile Include="QuestBoard\QuestBoardSettings.cs" />
+    <Compile Include="QuestBoard\QuestBoardSettingsDef.cs" />
+    <Compile Include="QuestBoard\QuestCooldownTracker.cs" />
+    <Compile Include="Stats\StatPart_ThresholdFromStats.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

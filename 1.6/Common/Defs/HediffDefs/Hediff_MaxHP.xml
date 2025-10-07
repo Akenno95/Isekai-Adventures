@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+		<HediffDef ParentName="BaseHediff">
+            <defName>IA_MaxHP_Buff_All_Flat20</defName>
+            <label>verstärkte Konstitution</label>
+            <description>Erhöht die maximale Gesundheit um 20 Punkte.</description>
+            <hediffClass>IsekaiAdventures.Hediff_MaxHPBonus</hediffClass>
+            <isBad>false</isBad>
+            <modExtensions>
+                <li Class="IsekaiAdventures.MaxHPBonusExtension">
+                    <applyToAll>true</applyToAll>       <!-- false -->
+                        <!-- <includePartTags>
+                                <li>BloodPumpingSource</li>
+                                <li>BreathingSource</li>
+                                <li>ConsciousnessSource</li>
+                            </includePartTags> -->
+                    <flatBonus>20</flatBonus>
+                    <percentBonus>0.15</percentBonus>
+                    <stackMultiples>true</stackMultiples>
+                    <maxStacks>0</maxStacks>  <!-- 0 = unlimited -->
+                    <!-- <excludePartTags>
+                        <li>ConsciousnessSource</li>
+                    </excludePartTags> -->
+                </li>
+            </modExtensions>
+        </HediffDef>
+
+
+        <HediffDef ParentName="BaseHediff">
+            <defName>IA_Regeneration_Basic</defName>
+            <label>Isekai Regeneration</label>
+            <description>Heilt langsam Wunden und Verletzungen über die Zeit.</description>
+            <hediffClass>HediffWithComps</hediffClass>
+            <isBad>false</isBad>
+            <comps>
+                <li Class="IsekaiAdventures.HediffCompProperties_Regenerate">
+                    <tickInterval>60</tickInterval> <!-- every 60 ticks (1 sec) -->
+                    <healFlat>0.5</healFlat>
+                    <healPercentOfMissing>0.02</healPercentOfMissing>
+                    <healPercentOfMax>0.005</healPercentOfMax>
+                    <naturalPartsOnly>true</naturalPartsOnly>
+                    <healNonInjuryHediffs>true</healNonInjuryHediffs>
+                    <hediffsToReduce>
+                        <li>ToxicBuildup</li>
+                    </hediffsToReduce>
+                    <hediffSeverityReducePerTick>0.005</hediffSeverityReducePerTick>
+                </li>
+            </comps>
+        </HediffDef>
+
+
+
+
+
+
+
+
+
+
+</Defs>
