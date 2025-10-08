@@ -80,21 +80,21 @@
 
 		<!-- Rank -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiJobDebugNodeHiding" Abstract="True" Name="IsekaiRankNode">
+			<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiJobDebugNodeHiding" Abstract="True" Name="IsekaiRankNode">
 				<learningTrackerDef>Isekai_Job_LearningTrackerTree_Rank</learningTrackerDef>
 				<coordY>0</coordY>
 				<coordX>0</coordX>
 				<pointReq>1</pointReq>
-			</ItsSorceryFramework.LearningTreeNodeDef>
+			</ItsSorceryFramework.LearningTreeNodeDef> -->
 
 		<!-- Race -->
 
-			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiJobDebugNodeHiding" Abstract="True" Name="IsekaiRaceNode">
+			<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiJobDebugNodeHiding" Abstract="True" Name="IsekaiRaceNode">
 				<learningTrackerDef>Isekai_Job_LearningTrackerTree_Race</learningTrackerDef>
 				<coordY>0</coordY>
 				<coordX>0</coordX>
 				<pointReq>0</pointReq>
-			</ItsSorceryFramework.LearningTreeNodeDef>
+			</ItsSorceryFramework.LearningTreeNodeDef> -->
 		
 				
 	<!-- Basics Skilltree -->

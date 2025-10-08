@@ -24,7 +24,7 @@
 				</genes>
 				<modExtensions>
 				<!-- This makes the game toggle to your race when the pawn is spawned in as a new creature. It does not require any special genes to do so. -->
-					<li Class="BetterPrerequisites.XenotypeExtension">
+					<li Class="BigAndSmall.XenotypeExtension">
 						<setRace>Isekai_Race_Human</setRace>
 						<!-- If set to true it will also be able to force itself over other races, such as HAR races. -->
 						<forceRace>true</forceRace>

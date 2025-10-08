@@ -21,20 +21,6 @@
 	
 			<initialSeverity>1</initialSeverity>
 	
-			<disablesNeeds>
-				<!-- <li>Comfort</li> -->
-				<!-- <li>Mood</li> -->
-				<!-- <li>Rest</li>
-				<li>Beauty</li>
-				<li>Outdoors</li>
-				<li>Indoors</li> -->
-				<!-- <li>Joy</li> -->
-				<!-- <li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
-				<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
-				<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
-				<li>Food</li> -->
-			</disablesNeeds>
-	
 			<!--
 			"Stages", even if you just have one is a useful way to control a lot of rimworld behaviour.
 	
@@ -81,6 +67,20 @@
 						<li>Carcinoma</li>
 						<li>HeartAttack</li> -->
 					</makeImmuneTo>
+					
+					<disablesNeeds>
+						<!-- <li>Comfort</li> -->
+						<!-- <li>Mood</li> -->
+						<!-- <li>Rest</li>
+						<li>Beauty</li>
+						<li>Outdoors</li>
+						<li>Indoors</li> -->
+						<!-- <li>Joy</li> -->
+						<!-- <li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
+						<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
+						<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
+						<li>Food</li> -->
+					</disablesNeeds>
 				</li>
 				<li>
 					<minSeverity>2</minSeverity>

@@ -54,7 +54,7 @@
 					<!-- <Ability_Duration>5</Ability_Duration> -->
 				</statBases>
 				<verbProperties>		
-					<verbClass>IsekaiAdventures.Verb_AbilityShoot_Scaling</verbClass>
+					<!-- <verbClass>IsekaiAdventures.Verb_AbilityShoot_Scaling</verbClass> -->
 					<defaultProjectile>Isekai_Projectile_WindSlash</defaultProjectile>
 					<burstShotCount>2</burstShotCount>
 					<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
@@ -82,19 +82,7 @@
 				</comps>
 
 				<modExtensions>		
-					<!-- damageBase + (damageStat * damageMultiplier) // Shield damage = damageBase -->
-					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
-						<!-- <damageStat>Isekai_Magic_Damage</damageStat>
-						<damageMultiplier>5.0</damageMultiplier>
-						<armorPenetrationStat>Isekai_Magic_Penetration</armorPenetrationStat>
-						<armorPenetrationMultiplier>5.0</armorPenetrationMultiplier> -->
-						<burstShotCountStat>Isekai_Magic_BurstShotCount</burstShotCountStat>
-						<burstShotMultiplier>5.0</burstShotMultiplier>
-						<!-- <cooldownStat>Isekai_Magic_Cooldown</cooldownStat>
-						<cooldownMultiplier>5.0</cooldownMultiplier>
-						<rangeStat>Isekai_Magic_Range</rangeStat>
-						<rangeMultiplier>5.0</rangeMultiplier> -->
-					</li>
+					
 				</modExtensions>
 			</ItsSorceryFramework.SorceryDef>
 

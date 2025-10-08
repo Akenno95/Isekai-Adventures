@@ -2,7 +2,7 @@
 <Defs>
 
 
-		<HediffDef ParentName="BaseHediff">
+		<HediffDef ParentName="IsekaiHediffBase">
             <defName>IA_MaxHP_Buff_All_Flat20</defName>
             <label>verstärkte Konstitution</label>
             <description>Erhöht die maximale Gesundheit um 20 Punkte.</description>
@@ -28,7 +28,7 @@
         </HediffDef>
 
 
-        <HediffDef ParentName="BaseHediff">
+        <HediffDef ParentName="IsekaiHediffBase">
             <defName>IA_Regeneration_Basic</defName>
             <label>Isekai Regeneration</label>
             <description>Heilt langsam Wunden und Verletzungen über die Zeit.</description>
