@@ -40,13 +40,45 @@
                     <healFlat>0.5</healFlat>
                     <healPercentOfMissing>0.02</healPercentOfMissing>
                     <healPercentOfMax>0.005</healPercentOfMax>
+                    <flatHealBonusStat>IAS_FlatRegenBonus</flatHealBonusStat>
+
+                    <totalHealFactorStat>IAS_TotalHealFactor</totalHealFactorStat>  <!-- Goes on everything -->
+
+                    <canHealScars>true</canHealScars>
+                    <scarSeverityReducePerTick>0.06</scarSeverityReducePerTick>
+                    <canRegenLimbs>true</canRegenLimbs>
+                    <ticksPerLimb>60000</ticksPerLimb>     <!-- 60k = 1 Day -->
                     <naturalPartsOnly>true</naturalPartsOnly>
                     <healNonInjuryHediffs>true</healNonInjuryHediffs>
                     <hediffsToReduce>
                         <li>ToxicBuildup</li>
                     </hediffsToReduce>
                     <hediffSeverityReducePerTick>0.005</hediffSeverityReducePerTick>
+                    <!-- Optionale Filter (Beispiel): nur natürliche Arme/Beine -->
+                    <!--
+                    <includePartTags>
+                        <li>MovingLimbCore</li>
+                    </includePartTags>
+                    -->
                 </li>
+            </comps>
+        </HediffDef>
+
+        <HediffDef ParentName="IsekaiHediffBase">
+            <defName>IA_Burn_Basic</defName>
+            <label>Isekai Burn</label>
+            <description>Burn damage over time.</description>
+            <hediffClass>HediffWithComps</hediffClass>
+            <isBad>true</isBad>
+            <stages>
+                <li>
+                    <label>burned</label>
+                    <statFactors>
+                        <IAS_TotalHealFactor>0</IAS_TotalHealFactor>
+                    </statFactors>
+                </li>
+            </stages>
+            <comps>
             </comps>
         </HediffDef>
 

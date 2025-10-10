@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+		
+		<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">
+			<sorcerySchema>Isekai_Magic</sorcerySchema>
+			<defName>Isekai_Ability_Regen</defName>
+			<label>Regen</label>
+			<description>Regenerates health over time.</description>
+			<level>1</level>
+			<!--<iconPath>UI/Sorceries/hea</iconPath>-->
+			<!--warmupSound>...</warmupSound-->
+			<aiCanUse>true</aiCanUse>
+			<cooldownTicksRange>100</cooldownTicksRange>
+		
+			<statBases>
+				<Isekai_MPCost>100</Isekai_MPCost>
+				<Ability_Duration>10</Ability_Duration>		<!-- Hediff needs disappear to function -->
+			</statBases>
+			<verbProperties>		
+				<verbClass>Verb_CastAbility</verbClass>
+				<range>15</range>
+				<requireLineOfSight>True</requireLineOfSight>
+				<warmupTime>1</warmupTime>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetSelf>true</canTargetSelf>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetMechs>false</canTargetMechs>
+				</targetParams>
+			</verbProperties>
+		
+			<comps>
+				<li Class = "CompProperties_AbilityGiveHediff">
+					<compClass>CompAbilityEffect_GiveHediff</compClass>
+					<hediffDef>IA_Burn_Basic</hediffDef>
+					<psychic>false</psychic>
+					<applicableToMechs>False</applicableToMechs>
+				</li>
+			</comps>
+		</ItsSorceryFramework.SorceryDef>	
 	
 		<!-- Slash -->
 		<ItsSorceryFramework.SorceryDef ParentName="SorceryBase">

@@ -61,14 +61,13 @@
 				<modExtensions>
 					<li Class="IsekaiAdventures.ModExt_ProjectileScaling">
 						<!-- Stat Description
-							✅ damageStat = Der Stat, dessen Wert in Punkte übersetzt wird.
-							✅ damageMultiplier = Der Faktor, der angibt, wie stark damageStat in Punkte übersetzt wird.
-							✅ damageMultiplierStat = Multiplier-Stat für den gesamten Schaden (Base + Flat).
-							✅ damageMultiplierScale = Umrechnungsfaktor, um damageMultiplierStat sinnvoll in einen Multiplikator zu verwandeln (z. B. Prozentwerte → Faktor). -->
+							Flat Bonus Damage = Base + flatBonusStat * flatBonusFactor 
+							Damage Scaling = Flat Bonus Damage + damageMultStat * damageMultScale 
+							Armor Pen = Base + Stat * Factor -->
 						<flatBonusStat>Isekai_Magic_Damage</flatBonusStat>
 						<flatBonusFactor>1.0</flatBonusFactor>
-						<damageMultStat>Isekai_Stat_Wind_DamageMultiplier</damageMultStat>
-						<damageMultScale>1.0</damageMultScale>
+						<!-- <damageMultStat>Isekai_Stat_Wind_DamageMultiplier</damageMultStat>
+						<damageMultScale>1.0</damageMultScale> -->
 						<armorPenetrationStat>Isekai_Stat_Wind_Penetration</armorPenetrationStat>
 						<armorPenetrationFactor>1.0</armorPenetrationFactor>
 					</li>

@@ -5,7 +5,6 @@
 		<StatDef Abstract="true" Name="Isekai_Stat_Base">
 			<category>PawnCombat</category>
 			<defaultBaseValue>0</defaultBaseValue>
-			<minValue>0</minValue>
 			<toStringStyle>FloatTwo</toStringStyle>
 			<showOnAnimals>false</showOnAnimals>
 			<displayPriorityInCategory>1000</displayPriorityInCategory>
@@ -325,6 +324,24 @@
 					</sources>
 				</li>
 			</parts>
+		</StatDef>
+
+		<!-- Additiver Bonus NUR auf die Basis-Injury-Heilung (flat + %...) -->
+		<StatDef>
+			<defName>IAS_FlatRegenBonus</defName>
+			<label>flat regeneration bonus</label>
+			<category>PawnCombat</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+		</StatDef>
+
+		<!-- Globaler Faktor für ALLE Aspekte (Injury-Heal, Scars, Non-Injury, Limb-Regen) -->
+		<StatDef>
+			<defName>IAS_TotalHealFactor</defName>
+			<label>total heal factor</label>
+			<category>PawnCombat</category>
+			<defaultBaseValue>1</defaultBaseValue> <!-- 1.00 = neutral; 0.00 = aus; 2.00 = doppelt -->
+			<toStringStyle>FloatTwo</toStringStyle>
 		</StatDef>
 
 

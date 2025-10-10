@@ -216,6 +216,42 @@
 				</statOffsets>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTrainingNode">
+				<defName>Isekai_Magic_Node_HealBonus</defName>
+				<label>Heal bonus</label>
+				<description>Understand that this world contains MP, also known as Magic Points, Mana Points or Magicule Points.</description>
+				
+				<coordX>5</coordX>
+				<statOffsets>
+					<IAS_FlatRegenBonus>5</IAS_FlatRegenBonus>
+				</statOffsets>
+
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTrainingNode">
+				<defName>Isekai_Magic_Node_Heal0</defName>
+				<label>0 heal</label>
+				<description>Understand that this world contains MP, also known as Magic Points, Mana Points or Magicule Points.</description>
+				
+				<coordX>6</coordX>
+				<statFactors>
+					<IAS_TotalHealFactor>0</IAS_TotalHealFactor>
+				</statFactors>
+
+			</ItsSorceryFramework.LearningTreeNodeDef>
+
+			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTrainingNode">
+				<defName>Isekai_Magic_Node_ability</defName>
+				<label>heal ability</label>
+				<description>Understand that this world contains MP, also known as Magic Points, Mana Points or Magicule Points.</description>
+				
+				<coordX>7</coordX>
+				<abilityGain>
+					<li>Isekai_Ability_Regen</li>
+				</abilityGain>
+
+			</ItsSorceryFramework.LearningTreeNodeDef>
 			
 			<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicTrainingNode">
 				<defName>Isekai_Magic_Node_Cooldown</defName>
