@@ -14,9 +14,9 @@
 			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Wind" ParentName="Isekai_SorceryScaling_Base">
 				<modExtensions>		
 					<!-- damageBase + (damageStat * damageMultiplier) // Shield damage = damageBase -->
-					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
-						<burstShotCountStat>Isekai_Stat_Wind_BurstShotCount</burstShotCountStat>
-						<burstShotMultiplier>1.0</burstShotMultiplier>
+					<li Class="IsekaiAdventures.MDO_BurstScaling">
+						<burstCountStat>Isekai_Stat_Wind_BurstShotCount</burstCountStat>
+						<!--<burstMultiplierStat>...</burstMultiplierStat>-->
 					</li>
 				</modExtensions>
 			</ItsSorceryFramework.SorceryDef>
@@ -24,9 +24,9 @@
 		<!-- Fire -->
 			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Fire" ParentName="Isekai_SorceryScaling_Base">
 				<modExtensions>
-					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
-						<burstShotCountStat>Isekai_Stat_Fire_BurstShotCount</burstShotCountStat>
-						<burstShotMultiplier>1.0</burstShotMultiplier>
+					<li Class="IsekaiAdventures.MDO_BurstScaling">
+						<burstCountStat>Isekai_Stat_Fire_BurstShotCount</burstCountStat>
+						<!--<burstMultiplierStat>...</burstMultiplierStat>-->
 					</li>
 				</modExtensions>
 			</ItsSorceryFramework.SorceryDef>
@@ -34,9 +34,9 @@
 		<!-- Water -->
 			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Water" ParentName="Isekai_SorceryScaling_Base">
 				<modExtensions>
-					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
-						<burstShotCountStat>Isekai_Stat_Water_BurstShotCount</burstShotCountStat>
-						<burstShotMultiplier>1.0</burstShotMultiplier>
+					<li Class="IsekaiAdventures.MDO_BurstScaling">
+						<burstCountStat>Isekai_Stat_Water_BurstShotCount</burstCountStat>
+						<!--<burstMultiplierStat>...</burstMultiplierStat>-->
 					</li>
 				</modExtensions>
 			</ItsSorceryFramework.SorceryDef>
@@ -44,9 +44,9 @@
 		<!-- Earth -->
 			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Earth" ParentName="Isekai_SorceryScaling_Base">
 				<modExtensions>
-					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
-						<burstShotCountStat>Isekai_Stat_Earth_BurstShotCount</burstShotCountStat>
-						<burstShotMultiplier>1.0</burstShotMultiplier>
+					<li Class="IsekaiAdventures.MDO_BurstScaling">
+						<burstCountStat>Isekai_Stat_Earth_BurstShotCount</burstCountStat>
+						<!--<burstMultiplierStat>...</burstMultiplierStat>-->
 					</li>
 				</modExtensions>
 			</ItsSorceryFramework.SorceryDef>
@@ -54,9 +54,9 @@
 		<!-- Light -->
 			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Light" ParentName="Isekai_SorceryScaling_Base">
 				<modExtensions>
-					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
-						<burstShotCountStat>Isekai_Stat_Light_BurstShotCount</burstShotCountStat>
-						<burstShotMultiplier>1.0</burstShotMultiplier>
+					<li Class="IsekaiAdventures.MDO_BurstScaling">
+						<burstCountStat>Isekai_Stat_Light_BurstShotCount</burstCountStat>
+						<!--<burstMultiplierStat>...</burstMultiplierStat>-->
 					</li>
 				</modExtensions>
 			</ItsSorceryFramework.SorceryDef>
@@ -64,9 +64,9 @@
 		<!-- Dark -->
 			<ItsSorceryFramework.SorceryDef Abstract="true" Name="Isekai_SorceryScaling_Dark" ParentName="Isekai_SorceryScaling_Base">
 				<modExtensions>
-					<li Class="IsekaiAdventures.ModExt_AbilityScaling">
-						<burstShotCountStat>Isekai_Stat_Dark_BurstShotCount</burstShotCountStat>
-						<burstShotMultiplier>1.0</burstShotMultiplier>
+					<li Class="IsekaiAdventures.MDO_BurstScaling">
+						<burstCountStat>Isekai_Stat_Dark_BurstShotCount</burstCountStat>
+						<!--<burstMultiplierStat>...</burstMultiplierStat>-->
 					</li>
 				</modExtensions>
 			</ItsSorceryFramework.SorceryDef>
