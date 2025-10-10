@@ -28,24 +28,23 @@ namespace IsekaiAdventures
                         priority = Priority.Last
                     };
                     h2.Patch(mi, postfix: hm);
-                    Log.Message($"[IA.MaxHP] Gepatcht: {label}");
                     ok++;
                 }
                 catch (Exception e)
                 {
-                    Log.Warning($"[IA.MaxHP] Patch auf {label} fehlgeschlagen: {e}");
+                    Log.Warning($"[IA.MaxHP] Patch fehlgeschlagen: {label}: {e}");
                 }
             }
 
             void PatchEBF(string typeName, string methodName, Type[] sig, string postfixName)
             {
                 var t = AccessTools.TypeByName(typeName);
-                if (t == null) { Log.Message($"[IA.MaxHP] EBF-Typ nicht gefunden: {typeName}"); return; }
+                if (t == null) return;
 
                 var mi = AccessTools.Method(t, methodName, sig);
-                if (mi == null) { Log.Message($"[IA.MaxHP] EBF-Methode nicht gefunden: {typeName}.{methodName}"); return; }
+                if (mi == null) return;
 
-                PatchWith(h, mi, $"{typeName}.{methodName}({string.Join(",", sig.Select(s => s.Name))})", postfixName);
+                PatchWith(h, mi, $"{typeName}.{methodName}", postfixName);
             }
             // ------------------------------------------------------------------
 
@@ -56,22 +55,18 @@ namespace IsekaiAdventures
             if (ebfPresent)
             {
                 // ----- Nur EBF patchen (kein Vanilla, verhindert Doppel-Boni) -----
-                // EBF.VanillaExtender.GetRawMaxHealth(BodyPartDef, Pawn)
                 PatchEBF("EBF.VanillaExtender", "GetRawMaxHealth",
                     new[] { typeof(BodyPartDef), typeof(Pawn) },
                     nameof(IA_MaxHP_Postfixes.PostfixEBF_Def));
 
-                // EBF.EBFEndpoints.GetMaxHealthUnmodified(BodyPartDef, Pawn)
                 PatchEBF("EBF.EBFEndpoints", "GetMaxHealthUnmodified",
                     new[] { typeof(BodyPartDef), typeof(Pawn) },
                     nameof(IA_MaxHP_Postfixes.PostfixEBF_Def));
 
-                // EBF.EBFEndpoints.GetMaxHealthWithEBF(BodyPartRecord, Pawn, bool)
                 PatchEBF("EBF.EBFEndpoints", "GetMaxHealthWithEBF",
                     new[] { typeof(BodyPartRecord), typeof(Pawn), typeof(bool) },
                     nameof(IA_MaxHP_Postfixes.PostfixEBF));
 
-                // Optional: EBF.VanillaExtender.GetRawMaxHealth_Cached(BodyPartDef, Pawn, BodyPartRecord)
                 PatchEBF("EBF.VanillaExtender", "GetRawMaxHealth_Cached",
                     new[] { typeof(BodyPartDef), typeof(Pawn), typeof(BodyPartRecord) },
                     nameof(IA_MaxHP_Postfixes.PostfixEBF_Def));
@@ -79,7 +74,6 @@ namespace IsekaiAdventures
             else
             {
                 // ----- Nur Vanilla patchen -----
-                // HealthUtility.*Get*Part*Max*Health*(Pawn, BodyPartRecord, ...)
                 var huCandidates = AccessTools.GetDeclaredMethods(typeof(HealthUtility))
                     .Where(m =>
                         m.ReturnType == typeof(float) &&
@@ -93,28 +87,25 @@ namespace IsekaiAdventures
                     .ToList();
 
                 foreach (var mi in huCandidates)
-                    PatchWith(h, mi, $"HealthUtility.{mi.Name}({string.Join(",", mi.GetParameters().Select(p => p.ParameterType.Name))})",
-                        nameof(IA_MaxHP_Postfixes.PostfixHU));
+                    PatchWith(h, mi, $"HealthUtility.{mi.Name}", nameof(IA_MaxHP_Postfixes.PostfixHU));
 
-                // BodyPartRecord.GetMaxHealth(Pawn)
                 PatchWith(h, AccessTools.Method(typeof(BodyPartRecord), "GetMaxHealth", new[] { typeof(Pawn) }),
-                    "BodyPartRecord.GetMaxHealth(Pawn)", nameof(IA_MaxHP_Postfixes.PostfixBPR));
+                    "BodyPartRecord.GetMaxHealth", nameof(IA_MaxHP_Postfixes.PostfixBPR));
 
-                // BodyPartDef.GetMaxHealth(Pawn) – Fallback
                 PatchWith(h, AccessTools.Method(typeof(BodyPartDef), "GetMaxHealth", new[] { typeof(Pawn) }),
-                    "BodyPartDef.GetMaxHealth(Pawn)", nameof(IA_MaxHP_Postfixes.PostfixBPD));
+                    "BodyPartDef.GetMaxHealth", nameof(IA_MaxHP_Postfixes.PostfixBPD));
             }
 
             if (ok == 0)
                 Log.Error("[IA.MaxHP] Keiner der erwarteten MaxHP-Hooks wurde gefunden! Bitte RW-/Mod-Version prüfen.");
         }
     }
-    // verhindert Doppelanwendung, wenn mehrere gepatchte Methoden im selben Stack laufen
+
+    // Reentrancy-Guard: verhindert Doppelanwendung im selben Call-Stack
     static class IA_MaxHP_Reentry
     {
         [ThreadStatic] public static int Depth;
     }
-
 
     public static class IA_MaxHP_Postfixes
     {
@@ -135,13 +126,11 @@ namespace IsekaiAdventures
             ApplyBonuses(pawn, part, ref __result);
         }
 
-        // ------- EBF (Positions-Argumente, robust gegen andere Parameternamen/zusätzliche Args) -------
-        // EBF…(BodyPartRecord, Pawn, [bool …])
+        // ------- EBF (Positions-Argumente) -------
         [HarmonyPriority(Priority.Last)]
         public static void PostfixEBF(BodyPartRecord __0, Pawn __1, ref float __result)
             => ApplyBonuses(__1, __0, ref __result);
 
-        // EBF…(BodyPartDef, Pawn, […])
         [HarmonyPriority(Priority.Last)]
         public static void PostfixEBF_Def(BodyPartDef __0, Pawn __1, ref float __result)
         {
@@ -153,8 +142,7 @@ namespace IsekaiAdventures
         // ------- Gemeinsame Logik -------
         private static void ApplyBonuses(Pawn pawn, BodyPartRecord part, ref float result)
         {
-            // Reentrancy-Guard: innerhalb eines laufenden MaxHP-Stacks nur EINMAL addieren
-            if (IA_MaxHP_Reentry.Depth > 0) return;
+            if (IA_MaxHP_Reentry.Depth > 0) return; // 1x pro Stack
             IA_MaxHP_Reentry.Depth++;
             try
             {
@@ -196,17 +184,12 @@ namespace IsekaiAdventures
                 float baseVal = result;
                 float after = Mathf.Max(1f, baseVal * (1f + addPct) + addFlat);
                 result = after;
-
-#if DEBUG
-                Log.Message($"[IA.MaxHP] {part.def.defName}: base={baseVal:0.##} flat+={addFlat:0.##} pct+={addPct:P0} -> {after:0.##}");
-#endif
             }
             finally
             {
                 IA_MaxHP_Reentry.Depth--;
             }
         }
-
 
         private static bool IsExcluded(BodyPartDef target, MaxHPBonusExtension ext)
         {
@@ -228,7 +211,7 @@ namespace IsekaiAdventures
         private static bool HasAnyTag(BodyPartDef def, List<string> tagNames)
         {
             if (def == null || tagNames == null || tagNames.Count == 0) return false;
-            var tags = def.tags; // List<BodyPartTagDef>
+            var tags = def.tags;
             if (tags == null || tags.Count == 0) return false;
             return tagNames.Any(want => tags.Any(td => td?.defName == want));
         }
