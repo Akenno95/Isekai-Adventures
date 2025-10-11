@@ -235,9 +235,9 @@
 				<description>Understand that this world contains MP, also known as Magic Points, Mana Points or Magicule Points.</description>
 				
 				<coordX>6</coordX>
-				<statFactors>
+				<statOffsets>
 					<IAS_TotalHealFactor>0</IAS_TotalHealFactor>
-				</statFactors>
+				</statOffsets>
 
 			</ItsSorceryFramework.LearningTreeNodeDef>
 

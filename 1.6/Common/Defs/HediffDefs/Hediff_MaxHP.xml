@@ -36,30 +36,58 @@
             <isBad>false</isBad>
             <comps>
                 <li Class="IsekaiAdventures.HediffCompProperties_Regenerate">
+                    <!-- Taktung -->
                     <tickInterval>60</tickInterval> <!-- every 60 ticks (1 sec) -->
+                    
+                    <!-- Verletzungen (nur NICHT-permanent) Basis-Budget -->
                     <healFlat>0.5</healFlat>
                     <healPercentOfMissing>0.02</healPercentOfMissing>
                     <healPercentOfMax>0.005</healPercentOfMax>
                     <flatHealBonusStat>IAS_FlatRegenBonus</flatHealBonusStat>
 
+                    <!-- Globalfaktor (wirkt auf ALLES) -->
                     <totalHealFactorStat>IAS_TotalHealFactor</totalHealFactorStat>  <!-- Goes on everything -->
 
+                    <!-- Filter -->
+                    <naturalPartsOnly>true</naturalPartsOnly>
+                    <!-- optional: nur bestimmte BodyParts -->
+                    <!-- <includeParts>
+                        <li>Arm</li>
+                        <li>Leg</li>
+                    </includeParts> -->
+                   
+                    <!-- optional: nur Parts mit bestimmten Tags (BodyPartTagDef.defName) -->
+                    <!-- <includePartTags>
+                        <li>MovingLimbCore</li>
+                    </includePartTags> -->
+                    
+                    <!-- Scars (permanent) separat, NICHT aus totalHeal -->
                     <canHealScars>true</canHealScars>
                     <scarSeverityReducePerTick>0.06</scarSeverityReducePerTick>
+
+                    <!-- Limb-Regeneration (separat, NICHT aus totalHeal) -->
                     <canRegenLimbs>true</canRegenLimbs>
                     <ticksPerLimb>60000</ticksPerLimb>     <!-- 60k = 1 Day -->
-                    <naturalPartsOnly>true</naturalPartsOnly>
+                    <regrowthIndicatorHediff>IAS_RegrowthIndicator</regrowthIndicatorHediff>
+                    <removeIndicatorOnComplete>true</removeIndicatorOnComplete>
+
+                    <!-- Non-Injury-Reduktion separat (z. B. ToxicBuildup) -->
                     <healNonInjuryHediffs>true</healNonInjuryHediffs>
                     <hediffsToReduce>
                         <li>ToxicBuildup</li>
                     </hediffsToReduce>
                     <hediffSeverityReducePerTick>0.005</hediffSeverityReducePerTick>
-                    <!-- Optionale Filter (Beispiel): nur natürliche Arme/Beine -->
-                    <!--
-                    <includePartTags>
-                        <li>MovingLimbCore</li>
-                    </includePartTags>
-                    -->
+                    
+                    <!-- Tend-Logik: Tend verbraucht Budget, kommt VOR Heilung -->
+                    <tendBleeding>true</tendBleeding>              <!-- blutende Injuries zuerst tenden -->
+                    <allowPartialTend>true</allowPartialTend>      <!-- wenn Budget knapp: niedrigere Qualität -->
+                    <tendTargetQuality>0.6</tendTargetQuality>     <!-- gewünschte Qualität 0..1 -->
+                    <tendCostPerQuality>1.0</tendCostPerQuality>   <!-- Kosten (Heal-Budget) pro 1.0 Qualität -->
+                    <minTendQuality>0.1</minTendQuality>           <!-- Mindestqualität bei Partial-Tend -->
+
+                    <!-- Fresh MissingParts können einen separaten Tend-Pool bekommen -->
+                    <tendFreshMissingParts>true</tendFreshMissingParts>
+                    <tendGlobalPoolPerTick>0.5</tendGlobalPoolPerTick> <!-- z.B. 0.8 = pro Tick 0.8 „Budget“ nur fürs Tend von MissingParts -->
                 </li>
             </comps>
         </HediffDef>
@@ -81,6 +109,62 @@
             <comps>
             </comps>
         </HediffDef>
+
+        <HediffDef ParentName="IsekaiHediffBase">
+            <defName>IAS_RegrowthIndicator</defName>
+            <label>regrowing</label>
+            <description>Indicates that a limb is regrowing.</description>
+            <hediffClass>Verse.Hediff</hediffClass>
+            <isBad>false</isBad>
+            <tendable>false</tendable>
+            <stages>
+                <li>
+                    <label>Regrowing 0%</label>
+                    <minSeverity>0.01</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 10%</label>
+                    <minSeverity>0.1</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 20%</label>
+                    <minSeverity>0.2</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 30%</label>
+                    <minSeverity>0.3</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 40%</label>
+                    <minSeverity>0.4</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 50%</label>
+                    <minSeverity>0.5</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 60%</label>
+                    <minSeverity>0.6</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 70%</label>
+                    <minSeverity>0.7</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 80%</label>
+                    <minSeverity>0.8</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 90%</label>
+                    <minSeverity>0.9</minSeverity>
+                </li>
+                <li>
+                    <label>Regrowing 99%</label>
+                    <minSeverity>0.99</minSeverity>
+                </li>
+            </stages>
+        </HediffDef>
+
 
 
 
