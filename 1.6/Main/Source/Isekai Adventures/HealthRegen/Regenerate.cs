@@ -36,6 +36,11 @@ namespace IsekaiAdventures
         public List<HediffDef> hediffsToReduce;
         public float hediffSeverityReducePerTick = 0f;
 
+        // --- Optional: Sichtbarer Indikator, dass ein Part nachwächst ---
+        public HediffDef regrowthIndicatorHediff;      // wird am Ziel-Part gesetzt/entfernt
+        public bool removeIndicatorOnComplete = true;  // bei RestorePart wieder löschen
+
+
         public HediffCompProperties_Regenerate()
         {
             compClass = typeof(HediffComp_Regenerate);
@@ -94,34 +99,62 @@ namespace IsekaiAdventures
                 float cur = pawn.health.hediffSet.GetPartHealth(part);
                 float estimatedMax = cur + totalMissing;
 
-                // --- Deine Basis-Summe NUR für Injuries ---
+                // --- Basis-Heilbudget NUR für Injuries ---
                 float totalHeal =
                       Props.healFlat
                     + (Props.flatHealBonusStat != null ? pawn.GetStatValue(Props.flatHealBonusStat) : 0f)
                     + (Props.healPercentOfMissing > 0f ? Props.healPercentOfMissing * totalMissing : 0f)
                     + (Props.healPercentOfMax > 0f && estimatedMax > 0f ? Props.healPercentOfMax * estimatedMax : 0f);
 
-                // Globaler Faktor (wirkt auf alles)
                 totalHeal *= global;
-
                 if (totalHeal <= 0f) continue;
 
-                // proportional nach Schwere verteilen
                 float remaining = totalHeal;
-                foreach (var inj in list.OrderByDescending(i => i.Severity))
+
+                // --------- Phase 1: Blutungen stoppen (hart priorisiert) ----------
+                // Heile zuerst alle blutenden Verletzungen – größte Blutung/Schwere zuerst
+                var bleeding = list.Where(i => i.Bleeding).OrderByDescending(i => i.Severity).ToList();
+                foreach (var inj in bleeding)
                 {
                     if (remaining <= 0f) break;
 
-                    float share = (inj.Severity / totalMissing) * totalHeal;
-                    float delta = Mathf.Min(share, inj.Severity, remaining); // clamp gegen Überheilung
-                    if (delta <= 0f) continue;
+                    // Wir versuchen, so viel zu heilen, bis die Blutung aufhört (Annäherung: volle Schwere ist Obergrenze).
+                    // RimWorld stoppt Blutung, wenn Schwere/State unter bestimmte Schwellen fällt oder getended wird.
+                    // Praktisch reicht meist "ein gutes Stück heilen"; wir heilen maximal was im Budget liegt.
+                    float delta = Mathf.Min(inj.Severity, remaining);
+                    if (delta > 0f)
+                    {
+                        inj.Heal(delta);
+                        remaining -= delta;
 
-                    inj.Heal(delta);
-                    remaining -= delta;
+                        // Falls immer noch Blutung: nächster Tick/Budget nimmt sie wieder zuerst dran.
+                        if (!inj.Bleeding) { /* schön, Blutung gestoppt */ }
+                    }
+                }
+
+                // --------- Phase 2: Rest proportional auf alle verbleibenden Injuries ----------
+                if (remaining > 0f)
+                {
+                    // Recompute totalMissing (kann sich nach Phase 1 geändert haben)
+                    float totalMissing2 = 0f;
+                    foreach (var inj in list) totalMissing2 += inj.Severity;
+                    if (totalMissing2 > 0f)
+                    {
+                        foreach (var inj in list.OrderByDescending(i => i.Severity))
+                        {
+                            if (remaining <= 0f) break;
+                            float share = (inj.Severity / totalMissing2) * remaining;   // proportional am Restbudget
+                            float delta = Mathf.Min(share, inj.Severity, remaining);
+                            if (delta <= 0f) continue;
+
+                            inj.Heal(delta);
+                            remaining -= delta;
+                        }
+                    }
                 }
             }
 
-            // --------- B) Scars separat (nur wenn aktiviert), NICHT aus totalHeal ----------
+            // --------- B) Scars separat (NICHT aus totalHeal) ----------
             if (Props.canHealScars && Props.scarSeverityReducePerTick > 0f && global > 0f)
             {
                 var scars = pawn.health.hediffSet.hediffs
@@ -132,28 +165,24 @@ namespace IsekaiAdventures
                 if (scars.Count > 0)
                 {
                     float budget = Props.scarSeverityReducePerTick * global;
-                    float totalScarSev = 0f;
-                    foreach (var s in scars) totalScarSev += Mathf.Max(0.0001f, s.Severity);
-
+                    float totalScarSev = 0f; foreach (var s in scars) totalScarSev += Mathf.Max(0.0001f, s.Severity);
                     float remaining = budget;
+
                     foreach (var scar in scars.OrderByDescending(s => s.Severity))
                     {
                         if (remaining <= 0f) break;
-
                         float share = (scar.Severity / totalScarSev) * budget;
                         float delta = Mathf.Min(share, scar.Severity, remaining);
                         if (delta <= 0f) continue;
 
                         scar.Severity = Mathf.Max(0f, scar.Severity - delta);
-                        if (scar.Severity <= 0.001f)
-                            HealthUtility.Cure(scar);
-
+                        if (scar.Severity <= 0.001f) HealthUtility.Cure(scar);
                         remaining -= delta;
                     }
                 }
             }
 
-            // --------- C) Non-Injury separat, NICHT aus totalHeal ----------
+            // --------- C) Non-Injury separat (NICHT aus totalHeal) ----------
             if (Props.healNonInjuryHediffs && Props.hediffsToReduce != null && Props.hediffsToReduce.Count > 0 && Props.hediffSeverityReducePerTick > 0f && global > 0f)
             {
                 float eff = Props.hediffSeverityReducePerTick * global;
@@ -168,6 +197,7 @@ namespace IsekaiAdventures
             }
         }
 
+
         // ------------------------------------------------------------
         // Limb-Regeneration (separat)
         // ------------------------------------------------------------
@@ -181,10 +211,14 @@ namespace IsekaiAdventures
             float global = GetGlobalHealFactor(pawn);
             if (global <= 0f) return; // globaler Stopp
 
-            // aktuelles Ziel validieren
+            // Ziel validieren
             var currentMissing = GetMissingPartForDef(pawn, targetRegenPartDef);
             if (currentMissing == null)
             {
+                // Falls Indikator lief, entfernen
+                if (Props.regrowthIndicatorHediff != null && targetRegenPartDef != null && Props.removeIndicatorOnComplete)
+                    RemoveRegrowIndicator(pawn, targetRegenPartDef);
+
                 targetRegenPartDef = null;
                 regenProgressTicks = 0;
             }
@@ -194,8 +228,19 @@ namespace IsekaiAdventures
             {
                 var pick = SelectMissingPart(pawn);
                 if (pick == null) return;
+
                 targetRegenPartDef = pick.Part.def;
                 regenProgressTicks = 0;
+
+                // Optionaler visueller Indikator am Ziel-Part
+                if (Props.regrowthIndicatorHediff != null)
+                {
+                    // nur setzen, wenn noch nicht vorhanden
+                    if (!pawn.health.hediffSet.hediffs.Any(h => h.def == Props.regrowthIndicatorHediff && h.Part?.def == targetRegenPartDef))
+                    {
+                        pawn.health.AddHediff(Props.regrowthIndicatorHediff, pick.Part);
+                    }
+                }
             }
 
             // Fortschritt skaliert mit globalem Faktor
@@ -208,10 +253,25 @@ namespace IsekaiAdventures
                 if (mp != null)
                     pawn.health.RestorePart(mp.Part);
 
+                // Indikator aufräumen
+                if (Props.regrowthIndicatorHediff != null && targetRegenPartDef != null && Props.removeIndicatorOnComplete)
+                    RemoveRegrowIndicator(pawn, targetRegenPartDef);
+
                 targetRegenPartDef = null;
                 regenProgressTicks = 0;
             }
         }
+
+        // Entfernt den optionalen Indikator am gegebenen BodyPartDef
+        private void RemoveRegrowIndicator(Pawn pawn, BodyPartDef partDef)
+        {
+            var toRemove = pawn.health.hediffSet.hediffs
+                .Where(h => h.def == Props.regrowthIndicatorHediff && h.Part?.def == partDef)
+                .ToList();
+            foreach (var h in toRemove)
+                pawn.health.RemoveHediff(h);
+        }
+
 
         // ------------------------------------------------------------
         // Hilfsfunktionen
