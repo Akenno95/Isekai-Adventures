@@ -40,6 +40,9 @@
   </PropertyGroup>
   <!-- .NET 4.7.2 Framework-Assemblies (ohne HintPath!) -->
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.4.2\lib\net472\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
@@ -73,14 +76,7 @@
         </Reference>
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="0Harmony">
-          <HintPath>$(WorkshopDir)\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <!-- Deine .cs-Dateien -->
   <ItemGroup>
@@ -101,6 +97,9 @@
     <Compile Include="QuestBoard\QuestBoardSettingsDef.cs" />
     <Compile Include="QuestBoard\QuestCooldownTracker.cs" />
     <Compile Include="Stats\StatPart_ThresholdFromStats.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
