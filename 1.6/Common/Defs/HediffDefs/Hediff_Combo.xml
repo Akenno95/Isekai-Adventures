@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+<!-- Example-Hediff -->
+	<HediffDef Name="ComboTestHediff" Abstract="True">
+		<label>Combo Test Hediff</label>
+		<comps>
+			<li Class="IsekaiAdventures.HediffComp_ComboReactor">
+				<hediffReactions>
+					<li>
+						<reactionHediff>	<!-- One hediff must already be present to fire -->
+							<li>Undead</li>
+							<li>Poisoned</li>
+						</reactionHediff>
+						<reactionProperties>	<!-- How it'll react once it fires -->
+							<damageDef>Holy</damageDef>
+							<damageRange>15~30</damageRange>
+							<armourPenetrationRange>0.2~0.8</armourPenetrationRange>
+							<stunTicks>200</stunTicks>
+							<hediffToAdd>Burning</hediffToAdd>
+							<isAOE>true</isAOE>		<!-- AOE with full damage, stuns and hediff to everyone inside the radius -->
+							<radius>4</radius>
+						</reactionProperties>
+						<removeOnReact>true</removeOnReact>
+					</li>
+				</hediffReactions>
+
+				<damageReactions>
+					<li>
+						<reactionDamageType>	<!-- One damage type needs to hit the pawn, after this hediff will react -->
+							<li>Fire</li>
+							<li>Bullet</li>
+						</reactionDamageType>
+						<reactionProperties>
+							<damageDef>Explosion</damageDef>
+							<damageRange>10~25</damageRange>
+							<armourPenetrationRange>0.5~1.0</armourPenetrationRange>
+							<stunTicks>100</stunTicks>
+							<hediffToAdd>Shocked</hediffToAdd>
+							<isAOE>false</isAOE>
+							<radius>1</radius>
+						</reactionProperties>
+						<removeOnReact>false</removeOnReact>
+					</li>
+					<li>						<!-- Multiple reactionTypes can be used for other outcomes of the same hediff -->
+						<reactionDamageType>
+							<li>Frost</li>
+						</reactionDamageType>
+						<reactionProperties>
+							<damageDef>Frostbite</damageDef>
+							<damageRange>5~15</damageRange>
+							<armourPenetrationRange>0.0~0.3</armourPenetrationRange>
+							<stunTicks>50</stunTicks>
+							<hediffToAdd>Frozen</hediffToAdd>
+							<isAOE>true</isAOE>
+							<radius>6</radius>
+						</reactionProperties>
+						<removeOnReact>true</removeOnReact>
+					</li>
+				</damageReactions>
+			</li>
+		</comps>
+	</HediffDef>
+
+<!-- Base -->
+
+	<HediffDef>
+		<defName>HolyHeal</defName>
+		<label>Holy Healing</label>
+		<comps>
+			<li Class="IsekaiAdventures.HediffComp_ComboReactor">
+				<hediffReactions>
+					<li>
+						<reactionHediff>
+							<li>Undead</li>
+						</reactionHediff>
+						<reactionProperties>
+							<damageDef>Holy</damageDef>
+							<damageRange>20~40</damageRange>
+							<armourPenetrationRange>0.5~1.0</armourPenetrationRange>
+							<stunTicks>300</stunTicks>
+							<hediffToAdd>Burning</hediffToAdd>
+							<isAOE>true</isAOE>
+							<radius>5</radius>
+						</reactionProperties>
+						<removeOnReact>true</removeOnReact>
+					</li>
+				</hediffReactions>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+
+
+
+
+
+
+
+</Defs>
