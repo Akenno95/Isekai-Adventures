@@ -85,6 +85,7 @@
     <Compile Include="AbilityScaling\MDO_BurstScaling.cs" />
     <Compile Include="AbilityScaling\VerbBurstPostfix.cs" />
     <Compile Include="AbilityScaling\Verb_AbilityBurstScaling.cs" />
+    <Compile Include="ComboReactor\HediffCompProperties_ComboReactor.cs" />
     <Compile Include="Harmony_Startup.cs" />
     <Compile Include="HealthRegen\Regenerate.cs" />
     <Compile Include="MaxHealth\MaxHPBonusExtension.cs" />

@@ -24,9 +24,10 @@ namespace IsekaiAdventures
         public List<HediffDef> reactionHediff;
         public ReactionProperties reactionProperties;
         public bool removeOnReact = false;
+		public bool requireAll = false;
     }
 
-    public class ReactionProperties
+	public class ReactionProperties
     {
         public DamageDef damageDef;
         public FloatRange damageRange;
@@ -50,23 +51,33 @@ namespace IsekaiAdventures
 
             bool shouldRemove = false;
 
-            foreach (var reaction in Props.hediffReactions)
-            {
-                if (reaction.reactionHediff == null) continue;
+			foreach (var reaction in Props.hediffReactions)
+			{
+				if (reaction.reactionHediff == null || reaction.reactionHediff.Count == 0) continue;
 
-                foreach (var targetHediff in reaction.reactionHediff)
-                {
-                    if (Pawn.health.hediffSet.HasHediff(targetHediff))
-                    {
-                        ExecuteReaction(reaction);
-                        if (reaction.removeOnReact)
-                            shouldRemove = true;
-                        break;
-                    }
-                }
-            }
+				bool shouldTrigger;
 
-            if (shouldRemove)
+				if (reaction.requireAll)
+				{
+					shouldTrigger = reaction.reactionHediff
+						.All(h => Pawn.health.hediffSet.HasHediff(h));
+				}
+				else
+				{
+					shouldTrigger = reaction.reactionHediff
+						.Any(h => Pawn.health.hediffSet.HasHediff(h));
+				}
+
+				if (shouldTrigger)
+				{
+					ExecuteReaction(reaction);
+					if (reaction.removeOnReact)
+						shouldRemove = true;
+				}
+			}
+
+
+			if (shouldRemove)
             {
                 Pawn.health.RemoveHediff(this.parent);
             }
