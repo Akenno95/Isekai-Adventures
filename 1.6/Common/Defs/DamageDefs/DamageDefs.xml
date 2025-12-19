@@ -19,6 +19,15 @@
 			<isExplosive>false</isExplosive>
 		</DamageDef>
 
+		<DamageDef ParentName="Flame">
+			<defName>Isekai_Damage_Holy</defName>
+			<label>Holy burn</label>
+			<workerClass>DamageWorker_Flame</workerClass>
+			<deathMessage>{0} has been burned by holy magic.</deathMessage>
+			<hediff>Isekai_Hediff_Holy_Burn_Low</hediff>
+			<armorCategory>Isekai_Light</armorCategory>
+			<overkillPctToDestroyPart>0.0~0.1</overkillPctToDestroyPart>
+		</DamageDef>
 
 
 

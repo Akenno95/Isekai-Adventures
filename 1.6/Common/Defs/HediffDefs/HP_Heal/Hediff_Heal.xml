@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Holy Burn -->
+
+		<HediffDef Name="Isekai_Hediff_Holy_Burn_Low" ParentName="BurnBase">
+			<defName>Isekai_Hediff_Holy_Burn_Low</defName>
+			<label>Holy Burn</label>
+			<description>A burning effect caused by holy energy.</description>
+			<defaultLabelColor>(1, 0.6, 0.6)</defaultLabelColor>
+			<isBad>true</isBad>
+			<comps>
+				<li Class="HediffCompProperties_GetsPermanent">
+					<permanentLabel>holy burn scar</permanentLabel>
+				</li>
+			</comps>
+			<injuryProps>
+				<destroyedLabel>Burned off</destroyedLabel>
+				<destroyedOutLabel>Burned out</destroyedOutLabel>
+			</injuryProps>
+		</HediffDef>
+
+		<!-- <MoteDef>
+			<defName>Isekai_Mote_HolyFlame</defName>
+			<graphicData>
+				<texPath>Things/Mote/HolyFlame</texPath>
+				<shaderType>MoteGlow</shaderType>
+				<drawSize>(1.0,1.0)</drawSize>
+			</graphicData>
+			<fadeInTime>0.3</fadeInTime>
+			<solidTime>0.6</solidTime>
+			<fadeOutTime>0.5</fadeOutTime>
+			<scale>1.2</scale>
+			<rotationRate>30</rotationRate>
+			<needsMaintenance>false</needsMaintenance>
+		</MoteDef> -->
+
+<!-- Heal -->
+
+		<HediffDef Name="Isekai_Hediff_Holy_Heal_Low" ParentName="IsekaiHediffBase">
+			<defName>Isekai_Hediff_Holy_Heal_Low</defName>
+			<label>Low Heal</label>
+			<description>Heals a small amount of health over time. Deals damage to undead creatures.</description>
+			<defaultLabelColor>(0, 0.5, 0)</defaultLabelColor>
+			<comps>
+				<li Class="IsekaiAdventures.HediffCompProperties_ComboReactor">
+					<hediffReactions>
+						<li>
+							<reactionHediff>
+								<li>Isekai_Undead</li>
+							</reactionHediff>
+							<reactionProperties>
+								<damageDef>Isekai_Damage_Holy</damageDef>
+								<damageRange>4~8</damageRange>
+								<armourPenetrationRange>0.1~0.4</armourPenetrationRange>
+								<!-- <stunTicks>300</stunTicks> -->
+								<hediffToAdd>Isekai_Hediff_Holy_Burn_Low</hediffToAdd>
+								<!-- <isAOE>true</isAOE>
+								<radius>5</radius> -->
+							</reactionProperties>
+							<removeOnReact>true</removeOnReact>
+						</li>
+					</hediffReactions>
+				</li>
+				<li Class="IsekaiAdventures.HediffCompProperties_Regenerate">
+					<tickInterval>60</tickInterval>
+					<healFlat>0.5</healFlat>
+					<healPercentOfMissing>0.0</healPercentOfMissing>
+					<healPercentOfMax>0.0</healPercentOfMax>
+					<flatHealBonusStat>IAS_FlatRegenBonus</flatHealBonusStat>
+					<totalHealFactorStat>IAS_TotalHealFactor</totalHealFactorStat>
+					<naturalPartsOnly>true</naturalPartsOnly>
+					<!-- <includeParts>
+						<li>Arm</li>
+						<li>Leg</li>
+					</includeParts> -->
+					<!-- <includePartTags>
+						<li>MovingLimbCore</li>
+					</includePartTags> -->
+					<canHealScars>false</canHealScars>
+					<!-- <scarSeverityReducePerTick>0.06</scarSeverityReducePerTick> -->
+					<canRegenLimbs>false</canRegenLimbs>
+					<!-- <ticksPerLimb>60000</ticksPerLimb>     60k = 1 Day -->
+					<regrowthIndicatorHediff>Isekai_Hediff_RegrowthIndicator</regrowthIndicatorHediff>
+					<removeIndicatorOnComplete>true</removeIndicatorOnComplete>
+					<healNonInjuryHediffs>false</healNonInjuryHediffs>
+					<!-- <hediffsToReduce>
+						<li>ToxicBuildup</li>
+					</hediffsToReduce> -->
+					<!-- <hediffSeverityReducePerTick>0.005</hediffSeverityReducePerTick> -->
+					
+					<!-- Tend-Logik: Tend verbraucht Budget, kommt VOR Heilung -->
+					<tendBleeding>false</tendBleeding>              <!-- blutende Injuries zuerst tenden -->
+					<allowPartialTend>false</allowPartialTend>      <!-- wenn Budget knapp: niedrigere Qualität -->
+					<tendTargetQuality>0.6</tendTargetQuality>     <!-- gewünschte Qualität 0..1 -->
+					<tendCostPerQuality>1.0</tendCostPerQuality>   <!-- Kosten (Heal-Budget) pro 1.0 Qualität -->
+					<minTendQuality>0.1</minTendQuality>           <!-- Mindestqualität bei Partial-Tend -->
+
+					<!-- Fresh MissingParts können einen separaten Tend-Pool bekommen -->
+					<tendFreshMissingParts>false</tendFreshMissingParts>
+					<tendGlobalPoolPerTick>0.5</tendGlobalPoolPerTick> <!-- z.B. 0.8 = pro Tick 0.8 „Budget“ nur fürs Tend von MissingParts -->
+				</li>
+			</comps>
+		</HediffDef>
+
+
+
+
+
+
+
+
+
+</Defs>
