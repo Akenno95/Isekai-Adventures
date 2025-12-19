@@ -3,26 +3,24 @@
 
 <!-- Holy Burn -->
 
-		<HediffDef Name="Isekai_Hediff_Holy_Burn_Low" ParentDef="IsekaiHediffBase">
+		<HediffDef Name="Isekai_Hediff_Holy_Burn_Low" ParentName="BurnBase">
 			<defName>Isekai_Hediff_Holy_Burn_Low</defName>
 			<label>Holy Burn</label>
 			<description>A burning effect caused by holy energy.</description>
-			<defaultLabelColor>(1, 0.8, 0.6)</defaultLabelColor>
+			<defaultLabelColor>(1, 0.6, 0.6)</defaultLabelColor>
 			<isBad>true</isBad>
 			<comps>
-				<li Class="HediffCompProperties_DamageOverTime">
-					<damageDef>Burn</damageDef>
-					<intervalTicks>60</intervalTicks>
-					<damageAmount>5</damageAmount>
-				</li>
-				<li Class="HediffCompProperties_SpawnMote">
-					<moteDef>Isekai_Mote_HolyFlame</moteDef>
-					<spawnInterval>60</spawnInterval>
+				<li Class="HediffCompProperties_GetsPermanent">
+					<permanentLabel>holy burn scar</permanentLabel>
 				</li>
 			</comps>
+			<injuryProps>
+				<destroyedLabel>Burned off</destroyedLabel>
+				<destroyedOutLabel>Burned out</destroyedOutLabel>
+			</injuryProps>
 		</HediffDef>
 
-		<MoteDef>
+		<!-- <MoteDef>
 			<defName>Isekai_Mote_HolyFlame</defName>
 			<graphicData>
 				<texPath>Things/Mote/HolyFlame</texPath>
@@ -35,26 +33,26 @@
 			<scale>1.2</scale>
 			<rotationRate>30</rotationRate>
 			<needsMaintenance>false</needsMaintenance>
-		</MoteDef>
+		</MoteDef> -->
 
 <!-- Heal -->
 
-		<HediffDef Name="Isekai_Hediff_Holy_Heal_Low" ParentDef="IsekaiHediffBase">
+		<HediffDef Name="Isekai_Hediff_Holy_Heal_Low" ParentName="IsekaiHediffBase">
 			<defName>Isekai_Hediff_Holy_Heal_Low</defName>
 			<label>Low Heal</label>
 			<description>Heals a small amount of health over time. Deals damage to undead creatures.</description>
-			<defaultLabelColor>(0, 0.3, 0)</defaultLabelColor>
+			<defaultLabelColor>(0, 0.5, 0)</defaultLabelColor>
 			<comps>
 				<li Class="IsekaiAdventures.HediffCompProperties_ComboReactor">
 					<hediffReactions>
 						<li>
 							<reactionHediff>
-								<li>Undead</li>
+								<li>Isekai_Undead</li>
 							</reactionHediff>
 							<reactionProperties>
-								<!-- <damageDef>Holy</damageDef>
+								<damageDef>Isekai_Damage_Holy</damageDef>
 								<damageRange>4~8</damageRange>
-								<armourPenetrationRange>0.1~0.4</armourPenetrationRange> -->
+								<armourPenetrationRange>0.1~0.4</armourPenetrationRange>
 								<!-- <stunTicks>300</stunTicks> -->
 								<hediffToAdd>Isekai_Hediff_Holy_Burn_Low</hediffToAdd>
 								<!-- <isAOE>true</isAOE>
