@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		
+ <ThingDef ParentName="BuildingBase">
+    <defName>Isekai_Test_ZoneMagicArea</defName>
+    <label>zone magic area</label>
+    <thingClass>IsekaiAdventures.ZoneMagicArea</thingClass>
+
+    <selectable>false</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <useHitPoints>false</useHitPoints>
+    <rotatable>false</rotatable>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+
+    <!-- WICHTIG: NICHT None -->
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <tickerType>Normal</tickerType>
+    <category>Building</category>
+
+    <!-- Minimal-Grafik, voll transparent -> triggert DrawAt, aber sieht man nicht -->
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <!-- <shaderType>Transparent</shaderType> -->
+      <shaderType>BS_EnergyShader</shaderType>
+      <texPath>Things/Zone/MagicZone</texPath>
+      <!-- <drawSize>(14,14)</drawSize> -->
+      <color>(0.15, 0.55, 1, 0.55)</color>
+    </graphicData>
+    <modExtensions>
+      <li Class="IsekaiAdventures.ZoneMagicVisualLayersExtension">
+        <visualLayers>
+          <li>
+            <texPath>Things/Zone/Zone_In</texPath>
+            <shaderType>BS_EnergyShader</shaderType>
+            <color>(0.08, 0.35, 1, 0.58)</color>
+            <scaleMul>0.8</scaleMul>
+            <yOffset>0.000</yOffset>
+          </li>
+          <!-- <li>
+            <texPath>Things/Zone/Zone_Out</texPath>
+            <shaderType>BS_EnergyShader</shaderType>
+            <color>(0.15, 0.55, 1, 0.55)</color>
+            <scaleMul>1.02</scaleMul>
+            <yOffset>0.000</yOffset>
+          </li> -->
+          <li>
+            <texPath>Things/Zone/Zone_Out</texPath>
+            <shaderType>Transparent</shaderType>
+            <color>(0.25, 0.55, 0.95, 0.75)</color>
+            <scaleMul>1.00</scaleMul>
+            <yOffset>0.000</yOffset>
+          </li>
+        </visualLayers>
+      </li>
+    </modExtensions>
+
+  </ThingDef>
+
+
+<HediffDef>
+  <defName>Isekai_Test_Slowed</defName>
+  <description>Causes the target to move more slowly.</description>
+  <label>slowed</label>
+  <hediffClass>HediffWithComps</hediffClass>
+  <isBad>true</isBad>
+  <maxSeverity>1.0</maxSeverity>
+
+  <stages>
+    <li>
+      <minSeverity>0.0</minSeverity>
+      <statOffsets>
+        <MoveSpeed>-0.20</MoveSpeed>
+      </statOffsets>
+    </li>
+    <li>
+      <minSeverity>0.5</minSeverity>
+      <statOffsets>
+        <MoveSpeed>-0.35</MoveSpeed>
+      </statOffsets>
+    </li>
+  </stages>
+
+  <comps>
+    <li Class="HediffCompProperties_Disappears">
+      <disappearsAfterTicks>240</disappearsAfterTicks>
+    </li>
+  </comps>
+</HediffDef>
+
+
+<HediffDef>
+  <defName>Isekai_Test_HolyBurn</defName>
+  <description>Causes the target to take holy burn damage over time.</description>
+  <label>holy burn</label>
+  <hediffClass>HediffWithComps</hediffClass>
+  <isBad>true</isBad>
+  <maxSeverity>1.0</maxSeverity>
+
+  <comps>
+    <li Class="HediffCompProperties_SeverityPerDay">
+      <severityPerDay>-0.25</severityPerDay>
+    </li>
+    <li Class="HediffCompProperties_Disappears">
+      <disappearsAfterTicks>2500</disappearsAfterTicks>
+    </li>
+  </comps>
+</HediffDef>
+
+
+<AbilityDef>
+  <defName>Isekai_Test_Ability_AntiUndeadZone</defName>
+  <description>Creates a zone that slows down and damages undead creatures.</description>
+  <label>anti-undead zone</label>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <label>cast</label>
+      <warmupTime>0.5</warmupTime>
+      <range>20</range>
+      <requireLineOfSight>true</requireLineOfSight>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+  <comps>
+    <li Class="IsekaiAdventures.CompProperties_AbilityEffect_ZoneMagicPlace">
+      <zoneAreaThingDef>Isekai_Test_ZoneMagicArea</zoneAreaThingDef>
+
+      <radius>7</radius>
+      <tickInterval>60</tickInterval>
+      <durationTicks>900</durationTicks>
+
+      <visualMode>None</visualMode>
+      <visualColor>Yellow</visualColor>
+
+      <effects>
+        <li>
+          <trigger>OnEnter</trigger>
+          <hediffDef>Isekai_Test_Slowed</hediffDef>
+          <initialSeverity>0.5</initialSeverity>
+        </li>
+
+        <li>
+          <trigger>OnExit</trigger>
+          <hediffDef>Isekai_Test_Slowed</hediffDef>
+          <initialSeverity>0.5</initialSeverity>
+        </li>
+
+        <li>
+          <trigger>WhileInside</trigger>
+          <hediffDef>Isekai_Test_HolyBurn</hediffDef>
+          <initialSeverity>0.10</initialSeverity>
+          <addSeverity>0.05</addSeverity>
+        </li>
+
+        <li>
+          <trigger>OnEnter</trigger>
+          <requiredHediff>Isekai_Hediff_Spirit_Wind</requiredHediff>
+          <mentalStateDef>PanicFlee</mentalStateDef>
+        </li>
+      </effects>
+    </li>
+  </comps>
+</AbilityDef>
+
+
+<ThingDef ParentName="BuildingBase">
+  <defName>Isekai_Test_MagicTotem_AntiUndead</defName>
+  <label>anti-undead totem</label>
+
+  <!-- <thingCategories>
+    <li>BuildingsMisc</li>
+  </thingCategories>
+  <designationCategory>Security</designationCategory>
+  <costList>
+    <Steel>50</Steel>
+    <ComponentIndustrial>2</ComponentIndustrial>
+  </costList>
+  <size>(1,1)</size>
+  <graphicData>
+    <graphicClass>Graphic_Single</graphicClass>
+    <texPath>Things/Building/Isekai_Totem/Isekai_Totem</texPath>
+    <drawSize>(1,1)</drawSize>
+    <shaderType>Cutout</shaderType>
+  </graphicData>
+  <uiIconPath>Things/Building/Isekai_Totem/Isekai_Totem</uiIconPath>
+   <minifiedDef>MinifiedThing</minifiedDef> -->
+
+  <comps>
+    <li Class="IsekaiAdventures.CompProperties_ZoneMagicEmitter">
+      <zoneAreaThingDef>Isekai_Test_ZoneMagicArea</zoneAreaThingDef>
+      <radius>7</radius>
+      <tickInterval>120</tickInterval>
+
+      <visualMode>None</visualMode>
+      <visualColor>Blue</visualColor>
+
+      <effects>
+        <li>
+          <trigger>OnEnter</trigger>
+          <hediffDef>Isekai_Test_Slowed</hediffDef>
+          <initialSeverity>0.35</initialSeverity>
+        </li>
+
+        <li>
+          <trigger>WhileInside</trigger>
+          <hediffDef>Isekai_Test_HolyBurn</hediffDef>
+          <initialSeverity>0.08</initialSeverity>
+          <addSeverity>0.04</addSeverity>
+        </li>
+      </effects>
+    </li>
+  </comps>
+</ThingDef>
+	
+
+
+</Defs>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Damage Sets -->
+    <!-- Physical -->
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_PhysicalDamageSet</defName>
+            <label>physical damage set</label>
+            <damageDefs>
+                <li>Blunt</li>
+                <li>Cut</li>
+                <li>Stab</li>
+                <li>Scratch</li>
+                <li>Bite</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
+
+    <!-- Magical -->
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_MagicDamageSet</defName>
+            <label>magic damage set</label>
+            <damageDefs>
+                <li>Isekai_SlashDamage</li>
+                <!-- <li>Isekai_FireMagicDamage</li>
+                <li>Isekai_HolyDamage</li>
+                <li>Isekai_VoidDamage</li> -->
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Defs>

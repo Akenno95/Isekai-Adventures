@@ -21,6 +21,9 @@
 							<Isekai_Magic_MaxMP>200</Isekai_Magic_MaxMP>
 							<Isekai_Magic_AbsMinMP>-50</Isekai_Magic_AbsMinMP>
 							<Isekai_Magic_MPRecovery>1</Isekai_Magic_MPRecovery>
+							<Isekai_Magic_Damage>5</Isekai_Magic_Damage>
+							<Isekai_Magic_Penetration>2</Isekai_Magic_Penetration>
+							<Isekai_Magic_BurstShotCount>2</Isekai_Magic_BurstShotCount>
 						</statOffsets>
 						<!-- <statFactors>
 							<PawnHealthScale>1.5</PawnHealthScale>

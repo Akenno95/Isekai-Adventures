@@ -42,7 +42,7 @@
 				<isBad>false</isBad>
 				<everCurableByItem>false</everCurableByItem>
 				<initialSeverity>1</initialSeverity>
-				<maxSeverity>10</maxSeverity>
+				<maxSeverity>3</maxSeverity>
 				<comps>
 					<li Class="EBSGFramework.HediffCompProperties_TemporaryGenes">
 						<genesAtSeverities>

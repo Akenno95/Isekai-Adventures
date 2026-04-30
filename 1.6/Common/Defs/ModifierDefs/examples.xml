@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+  ============================================================
+  IsekaiAdventures Blueprint Documentation
+  DamageModifier + OnHitModifier + OnDamagedModifier + ComboReaction
+  RimWorld 1.6
+  ============================================================
+
+  This file is intentionally COMMENT ONLY.
+  RimWorld can safely load it because the only active XML node is <Defs>.
+  Everything inside this file is documentation and will not create ingame defs.
+
+  XML comment safety:
+  Do not use double-hyphen lines inside comments.
+  This file uses ===== separators because XML comments cannot contain.
+
+  ============================================================
+  GENERAL DESIGN RULES
+  ============================================================
+
+  global
+    Default: false
+
+    If omitted or false:
+      Modifier only works when provided by an active source:
+      Hediff, GeneDef extension, Apparel, Equipment, etc.
+
+    If true:
+      Modifier is always considered globally for valid pawn combat events.
+
+    Example:
+      <global>true</global>
+
+  damageDef / damageTypeSet
+    Many modifier types can filter by either one exact DamageDef or one DamageTypeSetDef.
+
+    damageDef:
+      Applies only to one DamageDef.
+
+    damageTypeSet:
+      Applies to every DamageDef inside the set.
+
+    If both are omitted:
+      Applies to all DamageDefs, but only when the modifier is active/global.
+
+  StatScale list style
+    Used by several systems.
+
+    Example:
+      <chanceFromStats>
+        <li>
+          <stat>Isekai_CounterMastery</stat>
+          <factor>0.01</factor>
+        </li>
+      </chanceFromStats>
+
+    Meaning:
+      final value += pawn.GetStatValue(stat) * factor
+
+  Recommended stat values
+    For stats like MagicPower, BlockMastery, CounterMastery:
+      Use values like 10, 25, 100.
+      Use factors like 0.01 or 0.02.
+
+    Example:
+      BlockMastery 25 * 0.01 = 25% block chance.
+
+  ============================================================
+  1) SUPPORT DEFS
+  ============================================================
+
+  1.1 DamageTypeSetDef
+
+  Groups DamageDefs for DamageModifier, OnHit, OnDamaged and ComboReaction.
+
+  Fields:
+    damageDefs
+      Required list of DamageDef references.
+
+  Example:
+
+  <IsekaiAdventures.DamageTypeSetDef>
+    <defName>Isekai_PhysicalDamageSet</defName>
+    <label>physical damage set</label>
+    <damageDefs>
+      <li>Blunt</li>
+      <li>Cut</li>
+      <li>Stab</li>
+      <li>Scratch</li>
+      <li>Bite</li>
+      <li>Bullet</li>
+    </damageDefs>
+  </IsekaiAdventures.DamageTypeSetDef>
+
+  <IsekaiAdventures.DamageTypeSetDef>
+    <defName>Isekai_MagicDamageSet</defName>
+    <label>magic damage set</label>
+    <damageDefs>
+      <li>Isekai_MagicSlashDamage</li>
+      <li>Isekai_FireMagicDamage</li>
+      <li>Isekai_HolyDamage</li>
+      <li>Isekai_VoidDamage</li>
+    </damageDefs>
+  </IsekaiAdventures.DamageTypeSetDef>
+
+  1.2 HediffSetDef
+
+  Groups HediffDefs for ComboReaction requirements, triggers and consumption.
+
+  Fields:
+    hediffs
+      Required list of HediffDef references.
+
+  Example:
+
+  <IsekaiAdventures.HediffSetDef>
+    <defName>Isekai_HediffSet_WetStates</defName>
+    <label>wet states</label>
+    <hediffs>
+      <li>Isekai_Wet</li>
+      <li>Isekai_Drenched</li>
+      <li>Isekai_Soaked</li>
+    </hediffs>
+  </IsekaiAdventures.HediffSetDef>
+
+  <IsekaiAdventures.HediffSetDef>
+    <defName>Isekai_HediffSet_LightningStates</defName>
+    <label>lightning states</label>
+    <hediffs>
+      <li>Isekai_LightningCharge</li>
+      <li>Isekai_StaticCharge</li>
+    </hediffs>
+  </IsekaiAdventures.HediffSetDef>
+
+  1.3 ComboTriggerSetDef
+
+  Groups possible ComboReaction triggers.
+  Can contain DamageDefs, DamageTypeSets, HediffDefs and HediffSets.
+
+  Fields:
+    damageDefs
+      Optional list of exact DamageDef triggers.
+
+    damageTypeSets
+      Optional list of DamageTypeSetDef triggers.
+
+    hediffDefs
+      Optional list of exact HediffDef triggers.
+
+    hediffSets
+      Optional list of HediffSetDef triggers.
+
+  Example:
+
+  <IsekaiAdventures.ComboTriggerSetDef>
+    <defName>Isekai_TriggerSet_Lightning</defName>
+    <label>lightning triggers</label>
+
+    <damageDefs>
+      <li>Isekai_LightningDamage</li>
+    </damageDefs>
+
+    <damageTypeSets>
+      <li>Isekai_LightningDamageSet</li>
+    </damageTypeSets>
+
+    <hediffDefs>
+      <li>Isekai_LightningCharge</li>
+    </hediffDefs>
+
+    <hediffSets>
+      <li>Isekai_HediffSet_LightningStates</li>
+    </hediffSets>
+  </IsekaiAdventures.ComboTriggerSetDef>
+
+  ============================================================
+  2) STAT BLUEPRINTS
+  ============================================================
+
+  Important:
+    Use <category>PawnCombat</category> for now.
+    Custom StatCategoryDef caused InfoCard issues in testing.
+
+  Recommended toStringStyle:
+    Integer for stats like MagicPower, BlockMastery, CounterMastery.
+    Avoid PercentZero unless the stat itself is stored as 0.25 = 25%.
+
+  Example:
+
+  <StatDef>
+    <defName>Isekai_MagicPower</defName>
+    <label>magic power</label>
+    <description>Increases magic-based damage through Isekai damage modifiers.</description>
+    <category>PawnCombat</category>
+    <displayPriorityInCategory>1000</displayPriorityInCategory>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>Integer</toStringStyle>
+    <showOnPawns>true</showOnPawns>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>true</showOnAnimals>
+    <showOnMechanoids>true</showOnMechanoids>
+  </StatDef>
+
+  <StatDef>
+    <defName>Isekai_BlockMastery</defName>
+    <label>block mastery</label>
+    <description>Increases chance to block incoming attacks.</description>
+    <category>PawnCombat</category>
+    <displayPriorityInCategory>999</displayPriorityInCategory>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>Integer</toStringStyle>
+    <showOnPawns>true</showOnPawns>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>true</showOnAnimals>
+    <showOnMechanoids>true</showOnMechanoids>
+  </StatDef>
+
+  ============================================================
+  3) DAMAGE MODIFIER BLUEPRINT
+  ============================================================
+
+  Def class:
+    <IsekaiAdventures.DamageModifierDef>
+
+  Purpose:
+    Changes damage math before vanilla armor/injury handling.
+    Can be offensive, defensive, block-based or anti-block.
+
+  Defaults:
+    global = false
+    flatBonusDamage = 0
+    percentBonusDamage = 0
+    flatReduction = 0
+    percentReduction = 0
+    blockChance = 0
+    ignoreBlockChance = 0
+
+  Filters:
+    damageDef = optional exact DamageDef
+    damageTypeSet = optional DamageTypeSetDef
+    no filter = all DamageDefs
+
+  Offensive fields:
+    flatBonusDamage
+      Adds flat outgoing damage.
+
+    percentBonusDamage
+      Adds outgoing percent damage.
+      0.25 = +25%
+
+    percentBonusFromStats
+      Adds outgoing percent damage from attacker stats.
+
+    ignoreBlockChance
+      Chance to bypass defender block.
+      1.0 = 100%
+
+    ignoreBlockChanceFromStats
+      Adds ignore-block chance from attacker stats.
+
+  Defensive fields:
+    flatReduction
+      Reduces incoming damage by flat value.
+      Can be negative for vulnerability.
+
+    percentReduction
+      Reduces incoming damage by percent.
+      0.25 = 25% reduction.
+      1.0 = full negation.
+      Can be negative for vulnerability.
+      -0.20 = target takes 20% more damage.
+
+    percentReductionFromStats
+      Adds incoming percent reduction from defender stats.
+
+    blockChance
+      Chance to fully block/negate incoming damage before normal damage calculation.
+      1.0 = 100%
+
+    blockChanceFromStats
+      Adds block chance from defender stats.
+
+  Clamps:
+    blockChance final: 0 to 1
+    ignoreBlockChance final: 0 to 1
+    percentReduction final max: 1.0
+    percentBonus has safety caps in code
+
+  Maximum example:
+
+  <IsekaiAdventures.DamageModifierDef>
+    <defName>Isekai_DmgMod_MaximumExample</defName>
+    <global>false</global>
+
+    <damageDef>Blunt</damageDef>
+    <damageTypeSet>Isekai_PhysicalDamageSet</damageTypeSet>
+
+    <flatBonusDamage>5</flatBonusDamage>
+    <percentBonusDamage>0.25</percentBonusDamage>
+    <percentBonusFromStats>
+      <li>
+        <stat>Isekai_MagicPower</stat>
+        <factor>0.02</factor>
+      </li>
+    </percentBonusFromStats>
+
+    <ignoreBlockChance>0.10</ignoreBlockChance>
+    <ignoreBlockChanceFromStats>
+      <li>
+        <stat>Isekai_BlockPiercing</stat>
+        <factor>0.01</factor>
+      </li>
+    </ignoreBlockChanceFromStats>
+
+    <flatReduction>3</flatReduction>
+    <percentReduction>0.25</percentReduction>
+    <percentReductionFromStats>
+      <li>
+        <stat>Isekai_MagicResistance</stat>
+        <factor>0.02</factor>
+      </li>
+    </percentReductionFromStats>
+
+    <blockChance>0.10</blockChance>
+    <blockChanceFromStats>
+      <li>
+        <stat>Isekai_BlockMastery</stat>
+        <factor>0.01</factor>
+      </li>
+    </blockChanceFromStats>
+  </IsekaiAdventures.DamageModifierDef>
+
+  Practical global block example:
+
+  <IsekaiAdventures.DamageModifierDef>
+    <defName>Isekai_DmgMod_GlobalBlockMasteryScaling</defName>
+    <global>true</global>
+    <damageTypeSet>Isekai_PhysicalDamageSet</damageTypeSet>
+
+    <blockChanceFromStats>
+      <li>
+        <stat>Isekai_BlockMastery</stat>
+        <factor>0.01</factor>
+      </li>
+    </blockChanceFromStats>
+  </IsekaiAdventures.DamageModifierDef>
+
+  Practical anti-block example:
+
+  <IsekaiAdventures.DamageModifierDef>
+    <defName>Isekai_DmgMod_BlockPiercingScaling</defName>
+    <damageTypeSet>Isekai_PhysicalDamageSet</damageTypeSet>
+
+    <ignoreBlockChanceFromStats>
+      <li>
+        <stat>Isekai_BlockPiercing</stat>
+        <factor>0.01</factor>
+      </li>
+    </ignoreBlockChanceFromStats>
+  </IsekaiAdventures.DamageModifierDef>
+
+  ============================================================
+  4) ON HIT MODIFIER BLUEPRINT
+  ============================================================
+
+  Def class:
+    <IsekaiAdventures.OnHitModifierDef>
+
+  Purpose:
+    Attacker-side reaction after hitting a target.
+
+  Direction:
+    applyHediff = goes to hit target
+    applyHediffToSelf = goes to attacker/caster
+
+  Defaults:
+    chance = 1.0
+    triggerIfNoDamage = false
+    severity = 0.1
+    severityToSelf = 0.1
+
+  Important:
+    OnHit normally requires finalDamage > 0.
+    If damage was blocked or negated to 0, OnHit only fires with triggerIfNoDamage=true.
+
+  Fields:
+    damageDef
+      Optional exact DamageDef filter.
+
+    damageTypeSet
+      Optional DamageTypeSetDef filter.
+
+    chance
+      Base chance for entire modifier.
+      1.0 = 100%, 0.25 = 25%.
+
+    chanceFromStats
+      Adds chance from attacker stats.
+      finalChance = chance + Sum(stat * factor), clamped 0 to 1.
+
+    triggerIfNoDamage
+      Default false.
+      If true, can trigger even when final damage is 0.
+
+    applyHediff
+      Hediff applied to target.
+
+    severity
+      Severity added to applyHediff.
+
+    applyHediffToSelf
+      Hediff applied to attacker.
+
+    severityToSelf
+      Severity added to applyHediffToSelf.
+
+  Maximum example:
+
+  <IsekaiAdventures.OnHitModifierDef>
+    <defName>Isekai_OnHit_MaximumExample</defName>
+    <damageDef>Isekai_MagicSlashDamage</damageDef>
+    <damageTypeSet>Isekai_MagicDamageSet</damageTypeSet>
+
+    <chance>0.10</chance>
+    <chanceFromStats>
+      <li>
+        <stat>Isekai_OnHitMastery</stat>
+        <factor>0.01</factor>
+      </li>
+    </chanceFromStats>
+
+    <triggerIfNoDamage>false</triggerIfNoDamage>
+
+    <applyHediff>Isekai_ArcaneInstability</applyHediff>
+    <severity>0.1</severity>
+
+    <applyHediffToSelf>Isekai_LifeSurge</applyHediffToSelf>
+    <severityToSelf>0.1</severityToSelf>
+  </IsekaiAdventures.OnHitModifierDef>
+
+  Practical example:
+
+  <IsekaiAdventures.OnHitModifierDef>
+    <defName>Isekai_OnHit_ArcaneInstability</defName>
+    <damageTypeSet>Isekai_MagicDamageSet</damageTypeSet>
+    <chance>1.0</chance>
+    <triggerIfNoDamage>true</triggerIfNoDamage>
+    <applyHediff>Isekai_ArcaneInstability</applyHediff>
+    <severity>0.1</severity>
+  </IsekaiAdventures.OnHitModifierDef>
+
+  ============================================================
+  5) ON DAMAGED MODIFIER BLUEPRINT
+  ============================================================
+
+  Def class:
+    <IsekaiAdventures.OnDamagedModifierDef>
+
+  Purpose:
+    Defender-side reaction after being hit.
+
+  Direction:
+    applyHediff = goes to attacker
+    applyHediffToSelf = goes to defender / damaged pawn
+
+  Defaults:
+    global = false
+    chance = 1.0
+    triggerIfNoDamage = false
+    triggerIfBlocked = false
+    severity = 0.1
+    severityToSelf = 0.1
+
+  Important:
+    OnDamaged normally requires finalDamage > 0.
+    If damage was blocked or negated to 0, it only fires with:
+      triggerIfNoDamage=true
+      or triggerIfBlocked=true when WasBlocked is true.
+
+  Fields:
+    global
+      Default false.
+      If true, always considered globally for defender pawns.
+
+    damageDef
+      Optional exact DamageDef filter.
+
+    damageTypeSet
+      Optional DamageTypeSetDef filter.
+
+    chance
+      Base chance for entire modifier.
+
+    chanceFromStats
+      Adds chance from defender stats.
+      finalChance = chance + Sum(stat * factor), clamped 0 to 1.
+
+    triggerIfNoDamage
+      Default false.
+      Allows any 0-damage hit.
+
+    triggerIfBlocked
+      Default false.
+      Allows specifically blocked hits.
+      Useful for shield charge, stamina drain, boss shield cracks.
+
+    applyHediff
+      Hediff applied to attacker.
+
+    severity
+      Severity added to applyHediff.
+
+    applyHediffToSelf
+      Hediff applied to defender.
+
+    severityToSelf
+      Severity added to applyHediffToSelf.
+
+  Maximum example:
+
+  <IsekaiAdventures.OnDamagedModifierDef>
+    <defName>Isekai_OnDamaged_MaximumExample</defName>
+    <global>false</global>
+    <damageDef>Blunt</damageDef>
+    <damageTypeSet>Isekai_PhysicalDamageSet</damageTypeSet>
+
+    <chance>0.25</chance>
+    <chanceFromStats>
+      <li>
+        <stat>Isekai_CounterMastery</stat>
+        <factor>0.01</factor>
+      </li>
+    </chanceFromStats>
+
+    <triggerIfNoDamage>false</triggerIfNoDamage>
+    <triggerIfBlocked>true</triggerIfBlocked>
+
+    <applyHediff>Isekai_ThornWound</applyHediff>
+    <severity>0.1</severity>
+
+    <applyHediffToSelf>Isekai_ShieldCharge</applyHediffToSelf>
+    <severityToSelf>0.1</severityToSelf>
+  </IsekaiAdventures.OnDamagedModifierDef>
+
+  Practical thorn example:
+
+  <IsekaiAdventures.OnDamagedModifierDef>
+    <defName>Isekai_OnDamaged_ThornWound</defName>
+    <damageTypeSet>Isekai_PhysicalDamageSet</damageTypeSet>
+    <chance>1.0</chance>
+    <applyHediff>Isekai_ThornWound</applyHediff>
+    <severity>0.1</severity>
+  </IsekaiAdventures.OnDamagedModifierDef>
+
+  Practical shield charge on block:
+
+  <IsekaiAdventures.OnDamagedModifierDef>
+    <defName>Isekai_OnDamaged_ShieldChargeOnBlock</defName>
+    <damageTypeSet>Isekai_PhysicalDamageSet</damageTypeSet>
+    <chance>1.0</chance>
+    <triggerIfBlocked>true</triggerIfBlocked>
+    <applyHediffToSelf>Isekai_ShieldCharge</applyHediffToSelf>
+    <severityToSelf>0.1</severityToSelf>
+  </IsekaiAdventures.OnDamagedModifierDef>
+
+  ============================================================
+  6) COMBO REACTION MODIFIER BLUEPRINT
+  ============================================================
+
+  Def class:
+    <IsekaiAdventures.ComboReactionModifierDef>
+
+  Purpose:
+    Deterministic reaction when a trigger happens and the target has required Hediffs.
+
+  Trigger events:
+    Damage trigger:
+      ComboReactionResolver.Resolve(DamageResult)
+      Example: Blunt hits a Frozen target.
+
+    Hediff trigger:
+      Pawn_HealthTracker.AddHediff postfix
+      Example: LightningCharge is added to a Wet target.
+
+  Defaults:
+    global = false
+    triggerMode = Any
+    consume = true
+    severity = 0.1
+
+  Important:
+    No chance.
+    No self target.
+    applyHediff always applies to the target pawn.
+    No direct damage in Phase 1.
+    Severity changes after the trigger do not retrigger combos.
+
+  triggerMode:
+    Any
+      Default.
+      Damage OR Hediff trigger may activate the combo.
+
+    Damage
+      Only Damage triggers are considered.
+      Hediff triggers are ignored.
+
+    Hediff
+      Only Hediff-added triggers are considered.
+      Damage triggers are ignored.
+
+  Trigger fields:
+    triggerDamageDef
+      Optional exact DamageDef trigger.
+
+    triggerDamageTypeSet
+      Optional DamageTypeSetDef trigger.
+
+    triggerHediff
+      Optional exact HediffDef trigger.
+
+    triggerHediffSet
+      Optional HediffSetDef trigger.
+
+    triggerSet
+      Optional ComboTriggerSetDef containing damage and/or hediff triggers.
+      triggerMode decides which entries are read.
+
+  Required fields:
+    requiredHediffs
+      Required list.
+      All entries must be satisfied.
+
+      Each li can use either:
+        hediffDef
+        or hediffSet
+
+      severity omitted or 0:
+        matching Hediff must only be present.
+
+      severity > 0:
+        matching Hediff must have at least that severity.
+
+  Consume fields:
+    consume
+      Default true.
+      If omitted, all matched requiredHediffs are fully removed.
+
+      <consume>false</consume>
+        Required Hediffs are not automatically consumed.
+        Use this if the state should remain or if using consumeHediffs.
+
+    consumeHediffs
+      Optional special consume list.
+      Requires <consume>false</consume>.
+
+      Each li can use either:
+        hediffDef
+        or hediffSet
+
+      consumeAll=true:
+        removes matching Hediff(s) completely.
+
+      severity > 0:
+        reduces matching Hediff(s) by that amount.
+        removes them if severity reaches 0.
+
+  Maximum example:
+
+  <IsekaiAdventures.ComboReactionModifierDef>
+    <defName>Isekai_Combo_MaximumExample</defName>
+    <global>true</global>
+    <triggerMode>Any</triggerMode>
+
+    <triggerDamageDef>Blunt</triggerDamageDef>
+    <triggerDamageTypeSet>Isekai_PhysicalDamageSet</triggerDamageTypeSet>
+    <triggerHediff>Isekai_LightningCharge</triggerHediff>
+    <triggerHediffSet>Isekai_HediffSet_LightningStates</triggerHediffSet>
+    <triggerSet>Isekai_TriggerSet_Lightning</triggerSet>
+
+    <requiredHediffs>
+      <li>
+        <hediffDef>Isekai_Wet</hediffDef>
+        <severity>0.5</severity>
+      </li>
+      <li>
+        <hediffSet>Isekai_HediffSet_FrozenStates</hediffSet>
+        <severity>1.0</severity>
+      </li>
+    </requiredHediffs>
+
+    <consume>false</consume>
+    <consumeHediffs>
+      <li>
+        <hediffDef>Isekai_Wet</hediffDef>
+        <severity>0.5</severity>
+      </li>
+      <li>
+        <hediffSet>Isekai_HediffSet_FrozenStates</hediffSet>
+        <consumeAll>true</consumeAll>
+      </li>
+    </consumeHediffs>
+
+    <applyHediff>Isekai_Shocked</applyHediff>
+    <severity>0.25</severity>
+  </IsekaiAdventures.ComboReactionModifierDef>
+
+  Practical damage combo:
+
+  <IsekaiAdventures.ComboReactionModifierDef>
+    <defName>Isekai_Combo_FrozenBluntShatter</defName>
+    <global>true</global>
+    <triggerMode>Damage</triggerMode>
+    <triggerDamageDef>Blunt</triggerDamageDef>
+
+    <requiredHediffs>
+      <li>
+        <hediffDef>Isekai_Frozen</hediffDef>
+        <severity>1.0</severity>
+      </li>
+    </requiredHediffs>
+
+    <applyHediff>Isekai_Shattered</applyHediff>
+    <severity>0.5</severity>
+  </IsekaiAdventures.ComboReactionModifierDef>
+
+  Practical hediff combo:
+
+  <IsekaiAdventures.ComboReactionModifierDef>
+    <defName>Isekai_Combo_WetLightningChargeShock</defName>
+    <global>true</global>
+    <triggerMode>Hediff</triggerMode>
+    <triggerHediff>Isekai_LightningCharge</triggerHediff>
+
+    <requiredHediffs>
+      <li>
+        <hediffDef>Isekai_Wet</hediffDef>
+        <severity>0.5</severity>
+      </li>
+    </requiredHediffs>
+
+    <applyHediff>Isekai_Shocked</applyHediff>
+    <severity>0.25</severity>
+  </IsekaiAdventures.ComboReactionModifierDef>
+
+  Practical trigger set combo:
+
+  <IsekaiAdventures.ComboReactionModifierDef>
+    <defName>Isekai_Combo_WetLightningAnyShock</defName>
+    <global>true</global>
+    <triggerMode omitted = Any />
+    <triggerSet>Isekai_TriggerSet_Lightning</triggerSet>
+
+    <requiredHediffs>
+      <li>
+        <hediffSet>Isekai_HediffSet_WetStates</hediffSet>
+        <severity>0.5</severity>
+      </li>
+    </requiredHediffs>
+
+    <applyHediff>Isekai_Shocked</applyHediff>
+    <severity>0.25</severity>
+  </IsekaiAdventures.ComboReactionModifierDef>
+
+  ============================================================
+  7) SOURCE BLUEPRINTS
+  ============================================================
+
+  7.1 Hediff source for DamageModifiers
+
+  <HediffDef>
+    <defName>Isekai_Hediff_Source_DamageModifiers</defName>
+    <label>damage modifier source</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.1</initialSeverity>
+    <maxSeverity>10</maxSeverity>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_DamageModifiers">
+        <minSeverity>0</minSeverity>
+        <modifiers>
+          <li>Isekai_DmgMod_GlobalBlockMasteryScaling</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+  7.2 Hediff source for OnHitModifiers
+
+  <HediffDef>
+    <defName>Isekai_Hediff_Source_OnHit</defName>
+    <label>on hit source</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.1</initialSeverity>
+    <maxSeverity>10</maxSeverity>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_OnHitModifiers">
+        <minSeverity>0</minSeverity>
+        <modifiers>
+          <li>Isekai_OnHit_ArcaneInstability</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+  7.3 Hediff source for OnDamagedModifiers
+
+  <HediffDef>
+    <defName>Isekai_Hediff_Source_OnDamaged</defName>
+    <label>on damaged source</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.1</initialSeverity>
+    <maxSeverity>10</maxSeverity>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_OnDamagedModifiers">
+        <minSeverity>0</minSeverity>
+        <modifiers>
+          <li>Isekai_OnDamaged_ThornWound</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+  7.4 Hediff source for ComboReactionModifiers
+
+  <HediffDef>
+    <defName>Isekai_Hediff_Source_ComboReaction</defName>
+    <label>combo reaction source</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.1</initialSeverity>
+    <maxSeverity>10</maxSeverity>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_ComboReactionModifiers">
+        <minSeverity>0</minSeverity>
+        <modifiers>
+          <li>Isekai_Combo_WetLightningAnyShock</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+  7.5 GeneDef extensions
+
+  DamageModifier extension:
+
+  <GeneDef>
+    <defName>Isekai_Gene_DamageModifierExample</defName>
+    <label>damage modifier gene example</label>
+    <modExtensions>
+      <li Class="IsekaiAdventures.DamageModifiersExtension">
+        <modifiers>
+          <li>Isekai_DmgMod_GlobalBlockMasteryScaling</li>
+        </modifiers>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  OnHit extension:
+
+  <GeneDef>
+    <defName>Isekai_Gene_OnHitExample</defName>
+    <label>on hit gene example</label>
+    <modExtensions>
+      <li Class="IsekaiAdventures.OnHitModifiersExtension">
+        <modifiers>
+          <li>Isekai_OnHit_ArcaneInstability</li>
+        </modifiers>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  OnDamaged extension:
+
+  <GeneDef>
+    <defName>Isekai_Gene_OnDamagedExample</defName>
+    <label>on damaged gene example</label>
+    <modExtensions>
+      <li Class="IsekaiAdventures.OnDamagedModifiersExtension">
+        <modifiers>
+          <li>Isekai_OnDamaged_ThornWound</li>
+        </modifiers>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  ComboReaction extension:
+
+  <GeneDef>
+    <defName>Isekai_Gene_ComboReactionExample</defName>
+    <label>combo reaction gene example</label>
+    <modExtensions>
+      <li Class="IsekaiAdventures.ComboReactionModifiersExtension">
+        <modifiers>
+          <li>Isekai_Combo_WetLightningAnyShock</li>
+        </modifiers>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  7.6 Thing/Apparel/Equipment comps
+
+  DamageModifier comp:
+
+  <comps>
+    <li Class="IsekaiAdventures.CompProperties_DamageModifiers">
+      <modifiers>
+        <li>Isekai_DmgMod_GlobalBlockMasteryScaling</li>
+      </modifiers>
+    </li>
+  </comps>
+
+  OnHit comp:
+
+  <comps>
+    <li Class="IsekaiAdventures.CompProperties_OnHitModifiers">
+      <modifiers>
+        <li>Isekai_OnHit_ArcaneInstability</li>
+      </modifiers>
+    </li>
+  </comps>
+
+  OnDamaged comp:
+
+  <comps>
+    <li Class="IsekaiAdventures.CompProperties_OnDamagedModifiers">
+      <modifiers>
+        <li>Isekai_OnDamaged_ThornWound</li>
+      </modifiers>
+    </li>
+  </comps>
+
+  ComboReaction comp:
+
+  <comps>
+    <li Class="IsekaiAdventures.CompProperties_ComboReactionModifiers">
+      <modifiers>
+        <li>Isekai_Combo_WetLightningAnyShock</li>
+      </modifiers>
+    </li>
+  </comps>
+
+  ============================================================
+  END OF BLUEPRINT DOCUMENTATION
+  ============================================================
+  -->
+
+</Defs>
