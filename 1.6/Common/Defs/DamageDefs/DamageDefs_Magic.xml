@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Damage Types -->
+	<!-- Bases -->
+	 	<DamageDef Abstract="true" Name="Isekai_MagicDamageBase_Ranged">
+			<workerClass>DamageWorker_AddInjury</workerClass>
+			<armorCategory>Isekai_Armor_Magic</armorCategory>
+			<!-- <makesBlood>true</makesBlood> -->
+			<externalViolence>true</externalViolence>
+			<harmsHealth>true</harmsHealth>
+			<hediff>Isekai_Injury_Magic</hediff>
+			<!-- <hediffSolid>Isekai_Injury_Magic</hediffSolid> -->
+			<!-- <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside> -->
+			<impactSoundType>Slice</impactSoundType>
+			<overkillPctToDestroyPart>0.3~0.6</overkillPctToDestroyPart>
+			<isRanged>true</isRanged>
+			<makesAnimalsFlee>true</makesAnimalsFlee>
+			<isExplosive>false</isExplosive>
+		</DamageDef>
+
+		<DamageDef Abstract="true" Name="Isekai_MagicDamageBase_Cut" ParentName="Isekai_MagicDamageBase_Ranged">
+			<makesBlood>true</makesBlood>
+			<hediff>Cut</hediff>
+			<hediffSolid>Crush</hediffSolid>
+			<impactSoundType>Slice</impactSoundType>
+		</DamageDef>
+
+		<DamageDef Abstract="true" Name="Isekai_MagicDamageBase_Blunt" ParentName="Isekai_MagicDamageBase_Ranged">
+			<makesBlood>false</makesBlood>
+			<hediff>Crush</hediff>
+			<hediffSkin>Bruise</hediffSkin>
+			<hediffSolid>Crack</hediffSolid>
+			<impactSoundType>Blunt</impactSoundType>
+		</DamageDef>
+
+		<DamageDef Abstract="true" Name="Isekai_MagicDamageBase_Stab" ParentName="Isekai_MagicDamageBase_Ranged">
+			<makesBlood>true</makesBlood>
+			<hediff>Stab</hediff>
+			<hediffSolid>Crush</hediffSolid>
+			<impactSoundType>Stab</impactSoundType>
+		</DamageDef>
+
+		<DamageDef Abstract="true" Name="Isekai_MagicDamageBase_Burn" ParentName="Isekai_MagicDamageBase_Ranged">
+			<makesBlood>false</makesBlood>
+			<hediff>Burn</hediff>
+			<!-- <hediffSolid>Crush</hediffSolid> -->
+			<impactSoundType>Blunt</impactSoundType>
+		</DamageDef>
+
+		<DamageDef Abstract="true" Name="Isekai_MagicDamageBase_DoT" ParentName="Isekai_MagicDamageBase_Ranged">
+			<makesBlood>false</makesBlood>
+			<hediff>Crush</hediff>
+			<hediffSkin>Bruise</hediffSkin>
+			<hediffSolid>Crack</hediffSolid>
+			<impactSoundType>Blunt</impactSoundType>
+		</DamageDef>
+
+<!-- Special -->
+	<!-- DoT -->
+		<DamageDef ParentName="Isekai_MagicDamageBase_DoT">
+			<defName>Isekai_DoT_DamagePulse</defName>
+			<label>damage pulse</label>
+			<deathMessage>{0} was killed by an overtime effect.</deathMessage>
+			<hediff>Isekai_Cut_Small</hediff>
+			<!-- <hediffSolid>Crush</hediffSolid> -->
+			<impactSoundType>Blunt</impactSoundType>
+			<armorCategory>Isekai_Armor_Magic</armorCategory>
+			<overkillPctToDestroyPart>0.3~0.6</overkillPctToDestroyPart>
+			<isRanged>false</isRanged>
+			<makesAnimalsFlee>true</makesAnimalsFlee>
+			<isExplosive>false</isExplosive>
+		</DamageDef>
+
+<!-- Basic Physical -->
+
+<!-- Basic Magic -->
+	<!-- Arcane -->
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_ArcaneMagic_Lesser</defName>
+			<label>lesser arcane magic</label>
+			<deathMessage>{0} was destroyed by lesser arcane magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_ArcaneMagic_Medium</defName>
+			<label>medium arcane magic</label>
+			<deathMessage>{0} was destroyed by medium arcane magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_ArcaneMagic_Greater</defName>
+			<label>greater arcane magic</label>
+			<deathMessage>{0} was destroyed by greater arcane magic.</deathMessage>
+		</DamageDef>
+
+	<!-- Fire Magic -->
+		<DamageDef ParentName="Isekai_MagicDamageBase_Burn">
+			<defName>Isekai_FireMagic_Lesser</defName>
+			<label>lesser fire magic</label>
+			<deathMessage>{0} was burned away by lesser fire magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Burn">
+			<defName>Isekai_FireMagic_Medium</defName>
+			<label>medium fire magic</label>
+			<deathMessage>{0} was burned away by medium fire magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Burn">
+			<defName>Isekai_FireMagic_Greater</defName>
+			<label>greater fire magic</label>
+			<deathMessage>{0} was burned away by greater fire magic.</deathMessage>
+		</DamageDef>
+
+  	<!-- Water Magic -->
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_WaterMagic_Lesser</defName>
+			<label>lesser water magic</label>
+			<deathMessage>{0} was crushed by lesser water magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_WaterMagic_Medium</defName>
+			<label>medium water magic</label>
+			<deathMessage>{0} was crushed by medium water magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_WaterMagic_Greater</defName>
+			<label>greater water magic</label>
+			<deathMessage>{0} was crushed by greater water magic.</deathMessage>
+		</DamageDef>
+
+	<!-- Wind Magic -->
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Cut">
+			<defName>Isekai_WindMagic_Lesser</defName>
+			<label>lesser wind magic</label>
+			<deathMessage>{0} was cut apart by lesser wind magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Cut">
+			<defName>Isekai_WindMagic_Medium</defName>
+			<label>medium wind magic</label>
+			<deathMessage>{0} was cut apart by medium wind magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Cut">
+			<defName>Isekai_WindMagic_Greater</defName>
+			<label>greater wind magic</label>
+			<deathMessage>{0} was cut apart by greater wind magic.</deathMessage>
+		</DamageDef>
+
+	<!-- Earth Magic -->
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_EarthMagic_Lesser</defName>
+			<label>lesser earth magic</label>
+			<deathMessage>{0} was crushed by lesser earth magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_EarthMagic_Medium</defName>
+			<label>medium earth magic</label>
+			<deathMessage>{0} was crushed by medium earth magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_EarthMagic_Greater</defName>
+			<label>greater earth magic</label>
+			<deathMessage>{0} was crushed by greater earth magic.</deathMessage>
+		</DamageDef>
+
+	<!-- Light / Holy Magic -->
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_HolyMagic_Lesser</defName>
+			<label>lesser holy magic</label>
+			<deathMessage>{0} was purified by lesser holy magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_HolyMagic_Medium</defName>
+			<label>medium holy magic</label>
+			<deathMessage>{0} was purified by medium holy magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_HolyMagic_Greater</defName>
+			<label>greater holy magic</label>
+			<deathMessage>{0} was purified by greater holy magic.</deathMessage>
+		</DamageDef>
+
+	<!-- Dark Magic -->
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_DarkMagic_Lesser</defName>
+			<label>lesser dark magic</label>
+			<deathMessage>{0} was consumed by lesser dark magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_DarkMagic_Medium</defName>
+			<label>medium dark magic</label>
+			<deathMessage>{0} was consumed by medium dark magic.</deathMessage>
+		</DamageDef>
+
+		<DamageDef ParentName="Isekai_MagicDamageBase_Blunt">
+			<defName>Isekai_DarkMagic_Greater</defName>
+			<label>greater dark magic</label>
+			<deathMessage>{0} was consumed by greater dark magic.</deathMessage>
+		</DamageDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Defs>

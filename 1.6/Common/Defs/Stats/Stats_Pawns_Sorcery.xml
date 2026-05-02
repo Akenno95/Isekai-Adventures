@@ -34,7 +34,7 @@
 		
 		<StatDef>
 			<defName>Isekai_Body_MaxStamina</defName>
-			<label>Maximum stamina</label>
+			<label>Max stamina</label>
 			<description>Maximum stamina.</description>
 			<category>BasicsPawn</category>
 			<defaultBaseValue>100</defaultBaseValue>
@@ -47,7 +47,7 @@
 		
 		<StatDef>
 			<defName>Isekai_Body_MinStamina</defName>
-			<label>Minimum stamina</label>
+			<label>Min stamina</label>
 			<description>Minimum stamina.</description>
 			<category>BasicsPawn</category>
 			<defaultBaseValue>0</defaultBaseValue>
@@ -76,7 +76,7 @@
 		
 		<StatDef>
 			<defName>Isekai_Magic_MaxMP</defName>
-			<label>Maximum Magic Points</label>
+			<label>Max MP</label>
 			<description>Maximum Magic Points.</description>
 			<category>BasicsPawn</category>
 			<defaultBaseValue>0</defaultBaseValue>
@@ -92,7 +92,7 @@
 		
 		<StatDef>
 			<defName>Isekai_Magic_MinMP</defName>
-			<label>Minimum Magic Points</label>
+			<label>Min MP</label>
 			<description>Minimum Magic Points.</description>
 			<category>BasicsPawn</category>
 			<defaultBaseValue>0</defaultBaseValue>
@@ -105,7 +105,7 @@
 
 		<StatDef>
 			<defName>Isekai_Magic_MPRecovery</defName>
-			<label>Magic Point recovery</label>
+			<label>MP recovery</label>
 			<description>Magic Point recovery rate.</description>
 			<category>BasicsPawn</category>
 			<defaultBaseValue>0</defaultBaseValue>
@@ -121,7 +121,7 @@
 		
 		<StatDef>
 			<defName>Isekai_Magic_AbsMinMP</defName>
-			<label>Absolute minimum Magic Points</label>
+			<label>Abs min MP</label>
 			<description>Absolute minimum Magic Points of a pawn that might cause some trouble.</description>
 			<category>BasicsPawn</category>
 			<defaultBaseValue>0</defaultBaseValue>

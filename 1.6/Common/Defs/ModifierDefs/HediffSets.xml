@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Hediff Sets -->
+    <!-- Vanilla -->
+        <!-- <IsekaiAdventures.HediffSetDef>
+            <defName>Isekai_HediffSet_Wet</defName>
+            <label>wet states</label>
+            <hediffs>
+                <li>Isekai_TestWet</li>
+                <li>Isekai_TestDrenched</li>
+            </hediffs>
+        </IsekaiAdventures.HediffSetDef> -->
+
+
+
+
+
+
+
+
+
+</Defs>

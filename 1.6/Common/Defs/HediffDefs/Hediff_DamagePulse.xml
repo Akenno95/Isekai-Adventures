@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Damage Pulse Hediff -->
+    <!-- Test DoT -->
+        <HediffDef>
+            <defName>Isekai_Hediff_Test_DamagePulse_Arm</defName>
+            <label>damage pulse wound</label>
+            <description>This wound releases repeated pulses of damage on the affected body part.</description>
+
+            <hediffClass>HediffWithComps</hediffClass>
+
+            <initialSeverity>1</initialSeverity>
+            <maxSeverity>10.0</maxSeverity>
+
+            <comps>
+                <li Class="Isekai.HediffCompProperties_DamagePulse">
+                    <damageDef>Isekai_DoT_DamagePulse</damageDef>
+                    <damageAmount>5</damageAmount>
+                    <damagePenetration>0.15</damagePenetration>
+
+                    <!-- 60 ticks = 1 second -->
+                    <intervalTicks>60</intervalTicks>
+
+                    <!-- After each damage proc:
+                        Severity += -0.2
+                        1.0 severity = 5 procs -->
+                    <severityOffset>-0.2</severityOffset>
+
+                    <!-- true = damage is applied to the body part where the hediff sits -->
+                    <damageAttachedPartOnly>true</damageAttachedPartOnly>
+
+                    <debug>true</debug>
+                </li>
+            </comps>
+        </HediffDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Defs> 

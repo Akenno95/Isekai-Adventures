@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Basics 999 -->	
+
+		<StatDef ParentName="Isekai_Stat_Magic_Base">
+			<defName>Isekai_Stats_Magic_Power</defName>
+			<label>Magic Power</label>
+			<description>The raw force of a pawn's mana. Higher magic power strengthens spells and magical effects, allowing mana to strike, heal, or manifest with greater intensity.</description>
+			<displayPriorityInCategory>999</displayPriorityInCategory>
+			<!-- <statFactors>
+				<li>Isekai_Stats_Magic_Control</li>
+			</statFactors>
+			<capacityFactors>
+				<li>
+					<capacity>Consciousness</capacity>
+					<weight>1</weight>
+				</li>
+			</capacityFactors> -->
+		</StatDef>
+		
+		<StatDef ParentName="Isekai_Stat_Magic_Base">
+			<defName>Isekai_Stats_Magic_Resistance</defName>
+			<label>Magic Resistance</label>
+			<description>A pawn's ability to withstand hostile mana. Higher magic resistance reduces the impact of magical damage and harmful magical effects.</description>
+			<displayPriorityInCategory>998</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef ParentName="Isekai_Stat_Magic_Base">
+			<defName>Isekai_Stats_Magic_Control</defName>
+			<label>Magic Control</label>
+			<description>A pawn's ability to guide and stabilize mana. Higher mana control improves spell precision, efficiency, stability, and the handling of complex magical effects.</description>
+			<displayPriorityInCategory>997</displayPriorityInCategory>
+		</StatDef>
+
+
+	<!-- ElementalAffinity 980 -->
+
+		<StatDef ParentName="Isekai_Stat_Magic_Base">
+			<defName>Isekai_Stats_Affinity_Wind</defName>
+			<label>Wind Affinity</label>
+			<description>A natural or awakened bond with wind-aspected mana, which can be aquired through bloodline, spirit contracts, rituals, or fate. \n\nHigher affinity makes wind magic easier to command, more efficient to wield, and less harmful to endure.</description>
+			<displayPriorityInCategory>980</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef ParentName="Isekai_Stat_Magic_Base">
+			<defName>Isekai_Stats_Affinity_Fire</defName>
+			<label>Fire Affinity</label>
+			<description>A natural or awakened bond with fire-aspected mana, which can be aquired through bloodline, spirit contracts, rituals, or fate. \n\nHigher affinity makes fire magic easier to command, more efficient to wield, and less harmful to endure.</description>
+			<displayPriorityInCategory>979</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef ParentName="Isekai_Stat_Magic_Base">
+			<defName>Isekai_Stats_Affinity_Water</defName>
+			<label>Water Affinity</label>
+			<description>A natural or awakened bond with water-aspected mana, which can be aquired through bloodline, spirit contracts, rituals, or fate. \n\nHigher affinity makes water magic easier to command, more efficient to wield, and less harmful to endure.</description>
+			<displayPriorityInCategory>978</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef ParentName="Isekai_Stat_Magic_Base">
+			<defName>Isekai_Stats_Affinity_Earth</defName>
+			<label>Earth Affinity</label>
+			<description>A natural or awakened bond with earth-aspected mana, which can be aquired through bloodline, spirit contracts, rituals, or fate. \n\nHigher affinity makes earth magic easier to command, more efficient to wield, and less harmful to endure.</description>
+			<displayPriorityInCategory>977</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef ParentName="Isekai_Stat_Magic_Base">
+			<defName>Isekai_Stats_Affinity_Holy</defName>
+			<label>Holy Affinity</label>
+			<description>A natural or awakened bond with holy-aspected mana, which can be aquired through bloodline, spirit contracts, rituals, or fate. \n\nHigher affinity makes holy magic easier to command, more efficient to wield, and less harmful to endure.</description>
+			<displayPriorityInCategory>976</displayPriorityInCategory>
+		</StatDef>
+
+		<StatDef ParentName="Isekai_Stat_Magic_Base">
+			<defName>Isekai_Stats_Affinity_Dark</defName>
+			<label>Dark Affinity</label>
+			<description>A natural or awakened bond with dark-aspected mana, which can be aquired through bloodline, spirit contracts, rituals, or fate. \n\nHigher affinity makes dark magic easier to command, more efficient to wield, and less harmful to endure.</description>
+			<displayPriorityInCategory>975</displayPriorityInCategory>
+		</StatDef>
+
+
+
+
+
+        
+</Defs>

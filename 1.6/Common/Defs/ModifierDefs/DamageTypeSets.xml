@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-<!-- Damage Sets -->
-    <!-- Physical -->
+<!-- Physical -->
         <IsekaiAdventures.DamageTypeSetDef>
-            <defName>Isekai_PhysicalDamageSet</defName>
+            <defName>Isekai_DmgSet_Physical</defName>
             <label>physical damage set</label>
             <damageDefs>
                 <li>Blunt</li>
@@ -12,29 +11,155 @@
                 <li>Stab</li>
                 <li>Scratch</li>
                 <li>Bite</li>
+                <li>Crush</li>
             </damageDefs>
         </IsekaiAdventures.DamageTypeSetDef>
 
-    <!-- Magical -->
+<!-- Magic -->
+    <!-- All -->
         <IsekaiAdventures.DamageTypeSetDef>
-            <defName>Isekai_MagicDamageSet</defName>
-            <label>magic damage set</label>
+            <defName>Isekai_DmgSet_Magic_All</defName>
+            <label>all magic damage set</label>
             <damageDefs>
-                <li>Isekai_SlashDamage</li>
-                <!-- <li>Isekai_FireMagicDamage</li>
-                <li>Isekai_HolyDamage</li>
-                <li>Isekai_VoidDamage</li> -->
+                <li>Isekai_ArcaneMagic_Lesser</li>
+                <li>Isekai_ArcaneMagic_Medium</li>
+                <li>Isekai_ArcaneMagic_Greater</li>
+                <li>Isekai_FireMagic_Lesser</li>
+                <li>Isekai_FireMagic_Medium</li>
+                <li>Isekai_FireMagic_Greater</li>
+                <li>Isekai_WaterMagic_Lesser</li>
+                <li>Isekai_WaterMagic_Medium</li>
+                <li>Isekai_WaterMagic_Greater</li>
+                <li>Isekai_WindMagic_Lesser</li>
+                <li>Isekai_WindMagic_Medium</li>
+                <li>Isekai_WindMagic_Greater</li>
+                <li>Isekai_EarthMagic_Lesser</li>
+                <li>Isekai_EarthMagic_Medium</li>
+                <li>Isekai_EarthMagic_Greater</li>
+                <li>Isekai_HolyMagic_Lesser</li>
+                <li>Isekai_HolyMagic_Medium</li>
+                <li>Isekai_HolyMagic_Greater</li>
+                <li>Isekai_DarkMagic_Lesser</li>
+                <li>Isekai_DarkMagic_Medium</li>
+                <li>Isekai_DarkMagic_Greater</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
+        
+    <!-- Strength -->
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Lesser</defName>
+            <label>lesser magic damage set</label>
+            <damageDefs>
+                <li>Isekai_ArcaneMagic_Lesser</li>
+                <li>Isekai_FireMagic_Lesser</li>
+                <li>Isekai_WaterMagic_Lesser</li>
+                <li>Isekai_WindMagic_Lesser</li>
+                <li>Isekai_EarthMagic_Lesser</li>
+                <li>Isekai_HolyMagic_Lesser</li>
+                <li>Isekai_DarkMagic_Lesser</li>
             </damageDefs>
         </IsekaiAdventures.DamageTypeSetDef>
 
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Medium</defName>
+            <label>medium magic damage set</label>
+            <damageDefs>
+                <li>Isekai_ArcaneMagic_Medium</li>
+                <li>Isekai_FireMagic_Medium</li>
+                <li>Isekai_WaterMagic_Medium</li>
+                <li>Isekai_WindMagic_Medium</li>
+                <li>Isekai_EarthMagic_Medium</li>
+                <li>Isekai_HolyMagic_Medium</li>
+                <li>Isekai_DarkMagic_Medium</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
 
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Greater</defName>
+            <label>greater magic damage set</label>
+            <damageDefs>
+                <li>Isekai_ArcaneMagic_Greater</li>
+                <li>Isekai_FireMagic_Greater</li>
+                <li>Isekai_WaterMagic_Greater</li>
+                <li>Isekai_WindMagic_Greater</li>
+                <li>Isekai_EarthMagic_Greater</li>
+                <li>Isekai_HolyMagic_Greater</li>
+                <li>Isekai_DarkMagic_Greater</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
 
+    <!-- Elemental -->
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Arcane</defName>
+            <label>arcane magic damage set</label>
+            <damageDefs>
+                <li>Isekai_ArcaneMagic_Lesser</li>
+                <li>Isekai_ArcaneMagic_Medium</li>
+                <li>Isekai_ArcaneMagic_Greater</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
 
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Fire</defName>
+            <label>fire magic damage set</label>
+            <damageDefs>
+                <li>Isekai_FireMagic_Lesser</li>
+                <li>Isekai_FireMagic_Medium</li>
+                <li>Isekai_FireMagic_Greater</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
 
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Water</defName>
+            <label>water magic damage set</label>
+            <damageDefs>
+                <li>Isekai_WaterMagic_Lesser</li>
+                <li>Isekai_WaterMagic_Medium</li>
+                <li>Isekai_WaterMagic_Greater</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
 
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Wind</defName>
+            <label>wind magic damage set</label>
+            <damageDefs>
+                <li>Isekai_WindMagic_Lesser</li>
+                <li>Isekai_WindMagic_Medium</li>
+                <li>Isekai_WindMagic_Greater</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
 
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Earth</defName>
+            <label>earth magic damage set</label>
+            <damageDefs>
+                <li>Isekai_EarthMagic_Lesser</li>
+                <li>Isekai_EarthMagic_Medium</li>
+                <li>Isekai_EarthMagic_Greater</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
 
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Holy</defName>
+            <label>holy magic damage set</label>
+            <damageDefs>
+                <li>Isekai_HolyMagic_Lesser</li>
+                <li>Isekai_HolyMagic_Medium</li>
+                <li>Isekai_HolyMagic_Greater</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
 
+        <IsekaiAdventures.DamageTypeSetDef>
+            <defName>Isekai_DmgSet_Magic_Dark</defName>
+            <label>dark magic damage set</label>
+            <damageDefs>
+                <li>Isekai_DarkMagic_Lesser</li>
+                <li>Isekai_DarkMagic_Medium</li>
+                <li>Isekai_DarkMagic_Greater</li>
+            </damageDefs>
+        </IsekaiAdventures.DamageTypeSetDef>
+
+        
 
 
 

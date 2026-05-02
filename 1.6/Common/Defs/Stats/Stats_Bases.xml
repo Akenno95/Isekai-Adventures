@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+		<StatDef Abstract="true" Name="Isekai_Stat_Base">
+			<category>PawnCombat</category>
+			<defaultBaseValue>0</defaultBaseValue>
+			<toStringStyle>FloatTwo</toStringStyle>
+			<showOnAnimals>false</showOnAnimals>
+			<displayPriorityInCategory>1000</displayPriorityInCategory>
+		</StatDef>
+
+        <!-- <StatDef Abstract="true" ParentName="Isekai_Stat_Base" Name="Isekai_Stat_Magic_NoAnimal">
+            <toStringStyle>FloatOne</toStringStyle>
+            <showOnHumanlikes>true</showOnHumanlikes>
+            <showOnAnimals>false</showOnAnimals>
+            <showOnMechanoids>false</showOnMechanoids>
+        </StatDef> -->
+
+        <StatDef Abstract="true" ParentName="Isekai_Stat_Base" Name="Isekai_Stat_Magic_Base">
+            <category>Isekai_Stats_Magic</category>
+            <toStringStyle>FloatOne</toStringStyle>
+            <showOnHumanlikes>true</showOnHumanlikes>
+            <showOnAnimals>true</showOnAnimals>
+            <showOnMechanoids>true</showOnMechanoids>
+            <hideAtValue>0</hideAtValue>
+            <!-- <showIfUndefined>true</showIfUndefined> -->
+        </StatDef>
+		
+</Defs>

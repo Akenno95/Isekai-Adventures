@@ -2,7 +2,7 @@
 <Defs>
 
 
-		<HediffDef ParentName="InjuryBase">
+		<HediffDef Name="Isekai_InjuryBase" ParentName="InjuryBase">
 			<defName>Isekai_Cut_Small</defName>
 			<label>Cut</label>
 			<labelNoun>A small cut.</labelNoun>
@@ -25,6 +25,20 @@
 				<averagePainPerSeverityPermanent>0.00325</averagePainPerSeverityPermanent>
 				<bleedRate>0.02</bleedRate>
 				<canMerge>false</canMerge>
+				<destroyedLabel>Cut off</destroyedLabel>
+				<destroyedOutLabel>Cut out</destroyedOutLabel>
+			</injuryProps>
+		</HediffDef>
+
+		<HediffDef ParentName="Isekai_InjuryBase">
+			<defName>Isekai_Injury_Magic</defName>
+			<label>Magic Injury</label>
+			<labelNoun>A magic injury.</labelNoun>
+			<description>A magic injury.</description>
+			<injuryProps>
+				<painPerSeverity>0.01</painPerSeverity>
+				<averagePainPerSeverityPermanent>0.0065</averagePainPerSeverityPermanent>
+				<bleedRate>0.04</bleedRate>
 				<destroyedLabel>Cut off</destroyedLabel>
 				<destroyedOutLabel>Cut out</destroyedOutLabel>
 			</injuryProps>

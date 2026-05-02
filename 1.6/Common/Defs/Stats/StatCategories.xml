@@ -8,4 +8,11 @@
 			<displayOrder>10</displayOrder>
 		</StatCategoryDef>
 		
+		<StatCategoryDef MayRequire = "Ludeon.RimWorld.Biotech">
+			<defName>Isekai_Stats_Magic</defName>
+			<label>Magic Stats</label>
+			<displayOrder>20</displayOrder>
+    		<displayAllByDefault>true</displayAllByDefault>
+		</StatCategoryDef>
+		
 </Defs>

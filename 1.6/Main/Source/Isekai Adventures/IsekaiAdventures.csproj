@@ -92,6 +92,7 @@
     <Compile Include="DamageResolver\Damage_resolver.cs" />
     <Compile Include="Harmony_Startup.cs" />
     <Compile Include="HealthRegen\Regenerate.cs" />
+    <Compile Include="Hediff\DamagePulse.cs" />
     <Compile Include="MaxHealth\MaxHPBonusExtension.cs" />
     <Compile Include="ProjectileScaling\Bullet_Scaling.cs" />
     <Compile Include="ProjectileScaling\ModExt_ProjectileScaling.cs" />

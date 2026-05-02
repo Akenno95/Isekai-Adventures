@@ -79,7 +79,7 @@
     <!-- Old -->
         <!-- Magic -->
 
-            <StatDef>
+            <!-- <StatDef>
                 <defName>StuffPower_Armor_Isekai_Magic</defName>
                 <label>Armor - Magic</label>
                 <labelForFullStatList>Armor - Magic (material factor)</labelForFullStatList>
@@ -90,7 +90,7 @@
                 <toStringStyle>PercentZero</toStringStyle>
                 <showIfUndefined>false</showIfUndefined>
                 <displayPriorityInCategory>4511</displayPriorityInCategory>
-            </StatDef>
+            </StatDef> -->
 
 
         <!-- Elemental -->

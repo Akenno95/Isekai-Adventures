@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!-- Physical -->
+
+
+
+<!-- Magic -->
+    <!-- Strength -->
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Lesser_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Lesser</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Magic_Power</stat>
+                    <factor>0.002</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Magic_Control</stat>
+                    <factor>0.001</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>    <!-- 500 Points for no Damage -->  
+                <li>
+                <stat>Isekai_Stats_Magic_Resistance</stat>
+                <factor>0.002</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Medium_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Medium</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Magic_Power</stat>
+                    <factor>0.001</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Magic_Control</stat>
+                    <factor>0.0005</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>     <!-- 1.000 Points for no Damage -->
+                <li>
+                <stat>Isekai_Stats_Magic_Resistance</stat>
+                <factor>0.001</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Greater_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Greater</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Magic_Power</stat>
+                    <factor>0.0005</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Magic_Control</stat>
+                    <factor>0.0002</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>     <!-- 2.000 Points for no Damage -->
+                <li>
+                    <stat>Isekai_Stats_Magic_Resistance</stat>
+                    <factor>0.0005</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+    <!-- Elemental -->
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Arcane_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Arcane</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Magic_Power</stat>
+                    <factor>0.001</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Magic_Control</stat>
+                    <factor>0.0005</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>
+                <li>
+                    <stat>Isekai_Stats_Magic_Resistance</stat>
+                    <factor>0.001</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Fire_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Fire</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Fire</stat>
+                    <factor>0.05</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Fire</stat>
+                    <factor>0.05</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Wind</stat>     <!-- Fire beats Wind -->
+                    <factor>-0.02</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Water_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Water</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Water</stat>
+                    <factor>0.05</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Water</stat>
+                    <factor>0.05</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Fire</stat>    <!-- Water beats Fire -->
+                    <factor>-0.02</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Wind_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Wind</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Wind</stat>
+                    <factor>0.05</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Wind</stat>
+                    <factor>0.05</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Earth</stat>    <!-- Wind beats Earth -->
+                    <factor>-0.02</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Earth_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Earth</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Earth</stat>
+                    <factor>0.05</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Earth</stat>
+                    <factor>0.05</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Water</stat>    <!-- Earth beats Water -->
+                    <factor>-0.02</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Holy_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Holy</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Holy</stat>
+                    <factor>0.05</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Holy</stat>
+                    <factor>0.05</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Dark</stat>   <!-- Holy beats Dark -->
+                    <factor>-0.02</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_Global_Magic_Dark_Scaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_Dark</damageTypeSet>
+            <percentBonusFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Dark</stat>
+                    <factor>0.05</factor>
+                </li>
+            </percentBonusFromStats>
+            <percentReductionFromStats>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Dark</stat>
+                    <factor>0.05</factor>
+                </li>
+                <li>
+                    <stat>Isekai_Stats_Affinity_Holy</stat>  <!-- Dark beats Holy -->
+                    <factor>-0.02</factor>
+                </li>
+            </percentReductionFromStats>
+        </IsekaiAdventures.DamageModifierDef>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Defs>

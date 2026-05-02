@@ -2,13 +2,6 @@
 <Defs>
 
 	<!-- Base -->
-		<StatDef Abstract="true" Name="Isekai_Stat_Base">
-			<category>PawnCombat</category>
-			<defaultBaseValue>0</defaultBaseValue>
-			<toStringStyle>FloatTwo</toStringStyle>
-			<showOnAnimals>false</showOnAnimals>
-			<displayPriorityInCategory>1000</displayPriorityInCategory>
-		</StatDef>
 
 		<!-- Wind -->
 			<StatDef Abstract="true" Name="Isekai_Stat_WindDamage" ParentName="Isekai_Stat_Base" >
