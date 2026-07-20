@@ -89,6 +89,12 @@
 				<learningTrackerDef>Isekai_Magic_LearningTrackerTree_Basics</learningTrackerDef>
 				<coordY>0</coordY>
 				<pointReq>1</pointReq>
+				<modExtensions>
+					<li Class="ISFNodeIcons.LearningNodeIconExtension">
+						<iconPath>UI/Icons/QuestGiver</iconPath>
+						<iconSize>32</iconSize>
+					</li>
+				</modExtensions>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "IsekaiMagicDebugNodeHiding" Abstract="True" Name="IsekaiMagicTypesNode">

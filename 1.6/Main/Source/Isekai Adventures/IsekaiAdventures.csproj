@@ -52,6 +52,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <!-- Game/Unity -->
   <ItemGroup>
@@ -98,6 +101,7 @@
     <Compile Include="HealthRegen\Regenerate.cs" />
     <Compile Include="Hediff\DamagePulse.cs" />
     <Compile Include="Hediff\HealPulse.cs" />
+    <Compile Include="ItsSorcery\ISFNodeIconsPatch.cs" />
     <Compile Include="ItsSorcery\LearningPatch.cs" />
     <Compile Include="MaxHealth\MaxHPBonusExtension.cs" />
     <Compile Include="ProjectileScaling\Bullet_Scaling.cs" />
