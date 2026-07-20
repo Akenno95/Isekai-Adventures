@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- ============================================================ -->
+  <!-- 3) HEALMODIFIERDEFS                                           -->
+  <!--                                                              -->
+  <!-- Important rules:                                             -->
+  <!-- - No <values> list anymore.                                  -->
+  <!-- - Fixed modifiers are direct fields.                         -->
+  <!-- - totalHealFactor is multiplicative and explicit.            -->
+  <!-- - totalHealFactor 1 = neutral.                               -->
+  <!-- - totalHealFactor 0 = healing completely blocked.            -->
+  <!-- - global defaults to false, so it is omitted here.            -->
+  <!-- ============================================================ -->
+
+
+  <!-- ============================================================ -->
+  <!-- TEST 1: Complete Anti-Heal                                    -->
+  <!-- Expected:                                                     -->
+  <!-- - Custom healing becomes 0.                                   -->
+  <!-- - Regrowth progress becomes 0 when used by active HealComp.   -->
+  <!-- - Vanilla Hediff_Injury.Heal is blocked through patch.        -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_BlockAllHealing</defName>
+    <label>test: block all healing</label>
+    <description>Sets TotalHealFactor to 0. This should block all healing while active.</description>
+    <healTypeSets>
+      <li>Isekai_HealSet_AllIncludingVanilla</li>
+    </healTypeSets>
+    <totalHealFactor>0</totalHealFactor>
+  </IsekaiAdventures.HealModifierDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST 2A: Half Healing A                                       -->
+  <!-- Expected alone: TotalHealFactor = 0.5.                        -->
+  <!-- Expected with Half Healing B: 0.5 * 0.5 = 0.25.               -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_HalfHealing_A</defName>
+    <label>test: half healing A</label>
+    <description>Multiplies all healing by 0.5.</description>
+    <healTypeSets>
+      <li>Isekai_HealSet_AllIncludingVanilla</li>
+    </healTypeSets>
+    <totalHealFactor>0.5</totalHealFactor>
+  </IsekaiAdventures.HealModifierDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST 2B: Half Healing B                                       -->
+  <!-- Separate modifier so stacking can be tested.                  -->
+  <!-- The collector deduplicates identical HealModifierDefs, so      -->
+  <!-- two different modifier defs are used for stack testing.        -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_HalfHealing_B</defName>
+    <label>test: half healing B</label>
+    <description>Multiplies all healing by 0.5. Used to test multiplicative stacking.</description>
+    <healTypeSets>
+      <li>Isekai_HealSet_AllIncludingVanilla</li>
+    </healTypeSets>
+    <totalHealFactor>0.5</totalHealFactor>
+  </IsekaiAdventures.HealModifierDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST 3: Double Healing                                        -->
+  <!-- Expected: TotalHealFactor = 2.                                -->
+  <!-- Note: Vanilla healing is also doubled through TotalHealFactor. -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_DoubleHealing</defName>
+    <label>test: double healing</label>
+    <description>Multiplies all healing by 2.</description>
+    <healTypeSets>
+      <li>Isekai_HealSet_AllIncludingVanilla</li>
+    </healTypeSets>
+    <totalHealFactor>2</totalHealFactor>
+  </IsekaiAdventures.HealModifierDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST 4: Body Restoration Boost                                -->
+  <!-- Expected:                                                     -->
+  <!-- - Custom Injury healing stronger/faster.                      -->
+  <!-- - Custom Scar healing stronger/faster.                        -->
+  <!-- - Custom Regrowth gets more slots and speed.                  -->
+  <!-- - Vanilla healing is NOT increased unless totalHealFactor      -->
+  <!--   is changed separately.                                      -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_BodyRestorationBoost</defName>
+    <label>test: body restoration boost</label>
+    <description>Boosts custom injury, scar and regrowth healing.</description>
+    <healTypeSets>
+      <li>Isekai_HealSet_BodyRestoration</li>
+    </healTypeSets>
+
+    <injuryHealAmount>0.10</injuryHealAmount>
+    <injuryHealPercentOfMissing>0.05</injuryHealPercentOfMissing>
+    <injuryHealSpeed>1.0</injuryHealSpeed>
+    <injuryHealSlots>1</injuryHealSlots>
+
+    <scarHealAmount>0.02</scarHealAmount>
+    <scarHealSpeed>0.5</scarHealSpeed>
+    <scarHealSlots>1</scarHealSlots>
+
+    <regrowthSlots>1</regrowthSlots>
+    <regrowthSpeed>1.0</regrowthSpeed>
+  </IsekaiAdventures.HealModifierDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST 5: Auto Tend Boost                                       -->
+  <!-- Expected when active HealComp supports Tend:                  -->
+  <!-- - TendQuality +0.25                                           -->
+  <!-- - TendSlots +2                                                -->
+  <!-- - TendSpeed +1.0                                              -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_AutoTendBoost</defName>
+    <label>test: auto tend boost</label>
+    <description>Boosts automatic tending values only.</description>
+    <healDefs>
+      <li>Isekai_Heal_Tend</li>
+    </healDefs>
+
+    <tendQuality>0.25</tendQuality>
+    <tendSlots>2</tendSlots>
+    <tendSpeed>1.0</tendSpeed>
+  </IsekaiAdventures.HealModifierDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST 6: Regrowth Specialist                                   -->
+  <!-- Expected when active HealComp supports Regrowth:              -->
+  <!-- - RegrowthSlots +2                                            -->
+  <!-- - RegrowthSpeed +1.0                                          -->
+  <!-- - RegrowthWorkFactor -0.25                                    -->
+  <!-- If base work factor is 1, final work factor becomes 0.75.      -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_RegrowthSpecialist</defName>
+    <label>test: regrowth specialist</label>
+    <description>Boosts only regrowth values.</description>
+    <healDefs>
+      <li>Isekai_Heal_Regrowth</li>
+    </healDefs>
+
+    <regrowthSlots>2</regrowthSlots>
+    <regrowthSpeed>1.0</regrowthSpeed>
+    <regrowthWorkFactor>-0.25</regrowthWorkFactor>
+  </IsekaiAdventures.HealModifierDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST 7: Scar and Severity Cleaner                             -->
+  <!-- Expected when active HealComp supports Scar/HediffSeverity:   -->
+  <!-- - Scar and non-injury severity reduction are boosted.         -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_SeverityCleaner</defName>
+    <label>test: severity cleaner</label>
+    <description>Boosts scar and non-injury hediff severity healing.</description>
+    <healTypeSets>
+      <li>Isekai_HealSet_SeverityReduction</li>
+    </healTypeSets>
+
+    <scarHealAmount>0.03</scarHealAmount>
+    <scarHealSpeed>1.0</scarHealSpeed>
+    <scarHealSlots>1</scarHealSlots>
+
+    <hediffSeverityHealAmount>0.02</hediffSeverityHealAmount>
+    <hediffSeverityHealSpeed>1.0</hediffSeverityHealSpeed>
+    <hediffSeverityHealSlots>1</hediffSeverityHealSlots>
+  </IsekaiAdventures.HealModifierDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST 8: Stat Scaling Example                                  -->
+  <!-- Disabled until the StatDef exists.                            -->
+  <!-- statScales add to the selected property.                      -->
+  <!-- Example: stat 50 * factor 0.01 = +0.5 RegrowthSpeed.          -->
+  <!-- ============================================================ -->
+
+  <!--
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_StatScalingRegeneration</defName>
+    <label>test: stat scaling regeneration</label>
+    <description>Example modifier for stat-based scaling. Enable only when the StatDef exists.</description>
+    <healTypeSets>
+      <li>Isekai_HealSet_BodyRestoration</li>
+    </healTypeSets>
+
+    <statScales>
+      <li>
+        <property>InjuryHealAmount</property>
+        <stat>Isekai_RegenerationPower</stat>
+        <factor>0.002</factor>
+      </li>
+      <li>
+        <property>InjuryHealSpeed</property>
+        <stat>Isekai_RegenerationPower</stat>
+        <factor>0.01</factor>
+      </li>
+      <li>
+        <property>RegrowthSpeed</property>
+        <stat>Isekai_RegenerationPower</stat>
+        <factor>0.01</factor>
+      </li>
+      <li>
+        <property>RegrowthSlots</property>
+        <stat>Isekai_RegenerationPower</stat>
+        <factor>0.05</factor>
+      </li>
+    </statScales>
+  </IsekaiAdventures.HealModifierDef>
+  -->
+
+
+  <!-- ============================================================ -->
+  <!-- 4) TEST HEDIFFDEFS                                            -->
+  <!-- These Hediffs only provide HealModifierDefs.                  -->
+  <!-- They do not actively heal by themselves.                      -->
+  <!-- Active healing will require HediffComp_HealPipeline.          -->
+  <!-- ============================================================ -->
+
+
+  <!-- ============================================================ -->
+  <!-- TEST HEDIFF 1: Anti-Heal Curse                                -->
+  <!-- How to test now:                                              -->
+  <!-- 1. Injure pawn.                                               -->
+  <!-- 2. Add this hediff.                                           -->
+  <!-- 3. Any healing through Hediff_Injury.Heal should be blocked.  -->
+  <!-- ============================================================ -->
+
+  <HediffDef>
+    <defName>Isekai_TEST_AntiHealCurse</defName>
+    <label>anti-heal curse</label>
+    <description>Test hediff: blocks all healing while active.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_HealModifiers">
+        <modifiers>
+          <li>Isekai_HealModifier_TEST_BlockAllHealing</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST HEDIFF 2A: Half Healing A                                -->
+  <!-- Expected: TotalHealFactor 0.5.                                -->
+  <!-- ============================================================ -->
+
+  <HediffDef>
+    <defName>Isekai_TEST_HalfHealing_A</defName>
+    <label>half healing A</label>
+    <description>Test hediff: multiplies all healing by 0.5.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_HealModifiers">
+        <modifiers>
+          <li>Isekai_HealModifier_TEST_HalfHealing_A</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST HEDIFF 2B: Half Healing B                                -->
+  <!-- Add with A to test multiplicative stacking: 0.5 * 0.5 = 0.25. -->
+  <!-- ============================================================ -->
+
+  <HediffDef>
+    <defName>Isekai_TEST_HalfHealing_B</defName>
+    <label>half healing B</label>
+    <description>Test hediff: multiplies all healing by 0.5.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_HealModifiers">
+        <modifiers>
+          <li>Isekai_HealModifier_TEST_HalfHealing_B</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST HEDIFF 3: Double Healing                                 -->
+  <!-- Expected: TotalHealFactor 2.                                  -->
+  <!-- ============================================================ -->
+
+  <HediffDef>
+    <defName>Isekai_TEST_DoubleHealing</defName>
+    <label>double healing</label>
+    <description>Test hediff: doubles all healing through TotalHealFactor.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_HealModifiers">
+        <modifiers>
+          <li>Isekai_HealModifier_TEST_DoubleHealing</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST HEDIFF 4: Body Restoration Boost                         -->
+  <!-- Needs active HealPipeline comp later for visible custom heal. -->
+  <!-- ============================================================ -->
+
+  <HediffDef>
+    <defName>Isekai_TEST_BodyRestorationBoost</defName>
+    <label>body restoration boost</label>
+    <description>Test hediff: boosts custom injury, scar and regrowth healing.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_HealModifiers">
+        <modifiers>
+          <li>Isekai_HealModifier_TEST_BodyRestorationBoost</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST HEDIFF 5: Auto Tend Boost                                -->
+  <!-- Needs active HealPipeline comp later for visible auto-tend.   -->
+  <!-- ============================================================ -->
+
+  <HediffDef>
+    <defName>Isekai_TEST_AutoTendBoost</defName>
+    <label>auto tend boost</label>
+    <description>Test hediff: boosts only automatic tending values.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_HealModifiers">
+        <modifiers>
+          <li>Isekai_HealModifier_TEST_AutoTendBoost</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST HEDIFF 6: Regrowth Specialist                            -->
+  <!-- Needs active HealPipeline comp later for visible regrowth.    -->
+  <!-- ============================================================ -->
+
+  <HediffDef>
+    <defName>Isekai_TEST_RegrowthSpecialist</defName>
+    <label>regrowth specialist</label>
+    <description>Test hediff: boosts only regrowth values.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_HealModifiers">
+        <modifiers>
+          <li>Isekai_HealModifier_TEST_RegrowthSpecialist</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+  <!-- ============================================================ -->
+  <!-- TEST HEDIFF 7: Severity Cleaner                               -->
+  <!-- Needs active HealPipeline comp later for visible effect.      -->
+  <!-- ============================================================ -->
+
+  <HediffDef>
+    <defName>Isekai_TEST_SeverityCleaner</defName>
+    <label>severity cleaner</label>
+    <description>Test hediff: boosts scar and non-injury hediff severity healing.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_HealModifiers">
+        <modifiers>
+          <li>Isekai_HealModifier_TEST_SeverityCleaner</li>
+        </modifiers>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+  <!-- ============================================================ -->
+  <!-- 5) OPTIONAL DEBUG NOTES                                       -->
+  <!--                                                              -->
+  <!-- Current test status before HediffComp_HealPipeline exists:    -->
+  <!-- - Anti-heal should already affect vanilla Hediff_Injury.Heal. -->
+  <!-- - Half/double heal should affect vanilla Hediff_Injury.Heal.  -->
+  <!-- - Custom Amount/Slots/Speed values are collected by resolver, -->
+  <!--   but need an active HealPipeline comp to visibly execute.    -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealModifierDef>
+    <defName>Isekai_HealModifier_TEST_5Healing</defName>
+    <label>test: 5 healing</label>
+    <description>Multiplies all healing by 5.</description>
+    <healTypeSets>
+      <li>Isekai_HealSet_AllCustom</li>
+    </healTypeSets>
+    <totalHealFactor>5</totalHealFactor>
+    <global>true</global>
+  </IsekaiAdventures.HealModifierDef>
+
+
+ <HediffDef>
+    <defName>Isekai_TEST_HealPulse_FullTest</defName>
+    <label>heal pulse: full test</label>
+    <description>Test hediff: enables injury healing, auto tend, scar healing and regrowth.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="IsekaiAdventures.HediffCompProperties_HealPulse">
+        <!-- <severityOffset>-0.1</severityOffset> -->
+        <debug>true</debug>
+        <pulseImmediately>true</pulseImmediately>
+        <healInjuries>true</healInjuries>
+        <injuryHealIntervalTicks>60</injuryHealIntervalTicks>
+        <injuryHealAmount>0.1</injuryHealAmount>
+        <injuryHealSlots>1</injuryHealSlots>
+        <injuryHealSpeed>1</injuryHealSpeed>
+
+        <tendWounds>true</tendWounds>
+        <tendIntervalTicks>60</tendIntervalTicks>
+        <tendQuality>0.1</tendQuality>
+        <tendSlots>1</tendSlots>
+        <tendSpeed>1</tendSpeed>
+        <tendBleedingOnly>true</tendBleedingOnly>
+        <tendFreshMissingParts>true</tendFreshMissingParts>
+
+        <healScars>true</healScars>
+        <scarHealIntervalTicks>180</scarHealIntervalTicks>
+        <scarHealAmount>0.5</scarHealAmount>
+        <scarHealSlots>1</scarHealSlots>
+        <scarHealSpeed>1</scarHealSpeed>
+
+        <healNonInjuryHediffs>false</healNonInjuryHediffs>
+
+        <regrowParts>true</regrowParts>
+        <regrowthIntervalTicks>60</regrowthIntervalTicks>
+        <regrowthWorkRequiredTicks>1800</regrowthWorkRequiredTicks>
+        <regrowthSlots>1</regrowthSlots>
+        <regrowthSpeed>1</regrowthSpeed>
+        <regrowthWorkFactor>1</regrowthWorkFactor>
+
+        <scaleRegrowthWorkByPartSize>false</scaleRegrowthWorkByPartSize>
+        <regrowthIndicatorHediff>Isekai_Hediff_RegrowthIndicator</regrowthIndicatorHediff>
+        <removeIndicatorOnComplete>true</removeIndicatorOnComplete>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+
+
+
+
+
+
+
+
+
+
+</Defs>

@@ -43,6 +43,9 @@
     <Reference Include="0Harmony, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Lib.Harmony.2.4.2\lib\net472\0Harmony.dll</HintPath>
     </Reference>
+    <Reference Include="ItsSorceryFramework">
+      <HintPath>..\..\..\..\..\..\..\..\workshop\content\294100\3013487115\1.6\Assemblies\ItsSorceryFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
@@ -87,12 +90,15 @@
     <Compile Include="AbilityScaling\Verb_AbilityBurstScaling.cs" />
     <Compile Include="ComboReactor\HediffCompProperties_ComboReactor.cs" />
     <Compile Include="DamageResolver\ComboReaction_resolver.cs" />
+    <Compile Include="DamageResolver\Heal_resolver.cs" />
     <Compile Include="DamageResolver\OnDamaged_resolver.cs" />
     <Compile Include="DamageResolver\OnHit__resolver.cs" />
     <Compile Include="DamageResolver\Damage_resolver.cs" />
     <Compile Include="Harmony_Startup.cs" />
     <Compile Include="HealthRegen\Regenerate.cs" />
     <Compile Include="Hediff\DamagePulse.cs" />
+    <Compile Include="Hediff\HealPulse.cs" />
+    <Compile Include="ItsSorcery\LearningPatch.cs" />
     <Compile Include="MaxHealth\MaxHPBonusExtension.cs" />
     <Compile Include="ProjectileScaling\Bullet_Scaling.cs" />
     <Compile Include="ProjectileScaling\ModExt_ProjectileScaling.cs" />

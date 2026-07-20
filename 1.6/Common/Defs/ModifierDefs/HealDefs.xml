@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ===========  Don't change or change with code   ============ -->
+  <!-- HealDefs - Used for defining different healing types, similar to how DamageDefs work -->
+  <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealDef>
+    <defName>Isekai_Heal_Injury</defName>
+    <label>injury healing</label>
+    <description>Healing that reduces the severity of normal injuries.</description>
+  </IsekaiAdventures.HealDef>
+
+  <IsekaiAdventures.HealDef>
+    <defName>Isekai_Heal_Scar</defName>
+    <label>scar healing</label>
+    <description>Healing that reduces or removes scar severity.</description>
+  </IsekaiAdventures.HealDef>
+
+  <IsekaiAdventures.HealDef>
+    <defName>Isekai_Heal_Tend</defName>
+    <label>automatic tending</label>
+    <description>Healing that automatically tends wounds.</description>
+  </IsekaiAdventures.HealDef>
+
+  <IsekaiAdventures.HealDef>
+    <defName>Isekai_Heal_Regrowth</defName>
+    <label>body part regrowth</label>
+    <description>Healing that restores missing body parts over time.</description>
+  </IsekaiAdventures.HealDef>
+
+  <IsekaiAdventures.HealDef>
+    <defName>Isekai_Heal_HediffSeverity</defName>
+    <label>hediff severity healing</label>
+    <description>Healing that reduces the severity of non-injury hediffs.</description>
+  </IsekaiAdventures.HealDef>
+
+  <IsekaiAdventures.HealDef>
+    <defName>Isekai_Heal_Vanilla</defName>
+    <label>vanilla healing</label>
+    <description>Vanilla healing category. Only affected by TotalHealFactor.</description>
+  </IsekaiAdventures.HealDef>
+
+
+
+</Defs>

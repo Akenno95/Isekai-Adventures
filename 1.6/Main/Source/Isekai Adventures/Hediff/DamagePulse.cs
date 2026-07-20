@@ -2,7 +2,7 @@
 using UnityEngine;
 using Verse;
 
-namespace Isekai
+namespace IsekaiAdventures
 {
     public class HediffCompProperties_DamagePulse : HediffCompProperties
     {

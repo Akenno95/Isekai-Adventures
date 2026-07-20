@@ -20,7 +20,19 @@
         <IsekaiAdventures.DamageTypeSetDef>
             <defName>Isekai_DmgSet_Magic_All</defName>
             <label>all magic damage set</label>
-            <damageDefs>
+            <damageTypeSets>
+                <li>Isekai_DmgSet_Magic_Lesser</li>
+                <li>Isekai_DmgSet_Magic_Medium</li>
+                <li>Isekai_DmgSet_Magic_Greater</li>
+                <li>Isekai_DmgSet_Magic_Arcane</li>
+                <li>Isekai_DmgSet_Magic_Fire</li>
+                <li>Isekai_DmgSet_Magic_Water</li>
+                <li>Isekai_DmgSet_Magic_Wind</li>
+                <li>Isekai_DmgSet_Magic_Earth</li>
+                <li>Isekai_DmgSet_Magic_Holy</li>
+                <li>Isekai_DmgSet_Magic_Dark</li>
+            </damageTypeSets>
+            <!-- <damageDefs>
                 <li>Isekai_ArcaneMagic_Lesser</li>
                 <li>Isekai_ArcaneMagic_Medium</li>
                 <li>Isekai_ArcaneMagic_Greater</li>
@@ -42,7 +54,7 @@
                 <li>Isekai_DarkMagic_Lesser</li>
                 <li>Isekai_DarkMagic_Medium</li>
                 <li>Isekai_DarkMagic_Greater</li>
-            </damageDefs>
+            </damageDefs> -->
         </IsekaiAdventures.DamageTypeSetDef>
         
     <!-- Strength -->

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- ============================================================ -->
+    <!-- HEALTYPESETDEFS                                              -->
+    <!-- Sets group HealDefs to avoid repeated XML lists.             -->
+    <!-- ============================================================ -->
+
+  <IsekaiAdventures.HealTypeSetDef>
+    <defName>Isekai_HealSet_AllCustom</defName>
+    <label>all custom healing</label>
+    <healDefs>
+      <li>Isekai_Heal_Injury</li>
+      <li>Isekai_Heal_Scar</li>
+      <li>Isekai_Heal_Tend</li>
+      <li>Isekai_Heal_Regrowth</li>
+      <li>Isekai_Heal_HediffSeverity</li>
+    </healDefs>
+  </IsekaiAdventures.HealTypeSetDef>
+
+  <IsekaiAdventures.HealTypeSetDef>
+    <defName>Isekai_HealSet_AllIncludingVanilla</defName>
+    <label>all healing including vanilla</label>
+    <healDefs>
+      <li>Isekai_Heal_Injury</li>
+      <li>Isekai_Heal_Scar</li>
+      <li>Isekai_Heal_Tend</li>
+      <li>Isekai_Heal_Regrowth</li>
+      <li>Isekai_Heal_HediffSeverity</li>
+      <li>Isekai_Heal_Vanilla</li>
+    </healDefs>
+  </IsekaiAdventures.HealTypeSetDef>
+
+  <IsekaiAdventures.HealTypeSetDef>
+    <defName>Isekai_HealSet_BodyRestoration</defName>
+    <label>body restoration healing</label>
+    <healDefs>
+      <li>Isekai_Heal_Injury</li>
+      <li>Isekai_Heal_Scar</li>
+      <li>Isekai_Heal_Regrowth</li>
+    </healDefs>
+  </IsekaiAdventures.HealTypeSetDef>
+
+  <IsekaiAdventures.HealTypeSetDef>
+    <defName>Isekai_HealSet_WoundCare</defName>
+    <label>wound care healing</label>
+    <healDefs>
+      <li>Isekai_Heal_Injury</li>
+      <li>Isekai_Heal_Tend</li>
+    </healDefs>
+  </IsekaiAdventures.HealTypeSetDef>
+
+  <IsekaiAdventures.HealTypeSetDef>
+    <defName>Isekai_HealSet_SeverityReduction</defName>
+    <label>severity reduction healing</label>
+    <healDefs>
+      <li>Isekai_Heal_Scar</li>
+      <li>Isekai_Heal_HediffSeverity</li>
+    </healDefs>
+  </IsekaiAdventures.HealTypeSetDef>
+
+
+
+
+</Defs>

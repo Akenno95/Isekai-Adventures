@@ -28,7 +28,7 @@
 
 		<StatDef ParentName="Isekai_Stat_Magic_Base">
 			<defName>Isekai_Stats_Magic_Control</defName>
-			<label>Magic Control</label>
+			<label>Mana Control</label>
 			<description>A pawn's ability to guide and stabilize mana. Higher mana control improves spell precision, efficiency, stability, and the handling of complex magical effects.</description>
 			<displayPriorityInCategory>997</displayPriorityInCategory>
 		</StatDef>

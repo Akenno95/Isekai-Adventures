@@ -568,6 +568,31 @@
         </IsekaiAdventures.DamageTypeSetDef>
 
 
+<!-- V9 Testing statScales and property -->
+        <IsekaiAdventures.DamageModifierDef>
+            <defName>Isekai_DmgMod_GlobalMagicScaling</defName>
+            <global>true</global>
+            <damageTypeSet>Isekai_DmgSet_Magic_All</damageTypeSet>
 
+            <statScales>
+                <li>
+                    <property>PercentBonus</property>
+                    <stat>Isekai_Stats_Magic_Power</stat>
+                    <factor>0.004</factor>
+                </li>
+
+                <li>
+                    <property>PercentReduction</property>
+                    <stat>Isekai_Stats_Magic_Resistance</stat>
+                    <factor>0.008</factor>
+                </li>
+
+                <li>
+                    <property>ResistancePenetration</property>
+                    <stat>Isekai_Stats_Magic_Control</stat>
+                    <factor>0.005</factor>
+                </li>
+            </statScales>
+        </IsekaiAdventures.DamageModifierDef>
 
 </Defs>

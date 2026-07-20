@@ -1,16 +1,18 @@
 // /Source/IsekaiAdventures/Combat/Isekai_DamageResolverCore.cs
 // RimWorld 1.6 - IsekaiAdventures
-// Damage Resolver Core - Phase 2
+// Damage Resolver Core - Phase B Upgrade
 //
 // Contains:
 // - DamageModifierDef
-// - DamageTypeSetDef
-// - StatScale
+// - DamageTypeSetDef with nested damageTypeSets
+// - StatScale legacy support
+// - DamageModifierProperty / DamagePropertyScale / statScales
 // - DamageContext
 // - DamageResult
 // - Hediff / Thing / GeneDefExtension modifier sources
 // - DamageResolver
 // - BlockChance / IgnoreBlockChance
+// - ResistancePenetration
 // - Harmony hook into Thing.TakeDamage
 //
 // Notes:
@@ -18,8 +20,11 @@
 // - Your central IsekaiAdventures_Startup should call Harmony.PatchAll() once.
 // - Genes use DefModExtension here, not GeneComp.
 // - Hediffs and Things/Apparel/Equipment use normal comps.
-// - New XML should prefer percentBonusFromStats / percentReductionFromStats.
-// - Singular percentBonusFromStat / percentReductionFromStat remain supported for compatibility.
+// - Old XML fields remain supported:
+//   percentBonusFromStat, percentBonusFromStats,
+//   percentReductionFromStat, percentReductionFromStats,
+//   blockChanceFromStats, ignoreBlockChanceFromStats.
+// - New XML may use <statScales> with DamageModifierProperty.
 
 using System;
 using System.Collections.Generic;
@@ -37,16 +42,51 @@ namespace IsekaiAdventures
 
     /// <summary>
     /// A named group of DamageDefs.
-    /// Example: Magic = Isekai_MagicSlashDamage, Isekai_FireMagicDamage, Isekai_HolyDamage.
-    /// DamageModifierDef can reference this through <damageTypeSet>...</damageTypeSet>.
+    /// Phase B: can also contain other DamageTypeSetDefs through <damageTypeSets>.
     /// </summary>
     public class DamageTypeSetDef : Def
     {
         public List<DamageDef> damageDefs;
 
+        // Phase B: nested sets.
+        // Example:
+        // <damageTypeSets>
+        //   <li>Isekai_DmgSet_FireMagic</li>
+        //   <li>Isekai_DmgSet_WaterMagic</li>
+        // </damageTypeSets>
+        public List<DamageTypeSetDef> damageTypeSets;
+
         public bool Contains(DamageDef damageDef)
         {
-            return damageDef != null && damageDefs != null && damageDefs.Contains(damageDef);
+            HashSet<DamageTypeSetDef> visited = new HashSet<DamageTypeSetDef>();
+            return ContainsInternal(damageDef, visited);
+        }
+
+        private bool ContainsInternal(DamageDef damageDef, HashSet<DamageTypeSetDef> visited)
+        {
+            if (damageDef == null)
+                return false;
+
+            if (visited == null)
+                visited = new HashSet<DamageTypeSetDef>();
+
+            // Prevent accidental cycles from causing infinite recursion.
+            if (!visited.Add(this))
+                return false;
+
+            if (damageDefs != null && damageDefs.Contains(damageDef))
+                return true;
+
+            if (damageTypeSets != null)
+            {
+                foreach (DamageTypeSetDef set in damageTypeSets)
+                {
+                    if (set != null && set.ContainsInternal(damageDef, visited))
+                        return true;
+                }
+            }
+
+            return false;
         }
 
         public override IEnumerable<string> ConfigErrors()
@@ -54,18 +94,32 @@ namespace IsekaiAdventures
             foreach (string err in base.ConfigErrors())
                 yield return err;
 
-            if (damageDefs == null || damageDefs.Count == 0)
-                yield return $"{defName}: DamageTypeSetDef has no damageDefs.";
+            bool hasDamageDefs = damageDefs != null && damageDefs.Count > 0;
+            bool hasNestedSets = damageTypeSets != null && damageTypeSets.Count > 0;
+
+            if (!hasDamageDefs && !hasNestedSets)
+                yield return $"{defName}: DamageTypeSetDef has no damageDefs and no damageTypeSets.";
+
+            if (damageTypeSets != null)
+            {
+                foreach (DamageTypeSetDef set in damageTypeSets)
+                {
+                    if (set == null)
+                    {
+                        yield return $"{defName}: damageTypeSets contains a null entry.";
+                        continue;
+                    }
+
+                    if (set == this)
+                        yield return $"{defName}: damageTypeSets contains itself.";
+                }
+            }
         }
     }
 
     /// <summary>
-    /// One stat scaling entry.
-    /// Example XML:
-    /// <li>
-    ///   <stat>Isekai_TestPower</stat>
-    ///   <factor>0.02</factor>
-    /// </li>
+    /// One legacy stat scaling entry.
+    /// Still used by old FromStats fields and OnHit/OnDamaged chanceFromStats.
     /// </summary>
     public class StatScale
     {
@@ -85,6 +139,77 @@ namespace IsekaiAdventures
             {
                 Log.Warning($"[IsekaiAdventures] Failed to read stat '{stat?.defName}' for damage scaling: {ex.Message}");
                 return 0f;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Phase B generic stat scale target.
+    /// Offensive properties are evaluated from the attacker.
+    /// Defensive properties are evaluated from the defender.
+    /// </summary>
+    public enum DamageModifierProperty
+    {
+        PercentBonus,
+        PercentReduction,
+        FlatBonusDamage,
+        FlatReduction,
+        BlockChance,
+        IgnoreBlockChance,
+        ResistancePenetration
+    }
+
+    /// <summary>
+    /// Generic stat scaling entry for DamageModifierDef.
+    /// Example XML:
+    /// <statScales>
+    ///   <li>
+    ///     <property>PercentBonus</property>
+    ///     <stat>Isekai_Stats_MagicPower</stat>
+    ///     <factor>0.004</factor>
+    ///   </li>
+    /// </statScales>
+    /// </summary>
+    public class DamagePropertyScale
+    {
+        public DamageModifierProperty property;
+        public StatDef stat;
+        public float factor = 1f;
+
+        public float Evaluate(Pawn pawn)
+        {
+            if (pawn == null || stat == null)
+                return 0f;
+
+            try
+            {
+                return pawn.GetStatValue(stat) * factor;
+            }
+            catch (Exception ex)
+            {
+                Log.Warning($"[IsekaiAdventures] Failed to read stat '{stat?.defName}' for property scaling '{property}': {ex.Message}");
+                return 0f;
+            }
+        }
+
+        public bool IsOffensive
+        {
+            get
+            {
+                return property == DamageModifierProperty.PercentBonus
+                    || property == DamageModifierProperty.FlatBonusDamage
+                    || property == DamageModifierProperty.IgnoreBlockChance
+                    || property == DamageModifierProperty.ResistancePenetration;
+            }
+        }
+
+        public bool IsDefensive
+        {
+            get
+            {
+                return property == DamageModifierProperty.PercentReduction
+                    || property == DamageModifierProperty.FlatReduction
+                    || property == DamageModifierProperty.BlockChance;
             }
         }
     }
@@ -110,7 +235,7 @@ namespace IsekaiAdventures
         public float flatBonusDamage = 0f;
         public float percentBonusDamage = 0f;
 
-        // Legacy/single-entry field. Prefer percentBonusFromStats for new XML.
+        // Legacy/single-entry field. Prefer statScales for new XML.
         public StatScale percentBonusFromStat;
         public List<StatScale> percentBonusFromStats;
 
@@ -119,11 +244,16 @@ namespace IsekaiAdventures
         public float ignoreBlockChance = 0f;
         public List<StatScale> ignoreBlockChanceFromStats;
 
+        // Phase B offensive resistance penetration.
+        // This reduces defender percentReduction after defender reductions are calculated.
+        // 0.25 means the attacker pierces 25 percentage points of resistance.
+        public float resistancePenetration = 0f;
+
         // Defensive contributions, usually collected from target.
         public float flatReduction = 0f;
         public float percentReduction = 0f;
 
-        // Legacy/single-entry field. Prefer percentReductionFromStats for new XML.
+        // Legacy/single-entry field. Prefer statScales for new XML.
         public StatScale percentReductionFromStat;
         public List<StatScale> percentReductionFromStats;
 
@@ -131,6 +261,9 @@ namespace IsekaiAdventures
         // blockChance = chance to fully block/negate incoming damage before normal damage calculation.
         public float blockChance = 0f;
         public List<StatScale> blockChanceFromStats;
+
+        // Phase B generic stat scaling list.
+        public List<DamagePropertyScale> statScales;
 
         public bool AppliesTo(DamageDef incomingDamageDef)
         {
@@ -160,6 +293,12 @@ namespace IsekaiAdventures
             if (percentBonusDamage < -0.99f)
                 yield return $"{defName}: percentBonusDamage below -99% can create strange results.";
 
+            if (resistancePenetration < 0f)
+                yield return $"{defName}: resistancePenetration should not be negative. Use negative percentReduction for vulnerability instead.";
+
+            if (resistancePenetration > 1f)
+                yield return $"{defName}: resistancePenetration above 1.0 should usually be avoided.";
+
             // Negative percentReduction is allowed intentionally.
             // Example: <percentReduction>-0.20</percentReduction> means target takes 20% more damage.
 
@@ -169,8 +308,15 @@ namespace IsekaiAdventures
             if (percentReductionFromStat != null && percentReductionFromStat.stat == null)
                 yield return $"{defName}: percentReductionFromStat has no stat.";
 
-            if (damageTypeSet != null && (damageTypeSet.damageDefs == null || damageTypeSet.damageDefs.Count == 0))
-                yield return $"{defName}: damageTypeSet is empty.";
+            if (damageTypeSet != null)
+            {
+                bool emptyDirect = damageTypeSet.damageDefs == null || damageTypeSet.damageDefs.Count == 0;
+                bool emptyNested = damageTypeSet.damageTypeSets == null || damageTypeSet.damageTypeSets.Count == 0;
+                if (emptyDirect && emptyNested)
+                    yield return $"{defName}: damageTypeSet is empty.";
+            }
+
+            ValidateStatScaleList(percentBonusFromStats, nameof(percentBonusFromStats)).ForEach(e => { });
 
             if (percentBonusFromStats != null)
             {
@@ -207,6 +353,45 @@ namespace IsekaiAdventures
                         yield return $"{defName}: ignoreBlockChanceFromStats contains an entry without stat.";
                 }
             }
+
+            if (statScales != null)
+            {
+                foreach (DamagePropertyScale scale in statScales)
+                {
+                    if (scale == null)
+                    {
+                        yield return $"{defName}: statScales contains a null entry.";
+                        continue;
+                    }
+
+                    if (scale.stat == null)
+                        yield return $"{defName}: statScales entry for {scale.property} has no stat.";
+
+                    if (scale.property == DamageModifierProperty.BlockChance && scale.factor < 0f)
+                        yield return $"{defName}: BlockChance statScale factor is negative. This is allowed by math but usually not intended.";
+
+                    if (scale.property == DamageModifierProperty.IgnoreBlockChance && scale.factor < 0f)
+                        yield return $"{defName}: IgnoreBlockChance statScale factor is negative. This is allowed by math but usually not intended.";
+
+                    if (scale.property == DamageModifierProperty.ResistancePenetration && scale.factor < 0f)
+                        yield return $"{defName}: ResistancePenetration statScale factor should not be negative.";
+                }
+            }
+        }
+
+        private List<string> ValidateStatScaleList(List<StatScale> list, string fieldName)
+        {
+            List<string> errors = new List<string>();
+            if (list == null)
+                return errors;
+
+            foreach (StatScale scale in list)
+            {
+                if (scale == null || scale.stat == null)
+                    errors.Add($"{defName}: {fieldName} contains an entry without stat.");
+            }
+
+            return errors;
         }
     }
 
@@ -316,6 +501,7 @@ namespace IsekaiAdventures
         public float percentBonus;
         public float flatReduction;
         public float percentReduction;
+        public float resistancePenetration;
 
         public float blockChance;
         public float ignoreBlockChance;
@@ -538,6 +724,7 @@ namespace IsekaiAdventures
         // Hard safety caps. Keep in code, not XML.
         public const float MaxPercentBonus = 3.00f;          // +300%
         public const float MaxPercentReduction = 1.00f;      // 100% - allows full damage negation
+        public const float MaxResistancePenetration = 1.00f; // 100 percentage points of resistance pierce
         public const float MaxBlockChance = 1.00f;           // 100%
         public const float MaxIgnoreBlockChance = 1.00f;     // 100%
         public const float MinFinalDamage = 0f;
@@ -583,13 +770,40 @@ namespace IsekaiAdventures
             bool hadContributions = calc.hasContributions;
 
             // 3) Clamp accumulated percentages and chances.
+            float rawPercentBonus = calc.percentBonus;
+            float rawPercentReduction = calc.percentReduction;
+            float rawResistancePenetration = calc.resistancePenetration;
+
             calc.percentBonus = Mathf.Clamp(calc.percentBonus, -0.99f, MaxPercentBonus);
             calc.percentReduction = Mathf.Min(calc.percentReduction, MaxPercentReduction);
+            calc.resistancePenetration = Mathf.Clamp(calc.resistancePenetration, 0f, MaxResistancePenetration);
+
+            float effectivePercentReduction = calc.percentReduction;
+
+            // Phase B: resistance penetration only reduces positive resistance.
+            // It does not remove vulnerability from negative percentReduction.
+            if (effectivePercentReduction > 0f && calc.resistancePenetration > 0f)
+                effectivePercentReduction = Mathf.Max(0f, effectivePercentReduction - calc.resistancePenetration);
 
             float rawIgnoreBlockChance = calc.ignoreBlockChance;
             float rawBlockChance = calc.blockChance;
             calc.ignoreBlockChance = Mathf.Clamp(calc.ignoreBlockChance, 0f, MaxIgnoreBlockChance);
             calc.blockChance = Mathf.Clamp(calc.blockChance, 0f, MaxBlockChance);
+
+            if (Prefs.DevMode && hadContributions)
+            {
+                if (Mathf.Abs(rawPercentBonus - calc.percentBonus) > 0.0001f)
+                    calc.AddDebug($"Clamp PercentBonus raw={rawPercentBonus:P0} final={calc.percentBonus:P0}");
+
+                if (Mathf.Abs(rawPercentReduction - calc.percentReduction) > 0.0001f)
+                    calc.AddDebug($"Clamp PercentReduction raw={rawPercentReduction:P0} final={calc.percentReduction:P0}");
+
+                if (Mathf.Abs(rawResistancePenetration - calc.resistancePenetration) > 0.0001f)
+                    calc.AddDebug($"Clamp ResistancePenetration raw={rawResistancePenetration:P0} final={calc.resistancePenetration:P0}");
+
+                if (calc.resistancePenetration > 0f)
+                    calc.AddDebug($"ResistancePenetration={calc.resistancePenetration:P0}, EffectiveReduction={effectivePercentReduction:P0}");
+            }
 
             // 4) Block / Anti-Block phase.
             // First the attacker may bypass block. If this fails, the defender may block.
@@ -626,12 +840,11 @@ namespace IsekaiAdventures
             }
 
             // 5) Fixed deterministic damage order.
-            float finalDamage = context.baseDamage;
-            finalDamage += calc.flatBonus;
-            finalDamage *= 1f + calc.percentBonus;
-            finalDamage -= calc.flatReduction;
-            finalDamage *= 1f - calc.percentReduction;
-            finalDamage = Mathf.Max(MinFinalDamage, finalDamage);
+            float afterFlatBonus = context.baseDamage + calc.flatBonus;
+            float afterPercentBonus = afterFlatBonus * (1f + calc.percentBonus);
+            float afterFlatReduction = afterPercentBonus - calc.flatReduction;
+            float afterPercentReduction = afterFlatReduction * (1f - effectivePercentReduction);
+            float finalDamage = Mathf.Max(MinFinalDamage, afterPercentReduction);
 
             DamageResult result = new DamageResult(context, context.baseDamage, finalDamage, hadContributions, wasBlocked: false, ignoreBlockSucceeded: ignoreBlockSucceeded);
 
@@ -643,7 +856,8 @@ namespace IsekaiAdventures
                 if (ignoreBlockSucceeded)
                     status += ", IGNORE_BLOCK";
 
-                calc.AddDebug($"Base={context.baseDamage:0.##}, FlatBonus={calc.flatBonus:0.##}, PercentBonus={calc.percentBonus:P0}, FlatReduction={calc.flatReduction:0.##}, PercentReduction={calc.percentReduction:P0}, Final={finalDamage:0.##}{status}");
+                calc.AddDebug($"Formula Base={context.baseDamage:0.##} -> +Flat={afterFlatBonus:0.##} -> +Pct={afterPercentBonus:0.##} -> -Flat={afterFlatReduction:0.##} -> -Pct={afterPercentReduction:0.##}");
+                calc.AddDebug($"Totals FlatBonus={calc.flatBonus:0.##}, PercentBonus={calc.percentBonus:P0}, FlatReduction={calc.flatReduction:0.##}, PercentReduction={calc.percentReduction:P0}, ResistancePenetration={calc.resistancePenetration:P0}, EffectiveReduction={effectivePercentReduction:P0}, Final={finalDamage:0.##}{status}");
                 Log.Message($"[IsekaiAdventures] DamageResolver {context.damageDef.defName}: {string.Join(" | ", calc.debugLines)}");
             }
 
@@ -658,11 +872,14 @@ namespace IsekaiAdventures
             float beforeFlatBonus = calc.flatBonus;
             float beforePercentBonus = calc.percentBonus;
             float beforeIgnoreBlockChance = calc.ignoreBlockChance;
+            float beforeResistancePenetration = calc.resistancePenetration;
 
             calc.flatBonus += mod.flatBonusDamage;
             calc.percentBonus += mod.percentBonusDamage;
             calc.ignoreBlockChance += mod.ignoreBlockChance;
+            calc.resistancePenetration += mod.resistancePenetration;
 
+            // Legacy support.
             if (mod.percentBonusFromStat != null)
                 calc.percentBonus += mod.percentBonusFromStat.Evaluate(attacker);
 
@@ -684,13 +901,20 @@ namespace IsekaiAdventures
                 }
             }
 
+            // Phase B generic statScales.
+            ApplyOffensiveStatScales(calc, mod, attacker);
+
             float addedFlat = calc.flatBonus - beforeFlatBonus;
             float addedPercent = calc.percentBonus - beforePercentBonus;
             float addedIgnoreBlock = calc.ignoreBlockChance - beforeIgnoreBlockChance;
+            float addedResistancePenetration = calc.resistancePenetration - beforeResistancePenetration;
 
-            if (Mathf.Abs(addedFlat) > 0.0001f || Mathf.Abs(addedPercent) > 0.0001f || Mathf.Abs(addedIgnoreBlock) > 0.0001f)
+            if (Mathf.Abs(addedFlat) > 0.0001f
+                || Mathf.Abs(addedPercent) > 0.0001f
+                || Mathf.Abs(addedIgnoreBlock) > 0.0001f
+                || Mathf.Abs(addedResistancePenetration) > 0.0001f)
             {
-                calc.MarkContribution($"OFF {mod.defName} (+Flat {addedFlat:0.##}, +Pct {addedPercent:P0}, +IgnoreBlock {addedIgnoreBlock:P0})");
+                calc.MarkContribution($"OFF {mod.defName} (+Flat {addedFlat:0.##}, +Pct {addedPercent:P0}, +IgnoreBlock {addedIgnoreBlock:P0}, +ResPen {addedResistancePenetration:P0})");
             }
         }
 
@@ -707,6 +931,7 @@ namespace IsekaiAdventures
             calc.percentReduction += mod.percentReduction;
             calc.blockChance += mod.blockChance;
 
+            // Legacy support.
             if (mod.percentReductionFromStat != null)
                 calc.percentReduction += mod.percentReductionFromStat.Evaluate(target);
 
@@ -728,13 +953,80 @@ namespace IsekaiAdventures
                 }
             }
 
+            // Phase B generic statScales.
+            ApplyDefensiveStatScales(calc, mod, target);
+
             float addedFlatReduction = calc.flatReduction - beforeFlatReduction;
             float addedPercentReduction = calc.percentReduction - beforePercentReduction;
             float addedBlockChance = calc.blockChance - beforeBlockChance;
 
-            if (Mathf.Abs(addedFlatReduction) > 0.0001f || Mathf.Abs(addedPercentReduction) > 0.0001f || Mathf.Abs(addedBlockChance) > 0.0001f)
+            if (Mathf.Abs(addedFlatReduction) > 0.0001f
+                || Mathf.Abs(addedPercentReduction) > 0.0001f
+                || Mathf.Abs(addedBlockChance) > 0.0001f)
             {
                 calc.MarkContribution($"DEF {mod.defName} (-Flat {addedFlatReduction:0.##}, -Pct {addedPercentReduction:P0}, +Block {addedBlockChance:P0})");
+            }
+        }
+
+        private static void ApplyOffensiveStatScales(DamageCalculationContext calc, DamageModifierDef mod, Pawn attacker)
+        {
+            if (calc == null || mod?.statScales == null)
+                return;
+
+            foreach (DamagePropertyScale scale in mod.statScales)
+            {
+                if (scale == null || !scale.IsOffensive)
+                    continue;
+
+                float value = scale.Evaluate(attacker);
+
+                switch (scale.property)
+                {
+                    case DamageModifierProperty.PercentBonus:
+                        calc.percentBonus += value;
+                        break;
+
+                    case DamageModifierProperty.FlatBonusDamage:
+                        calc.flatBonus += value;
+                        break;
+
+                    case DamageModifierProperty.IgnoreBlockChance:
+                        calc.ignoreBlockChance += value;
+                        break;
+
+                    case DamageModifierProperty.ResistancePenetration:
+                        calc.resistancePenetration += value;
+                        break;
+                }
+            }
+        }
+
+        private static void ApplyDefensiveStatScales(DamageCalculationContext calc, DamageModifierDef mod, Pawn target)
+        {
+            if (calc == null || mod?.statScales == null)
+                return;
+
+            foreach (DamagePropertyScale scale in mod.statScales)
+            {
+                if (scale == null || !scale.IsDefensive)
+                    continue;
+
+                float value = scale.Evaluate(target);
+
+                switch (scale.property)
+                {
+                    case DamageModifierProperty.PercentReduction:
+                        calc.percentReduction += value;
+                        break;
+
+                    case DamageModifierProperty.FlatReduction:
+                        calc.flatReduction += value;
+                        break;
+
+                    case DamageModifierProperty.BlockChance:
+                        calc.blockChance += value;
+                        break;
+                }
             }
         }
     }
@@ -830,7 +1122,7 @@ namespace IsekaiAdventures
         /// <summary>
         /// Postfix phase:
         /// - Vanilla damage has now been applied.
-        /// - OnHitModifier is resolved after vanilla damage.
+        /// - OnHitModifier, OnDamagedModifier and ComboReaction are resolved after vanilla damage.
         /// </summary>
         public static void Postfix(Thing __instance, DamageInfo dinfo, DamageResult __state)
         {
@@ -845,7 +1137,7 @@ namespace IsekaiAdventures
             }
             catch (Exception ex)
             {
-                Log.Error($"[IsekaiAdventures] DamageResolver postfix failed while resolving OnHit modifiers: {ex}");
+                Log.Error($"[IsekaiAdventures] DamageResolver postfix failed while resolving post-damage modifiers: {ex}");
             }
         }
     }

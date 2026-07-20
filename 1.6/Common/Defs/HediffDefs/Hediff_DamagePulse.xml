@@ -14,7 +14,7 @@
             <maxSeverity>10.0</maxSeverity>
 
             <comps>
-                <li Class="Isekai.HediffCompProperties_DamagePulse">
+                <li Class="IsekaiAdventures.HediffCompProperties_DamagePulse">
                     <damageDef>Isekai_DoT_DamagePulse</damageDef>
                     <damageAmount>5</damageAmount>
                     <damagePenetration>0.15</damagePenetration>

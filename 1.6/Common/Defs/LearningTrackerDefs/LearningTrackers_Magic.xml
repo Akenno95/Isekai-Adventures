@@ -80,7 +80,7 @@
 		<!-- Debug -->
 		
 			<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Abstract="True" Name="IsekaiMagicDebugNodeHiding">
-				<condVisiblePrereq>false</condVisiblePrereq>
+				<condVisiblePrereq>true</condVisiblePrereq>
 			</ItsSorceryFramework.LearningTreeNodeDef>
 
 		<!-- Basics -->
