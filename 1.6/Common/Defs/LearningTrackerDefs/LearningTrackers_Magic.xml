@@ -293,6 +293,8 @@
 					<li Class="ISFNodeIcons.LearningNodeIconExtension">
 						<iconPath>UI/Icons/QuestGiver</iconPath>
 						<iconSize>32</iconSize>
+						<leftPadding>2</leftPadding>
+						<textGap>2</textGap>
 					</li>
 				</modExtensions>
 			</ItsSorceryFramework.LearningTreeNodeDef>		
@@ -313,7 +315,9 @@
 				<modExtensions>
 					<li Class="ISFNodeIcons.LearningNodeIconExtension">
 						<iconPath>UI/Icons/QuestGiver</iconPath>
-						<iconSize>50</iconSize>
+						<iconSize>50</iconSize>			(default 32)
+						<leftPadding>0</leftPadding>	(default 6)
+						<textGap>5</textGap>			(default 6)
 					</li>
 				</modExtensions>
 			</ItsSorceryFramework.LearningTreeNodeDef>
